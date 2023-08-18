@@ -1,2 +1,4 @@
-# web-essentials
-Web Essentials Notes
+# Dev
+```sh
+hugo server --themesDir ../
+```
