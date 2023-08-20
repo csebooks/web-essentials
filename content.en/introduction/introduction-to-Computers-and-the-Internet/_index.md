@@ -3,7 +3,9 @@ title: Introduction-to-Computers-and-the-Internet
 weight: 1
 ---
 
-**O B J E C T I V E S** In this chapter you will learn:
+# O B J E C T I V E S
+
+In this chapter you will learn:
 
 ■ Basic computing concepts.
 
@@ -23,29 +25,34 @@ weight: 1
 
 **_Some people take what we contribute and extend it and contribute it back \[to Ruby on Rails\]. That's really the basic open source success story._ —David Heinemeier Hansson, interviewed by Chris Karr at www.Chicagoist.com**
 
-1.1 Introduction **3 O**
+**1.1 Introduction <br>**
+**1.2 What Is a Computer? <br>**
+**1.3 Computer Organization <br>**
+**1.4 Machine Languages, Assembly Languages and High-Level Languages <br>**
+**1.5 History of the Internet and World Wide Web <br>**
+**1.6 World Wide Web Consortium (W3C) <br>**
+**1.7 Web 2.0<br>**
+**1.8 Personal, Distributed and Client/Server Computing<br>**
+**1.9 Hardware Trends<br>**
+**1.10 Key Software Trend: Object Technology<br>**
+**1.11 JavaScript: Object-Based Scripting for the Web<br>**
+**1.12 Browser Portability<br>**
+**1.13 C, C++ and Java<br>**
+**1.14 BASIC, Visual Basic, Visual C++, C# and .NET<br>**
+**1.15 Software Technologies<br>**
+**1.16 Notes about Internet & World Wide Web How to Program, 4/e<br>**
+**1.17 Web Resources<br>**
+Summary | Terminology | Self-Review Exercises | Answers to Self-Review Exercises | Exercises
 
-**u tl**
+## Introduction
 
-**in e**
-
-**1.1 Introduction** Welcome to Internet and World Wide Web programming and Web 2.0! And welcome to a walkthrough of the Web 2.0 phenomenon from the technical, business and social per- spectives. We’ve worked hard to create what we hope you’ll find to be an informative, en- tertaining and challenging learning experience. As you read this book, you may want to refer to www.deitel.com for updates and additional information.
+Welcome to Internet and World Wide Web programming and Web 2.0! And welcome to a walkthrough of the Web 2.0 phenomenon from the technical, business and social per- spectives. We’ve worked hard to create what we hope you’ll find to be an informative, en- tertaining and challenging learning experience. As you read this book, you may want to refer to www.deitel.com for updates and additional information.
 
 The technologies you’ll learn in this book are fun for novices, and simultaneously are appropriate for experienced professionals who build substantial information systems. _Internet & World Wide Web How to Program, Fourth Edition_, is designed to be an effective learning tool for each of these audiences. How can one book appeal to both groups? The answer is that the core of this book emphasizes achieving program clarity through the proven techniques of structured programming, object-based programming and object-ori- ented programming. Beginners will learn programming the right way from the beginning. Experienced programmers will find “industrial-strength” code examples. We have attempted to write in a clear and straightforward manner using best practices.
 
 Perhaps most important, the book presents hundreds of working examples and shows the outputs produced when these examples are rendered in browsers or run on computers. We present all concepts in the context of complete working programs. We call this the “live-code approach.” These examples are available for download from our website, www.deitel.com/books/iw3htp4/.
 
-The early chapters introduce computer fundamentals, the Internet and the web. We show how to use software for browsing the web. We present a carefully paced introduction to “client-side” web programming, using the popular JavaScript language and the closely related technologies of XHTML (Extensible HyperText Markup Language), CSS (Cas-
-
-**1.1** Introduction **1.2** What Is a Computer? **1.3** Computer Organization **1.4** Machine Languages, Assembly Languages and High-Level Languages **1.5** History of the Internet and World Wide Web **1.6** World Wide Web Consortium (W3C) **1.7** Web 2.0 **1.8** Personal, Distributed and Client/Server Computing **1.9** Hardware Trends
-
-**1.10** Key Software Trend: Object Technology **1.11** JavaScript: Object-Based Scripting for the Web **1.12** Browser Portability **1.13** C, C++ and Java **1.14** BASIC, Visual Basic, Visual C++, C# and .NET **1.15** Software Technologies **1.16** Notes about _Internet & World Wide Web How to Program, 4/e_ **1.17** Web Resources
-
-Summary | Terminology | Self-Review Exercises | Answers to Self-Review Exercises | Exercises
-
-**4** Chapter 1 Introduction to Computers and the Internet
-
-cading Style Sheets) and the DOM (Document Object Model). We often refer to “pro- gramming” as scripting—for reasons that will soon become clear. Novices will find that the material in the JavaScript chapters presents a solid foundation for the deeper treatment of scripting in the Adobe Flash, Adobe Flex, Microsoft Silverlight, PHP and Ruby on Rails chapters later in the book. Experienced programmers will read the early chapters quickly and find the treatment of scripting in the later chapters to be rigorous and challenging.
+The early chapters introduce computer fundamentals, the Internet and the web. We show how to use software for browsing the web. We present a carefully paced introduction to “client-side” web programming, using the popular JavaScript language and the closely related technologies of XHTML (Extensible HyperText Markup Language), CSS (Cas-cading Style Sheets) and the DOM (Document Object Model). We often refer to “pro- gramming” as scripting—for reasons that will soon become clear. Novices will find that the material in the JavaScript chapters presents a solid foundation for the deeper treatment of scripting in the Adobe Flash, Adobe Flex, Microsoft Silverlight, PHP and Ruby on Rails chapters later in the book. Experienced programmers will read the early chapters quickly and find the treatment of scripting in the later chapters to be rigorous and challenging.
 
 Most people are familiar with the exciting things that computers can do. Using this textbook, you’ll learn how to command computers to perform specific tasks. **Software** (i.e., the instructions you write to command the computer to perform **actions** and make **decisions**) controls computers (often referred to as **hardware**). JavaScript and PHP are among today’s most popular software development languages for web-based applications.
 
@@ -55,11 +62,7 @@ Through the early 1990s most students in introductory programming courses learne
 
 Today’s users are accustomed to applications with rich graphical user interfaces (GUIs), such as those used on Apple’s Mac OS X systems, Microsoft Windows systems, various Linux systems and more. Users want applications that employ the multimedia capabilities of graphics, images, animation, audio and video. They want applications that can run on the Internet and the web and communicate with other applications. Users want to apply database technologies for storing and manipulating their business and personal data. They want applications that are not limited to the desktop or even to some local computer network, but that can integrate Internet and web components, and remote data- bases. Programmers want to use all these capabilities in a truly portable manner so that applications will run without modification on a variety of **platforms** (i.e., different types of computers running different operating systems).
 
-In this book, we present a number of powerful software technologies that will enable you to build these kinds of systems. Early in the book we concentrate on using technolo- gies such as the Extensible HyperText Markup Language (XHTML), JavaScript, CSS, Flash, Flex, Silverlight, Dreamweaver and Extensible Markup Language (XML) to build the portions of web-based applications that reside on the **client side** (i.e., the portions of applications that typically run in your web browsers such as Mozilla’s Firefox 2 or
-
-1.1 Introduction **5**
-
-Microsoft’s Internet Explorer 7). Later in the book we concentrate on using technologies such as web servers, databases (integrated collections of data), PHP, Ruby on Rails, ASP.NET, ASP.NET Ajax and JavaServer Faces (JSF) to build the **server side** of web- based applications. These portions of applications typically run on “heavy-duty” computer systems on which organizations’ business-critical websites reside. By mastering the tech- nologies in this book, you’ll be able to build substantial web-based, client/server, database- intensive, “multitier” applications. We begin with a discussion of computer hardware and software fundamentals. If you are generally familiar with computers, the Internet and the web, you may want to skip some or all of this chapter.
+In this book, we present a number of powerful software technologies that will enable you to build these kinds of systems. Early in the book we concentrate on using technolo- gies such as the Extensible HyperText Markup Language (XHTML), JavaScript, CSS, Flash, Flex, Silverlight, Dreamweaver and Extensible Markup Language (XML) to build the portions of web-based applications that reside on the **client side** (i.e., the portions of applications that typically run in your web browsers such as Mozilla’s Firefox 2 or Microsoft’s Internet Explorer 7). Later in the book we concentrate on using technologies such as web servers, databases (integrated collections of data), PHP, Ruby on Rails, ASP.NET, ASP.NET Ajax and JavaServer Faces (JSF) to build the **server side** of web- based applications. These portions of applications typically run on “heavy-duty” computer systems on which organizations’ business-critical websites reside. By mastering the tech- nologies in this book, you’ll be able to build substantial web-based, client/server, database- intensive, “multitier” applications. We begin with a discussion of computer hardware and software fundamentals. If you are generally familiar with computers, the Internet and the web, you may want to skip some or all of this chapter.
 
 To keep up to date with Internet and web programming developments, and the latest information on _Internet & World Wide Web How to Program, 4/e_, at Deitel & Associates, please register for our free e-mail newsletter, _the Deitel® Buzz Online,_ at
 
@@ -81,41 +84,32 @@ deitel@deitel.com
 
 We’ll respond promptly. We hope that you’ll enjoy learning with _Internet & World Wide Web How to Program, Fourth Edition_.
 
-**_Architecture of_ Internet & World Wide Web How to Program, 4/e** This book focuses on Web 2.0 and Rich Internet Application (RIA) development. Our goal is to develop webtop applications that have the responsiveness, look and feel of tradi- tional desktop applications. In the interim since the previous edition of this book, Deitel has evolved into a development organization, while maintaining its focus on programming languages textbook and professional book authoring, and corporate training. We’re build- ing the infrastructure for the Internet businesses we’re designing and developing as part of our Web 2.0 Internet Business Initiative. This edition has been enhanced with discussions of many practical issues we’ve encountered in developing that infrastructure.
+**_Architecture of_ Internet & World Wide Web How to Program, 4/e**<br>This book focuses on Web 2.0 and Rich Internet Application (RIA) development. Our goal is to develop webtop applications that have the responsiveness, look and feel of tradi- tional desktop applications. In the interim since the previous edition of this book, Deitel has evolved into a development organization, while maintaining its focus on programming languages textbook and professional book authoring, and corporate training. We’re build- ing the infrastructure for the Internet businesses we’re designing and developing as part of our Web 2.0 Internet Business Initiative. This edition has been enhanced with discussions of many practical issues we’ve encountered in developing that infrastructure.
 
-Figure 1.1 shows the architecture of _Internet & World Wide Web How to Program, 4/e._ The book is divided into several parts. The first part, Chapters 1–3, provides an introduc- tion to the Internet and the web, web browsers and Web 2.0. These chapters provide a foundation for understanding Web 2.0 and Rich Internet Application development. Chapter 1 introduces hardware, software, communications and Web 2.0 topics. If you are
-
-**6** Chapter 1 Introduction to Computers and the Internet
-
+Figure 1.1 shows the architecture of _Internet & World Wide Web How to Program, 4/e._ The book is divided into several parts. The first part, Chapters 1–3, provides an introduc- tion to the Internet and the web, web browsers and Web 2.0. These chapters provide a foundation for understanding Web 2.0 and Rich Internet Application development. Chapter 1 introduces hardware, software, communications and Web 2.0 topics. If you are ![Alt text](Image/web11.png)
 a serious web developer, you’ll want to test your web applications across many browsers and platforms. The examples for this book target Microsoft’s Internet Explorer 7 (IE7) and Mozilla’s Firefox 2 (FF2) browsers, each of which is introduced in Chapter 2. The examples execute correctly in both browsers. Many of the examples will also work in other browsers such as Opera and Safari. Many of the examples will not work on earlier browsers. Microsoft Windows users should upgrade to IE7 and install FF2; readers with other operating systems should install Firefox 2. Web browsers—a crucial component of web applications—are free, as are most of the software technologies we present in this book. Chapter 3 discusses Web 2.0 from technical, business and social perspectives.
 
 The second part of the book, Chapters 4–15, presents a 12-chapter treatment of Ajax component technologies that concludes with Chapter 15’s treatment of Ajax develop- ment. Ajax is not a new technology—we’ve been writing about all but one of its compo- nent technologies since the first edition of this book in 1999, and many of the technologies existed before that. However, Ajax is one of the key technologies of Web 2.0 and RIAs. Several later chapters in the book demonstrate technologies that encapsulate Ajax func- tionality to help make it operate across a wide variety of browsers and browser versions.
 
-The third part of the book, Chapters 15–28, focuses on both the client and server sides of the GUI and graphical part of RIA development. Here we cover client-side tech- nologies such as Adobe Flash, Adobe Flex and Microsoft Silverlight that use, or can be combined with, Ajax or Ajax-like capabilities to develop RIAs. Each of these technologies
-
-o
-
-**Fig. 1.1** | Architecture of _Internet & World Wide Web How to Program, 4/e_.
-
-1.2 What Is a Computer? **7**
-
-also can consume web services. Next, we present the server side of web application devel- opment with discussions of web servers (IIS and Apache), databases, several server-side scripting languages such as PHP and Ruby on Rails, and several server-side frameworks such as ASP.NET 2.0 and JavaServer Faces. We complete our server-side discussion with a chapter on building web services.
+The third part of the book, Chapters 15–28, focuses on both the client and server sides of the GUI and graphical part of RIA development. Here we cover client-side tech- nologies such as Adobe Flash, Adobe Flex and Microsoft Silverlight that use, or can be combined with, Ajax or Ajax-like capabilities to develop RIAs. Each of these technologies also can consume web services. Next, we present the server side of web application devel- opment with discussions of web servers (IIS and Apache), databases, several server-side scripting languages such as PHP and Ruby on Rails, and several server-side frameworks such as ASP.NET 2.0 and JavaServer Faces. We complete our server-side discussion with a chapter on building web services.
 
 You may have noticed that Chapter 15, Ajax-Enabled Rich Internet Applications, overlaps the second and third parts of the book. Chapter 15 serves as a bridge from “raw” Ajax development to sophisticated RIA development.
 
-**1.2 What Is a Computer?** A **computer** is a device that can perform computations and make logical decisions billions of times faster than human beings can. For example, many of today’s personal computers can perform several billion additions per second. A person could operate a desk calculator for an entire lifetime and still not complete as many calculations as a powerful personal computer can perform in one second! (Points to ponder: How would you know whether the person added the numbers correctly? How would you know whether the computer added the numbers correctly?) Today’s fastest **supercomputers** can perform trillions of ad- ditions per second!
+## What Is a Computer?
+
+A **computer** is a device that can perform computations and make logical decisions billions of times faster than human beings can. For example, many of today’s personal computers can perform several billion additions per second. A person could operate a desk calculator for an entire lifetime and still not complete as many calculations as a powerful personal computer can perform in one second! (Points to ponder: How would you know whether the person added the numbers correctly? How would you know whether the computer added the numbers correctly?) Today’s fastest **supercomputers** can perform trillions of ad- ditions per second!
 
 Computers process data under the control of sets of instructions called **computer pro- grams**_._ These programs guide the computer through orderly sets of actions specified by people called **computer programmers**_._
 
 A computer consists of various devices referred to as hardware (e.g., the keyboard, screen, mouse, hard disk, memory, DVD drives and processing units)_._ The programs that run on a computer are referred to as software*.* Hardware costs have been declining dramat- ically in recent years, to the point that personal computers have become a commodity. In this book, you’ll learn proven methods that are reducing software development costs— object-oriented programming and object-oriented design.
 
-**1.3 Computer Organization** Regardless of differences in physical appearance, virtually every computer may be envi- sioned as divided into six **logical units** or sections:
+## Computer Organization
+
+Regardless of differences in physical appearance, virtually every computer may be envi- sioned as divided into six **logical units** or sections:
 
 **1\. Input unit**. This is the “receiving” section of the computer. It obtains informa- tion (data and computer programs) from **input devices** and places this informa- tion at the disposal of the other units for processing. Most information is entered into computers through keyboards and mouse devices. Information also can be entered in many other ways, including by speaking to your computer, scanning images, uploading digital photos and videos, and receiving information from a network, such as the Internet.
 
 **2\. Output unit**. This is the “shipping” section of the computer. It takes information that the computer has processed and places it on various **output devices** to make the information available for use outside the computer. Most information output from computers today is displayed on screens, printed on paper or used to control other devices. Computers also can output their information to networks, such as the Internet.
-
-**8** Chapter 1 Introduction to Computers and the Internet
 
 **3\. Memory unit**. This is the rapid-access, relatively low-capacity “warehouse” section of the computer. It stores computer programs while they are being executed. It re- tains information that has been entered through the input unit, so that it will be immediately available for processing when needed. The memory unit also retains processed information until it can be placed on output devices by the output unit. Information in the memory unit is typically lost when the computer’s power is turned off. The memory unit is often called either **memory** or **primary memory**_._
 
@@ -125,7 +119,9 @@ A computer consists of various devices referred to as hardware (e.g., the keyboa
 
 **6\. Secondary storage unit**. This is the computer’s long-term, high-capacity “ware- housing” section. Programs or data not actively being used by the other units nor- mally are placed on secondary storage devices, such as your hard drive, until they are needed, possibly hours, days, months or even years later. Information in sec- ondary storage takes much longer to access than information in primary memory, but the cost per unit of secondary storage is much less than that of primary mem- ory. Other secondary storage devices include CDs and DVDs, which can hold hundreds of millions and billions of characters, respectively.
 
-**1.4 Machine Languages, Assembly Languages and High-Level Languages** Programmers write instructions in various programming languages, some directly under- standable by computers and others requiring intermediate **translation** steps. Hundreds of computer languages are in use today. These may be divided into three general types:
+## Machine Languages, Assembly Languages and High-Level Languages
+
+Programmers write instructions in various programming languages, some directly under- standable by computers and others requiring intermediate **translation** steps. Hundreds of computer languages are in use today. These may be divided into three general types:
 
 **1\.** Machine languages
 
@@ -133,17 +129,19 @@ A computer consists of various devices referred to as hardware (e.g., the keyboa
 
 **3\.** High-level languages
 
-Any computer can directly understand only its own **machine language**_._ Machine lan- guage is the “natural language” of a computer and as such is defined by its hardware design. \[_Note:_ Machine language is often referred to as **object code**. This term predates “object- oriented programming.” These two uses of “object” are unrelated.\] Machine languages generally consist of strings of numbers (ultimately reduced to 1s and 0s) that instruct com- puters to perform their most elementary operations one at a time. Machine languages are **machine dependent** (i.e., a particular machine language can be used on only one type of computer). Such languages are cumbersome for humans, as illustrated by the following
-
-1.4 Machine Languages, Assembly Languages and High-Level Languages **9**
+Any computer can directly understand only its own **machine language**_._ Machine lan- guage is the “natural language” of a computer and as such is defined by its hardware design.[Note:Machine language is often referred to as object code**. This term predates “object- oriented programming.” These two uses of “object” are unrelated.] Machine languages generally consist of strings of numbers (ultimately reduced to 1s and 0s) that instruct com- puters to perform their most elementary operations one at a time. Machine languages are **machine dependent** (i.e., a particular machine language can be used on only one type of computer). Such languages are cumbersome for humans, as illustrated by the following
 
 section of an early machine-language program that adds overtime pay to base pay and stores the result in gross pay:
 
-+1300042774 +1400593419 +1200274027
++1300042774
++1400593419
++1200274027
 
 Machine-language programming was simply too slow, tedious and error prone for most programmers. Instead of using the strings of numbers that computers could directly understand, programmers began using English-like abbreviations to represent elementary operations. These abbreviations formed the basis of **assembly languages**_._ **Translator pro- grams** called **assemblers** were developed to convert early assembly-language programs to machine language at computer speeds. The following section of an assembly-language pro- gram also adds overtime pay to base pay and stores the result in gross pay:
 
-load basepay add overpay store grosspay
+load basepay
+add overpay
+store grosspay
 
 Although such code is clearer to humans, it is incomprehensible to computers until trans- lated to machine language.
 
@@ -157,21 +155,19 @@ The process of compiling a high-level language program into machine language can
 
 **Performance Tip 1.1** _Interpreters have an advantage over compilers in scripting. An interpreted program can begin executing as soon as it is downloaded to the client’s machine, without the need to be compiled before it can execute. On the downside, scripts generally run much slower than compiled code._ 1.1
 
-**10** Chapter 1 Introduction to Computers and the Internet
-
 **Portability Tip 1.1** _Interpreted languages are more portable than compiled languages. Interpreters can be imple- mented for each platform on which the interpreted languages need to execute._ 1.1
 
 **Software Engineering Observation 1.1** _Interpreted languages are more dynamic than compiled languages. For example, server-side applications can generate code in response to user interactions, and that code can then be interpreted in a browser._ 1.1
 
-**1.5 History of the Internet and World Wide Web** In the late 1960s, one of the authors (HMD) was a graduate student at MIT. His research at MIT’s Project MAC (now the Laboratory for Computer Science—the home of the World Wide Web Consortium) was funded by ARPA—the Advanced Research Projects Agency of the Department of Defense. ARPA sponsored a conference at which several doz- en ARPA-funded graduate students were brought together at the University of Illinois at Urbana-Champaign to meet and share ideas. During this conference, ARPA rolled out the blueprints for networking the main computer systems of about a dozen ARPA-funded uni- versities and research institutions. They were to be connected with communications lines operating at a then-stunning 56 Kbps (i.e., 56,000 bits per second)—this at a time when most people (of the few who could) were connecting over telephone lines to computers at a rate of 110 bits per second. There was great excitement at the conference. Researchers at Harvard talked about communicating with the Univac 1108 “supercomputer” at the Uni- versity of Utah to handle calculations related to their computer graphics research. Many other intriguing possibilities were raised. Academic research about to take a giant leap for- ward. Shortly after this conference, ARPA proceeded to implement the **ARPANET**, which eventually evolved into today’s **Internet**.
+## History of the Internet and World Wide Web
+
+In the late 1960s, one of the authors (HMD) was a graduate student at MIT. His research at MIT’s Project MAC (now the Laboratory for Computer Science—the home of the World Wide Web Consortium) was funded by ARPA—the Advanced Research Projects Agency of the Department of Defense. ARPA sponsored a conference at which several doz- en ARPA-funded graduate students were brought together at the University of Illinois at Urbana-Champaign to meet and share ideas. During this conference, ARPA rolled out the blueprints for networking the main computer systems of about a dozen ARPA-funded uni- versities and research institutions. They were to be connected with communications lines operating at a then-stunning 56 Kbps (i.e., 56,000 bits per second)—this at a time when most people (of the few who could) were connecting over telephone lines to computers at a rate of 110 bits per second. There was great excitement at the conference. Researchers at Harvard talked about communicating with the Univac 1108 “supercomputer” at the Uni- versity of Utah to handle calculations related to their computer graphics research. Many other intriguing possibilities were raised. Academic research about to take a giant leap for- ward. Shortly after this conference, ARPA proceeded to implement the **ARPANET**, which eventually evolved into today’s **Internet**.
 
 Things worked out differently from what was originally planned. Rather than enabling researchers to share each other’s computers, it rapidly became clear that enabling researchers to communicate quickly and easily via what became known as **electronic mail** (**e-mail**, for short) was the key early benefit of the ARPANET. This is true even today on the Internet, as e-mail facilitates communications of all kinds among a billion people worldwide.
 
 One of the primary goals for ARPANET was to allow multiple users to send and receive information simultaneously over the same communications paths (e.g., phone lines). The network operated with a technique called **packet switching**, in which digital data was sent in small bundles called **packets**. The packets contained address, error-control and sequencing information. The address information allowed packets to be routed to their destinations. The sequencing information helped in reassembling the packets— which, because of complex routing mechanisms, could actually arrive out of order—into their original order for presentation to the recipient. Packets from different senders were intermixed on the same lines. This packet-switching technique greatly reduced transmis- sion costs, as compared with the cost of dedicated communications lines.
 
 The network was designed to operate without centralized control. If a portion of the network failed, the remaining working portions would still route packets from senders to receivers over alternative paths for reliability.
-
-1.6 World Wide Web Consortium (W3C) **11**
 
 The protocol for communicating over the ARPANET became known as **TCP**—the **Transmission Control Protocol**. TCP ensured that messages were properly routed from sender to receiver and that they arrived intact.
 
@@ -185,15 +181,15 @@ The **World Wide Web** allows computer users to locate and view multimedia-based
 
 In the past, most computer applications ran on computers that were not connected to one another, whereas today’s applications can be written to communicate among the world’s computers. The Internet mixes computing and communications technologies. It makes our work easier. It makes information instantly and conveniently accessible world- wide. It enables individuals and small businesses to get worldwide exposure. It is changing the way business is done. People can search for the best prices on virtually any product or service. Special-interest communities can stay in touch with one another. Researchers can be made instantly aware of the latest breakthroughs. The Internet and the web are surely among humankind’s most profound creations.
 
-**1.6 World Wide Web Consortium (W3C)** In October 1994, Tim Berners-Lee founded an organization—called the **World Wide Web Consortium** (**W3C**)—devoted to developing nonproprietary, interoperable technol-
+## World Wide Web Consortium (W3C)
 
-**12** Chapter 1 Introduction to Computers and the Internet
-
-ogies for the World Wide Web. One of the W3C’s primary goals is to make the web uni- versally accessible—regardless of ability, language or culture. The W3C home page (www.w3.org) provides extensive resources on Internet and web technologies.
+In October 1994, Tim Berners-Lee founded an organization—called the **World Wide Web Consortium** (**W3C**)—devoted to developing nonproprietary, interoperable technologies for the World Wide Web. One of the W3C’s primary goals is to make the web uni- versally accessible—regardless of ability, language or culture. The W3C home page (www.w3.org) provides extensive resources on Internet and web technologies.
 
 The W3C is also a standardization organization. Web technologies standardized by the W3C are called **Recommendations**. W3C Recommendations include the Extensible HyperText Markup Language (XHTML), Cascading Style Sheets (CSS), HyperText Markup Language (HTML—now considered a “legacy” technology) and the Extensible Markup Language (XML). A recommendation is not an actual software product, but a document that specifies a technology’s role, syntax rules and so forth.
 
-**1.7 Web 2.0** In 2003 there was a noticeable shift in how people and businesses were using the web and developing web-based applications. The term **Web 2.0** was coined by **Dale Dougherty** of **O’Reilly® Media**1 in 2003 to describe this trend. Although it became a major media buzzword, few people really know what Web 2.0 means. Generally, Web 2.0 companies use the web as a platform to create collaborative, community-based sites (e.g., social net- working sites, blogs, wikis, etc.).
+## Web 2.0
+
+In 2003 there was a noticeable shift in how people and businesses were using the web and developing web-based applications. The term **Web 2.0** was coined by **Dale Dougherty** of **O’Reilly® Media**1 in 2003 to describe this trend. Although it became a major media buzzword, few people really know what Web 2.0 means. Generally, Web 2.0 companies use the web as a platform to create collaborative, community-based sites (e.g., social net- working sites, blogs, wikis, etc.).
 
 **Web 1.0** (the state of the web through the 1990s and early 2000s) was focused on a relatively small number of companies and advertisers producing content for users to access (some people called it the “brochure web”). Web 2.0 _involves_ the user—not only is the content often created by the users, but users help organize it, share it, remix it, critique it, update it, etc. One way to look at Web 1.0 is as a _lecture_, a small number of professors informing a large audience of students. In comparison, Web 2.0 is a _conversation_, with everyone having the opportunity to speak and share views.
 
@@ -205,8 +201,6 @@ The architecture of participation has influenced software development as well. O
 
 2\. Grossman, L. “TIME’s Person of the Year: You.” _TIME_, December 2006 <http:// www.time.com/time/magazine/article/0,9171,1569514,00.html>.
 
-1.8 Personal, Distributed and Client/Server Computing **13**
-
 oped using technologies (such as Ajax) that have the look and feel of desktop software, enhancing a user’s overall experience. Software as a Service (SaaS)—software that runs on a server instead of a local computer—has also gained prominence because of sophisticated new technologies and increased broadband Internet access.
 
 Search engines, including Google™, Yahoo!®, MSN®, Ask™, and many more, have become essential to sorting through the massive amount of content on the web. Social bookmarking sites such as del.icio.us and Ma.gnolia allow users to share their favorite sites with others. Social media sites such as Digg™, Spotplex™ and Netscape® enable the community to decide which news articles are the most significant. The way we find the information on these sites is also changing—people are **tagging** (i.e., labeling) web content by subject or keyword in a way that helps anyone locate information more effectively.
@@ -217,17 +211,17 @@ In the future, we’ll see computers learn to understand the meaning of the data
 
 These topics and more are covered in a detailed walkthrough in Chapter 3, Dive Into® Web 2.0. The chapter highlights the major characteristics and technologies of Web 2.0, providing examples of popular Web 2.0 companies and Web 2.0 Internet business and monetization models. You’ll learn about user-generated content, blogging, content networks, social networking, location-based services and more. In Chapters 4–28, you’ll learn key software technologies for building web-based applications in general, and Ajax- enabled, web-based Rich Internet Applications in particular. See our Web 2.0 Resource Center at www.deitel.com/web2.0/ for more information.
 
-**1.8 Personal, Distributed and Client/Server Computing** In 1977, Apple Computer popularized **personal computing**_._ Computers became so eco- nomical that people could buy them for their own personal or business use. In 1981, IBM, the world’s largest computer vendor, introduced the IBM Personal Computer. This quick- ly legitimized personal computing in business, industry and government organizations, where IBM mainframes were heavily used.
+## Personal, Distributed and Client/Server Computing
 
-These computers were for the most part “stand-alone” units—people transported disks back and forth between them to share information (this was often called “sneak- ernet”). Although early personal computers were not powerful enough to timeshare several users, these machines could be linked together in computer networks, sometimes over tele-
+In 1977, Apple Computer popularized **personal computing**_._ Computers became so eco- nomical that people could buy them for their own personal or business use. In 1981, IBM, the world’s largest computer vendor, introduced the IBM Personal Computer. This quick- ly legitimized personal computing in business, industry and government organizations, where IBM mainframes were heavily used.
 
-**14** Chapter 1 Introduction to Computers and the Internet
-
-phone lines and sometimes in **local area networks (LANs)** within an organization. This led to the phenomenon of **distributed computing**_,_ in which an organization’s computing, instead of being performed only at some central computer installation, is distributed over networks to the sites where the organization’s work is performed. Personal computers were powerful enough to handle the computing requirements of individual users as well as the basic communications tasks of passing information between computers electronically.
+These computers were for the most part “stand-alone” units—people transported disks back and forth between them to share information (this was often called “sneak- ernet”). Although early personal computers were not powerful enough to timeshare several users, these machines could be linked together in computer networks, sometimes over telephone lines and sometimes in **local area networks (LANs)** within an organization. This led to the phenomenon of **distributed computing**_,_ in which an organization’s computing, instead of being performed only at some central computer installation, is distributed over networks to the sites where the organization’s work is performed. Personal computers were powerful enough to handle the computing requirements of individual users as well as the basic communications tasks of passing information between computers electronically.
 
 Today’s personal computers are as powerful as the million-dollar machines of just a few decades ago. The most powerful desktop machines—called **workstations**—provide individual users with enormous capabilities. Information is shared easily across computer networks, where computers called **servers** (file servers, database servers, web servers, etc.) offer data storage and other capabilities that may be used by **client** computers distributed throughout the network, hence the term **client/server computing**_._ Today’s popular oper- ating systems, such as UNIX, Linux, Mac OS X and Microsoft’s Windows-based systems, provide the kinds of capabilities discussed in this section.
 
-**1.9 Hardware Trends** The Internet community thrives on the continuing stream of dramatic improvements in hardware, software and communications technologies. In general, people expect to pay at least a little more for most products and services every year. The opposite generally has been the case in the computer and communications industries, especially with regard to the hardware costs of supporting these technologies. For many decades, and with no change expected in the foreseeable future, hardware costs have fallen rapidly. This is a phe- nomenon of technology. **Moore’s Law** states that the power of hardware doubles every two years, while the price remains essentially the same.3 Significant improvements also have occurred in the communications field, especially in recent years, with the enormous demand for communications bandwidth attracting tremendous competition, forcing communications bandwidth to increase and prices to decline. We know of no other fields in which technology moves so quickly and costs fall so rapidly.
+## Hardware Trends
+
+The Internet community thrives on the continuing stream of dramatic improvements in hardware, software and communications technologies. In general, people expect to pay at least a little more for most products and services every year. The opposite generally has been the case in the computer and communications industries, especially with regard to the hardware costs of supporting these technologies. For many decades, and with no change expected in the foreseeable future, hardware costs have fallen rapidly. This is a phe- nomenon of technology. **Moore’s Law** states that the power of hardware doubles every two years, while the price remains essentially the same.3 Significant improvements also have occurred in the communications field, especially in recent years, with the enormous demand for communications bandwidth attracting tremendous competition, forcing communications bandwidth to increase and prices to decline. We know of no other fields in which technology moves so quickly and costs fall so rapidly.
 
 When computer use exploded in the 1960s and 1970s, there was talk of the huge improvements in human productivity that computing and communications would bring about. However, these productivity improvements did not immediately materialize. Orga- nizations were spending vast sums on computers and distributing them to their work- forces, but without immediate productivity gains. On the hardware side, it was the invention of microprocessor chip technology and its wide deployment in the late 1970s and 1980s which laid the groundwork for significant productivity improvements in the 1990s. On the software side, productivity improvements are now coming from object technology, which we use throughout this book.
 
@@ -235,9 +229,9 @@ Recently, hardware has been moving toward mobile, wireless technology. Small han
 
 3\. Moore, G. “Cramming More Components onto Integrated Circuits.” _Electronics_, April 1965 <ftp://download.intel.com/museum/Moores_Law/Articles-Press_Releases/Gordon_Moore\_ 1965_Article.pdf>.
 
-1.10 Key Software Trend: Object Technology **15**
+## Key Software Trend: Object Technology
 
-**1.10 Key Software Trend: Object Technology** One of the authors, HMD, remembers the great frustration felt in the 1960s by software development organizations, especially those working on large-scale projects. During his undergraduate years, he had the privilege of working summers at a leading computer ven- dor on the teams developing timesharing, virtual-memory operating systems. This was a great experience for a college student. But, in the summer of 1967, reality set in when the company “decommitted” from producing as a commercial product the particular system on which hundreds of people had been working for many years. It was difficult to get this thing called software right—software is “complex stuff.”
+One of the authors, HMD, remembers the great frustration felt in the 1960s by software development organizations, especially those working on large-scale projects. During his undergraduate years, he had the privilege of working summers at a leading computer ven- dor on the teams developing timesharing, virtual-memory operating systems. This was a great experience for a college student. But, in the summer of 1967, reality set in when the company “decommitted” from producing as a commercial product the particular system on which hundreds of people had been working for many years. It was difficult to get this thing called software right—software is “complex stuff.”
 
 Improvements to software technology did emerge, with the benefits of structured pro- gramming (and the related disciplines of **structured systems analysis and design**) being realized in the 1970s. Not until the technology of object-oriented programming became widely used in the 1990s, though, did software developers feel they had the necessary tools for making major strides in the software development process.
 
@@ -251,9 +245,9 @@ A key problem with procedural programming is that the program units do not effec
 
 **Software Engineering Observation 1.3** _Some organizations report that the key benefit object-oriented programming gives them is not software that is reusable but, rather, software that is more understandable, better organized and easier to maintain, modify and debug. This can be significant, because perhaps as much as 80 percent of software cost is associated not with the original efforts to develop the software, but with the continued evolution and maintenance of that software throughout its lifetime._ 1.3
 
-**16** Chapter 1 Introduction to Computers and the Internet
+## JavaScript: Object-Based Scripting for the Web
 
-**1.11 JavaScript: Object-Based Scripting for the Web** JavaScript is an object-based scripting language with strong support for proper software engineering techniques. Students learn to create and manipulate objects from the start in JavaScript. JavaScript is available free in today’s popular web browsers.
+JavaScript is an object-based scripting language with strong support for proper software engineering techniques. Students learn to create and manipulate objects from the start in JavaScript. JavaScript is available free in today’s popular web browsers.
 
 Does JavaScript provide the solid foundation of programming principles typically taught in first programming courses—a portion of the intended audience for this book? We think so.
 
@@ -273,37 +267,41 @@ You’ll see that JavaScript is a portable scripting language and that programs 
 
 **Good Programming Practice 1.2** _Read the documentation for the JavaScript version you are using to access JavaScript’s rich col- lection of features._ 1.2
 
-1.12 Browser Portability **17**
-
 **Error-Prevention Tip 1.2** _Your computer and JavaScript interpreter are good teachers. If you are not sure how a feature works, even after studying the documentation, experiment and see what happens. Study each er- ror or warning message and adjust the code accordingly._ 1.2
 
 JavaScript was created by Netscape, the company that created the first widely suc- cessful web browser. Both Netscape and Microsoft have been instrumental in the stan- dardization of JavaScript by ECMA International (formerly the European Computer Manufacturers Association) as ECMAScript. In Chapters 16–17, we discuss Adobe Flash, which uses another scripting language named ActionScript. ActionScript and JavaScript are converging in the next version of the JavaScript standard (JavaScript 2/ECMA Script version 4) currently under development by ECMA. This will result in a universal client scripting language, greatly simplifying web application development.
 
-**1.12 Browser Portability** Ensuring a consistent look and feel on client-side browsers is one of the great challenges of developing web-based applications. Currently, a standard does not exist to which soft- ware developers must adhere when creating web browsers. Although browsers share a com- mon set of features, each browser might render pages differently. Browsers are available in many versions and on many different platforms (Microsoft Windows, Apple Macintosh, Linux, UNIX, etc.). Vendors add features to each new version that sometimes result in cross-platform incompatibility issues. Clearly it is difficult to develop web pages that ren- der correctly on all versions of each browser. In this book we develop web applications that execute on both the Internet Explorer 7 and Firefox 2 browsers.
+## Browser Portability
+
+Ensuring a consistent look and feel on client-side browsers is one of the great challenges of developing web-based applications. Currently, a standard does not exist to which soft- ware developers must adhere when creating web browsers. Although browsers share a com- mon set of features, each browser might render pages differently. Browsers are available in many versions and on many different platforms (Microsoft Windows, Apple Macintosh, Linux, UNIX, etc.). Vendors add features to each new version that sometimes result in cross-platform incompatibility issues. Clearly it is difficult to develop web pages that ren- der correctly on all versions of each browser. In this book we develop web applications that execute on both the Internet Explorer 7 and Firefox 2 browsers.
 
 **Portability Tip 1.4** _The web is populated with many different browsers, which makes it difficult for authors and web application developers to create universal solutions. The W3C is working toward the goal of a universal client-side platform._ 1.4
 
-**1.13 C, C++ and Java _C_** The **C** language was developed by Dennis Ritchie at Bell Laboratories. C was implement- ed in 1972. C initially became known as the development language of the UNIX operating system. Today, virtually all new major operating systems are written in C and/or C++.
+## C, C++ and Java
+
+**_C_**
+The **C** language was developed by Dennis Ritchie at Bell Laboratories. C was implement- ed in 1972. C initially became known as the development language of the UNIX operating system. Today, virtually all new major operating systems are written in C and/or C++.
 
 **_C++_** Bjarne Stroustrup developed **C++**, an extension of C, in the early 1980s. C++ provides a number of features that “spruce up” the C language, but more importantly, it provides ca- pabilities for object-oriented programming. C++ is a hybrid language: It is possible to pro- gram in either a C-like style (procedural programming), in which the focus is on actions, or an object-oriented style, in which the focus is on objects, or both. C and C++ have in- fluenced many subsequent programming languages, such as Java, C#, JavaScript and PHP, each of which has a syntax similar to C and C++.
 
-**18** Chapter 1 Introduction to Computers and the Internet
-
-**_Java_** Microprocessors are having a profound impact in intelligent consumer electronic devices. Recognizing this, Sun Microsystems in 1991 funded an internal corporate research project code-named Green to provide software for these devices. The project resulted in the de- velopment of a C++-based language that its creator, James Gosling, called Oak after an oak tree outside his window at Sun. It was later discovered that there already was a computer language called Oak. When a group of Sun people visited a local coffee shop, the name **Java** was suggested and it stuck.
+**_Java_**
+Microprocessors are having a profound impact in intelligent consumer electronic devices. Recognizing this, Sun Microsystems in 1991 funded an internal corporate research project code-named Green to provide software for these devices. The project resulted in the de- velopment of a C++-based language that its creator, James Gosling, called Oak after an oak tree outside his window at Sun. It was later discovered that there already was a computer language called Oak. When a group of Sun people visited a local coffee shop, the name **Java** was suggested and it stuck.
 
 The Green project ran into some difficulties. The marketplace for intelligent con- sumer electronic devices did not develop in the early 1990s as quickly as Sun had antici- pated. The project was in danger of being canceled. By sheer good fortune, the World Wide Web exploded in popularity in 1993, and Sun saw the immediate potential of using Java to add **dynamic content** (e.g., interactivity, animations and the like) to web pages. This breathed new life into the project.
 
 Sun formally announced Java at an industry conference in May 1995. Java garnered the attention of the business community because of the phenomenal interest in the web. Java is now used to develop large-scale enterprise applications, to enhance the function- ality of web servers (the computers that provide the content we see in our web browsers), to provide applications for consumer devices (e.g., cell phones, pagers and personal digital assistants) and for many other purposes.
 
-**1.14 BASIC, Visual Basic, Visual C++, C# and .NET** The **BASIC** (Beginner’s All-purpose Symbolic Instruction Code) programming language was developed in the mid-1960s at Dartmouth College as a means of writing simple pro- grams. BASIC’s primary purpose was to familiarize novices with programming techniques. Microsoft’s Visual Basic language, introduced in the early 1990s to simplify the develop- ment of Microsoft Windows applications, has become one of the most popular program- ming languages in the world.
+## BASIC, Visual Basic, Visual C++, C# and .NET
+
+The **BASIC** (Beginner’s All-purpose Symbolic Instruction Code) programming language was developed in the mid-1960s at Dartmouth College as a means of writing simple pro- grams. BASIC’s primary purpose was to familiarize novices with programming techniques. Microsoft’s Visual Basic language, introduced in the early 1990s to simplify the develop- ment of Microsoft Windows applications, has become one of the most popular program- ming languages in the world.
 
 Microsoft’s latest development tools are part of its corporatewide strategy for inte- grating the Internet and the web into computer applications. This strategy is implemented in Microsoft’s **.NET platform**, which provides the capabilities developers need to create computer applications that can execute on computers distributed across the Internet. Microsoft’s three primary programming languages are **Visual Basic** (based on the original BASIC), **Visual C++** (based on C++) and **Visual C#** (a relatively new language based on C++ and Java that was developed expressly for the .NET platform). Developers using .NET can write software components in the language they are most familiar with, then form applications by combining those components with others written in any .NET language.
 
-**1.15 Software Technologies** In this section, we discuss some software engineering topics and buzzwords that you’ll hear in the software development community. We’ve created Resource Centers on most of these topics, with many more on the way.
+## Software Technologies
+
+In this section, we discuss some software engineering topics and buzzwords that you’ll hear in the software development community. We’ve created Resource Centers on most of these topics, with many more on the way.
 
 **Agile Software Development** is a set of methodologies that try to get software imple- mented quickly with fewer resources than previous methodologies. Check out the Agile Alliance (www.agilealliance.org) and the Agile Manifesto (www.agilemanifesto.org).
-
-1.15 Software Technologies **19**
 
 **Refactoring** involves reworking code to make it clearer and easier to maintain while preserving its functionality. It’s widely employed with agile development methodologies. Many refactoring tools are available to do major portions of the reworking automatically.
 
@@ -319,13 +317,11 @@ Microsoft’s latest development tools are part of its corporatewide strategy fo
 
 real.37signals.com/toc.php. Many Ruby on Rails developers have reported significant productivity gains over using other languages when developing database-intensive web applications.
 
-Software has generally been viewed as a product; most software still is offered this way. If you want to run an application, you buy a software package from a software vendor. You then install that software on your computer and run it as needed. As new versions of the software appear, you upgrade your software, often at significant expense. This process can become cumbersome for organizations with tens of thousands of systems that must be maintained on a diverse array of computer equipment. With **Software as a Service (SaaS)**, the software runs on servers elsewhere on the Internet. When those servers are updated, all clients worldwide see the new capabilities; no local installation is needed. You access the service through a browser—these are quite portable, so you can run the same applications
+Software has generally been viewed as a product; most software still is offered this way. If you want to run an application, you buy a software package from a software vendor. You then install that software on your computer and run it as needed. As new versions of the software appear, you upgrade your software, often at significant expense. This process can become cumbersome for organizations with tens of thousands of systems that must be maintained on a diverse array of computer equipment. With **Software as a Service (SaaS)**, the software runs on servers elsewhere on the Internet. When those servers are updated, all clients worldwide see the new capabilities; no local installation is needed. You access the service through a browser—these are quite portable, so you can run the same applications on different kinds of computers from anywhere in the world. Salesforce.com, Google, Microsoft and 37Signals all offer SaaS.
 
-**20** Chapter 1 Introduction to Computers and the Internet
+## Notes about _Internet & World Wide Web How to Program, 4/e_
 
-on different kinds of computers from anywhere in the world. Salesforce.com, Google, Microsoft and 37Signals all offer SaaS.
-
-**1.16 Notes about _Internet & World Wide Web How to Program, 4/e_** In 1995, we saw an explosion of interest in the Internet and the World Wide Web. We immersed ourselves in these technologies, and a clear picture started to emerge in our minds of the next direction to take in writing textbooks for introductory programming courses. **Electronic commerce**, or **e-commerce**, as it is typically called, began to dominate the business, financial and computer industry news. This was a reconceptualization of the way business should be conducted. We still wanted to teach programming principles, but we felt compelled to do it in the context of the technologies that businesses and organiza- tions need to create Internet-based and web-based applications. With this realization, the first edition of _Internet & World Wide Web How to Program_ was born and published in December of 1999.
+In 1995, we saw an explosion of interest in the Internet and the World Wide Web. We immersed ourselves in these technologies, and a clear picture started to emerge in our minds of the next direction to take in writing textbooks for introductory programming courses. **Electronic commerce**, or **e-commerce**, as it is typically called, began to dominate the business, financial and computer industry news. This was a reconceptualization of the way business should be conducted. We still wanted to teach programming principles, but we felt compelled to do it in the context of the technologies that businesses and organiza- tions need to create Internet-based and web-based applications. With this realization, the first edition of _Internet & World Wide Web How to Program_ was born and published in December of 1999.
 
 _Internet & World Wide Web How to Program, Fourth Edition_ teaches programming languages and programming language principles. In addition, we focus on the broad range of technologies that will help you build real-world Internet-based and web-based applica- tions that interact with other applications and with databases. These capabilities allow you to develop the kinds of enterprise-level, distributed applications popular in industry today.
 
@@ -333,13 +329,13 @@ You’ll learn computer programming and basic principles of computer science and
 
 After you learn programming principles from the detailed JavaScript discussions, we present condensed treatments of four other popular Internet/web programming languages for building the server side of Internet- and web-based client/server applications. Chapter 23 introduces the popular PHP scripting language. Chapter 24 introduces Ruby, the scripting language used with the Ruby on Rails framework for rapid development of database-driven web applications. In Chapter 25, we discuss ASP.NET 2.0—Microsoft’s technology for server-side scripting. ASP.NET pages can be written in Visual Basic and C#; we code ASP.NET pages using Visual Basic. In Chapters 26–27, we discuss JavaServer Faces, which uses the Java programming language. Finally, in Chapter 28, we discuss web services (using examples in both Java and ASP.NET).
 
-**1.17 Web Resources** www.deitel.com/
+## Web Resources
+
+www.deitel.com/
 
 Check this site frequently for updates, corrections and additional resources for all Deitel & Associ- ates, Inc., publications. www.deitel.com/resourcecenters.html
 
 Check out the complete list of Deitel Resource Centers, including numerous programming, open source, Web 2.0 and Internet business topics.
-
-1.17 Web Resources **21**
 
 netforbeginners.about.com
 
@@ -351,153 +347,149 @@ The World Wide Web Consortium (W3C) website offers a comprehensive description o
 
 **Summary**
 
-**_Section 1.1 Introduction_** • In an era of steadily rising costs, computing costs have been decreasing dramatically because of
+**_Section 1.1 Introduction_**
 
-rapid developments in both hardware and software technologies.
+- In an era of steadily rising costs, computing costs have been decreasing dramatically because of rapid developments in both hardware and software technologies.
 
-• Technologies such as Extensible HyperText Markup Language (XHTML), JavaScript, Flash, Flex, Dreamweaver and Extensible Markup Language (XML) are used to build the portions of web-based applications that reside on the client side (i.e., the portions of applications that typi- cally run on web browsers such as Firefox or Microsoft’s Internet Explorer).
+- Technologies such as Extensible HyperText Markup Language (XHTML), JavaScript, Flash, Flex, Dreamweaver and Extensible Markup Language (XML) are used to build the portions of web-based applications that reside on the client side (i.e., the portions of applications that typi- cally run on web browsers such as Firefox or Microsoft’s Internet Explorer).
 
-• Technologies such as web servers, databases, ASP.NET, PHP, Ruby on Rails and JavaServer Fac- es are used to build the server side of web-based applications. These parts of applications typically run on “heavy-duty” computer systems on which organizations’ business-critical websites reside.
+- Technologies such as web servers, databases, ASP.NET, PHP, Ruby on Rails and JavaServer Fac- es are used to build the server side of web-based applications. These parts of applications typically run on “heavy-duty” computer systems on which organizations’ business-critical websites reside.
 
-**_Section 1.2 What Is a Computer?_** • A computer is a device capable of performing computations and making logical decisions at
+**_Section 1.2 What Is a Computer?_**
 
-speeds billions of times faster than human beings can.
+- A computer is a device capable of performing computations and making logical decisions at speeds billions of times faster than human beings can.
 
-• A computer processes data under the control of sets of instructions called computer programs, which guide it through orderly sets of actions specified by computer programmers.
+- A computer processes data under the control of sets of instructions called computer programs, which guide it through orderly sets of actions specified by computer programmers.
 
-• The various devices that comprise a computer system are referred to as hardware.
+- The various devices that comprise a computer system are referred to as hardware.
 
-• The computer programs that run on a computer are referred to as software.
+- The computer programs that run on a computer are referred to as software.
 
-**_Section 1.3 Computer Organization_** • The input unit is the “receiving” section of the computer. It obtains information from input de-
+**_Section 1.3 Computer Organization_**
 
-vices and places it at the disposal of the other units for processing.
+- The input unit is the “receiving” section of the computer. It obtains information from input devices and places it at the disposal of the other units for processing.
 
-• The output unit is the “shipping” section of the computer. It takes information processed by the computer and places it on output devices to make it available for use outside the computer.
+- The output unit is the “shipping” section of the computer. It takes information processed by the computer and places it on output devices to make it available for use outside the computer.
 
-• The memory unit is the rapid-access, relatively low-capacity “warehouse” section of the comput- er. It retains information that has been entered through the input unit, making it immediately available for processing when needed, and retains information that has already been processed until it can be placed on output devices by the output unit.
+- The memory unit is the rapid-access, relatively low-capacity “warehouse” section of the comput- er. It retains information that has been entered through the input unit, making it immediately available for processing when needed, and retains information that has already been processed until it can be placed on output devices by the output unit.
 
-• The arithmetic and logic unit (ALU) is the “manufacturing” section of the computer. It is re- sponsible for performing calculations and making decisions.
+- The arithmetic and logic unit (ALU) is the “manufacturing” section of the computer. It is re- sponsible for performing calculations and making decisions.
 
-• The central processing unit (CPU) is the “administrative” section of the computer. It coordinates and supervises the operation of the other sections.
+- The central processing unit (CPU) is the “administrative” section of the computer. It coordinates and supervises the operation of the other sections.
 
-**22** Chapter 1 Introduction to Computers and the Internet
+- The secondary storage unit is the long-term, high-capacity “warehousing” section of the comput- er. Programs or data not being used by the other units are normally placed on secondary storage devices (e.g., disks) until they are needed, possibly hours, days, months or even years later.
 
-• The secondary storage unit is the long-term, high-capacity “warehousing” section of the comput- er. Programs or data not being used by the other units are normally placed on secondary storage devices (e.g., disks) until they are needed, possibly hours, days, months or even years later.
+**_Section 1.4 Machine Languages, Assembly Languages and High-Level Languages_**
 
-**_Section 1.4 Machine Languages, Assembly Languages and High-Level Languages_** • Any computer can directly understand only its own machine language, which generally consists
+- Any computer can directly understand only its own machine language, which generally consists of strings of numbers ultimately reduced to 1s and 0s that instruct the computer to perform its most elementary operations.
 
-of strings of numbers ultimately reduced to 1s and 0s that instruct the computer to perform its most elementary operations.
+- English-like abbreviations form the basis of assembly languages. Translator programs called as- semblers convert assembly-language programs to machine language.
 
-• English-like abbreviations form the basis of assembly languages. Translator programs called as- semblers convert assembly-language programs to machine language.
+- Compilers translate high-level language programs into machine-language programs. High-level languages contain English words and conventional mathematical notations.
 
-• Compilers translate high-level language programs into machine-language programs. High-level languages contain English words and conventional mathematical notations.
+- Interpreter programs directly execute high-level language programs, eliminating the need to compile them into machine language.
 
-• Interpreter programs directly execute high-level language programs, eliminating the need to compile them into machine language.
+**_Section 1.5 History of the Internet and World Wide Web_**
 
-**_Section 1.5 History of the Internet and World Wide Web_** • In the late 1960s, ARPA, the Advanced Research Projects Agency of the U.S. Department of De-
+- In the late 1960s, ARPA, the Advanced Research Projects Agency of the U.S. Department of Defense rolled out the blueprints for networking the main computer systems of about a dozen ARPA-funded universities and research institutions. ARPA then proceeded to implement the ARPANET, the predecessor to today’s Internet.
 
-fense rolled out the blueprints for networking the main computer systems of about a dozen ARPA-funded universities and research institutions. ARPA then proceeded to implement the ARPANET, the predecessor to today’s Internet.
+- The World Wide Web allows computer users to locate and view multimedia-based documents (i.e., documents with text, graphics, animations, audios or videos) on almost any subject.
 
-• The World Wide Web allows computer users to locate and view multimedia-based documents (i.e., documents with text, graphics, animations, audios or videos) on almost any subject.
+- In 1989, Tim Berners-Lee of CERN began to develop the World Wide Web and several com- munication protocols that form the backbone of the web.
 
-• In 1989, Tim Berners-Lee of CERN began to develop the World Wide Web and several com- munication protocols that form the backbone of the web.
+- Web use exploded with the availability in 1993 of the Mosaic browser, which featured a user- friendly graphical interface. Marc Andreessen, whose team at NCSA developed Mosaic, went on to found Netscape, the company that many people credit with initiating the explosive Internet economy of the late 1990s.
 
-• Web use exploded with the availability in 1993 of the Mosaic browser, which featured a user- friendly graphical interface. Marc Andreessen, whose team at NCSA developed Mosaic, went on to found Netscape, the company that many people credit with initiating the explosive Internet economy of the late 1990s.
+**_Section 1.6 World Wide Web Consortium (W3C)_**
 
-**_Section 1.6 World Wide Web Consortium (W3C)_** • In October 1994, Tim Berners-Lee founded the World Wide Web Consortium (W3C)—an or-
+- In October 1994, Tim Berners-Lee founded the World Wide Web Consortium (W3C)—an organization devoted to developing nonproprietary, interoperable technologies for the web.
 
-ganization devoted to developing nonproprietary, interoperable technologies for the web.
+**_Section 1.7 Web 2.0_**
 
-**_Section 1.7 Web 2.0_** • Web 2.0 companies use the web as a platform to create collaborative, community-based sites
+- Web 2.0 companies use the web as a platform to create collaborative, community-based sites (e.g., social networking sites, blogs, wikis, etc.).
 
-(e.g., social networking sites, blogs, wikis, etc.).
+- Web 1.0 (the state of the web through the 1990s and early 2000s) was focused on a relatively small number of companies and advertisers producing content for users to access.
 
-• Web 1.0 (the state of the web through the 1990s and early 2000s) was focused on a relatively small number of companies and advertisers producing content for users to access.
+- Web 2.0 embraces an architecture of participation—a design that encourages user interaction and community contributions.
 
-• Web 2.0 embraces an architecture of participation—a design that encourages user interaction and community contributions.
+- Using the collective intelligence—the concept that a large diverse group of people will create smart ideas—communities collaborate to develop open source software that many people believe is better and more robust than proprietary software.
 
-• Using the collective intelligence—the concept that a large diverse group of people will create smart ideas—communities collaborate to develop open source software that many people believe is better and more robust than proprietary software.
+- Rich Internet Applications (RIAs) are being developed using technologies (such as Ajax) that have the look and feel of desktop software, enhancing a user’s overall experience.
 
-• Rich Internet Applications (RIAs) are being developed using technologies (such as Ajax) that have the look and feel of desktop software, enhancing a user’s overall experience.
+- Web services, inexpensive computers, abundant high-speed Internet access, open source software and many other elements have inspired new, exciting, lightweight business models that people can launch with only a small investment.
 
-• Web services, inexpensive computers, abundant high-speed Internet access, open source software and many other elements have inspired new, exciting, lightweight business models that people can launch with only a small investment.
+**_Section 1.8 Personal, Distributed and Client/Server Computing_**
 
-Summary **23**
+- Apple Computer popularized personal computing.
 
-**_Section 1.8 Personal, Distributed and Client/Server Computing_** • Apple Computer popularized personal computing.
+- IBM’s Personal Computer quickly legitimized personal computing in business, industry and government organizations, where IBM mainframes were heavily used.
 
-• IBM’s Personal Computer quickly legitimized personal computing in business, industry and government organizations, where IBM mainframes were heavily used.
+- Although early personal computers were not powerful enough to timeshare several users, these machines could be linked together in computer networks, sometimes over telephone lines and sometimes in local area networks (LANs) within an organization. This led to the phenomenon of distributed computing.
 
-• Although early personal computers were not powerful enough to timeshare several users, these machines could be linked together in computer networks, sometimes over telephone lines and sometimes in local area networks (LANs) within an organization. This led to the phenomenon of distributed computing.
+- Today’s personal computers are as powerful as the million-dollar machines of just a few decades ago, and information is shared easily across computer networks.
 
-• Today’s personal computers are as powerful as the million-dollar machines of just a few decades ago, and information is shared easily across computer networks.
+**_Section 1.9 Hardware Trends_**
 
-**_Section 1.9 Hardware Trends_** • Moore’s Law states that the power of hardware doubles every two years, while the price remains
+- Moore’s Law states that the power of hardware doubles every two years, while the price remainsessentially the same.
 
-essentially the same.
+**_Section 1.10 Key Software Trend: Object Technology_**
 
-**_Section 1.10 Key Software Trend: Object Technology_** • Objects are essentially reusable software components that model real-world items.
+- Objects are essentially reusable software components that model real-world items.
 
-• Not until object-oriented programming became widely used in the 1990s did software develop- ers feel they had the tools to make major strides in the software development process.
+- Not until object-oriented programming became widely used in the 1990s did software develop- ers feel they had the tools to make major strides in the software development process.
 
-• Object technology is a packaging scheme that helps us create meaningful software units.
+- Object technology is a packaging scheme that helps us create meaningful software units.
 
-• A key problem with procedural programming is that the program units do not effectively mirror real-world entities, so these units are not particularly reusable.
+- A key problem with procedural programming is that the program units do not effectively mirror real-world entities, so these units are not particularly reusable.
 
-• With object technology, the software entities created (called classes), if properly designed, tend to be reusable on future projects. Using libraries of reusable componentry can greatly reduce ef- fort required to implement certain kinds of systems.
+- With object technology, the software entities created (called classes), if properly designed, tend to be reusable on future projects. Using libraries of reusable componentry can greatly reduce ef- fort required to implement certain kinds of systems.
 
-• Some organizations report that the key benefit object-oriented programming gives them is the production of software which is more understandable, better organized and easier to maintain, modify and debug.
+- Some organizations report that the key benefit object-oriented programming gives them is the production of software which is more understandable, better organized and easier to maintain, modify and debug.
 
-**_Section 1.11 JavaScript: Object-Based Scripting for the Web_** • JavaScript is an object-based scripting language with strong support for proper software engineer-
+**_Section 1.11 JavaScript: Object-Based Scripting for the Web_**
 
-ing techniques.
+- JavaScript is an object-based scripting language with strong support for proper software engineering techniques.
 
-• JavaScript was created by Netscape. Both Netscape and Microsoft have been instrumental in the standardization of JavaScript by ECMA International as ECMAScript.
+- JavaScript was created by Netscape. Both Netscape and Microsoft have been instrumental in the standardization of JavaScript by ECMA International as ECMAScript.
 
-**_Section 1.12 Browser Portability_** • Ensuring a consistent look and feel on client-side browsers is one of the great challenges of de-
+**_Section 1.12 Browser Portability_**
 
-veloping web-based applications.
+- Ensuring a consistent look and feel on client-side browsers is one of the great challenges of developing web-based applications.
 
-**_Section 1.13 C, C++ and Java_** • C initially became known as the development language of the UNIX operating system. Today,
+**_Section 1.13 C, C++ and Java_**
 
-virtually all new major operating systems are written in C and/or C++.
+- C initially became known as the development language of the UNIX operating system. Today,virtually all new major operating systems are written in C and/or C++.
 
-• C++ provides a number of features that “spruce up” the C language, but more importantly, it provides capabilities for object-oriented programming.
+- C++ provides a number of features that “spruce up” the C language, but more importantly, it provides capabilities for object-oriented programming.
 
-• Java is used to create dynamic and interactive content for web pages, develop enterprise applica- tions, enhance web-server functionality, provide applications for consumer devices and more.
+- Java is used to create dynamic and interactive content for web pages, develop enterprise applica- tions, enhance web-server functionality, provide applications for consumer devices and more.
 
-**24** Chapter 1 Introduction to Computers and the Internet
+**_Section 1.14 BASIC, Visual Basic, Visual C++, C# and .NET_**
 
-**_Section 1.14 BASIC, Visual Basic, Visual C++, C# and .NET_** • The BASIC programming language was developed in the mid-1960s at Dartmouth College. Its
+- The BASIC programming language was developed in the mid-1960s at Dartmouth College. Its primary purpose was to familiarize novices with programming techniques.
 
-primary purpose was to familiarize novices with programming techniques.
+- Microsoft’s Visual Basic was introduced in the early 1990s to simplify the process of developing Microsoft Windows applications.
 
-• Microsoft’s Visual Basic was introduced in the early 1990s to simplify the process of developing Microsoft Windows applications.
+- Microsoft has a corporatewide strategy for integrating the Internet and the web into computer applications. This strategy is implemented in Microsoft’s .NET platform.
 
-• Microsoft has a corporatewide strategy for integrating the Internet and the web into computer applications. This strategy is implemented in Microsoft’s .NET platform.
+- The .NET platform’s three primary programming languages are Visual Basic, Visual C++ and Visual C#.
 
-• The .NET platform’s three primary programming languages are Visual Basic, Visual C++ and Visual C#.
+- .NET developers can write software components in their preferred language, then form applica- tions by combining those components with components written in any .NET language.
 
-• .NET developers can write software components in their preferred language, then form applica- tions by combining those components with components written in any .NET language.
+**_Section 1.15 Software Technologies_**
 
-**_Section 1.15 Software Technologies_** • Agile Software Development is a set of methodologies that try to get software implemented
+- Agile Software Development is a set of methodologies that try to get software implemented quickly with fewer resources than previous methodologies.
 
-quickly with fewer resources than previous methodologies.
+- Refactoring involves reworking code to make it clearer and easier to maintain while preserving its functionality.
 
-• Refactoring involves reworking code to make it clearer and easier to maintain while preserving its functionality.
+- Design patterns are proven architectures for constructing flexible and maintainable object-ori- ented software.
 
-• Design patterns are proven architectures for constructing flexible and maintainable object-ori- ented software.
+- Open source development allows individuals and companies to contribute their efforts in devel- oping, maintaining and evolving software in exchange for the right to use that software for their own purposes, typically at no charge.
 
-• Open source development allows individuals and companies to contribute their efforts in devel- oping, maintaining and evolving software in exchange for the right to use that software for their own purposes, typically at no charge.
-
-• With Software as a Service (SaaS), the software runs on servers elsewhere on the Internet, rather than on the desktop.
+- With Software as a Service (SaaS), the software runs on servers elsewhere on the Internet, rather than on the desktop.
 
 **Terminology** actions Agile Software Development architecture of participation arithmetic and logic unit (ALU) ARPANET assemblers assembly language bandwidth BASIC C C++ central processing unit (CPU) class client side client/server computing collective intelligence compilers computer computer program computer programmer CSS
 
 Dale Dougherty data data structure decision design pattern distributed computing DOM (Document Object Model) dynamic content electronic commerce (e-commerce) electronic mail (e-mail) function game programming hardware high-level languages HTML (HyperText Markup Language) HTTP (Hypertext Transfer Protocol) input device input unit Internet interpreter IP (Internet Protocol)
-
-Self-Review Exercises **25**
 
 Java JavaScript LAMP library lightweight business models Linux local area networks (LANs) logical unit machine dependent machine language memory memory unit method Moore’s Law multiprocessor MySQL .NET platform O’Reilly Media object code object-based programming object-oriented programming open source software output devices output unit packet packet switching personal computer PHP platform
 
@@ -505,10 +497,10 @@ primary memory refactoring Ruby on Rails scripting scripting language secondary 
 
 guage) XML (Extensible Markup Language)
 
-**Self-Review Exercises 1.1** Fill in the blanks in each of the following:
+**Self-Review Exercises 1.1**
+Fill in the blanks in each of the following:
 
-a) The company that popularized personal computing was . b) The computer that made personal computing legitimate in business and industry was
-
+a) The company that popularized personal computing was . b) The computer that made personal computing legitimate in business and industry was\_\_\_\_
 the . c) Computers process data under the control of sets of instructions called computer
 
 . d) The six key logical units of the computer are the , , ,
@@ -522,8 +514,6 @@ called . g) , or labeling content, is another key part of the collaborative them
 serving its functionality. j) With development, individuals and companies contribute their efforts in de-
 
 veloping, maintaining and evolving software in exchange for the right to use that soft- ware for their own purposes, typically at no charge.
-
-**26** Chapter 1 Introduction to Computers and the Internet
 
 k) The was the predecessor to the Internet. l) The information-carrying capacity of a communications medium like the Internet is
 
@@ -539,15 +529,19 @@ c) are reusable software components that model items in the real world. d) In a 
 
 formed and the performs the action and responds.
 
-**Answers to Self-Review Exercises 1.1** a) Apple. b) IBM Personal Computer. c) programs. d) input unit, output unit, memory unit, arithmetic and logic unit, central processing unit, secondary storage unit. e) machine languag- es, assembly languages and high-level languages. f) compilers. g) Tagging. h) webtop. i) Refactor- ing. j) open source. k) ARPANET. l) bandwidth. m) Transmission Control Protocol/Internet Protocol.
+**Answers to Self-Review Exercises 1.1**
+a) Apple. b) IBM Personal Computer. c) programs. d) input unit, output unit, memory unit, arithmetic and logic unit, central processing unit, secondary storage unit. e) machine languag- es, assembly languages and high-level languages. f) compilers. g) Tagging. h) webtop. i) Refactor- ing. j) open source. k) ARPANET. l) bandwidth. m) Transmission Control Protocol/Internet Protocol.
 
-**1.2** a) World Wide Web. b) Tim Berners-Lee. c) Objects. d) client, server.
+**1.2**
+a) World Wide Web. b) Tim Berners-Lee. c) Objects. d) client, server.
 
-**Exercises 1.3** Categorize each of the following items as either hardware or software:
+**Exercises 1.3**
+Categorize each of the following items as either hardware or software:
 
 a) CPU b) ALU c) input unit d) an editor program
 
-**1.4** Fill in the blanks in each of the following statements: a) Which logical unit of the computer receives information from outside the computer for
+**1.4**
+Fill in the blanks in each of the following statements: a) Which logical unit of the computer receives information from outside the computer for
 
 use by the computer? . b) The process of instructing the computer to solve specific problems is called . c) What type of computer language uses English-like abbreviations for machine-language
 
@@ -563,15 +557,14 @@ easily is . i) The only language that a computer directly understands is called 
 
 units? .
 
-Exercises **27**
-
 k) Some organizations report that the key benefit gives them is the production of software which is more understandable, better organized and easier to maintain, modify and debug.
 
 l) Web 2.0 embraces an —a design that encourages user interaction and com- munity contributions.
 
 m) is the concept that a large diverse group of people will create smart ideas.
 
-**1.5** Fill in the blanks in each of the following statements (based on Section 1.15, Software Technologies):
+**1.5**
+Fill in the blanks in each of the following statements (based on Section 1.15, Software Technologies):
 
 a) The open source database management system used in LAMP development is .
 
@@ -581,6 +574,8 @@ ented software. d) is the most popular open source server-side “scripting” l
 
 ing Internet-based applications.
 
-**1.6** What is the relationship between JavaScript and ECMAScript?
+**1.6**
+What is the relationship between JavaScript and ECMAScript?
 
-**1.7** In this chapter, we discussed a few popular Web 2.0 businesses including MySpace, Flickr, YouTube and Wikipedia. Indentify a Web 2.0 business and describe why it fits the Web 2.0 busi- ness model.
+**1.7**
+In this chapter, we discussed a few popular Web 2.0 businesses including MySpace, Flickr, YouTube and Wikipedia. Indentify a Web 2.0 business and describe why it fits the Web 2.0 busi- ness model.
