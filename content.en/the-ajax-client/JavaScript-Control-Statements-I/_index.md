@@ -816,29 +816,25 @@ document.writeln( "<br />Raise Tuition" );
 
 **Fig. 7.11** | Examination-results calculation. (Part 2 of 3.)
 
-This dialog is displayed 10 times. User input is 1, 2, 1, 1, 1, 1, 1, 1, 1 and 1.
-
-**260** Chapter 7 JavaScript: Control Statements I
+**Fig. 7.11** | Examination-results calculation. (Part 3 of 3.)
 
 Lines 13–16 declare the variables used to process the examination results. Note that JavaScript allows variable initialization to be incorporated into declarations (passes is assigned 0, failures is assigned 0 and student is assigned 1). Some programs may require reinitialization at the beginning of each repetition; such reinitialization would normally occur in assignment statements.
 
 The processing of the exam results occurs in the while statement in lines 19–29. Note that the if…else statement in lines 23–26 in the loop tests only whether the exam result was 1; it assumes that all other exam results are 2. Normally, you should validate the values input by the user (i.e., determine whether the values are correct). In the exercises, we ask you to modify this example to validate the input values to ensure that they are either 1 or 2.
 
-**Good Programming Practice 7.8** _When inputting values from the user, validate the input to ensure that it is correct. If an input value is incorrect, prompt the user to input the value again._ 7.8
+**Good Programming Practice 7.8**
 
-**7.11 Assignment Operators** JavaScript provides several assignment operators (called **compound assignment operators**) for abbreviating assignment expressions. For example, the statement
+> _When inputting values from the user, validate the input to ensure that it is correct. If an input value is incorrect, prompt the user to input the value again._ 7.8
+
+## Assignment Operators
+
+JavaScript provides several assignment operators (called **compound assignment operators**) for abbreviating assignment expressions. For example, the statement
 
 c = c + 3;
 
 can be abbreviated with the **addition assignment operator**, **+=**, as
 
 c += 3;
-
-**Fig. 7.11** | Examination-results calculation. (Part 3 of 3.)
-
-This dialog is displayed 10 times. User input is 1, 2, 1, 2, 2, 1, 2, 2, 1 and 1.
-
-7.12 Increment and Decrement Operators **261**
 
 The += operator adds the value of the expression on the right of the operator to the value of the variable on the left of the operator and stores the result in the variable on the left of the operator. Any statement of the form
 
@@ -850,59 +846,86 @@ _variable operator_ \= _expression_;
 
 Thus, the assignment c += 3 adds 3 to c. Figure 7.12 shows the arithmetic assignment op- erators, sample expressions using these operators and explanations of the meaning of the operators.
 
-**Performance Tip 7.1** _Programmers can write programs that execute a bit faster when the arithmetic assignment oper- ators are used, because the variable on the left side of the assignment does not have to be evaluated twice._ 7.1
+**Performance Tip 7.1**
 
-**Performance Tip 7.2** _Many of the performance tips we mention in this text result in only nominal improvements, so the reader may be tempted to ignore them. Significant performance improvement often is real- ized when a supposedly nominal improvement is placed in a loop that may repeat a large number of times._ 7.2
+> _Programmers can write programs that execute a bit faster when the arithmetic assignment oper- ators are used, because the variable on the left side of the assignment does not have to be evaluated twice._ 7.1
 
-**7.12 Increment and Decrement Operators** JavaScript provides the unary **increment operator** (**++**) and **decrement operator** (**\--**) (sum- marized in Fig. 7.13). If a variable c is incremented by 1, the increment operator, ++, can be used rather than the expression c = c + 1 or c += 1. If an increment or decrement oper- ator is placed before a variable, it is referred to as the **preincrement** or **predecrement op- erator**, respectively. If an increment or decrement operator is placed after a variable, it is referred to as the **postincrement** or **postdecrement operator**, respectively.
+**Performance Tip 7.2**
 
-Assignment operator
+> _Many of the performance tips we mention in this text result in only nominal improvements, so the reader may be tempted to ignore them. Significant performance improvement often is real- ized when a supposedly nominal improvement is placed in a loop that may repeat a large number of times._ 7.2
 
-Initial value of variable
-
-Sample expression Explanation Assigns
-
-+= c = 3 c += 7 c = c + 7 10 to c
-
-\-= d = 5 d -= 4 d = d - 4 1 to d
-
-\*= e = 4 e \*= 5 e = e \* 5 20 to e
-
-/= f = 6 f /= 3 f = f / 3 2 to f
-
-%= g = 12 g %= 9 g = g % 9 3 to g
+| Assignment operator | Initial value of variable | Sample expression | Explanation | Assigns |
+| :-----------------: | :-----------------------: | :---------------: | :---------: | :-----: |
+|         +=          |           c = 3           |      c += 7       |  c = c + 7  | 10 to c |
+|         \-=         |           d = 5           |      d -= 4       |  d = d - 4  | 1 to d  |
+|         \*=         |           e = 4           |      e \*= 5      | e = e \* 5  | 20 to e |
+|         /=          |           f = 6           |      f /= 3       |  f = f / 3  | 2 to f  |
+|         %=          |          g = 12           |      g %= 9       |  g = g % 9  | 3 to g  |
 
 **Fig. 7.12** | Arithmetic assignment operators.
 
-**262** Chapter 7 JavaScript: Control Statements I
+## Increment and Decrement Operators
 
-**Error-Prevention Tip 7.2** _The predecrement and postdecrement JavaScript operators cause the W3C XHTML Validator to incorrectly report errors. The validator attempts to interpret the decrement operator as part of an XHTML comment tag (<!-- or -->). You can avoid this problem by using the subtraction assignment operator (-=) to subtract one from a variable. Note that the validator may report many more (nonexistent) errors once it improperly parses the decrement operator._ 7.2
+JavaScript provides the unary **increment operator** (**++**) and **decrement operator** (**\--**) (sum- marized in Fig. 7.13). If a variable c is incremented by 1, the increment operator, ++, can be used rather than the expression c = c + 1 or c += 1. If an increment or decrement oper- ator is placed before a variable, it is referred to as the **preincrement** or **predecrement op- erator**, respectively. If an increment or decrement operator is placed after a variable, it is referred to as the **postincrement** or **postdecrement operator**, respectively.
+
+| Operator | Example |    Called     |                                       Explanation                                       |
+| :------: | :-----: | :-----------: | :-------------------------------------------------------------------------------------: |
+|    ++    |   ++a   | preincrement  |    Increment a by 1, then use the new value of a in the expression which a resides.     |
+|    ++    |   a++   | postincrement | Use the current value of a in the expression in which a resides, then increment a by 1. |
+|   \--    |   --b   | predecrement  |   Decrement b by 1, then use the new value of b in the expression in which b resides.   |
+|   \--    |   b--   | postdecrement | Use the current value of b in the expression in which b resides, then decrement b by 1. |
+
+**Fig. 7.13** | Increment and decrement operators.
+
+**Error-Prevention Tip 7.2**
+
+> _The predecrement and postdecrement JavaScript operators cause the W3C XHTML Validator to incorrectly report errors. The validator attempts to interpret the decrement operator as part of an XHTML comment tag (<!-- or -->). You can avoid this problem by using the subtraction assignment operator (-=) to subtract one from a variable. Note that the validator may report many more (nonexistent) errors once it improperly parses the decrement operator._ 7.2
 
 Preincrementing (or predecrementing) a variable causes the program to increment (decrement) the variable by 1, then use the new value of the variable in the expression in which it appears. Postincrementing (postdecrementing) the variable causes the program to use the current value of the variable in the expression in which it appears, then increment (decrement) the variable by 1.
 
 The script in Fig. 7.14 demonstrates the difference between the preincrementing ver- sion and the postincrementing version of the ++ increment operator. Postincrementing the variable c causes it to be incremented after it is used in the document.writeln method call (line 18). Preincrementing the variable c causes it to be incremented before it is used in the document.writeln method call (line 25). The program displays the value of c before and after the ++ operator is used. The decrement operator (--) works similarly.
 
-Operator Example Called Explanation
+```js
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-++ ++a preincrement Increment a by 1, then use the new value of a in the expression in which a resides.
-
-++ a++ postincrement Use the current value of a in the expression in which a resides, then increment a by 1.
-
-\-- --b predecrement Decrement b by 1, then use the new value of b in the expression in which b resides.
-
-\-- b-- postdecrement Use the current value of b in the expression in which b resides, then decrement b by 1.
-
-**Fig. 7.13** | Increment and decrement operators.
-
-**1** <?xml version = "1.0" encoding = "utf-8"?> **2** <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" **3** "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> **4 5** <!-- Fig. 7.14: increment.html --> **6** <!-- Preincrementing and Postincrementing. --> **7** <html xmlns = "http://www.w3.org/1999/xhtml"> **8** <head> **9** <title>Preincrementing and Postincrementing</title>
-
-**10** <script type = "text/javascript"> **11** <!-- **12** var c;
+<!-- Fig. 7.14: increment.html -->
+<!-- Preincrementing and Postincrementing. -->
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+<title>Preincrementing and Postincrementing</title>
+<script type = "text/javascript">
+<!--
+var c;
+```
 
 **Fig. 7.14** | Preincrementing and postincrementing. (Part 1 of 2.)
 
-7.12 Increment and Decrement Operators **263**
+**13**
+**14** c = 5;
+**15** document.writeln( "<h3>Postincrementing</h3>" );
+**16** document.writeln( c ); // prints 5
+**17** // prints 5 then increments
+**18** document.writeln( "<br />" + c++ );
+**19** document.writeln( "<br />" + c ); // prints 6
+**20**
+**21** c = 5; '
+**22** document.writeln( "<h3>Preincrementing</h3>" );
+**23** document.writeln( c ); // prints 5
+**24** // increments then prints 6
+**25** document.writeln( "<br />" + ++c );
+**26** document.writeln( "<br />" + c ); // prints 6
+**27** // -->
+**28** </script>
+**29** </head><body></body>
+**30** </html>
 
-**Good Programming Practice 7.9** _For readability, unary operators should be placed next to their operands, with no intervening spaces._ 7.9
+**Fig. 7.14** | Preincrementing and postincrementing. (Part 2 of 2.)
+
+**Good Programming Practice 7.9**
+
+> _For readability, unary operators should be placed next to their operands, with no intervening spaces._ 7.9
 
 The three assignment statements in Fig. 7.11 (lines 24, 26 and 28, respectively),
 
@@ -911,16 +934,6 @@ passes = passes + 1; failures = failures + 1; student = student + 1;
 can be written more concisely with assignment operators as
 
 passes += 1; failures += 1; student += 1;
-
-**13 14** c = 5; **15** document.writeln( "<h3>Postincrementing</h3>" ); **16** document.writeln( c ); // prints 5 **17** // prints 5 then increments **18** document.writeln( "<br />" + ); **19** document.writeln( "<br />" + c ); // prints 6 **20 21** c = 5; **22** document.writeln( "<h3>Preincrementing</h3>" ); **23** document.writeln( c ); // prints 5 **24** // increments then prints 6 **25** document.writeln( "<br />" + ); **26** document.writeln( "<br />" + c ); // prints 6 **27** // --> **28** </script> **29** </head><body></body> **30** </html>
-
-**Fig. 7.14** | Preincrementing and postincrementing. (Part 2 of 2.)
-
-c++
-
-++c
-
-**264** Chapter 7 JavaScript: Control Statements I
 
 with preincrement operators as
 
@@ -932,432 +945,30 @@ passes++; failures++; student++;
 
 It is important to note here that when incrementing or decrementing a variable in a statement by itself, the preincrement and postincrement forms have the same effect, and the predecrement and postdecrement forms have the same effect. It is only when a variable appears in the context of a larger expression that preincrementing the variable and post- incrementing the variable have different effects. Predecrementing and postdecrementing behave similarly.
 
-**Common Programming Error 7.10** _Attempting to use the increment or decrement operator on an expression other than a_ **left-hand- side expression**_—commonly called an_ **lvalue**—_is a syntax error. A left-hand-side expression is a variable or expression that can appear on the left side of an assignment operation. For example, writing ++(x + 1) is a syntax error, because (x + 1) is not a left-hand-side expression._ 7.10
+**Common Programming Error 7.10**
+
+> _Attempting to use the increment or decrement operator on an expression other than a_ **left-hand- side expression**_—commonly called an_ **lvalue**—_is a syntax error. A left-hand-side expression is a variable or expression that can appear on the left side of an assignment operation. For example, writing ++(x + 1) is a syntax error, because (x + 1) is not a left-hand-side expression._ 7.10
 
 Figure 7.15 lists the precedence and associativity of the operators introduced to this point. The operators are shown top to bottom in decreasing order of precedence. The second column describes the associativity of the operators at each level of precedence. Notice that the conditional operator (?:), the unary operators increment (++) and decre- ment (--) and the assignment operators =, +=, -=, \*=, /= and %= associate from right to left. All other operators in the operator precedence table (Fig. 7.15) associate from left to right. The third column names the groups of operators.
 
-Operator Associativity Type
-
-++ -- right to left unary
-
-\* / % left to right multiplicative
-
-\+ - left to right additive
-
-< <= > >= left to right relational
-
-\== != left to right equality
-
-?: right to left conditional
-
-\= += -= \*= /= %= right to left assignment
+|      Operator      | Associativity |      Type      |
+| :----------------: | :-----------: | :------------: |
+|       ++ --        | right to left |     unary      |
+|       \* / %       | left to right | multiplicative |
+|        \+ -        | left to right |    additive    |
+|     < <= > >=      | left to right |   relational   |
+|       \== !=       | left to right |    equality    |
+|         ?:         | right to left |  conditional   |
+| \= += -= \*= /= %= | right to left |   assignment   |
 
 **Fig. 7.15** | Precedence and associativity of the operators discussed so far.
 
-7.13 Wrap-Up **265**
+## Wrap-Up
 
-**7.13 Wrap-Up** In this chapter, we introduced the concept of algorithms, and explained how to introduce structure into your programs. We used pseudocode and flowcharts to represent algorithms and demonstrated how to translate them into control structures, which form the basis of all programs. We explored selection and repetition statements, and how to integrate them to make decisions and repeat statements in your code. We also introduced assignment, in- crement and decrement operators, as well as different types of errors that can result from incorrect implementation of control statements.
+In this chapter, we introduced the concept of algorithms, and explained how to introduce structure into your programs. We used pseudocode and flowcharts to represent algorithms and demonstrated how to translate them into control structures, which form the basis of all programs. We explored selection and repetition statements, and how to integrate them to make decisions and repeat statements in your code. We also introduced assignment, in- crement and decrement operators, as well as different types of errors that can result from incorrect implementation of control statements.
 
-**7.14 Web Resources** www.deitel.com/javascript/
+## Web Resources
+
+www.deitel.com/javascript/
 
 The Deitel JavaScript Resource Center contains links to some of the best JavaScript resources on the web. There you’ll find categorized links to JavaScript tools, code generators, forums, books, libraries, frameworks and more. Also check out the tutorials for all skill levels, from introductory to advanced. Be sure to visit the related Resource Centers on XHTML (www.deitel.com/xhtml/) and CSS 2.1 (www.deitel.com/css21/).
-
-**Summary _Section 7.2 Algorithms_** • Any computable problem can be solved by executing a series of actions in a specific order.
-
-• A procedure for solving a problem in terms of the actions to execute and the order in which the actions are to execute is called an algorithm.
-
-• Specifying the order in which statements are to be executed in a computer program is called pro- gram control.
-
-**_Section 7.3 Pseudocode_** • Pseudocode is an artificial and informal language that helps programmers develop algorithms.
-
-• Carefully prepared pseudocode may be converted easily to a corresponding JavaScript program.
-
-• Pseudocode normally describes only executable statements—the actions that are performed when the program is converted from pseudocode to JavaScript and executed.
-
-**_Section 7.4 Control Structures_** • Normally, statements in a program execute one after the other, in the order in which they are
-
-written. This process is called sequential execution.
-
-• Various JavaScript statements enable the programmer to specify that the next statement to be ex- ecuted may be other than the next one in sequence. This process is called transfer of control.
-
-• All programs can be written in terms of only three control structures, namely, the sequence struc- ture, the selection structure and the repetition structure.
-
-• A flowchart is a graphical representation of an algorithm or of a portion of an algorithm. Flow- charts are drawn using certain special-purpose symbols, such as rectangles, diamonds, ovals and small circles; these symbols are connected by arrows called flowlines, which indicate the order in which the actions of the algorithm execute.
-
-• JavaScript provides three selection structures. The if statement either performs (selects) an ac- tion if a condition is true or skips the action if the condition is false. The if…else statement performs an action if a condition is true and performs a different action if the condition is false.
-
-**266** Chapter 7 JavaScript: Control Statements I
-
-The switch statement performs one of many different actions, depending on the value of an ex- pression.
-
-• JavaScript provides four repetition statements, namely, while, do…while, for and for…in.
-
-• Keywords cannot be used as identifiers (e.g., for variable names).
-
-• Single-entry/single-exit control structures make it easy to build programs. Control structures are attached to one another by connecting the exit point of one control structure to the entry point of the next. This procedure is called control-structure stacking. There is only one other way con- trol structures may be connected: control-structure nesting.
-
-**_Section 7.5 if Selection Statement_** • The JavaScript interpreter ignores white-space characters: blanks, tabs and newlines used for in-
-
-dentation and vertical spacing. Programmers insert white-space characters to enhance program clarity.
-
-• A decision can be made on any expression that evaluates to a value of JavaScript’s boolean type (i.e., any expression that evaluates to true or false).
-
-• The indentation convention you choose should be carefully applied throughout your programs. It is difficult to read programs that do not use uniform spacing conventions.
-
-**_Section 7.6 if…else Selection Statement_** • The conditional operator (?:) is closely related to the if…else statement. Operator ?: is Java-
-
-Script’s only ternary operator—it takes three operands. The operands together with the ?: oper- ator form a conditional expression. The first operand is a boolean expression, the second is the value for the conditional expression if the boolean expression evaluates to true and the third is the value for the conditional expression if the boolean expression evaluates to false.
-
-• Nested if…else statements test for multiple cases by placing if…else statements inside other if…else structures.
-
-• The JavaScript interpreter always associates an else with the previous if, unless told to do oth- erwise by the placement of braces ({}).
-
-• The if selection statement expects only one statement in its body. To include several statements in the body of an if statement, enclose the statements in braces ({ and }). A set of statements contained within a pair of braces is called a block.
-
-• A logic error has its effect at execution time. A fatal logic error causes a program to fail and ter- minate prematurely. A nonfatal logic error allows a program to continue executing, but the pro- gram produces incorrect results.
-
-**_Section 7.7 while Repetition Statement_** • The while repetition structure allows the programmer to specify that an action is to be repeated
-
-while some condition remains true.
-
-**_Section 7.8 Formulating Algorithms: Counter-Controlled Repetition_** • Counter-controlled repetition is often called definite repetition, because the number of repeti-
-
-tions is known before the loop begins executing.
-
-• Uninitialized variables used in mathematical calculations result in logic errors and produce the value NaN (not a number).
-
-• JavaScript represents all numbers as floating-point numbers in memory. Floating-point numbers often develop through division. The computer allocates only a fixed amount of space to hold such a value, so the stored floating-point value can only be an approximation.
-
-Terminology **267**
-
-**_Section 7.9 Formulating Algorithms: Sentinel-Controlled Repetition_** • In sentinel-controlled repetition, a special value called a sentinel value (also called a signal value,
-
-a dummy value or a flag value) indicates the end of data entry. Sentinel-controlled repetition of- ten is called indefinite repetition, because the number of repetitions is not known in advance.
-
-• It is necessary to choose a sentinel value that cannot be confused with an acceptable input value.
-
-**_Section 7.10 Formulating Algorithms: Nested Control Statements._** • Top-down, stepwise refinement is a technique essential to the development of well-structured al-
-
-gorithms. The top is a single statement that conveys the overall purpose of the program. As such, the top is, in effect, a complete representation of a program. The stepwise refinement process di- vides the top into a series of smaller tasks. The programmer terminates the top-down, stepwise refinement process when the pseudocode algorithm is specified in sufficient detail for the pro- grammer to be able to convert the pseudocode to a JavaScript program.
-
-**_Section 7.11 Assignment Operators_** • JavaScript provides the arithmetic assignment operators +=, -=, \*=, /= and %=, which abbreviate
-
-certain common types of expressions.
-
-**_Section 7.12 Increment and Decrement Operators_** • The increment operator, ++, and the decrement operator, --, increment or decrement a variable
-
-by 1, respectively. If the operator is prefixed to the variable, the variable is incremented or dec- remented by 1, then used in its expression. If the operator is postfixed to the variable, the variable is used in its expression, then incremented or decremented by 1.
-
-**Terminology** \-- operator ?: operator ++ operator action symbol action/decision model algorithm arithmetic assignment operators:
-
-+=, -=, \*=, /= and %=
-
-arrow block body of a loop boolean expression braces ({}) compound assignment operator conditional expression conditional operator (?:) connector symbol control structure control-structure nesting control-structure stacking counter counter-controlled repetition dangling-else problem decision symbol decrement operator (--)
-
-definite repetition diamond symbol division by zero double-selection structure dummy value empty statement (;) fatal logic error first refinement flag value floating-point number flowchart flowlines goto elimination goto statement if selection statement if…else selection statement increment operator (++) indefinite repetition infinite loop initialization initialization phase keyword left-hand-side expression logic error loop
-
-**268** Chapter 7 JavaScript: Control Statements I
-
-loop-continuation condition _lvalue_ multiple-selection structure NaN (not a number) nested control structures nonfatal logic error null
-
-oval symbol postdecrement operator postincrement operator predecrement operator preincrement operator procedure processing phase program control pseudocode rectangle symbol repetition repetition structure second refinement selection selection structure
-
-sentinel value sentinel-controlled repetition sequence structure sequential execution signal value single-entry/single-exit control structure single-selection structure small circle symbol stacked control structures statement structured programming syntax error terminate a loop termination phase ternary operator top top-down, stepwise refinement transfer of control unary operator while repetition statement white-space character
-
-**Self-Review Exercises 7.1** Fill in the blanks in each of the following statements:
-
-a) All programs can be written in terms of three types of control structures: , and .
-
-b) The double-selection statement is used to execute one action when a condi- tion is true and another action when that condition is false.
-
-c) Repeating a set of instructions a specific number of times is called repetition. d) When it is not known in advance how many times a set of statements will be repeated,
-
-a(n) (or a(n) , or ) value can be used to terminate the repetition.
-
-**7.2** Write four JavaScript statements that each add 1 to variable x, which contains a number.
-
-**7.3** Write JavaScript statements to accomplish each of the following tasks: a) Assign the sum of x and y to z, and increment the value of x by 1 after the calculation.
-
-Use only one statement. b) Test whether the value of the variable count is greater than 10. If it is, print "Count is
-
-greater than 10". c) Decrement the variable x by 1, then subtract it from the variable total. Use only one
-
-statement. d) Calculate the remainder after q is divided by divisor, and assign the result to q. Write
-
-this statement in two different ways.
-
-**7.4** Write a JavaScript statement to accomplish each of the following tasks: a) Declare variables sum and x. b) Assign 1 to variable x. c) Assign 0 to variable sum. d) Add variable x to variable sum, and assign the result to variable sum. e) Print "The sum is: ", followed by the value of variable sum.
-
-Answers to Self-Review Exercises **269**
-
-**7.5** Combine the statements that you wrote in Exercise 7.4 into a JavaScript program that cal- culates and prints the sum of the integers from 1 to 10. Use the while statement to loop through the calculation and increment statements. The loop should terminate when the value of x becomes 11.
-
-**7.6** Determine the value of each variable after the calculation is performed. Assume that, when each statement begins executing, all variables have the integer value 5.
-
-a) product \*= x++;
-
-b) quotient /= ++x;
-
-**7.7** Identify and correct the errors in each of the following segments of code: a) while ( c <= 5 ) {
-
-product \*= c;
-
-++c;
-
-b) if ( gender == 1 )
-
-document.writeln( "Woman" );
-
-else;
-
-document.writeln( "Man" );
-
-**7.8** What is wrong with the following while repetition statement? while ( z >= 0 )
-
-sum += z;
-
-**Answers to Self-Review Exercises 7.1** a) Sequence, selection and repetition. b) if…else. c) Counter-controlled (or definite). d) Sentinel, signal, flag or dummy.
-
-**7.2** x = x + 1; x += 1; ++x;
-
-x++;
-
-**7.3** a) z = x++ + y;
-
-b) if ( count > 10 )
-
-document.writeln( "Count is greater than 10" );
-
-c) total -= --x;
-
-d) q %= divisor;
-
-q = q % divisor;
-
-**7.4** a) var sum, x;
-
-b) x = 1;
-
-c) sum = 0;
-
-d) sum += x; or sum = sum + x;
-
-e) document.writeln( "The sum is: " + sum );
-
-**7.5** The solution is as follows:
-
-**1** <?xml version = "1.0" encoding = "utf-8"?> **2** <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" **3** "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> **4 5** <!-- Exercise 7.5: ex07\_05.html --> **6** <html xmlns = "http://www.w3.org/1999/xhtml"> **7** <head><title>Sum the Integers from 1 to 10</title> **8** <script type = "text/javascript"> **9** <!--
-
-**270** Chapter 7 JavaScript: Control Statements I
-
-**7.6** a) product = 25, x = 6;
-
-b) quotient = 0.833333…, x = 6;
-
-**7.7** a) Error: Missing the closing right brace of the while body. Correction: Add closing right brace after the statement ++c;.
-
-**10** var sum; // stores the total **11** var x; // counter control variable **12 13** x = 1; **14** sum = 0; **15 16** while ( x <= 10 ) **17** { **18** sum += x; **19** ++x; **20** } // end while **21 22** document.writeln( "The sum is: " + sum ); **23** // --> **24** </script> **25** </head><body></body> **26** </html>
-
-**1** <?xml version = "1.0" encoding = "utf-8"?> **2** <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" **3** "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> **4 5** <!-- Exercise 7.7a: ex07\_07a.html --> **6** <html xmlns = "http://www.w3.org/1999/xhtml"> **7** <head> **8** <title>Finding Code Errors</title> **9** <script type = "text/javascript">
-
-**10** <!-- **11** var c; **12** var product; **13 14** c = 1; **15** product = 1; **16 17** while ( c <= 5 ) **18** { **19** product \*= c; **20** ++c; **21** } // end while **22 23** document.writeln( "The product is: " + product );
-
-Answers to Self-Review Exercises **271**
-
-b) Error: The semicolon after else results in a logic error. The second output statement will always be executed. Correction: Remove the semicolon after else.
-
-**24** // --> **25** </script> **26** </head><body></body> **27** </html>
-
-**1** <?xml version = "1.0" encoding = "utf-8"?> **2** <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" **3** "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> **4 5** <!-- Exercise 7.7b: ex07\_07b.html --> **6** <html xmlns = "http://www.w3.org/1999/xhtml"> **7** <head> **8** <title>Finding Code Errors</title> **9** <script type = "text/javascript">
-
-**10** <!-- **11** var gender; **12** gender = window.prompt( "Enter gender" **13** \+ "(1=Woman,2=Man)", "1" ); **14 15** if ( gender == 1 ) **16** document.writeln( "Woman" ); **17** else **18** document.writeln( "Man" ); **19** // --> **20** </script> **21** </head><body></body> **22** </html>
-
-**272** Chapter 7 JavaScript: Control Statements I
-
-**7.8** The value of the variable z is never changed in the body of the while statement. Therefore, if the loop-continuation condition ( z >= 0 ) is true, an infinite loop is created. To prevent the cre- ation of the infinite loop, z must be decremented so that it eventually becomes less than 0.
-
-**Exercises 7.9** Identify and correct the errors in each of the following segments of code \[_Note:_ There may be more than one error in each piece of code\]:
-
-a) if ( age >= 65 );
-
-document.writeln( "Age greater than or equal to 65" );
-
-else
-
-document.writeln( "Age is less than 65" );
-
-b) var x = 1, total;
-
-while ( x <= 10 )
-
-{
-
-total += x;
-
-++x;
-
-}
-
-c) var x = 1; var total = 0; While ( x <= 100 )
-
-total += x;
-
-++x;
-
-d) var y = 5;
-
-while ( y > 0 )
-
-{
-
-document.writeln( y );
-
-++y;
-
-**7.10** What does the following program print?
-
-**1** <?xml version = "1.0" encoding = "utf-8"?> **2** <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" **3** "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> **4 5** <!-- Exercise 7.10: ex07\_10.html --> **6** <html xmlns="http://www.w3.org/1999/xhtml"> **7** <head><title>Mystery Script</title> **8** <script type = "text/javascript"> **9** <!--
-
-**10** var y; **11** var x = 1; **12** var total = 0; **13 14** while ( x <= 10 ) **15** { **16** y = x \* x; **17** document.writeln( y + "<br />" ); **18** total += y; **19** ++x; **20** } // end while **21 22** document.writeln( "<br />Total is " + total ); **23** // -->
-
-Exercises **273**
-
-**For Exercises 7.11–7.14, perform each of the following steps:** a) Read the problem statement. b) Formulate the algorithm using pseudocode and top-down, stepwise refinement. c) Write a JavaScript program. d) Test, debug and execute the JavaScript program. e) Process three complete sets of data.
-
-**7.11** Drivers are concerned with the mileage obtained by their automobiles. One driver has kept track of several tankfuls of gasoline by recording the number of miles driven and the number of gal- lons used for each tankful. Develop a JavaScript program that will take as input the miles driven and gallons used (both as integers) for each tankful. The program should calculate and output XHTML text that displays the number of miles per gallon obtained for each tankful and prints the combined number of miles per gallon obtained for all tankfuls up to this point. Use prompt dialogs to obtain the data from the user.
-
-**7.12** Develop a JavaScript program that will determine whether a department-store customer has exceeded the credit limit on a charge account. For each customer, the following facts are available:
-
-a) Account number b) Balance at the beginning of the month c) Total of all items charged by this customer this month d) Total of all credits applied to this customer's account this month e) Allowed credit limit
-
-The program should input each of these facts from a prompt dialog as an integer, calculate the new balance (_\= beginning balance + charges – credits_), display the new balance and determine whether the new balance exceeds the customer's credit limit. For customers whose credit limit is exceeded, the program should output XHTML text that displays the message “Credit limit exceeded.”
-
-**7.13** A large company pays its salespeople on a commission basis. The salespeople receive $200 per week, plus 9 percent of their gross sales for that week. For example, a salesperson who sells $5000 worth of merchandise in a week receives $200 plus 9 percent of $5000, or a total of $650. You have been supplied with a list of the items sold by each salesperson. The values of these items are as follows:
-
-**Item Value** 1 239.99 2 129.75 3 99.95 4 350.89
-
-Develop a program that inputs one salesperson’s items sold for last week, calculates the salesper- son's earnings and outputs XHTML text that displays the salesperson's earnings.
-
-**7.14** Develop a JavaScript program that will determine the gross pay for each of three employees. The company pays “straight time” for the first 40 hours worked by each employee and pays “time and a half” for all hours worked in excess of 40 hours. You are given a list of the employees of the company, the number of hours each employee worked last week and the hourly rate of each employ- ee. Your program should input this information for each employee, determine the employee’s gross pay and output XHTML text that displays the employee's gross pay. Use prompt dialogs to input the data.
-
-**24** </script> **25** </head><body></body> **26** </html>
-
-**274** Chapter 7 JavaScript: Control Statements I
-
-**7.15** The process of finding the largest value (i.e., the maximum of a group of values) is used fre- quently in computer applications. For example, a program that determines the winner of a sales con- test would input the number of units sold by each salesperson. The salesperson who sells the most units wins the contest. Write a pseudocode program and then a JavaScript program that inputs a series of 10 single-digit numbers as characters, determines the largest of the numbers and outputs a message that displays the largest number. Your program should use three variables as follows:
-
-a) counter: A counter to count to 10 (i.e., to keep track of how many numbers have been input and to determine when all 10 numbers have been processed);
-
-b) number: The current digit input to the program; c) largest: The largest number found so far.
-
-**7.16** Write a JavaScript program that uses looping to print the following table of values. Output the results in an XHTML table. Use CSS to center the data in each column.
-
-**7.17** Using an approach similar to that in Exercise 7.15, find the _two_ largest values among the 10 digits entered. \[_Note:_ You may input each number only once.\]
-
-**7.18** Modify the program in Fig. 7.11 to validate its inputs. For every value input, if the value entered is other than 1 or 2, keep looping until the user enters a correct value.
-
-**7.19** What does the following program print?
-
-**1** <?xml version = "1.0" encoding = "utf-8"?> **2** <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" **3** "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> **4 5** <!-- Exercise 7.19: ex07\_19.html --> **6** <html xmlns = "http://www.w3.org/1999/xhtml"> **7** <head><title>Mystery Script</title> **8** <script type = "text/javascript"> **9** <!--
-
-**10** var count = 1; **11 12** while ( count <= 10 ) **13** { **14** document.writeln( **15** count % 2 == 1 ? "\*\*\*\*<br />" : "++++++++<br />" ); **16** ++count; **17** } // end while **18** // --> **19** </script> **20** </head><body></body> **21** </html>
-
-Exercises **275**
-
-**7.20** What does the following program print?
-
-**7.21** (_Dangling-Else Problem_) Determine the output for each of the given segments of code when x is 9 and y is 11, and when x is 11 and y is 9. Note that the interpreter ignores the indentation in a JavaScript program. Also, the JavaScript interpreter always associates an else with the previous if, unless told to do otherwise by the placement of braces ({}). You may not be sure at first glance which if an else matches. This situation is referred to as the “dangling-else” problem. We have eliminated the indentation from the given code to make the problem more challenging. \[_Hint:_ Apply the in- dentation conventions you have learned.\]
-
-a) if ( x < 10 )
-
-if ( y > 10 )
-
-document.writeln( "\*\*\*\*\*<br />" );
-
-else
-
-document.writeln( "#####<br />" );
-
-document.writeln( "$$$$$<br />" );
-
-b) if ( x < 10 )
-
-{
-
-if ( y > 10 )
-
-document.writeln( "\*\*\*\*\*<br />" );
-
-}
-
-else
-
-{
-
-document.writeln( "#####<br />" );
-
-document.writeln( "$$$$$<br />" );
-
-}
-
-**1** <?xml version = "1.0" encoding = "utf-8"?> **2** <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" **3** "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> **4 5** <!-- Exercise 7.20: ex07\_20.html --> **6** <html xmlns = "http://www.w3.org/1999/xhtml"> **7** <head><title>Mystery Script</title> **8** <script type = "text/javascript"> **9** <!--
-
-**10** var row = 10; **11** var column; **12 13** while ( row >= 1 ) **14** { **15** column = 1; **16 17** while ( column <= 10 ) **18** { **19** document.write( row % 2 == 1 ? "<" : ">" ); **20** ++column; **21** } // end while **22 23** \--row; **24** document.writeln( "<br />" ); **25** } // end while **26** // --> **27** </script> **28** </head><body></body> **29** </html>
-
-**276** Chapter 7 JavaScript: Control Statements I
-
-**7.22** _(Another Dangling-Else Problem_) Modify the given code to produce the output shown in each part of this problem. Use proper indentation techniques. You may not make any changes other than inserting braces, changing the code indentation and inserting blank lines. The interpreter ig- nores indentation in JavaScript. We have eliminated the indentation from the given code to make the problem more challenging. \[_Note:_ It is possible that no modification is necessary for some of the segments of code.\]
-
-if ( y == 8 ) if ( x == 5 ) document.writeln( "@@@@@<br />" ); else document.writeln( "#####<br />" ); document.writeln( "$$$$$<br />" ); document.writeln( "&&&&&<br />" );
-
-a) Assuming that x = 5 and y = 8, the following output is produced:
-
-@@@@@ $$$$$ &&&&&
-
-b) Assuming that x = 5 and y = 8, the following output is produced:
-
-@@@@@
-
-c) Assuming that x = 5 and y = 8, the following output is produced:
-
-@@@@@ &&&&&
-
-d) Assuming that x = 5 and y = 7, the following output is produced \[_Note:_ The last three output statements after the else statements are all part of a block\]:
-
-\##### $$$$$ &&&&&
-
-**7.23** Write a script that reads in the size of the side of a square and outputs XHTML text that displays a hollow square of that size constructed of asterisks. Use a prompt dialog to read the size from the user. Your program should work for squares of all side sizes between 1 and 20.
-
-**7.24** A palindrome is a number or a text phrase that reads the same backward and forward. For example, each of the following five-digit integers is a palindrome: 12321, 55555, 45554 and 11611. Write a script that reads in a five-digit integer and determines whether it is a palindrome. If the number is not five digits long, display an alert dialog indicating the problem to the user. Allow the user to enter a new value after dismissing the alert dialog. \[_Hint:_ It is possible to do this exercise with the techniques learned in this chapter. You will need to use both division and remainder oper- ations to “pick off” each digit.\]
-
-**7.25** Write a script that outputs XHTML text that displays the following checkerboard pattern:
-
-\* \* \* \* \* \* \* \* \* \* \* \* \* \* \* \*
-
-\* \* \* \* \* \* \* \* \* \* \* \* \* \* \* \*
-
-\* \* \* \* \* \* \* \* \* \* \* \* \* \* \* \*
-
-\* \* \* \* \* \* \* \* \* \* \* \* \* \* \* \*
-
-Your program may use only three output statements to display the pattern, one of the form
-
-document.write( "\* " );
-
-Exercises **277**
-
-one of the form
-
-document.write( " " );
-
-and one of the form
-
-document.writeln(); //writes a newline character
-
-You may use XHTML tags (e.g., <pre>) for alignment purposes. \[_Hint:_ Repetition structures are required in this exercise.\]
-
-**7.26** Write a script that outputs XHTML text that keeps displaying in the browser window the multiples of the integer 2, namely 2, 4, 8, 16, 32, 64, etc. Your loop should _not terminate_ (i.e., you should create an infinite loop). What happens when you run this program?
-
-**7.27** A company wants to transmit data over the telephone, but it is concerned that its phones may be tapped. All of its data is transmitted as four-digit integers. It has asked you to write a pro- gram that will encrypt its data so that the data may be transmitted more securely. Your script should read a four-digit integer entered by the user in a prompt dialog and encrypt it as follows: Replace each digit by _(the sum of that digit plus 7) modulus 10_. Then swap the first digit with the third, and swap the second digit with the fourth. Then output XHTML text that displays the encrypted inte- ger.
-
-**7.28** Write a program that inputs an encrypted four-digit integer (from Exercise 7.27) and de- crypts it to form the original number.
