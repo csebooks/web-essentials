@@ -3,7 +3,9 @@ title: "JavaScript: Control Statements I"
 weight: 4
 ---
 
-**O B J E C T I V E S** In this chapter you will learn:
+# O B J E C T I V E S
+
+In this chapter you will learn:
 
 ■ Basic problem-solving techniques.
 
@@ -17,21 +19,13 @@ weight: 4
 
 ■ To use the increment, decrement and assignment operators.
 
-**_Let’s all move one place on._ —Lewis Carroll**
+## Introduction
 
-**_The wheel is come full circle._ —William Shakespeare**
+Before writing a script to solve a problem, it is essential to have a thorough understanding of the problem and a carefully planned approach to solving the problem. When writing a script, it is equally essential to understand the types of building blocks that are available and to employ proven program-construction principles. In this chapter and in Chapter 8, we discuss these issues in our presentation of the theory and principles of structured pro- gramming. The techniques you will learn here are applicable to most high-level languages, including JavaScript.
 
-**_How many apples fell on Newton’s head before he took the hint!_ —Robert Frost**
+## Algorithms
 
-7.1 Introduction **235 O**
-
-**u tl**
-
-**in e**
-
-**7.1 Introduction** Before writing a script to solve a problem, it is essential to have a thorough understanding of the problem and a carefully planned approach to solving the problem. When writing a script, it is equally essential to understand the types of building blocks that are available and to employ proven program-construction principles. In this chapter and in Chapter 8, we discuss these issues in our presentation of the theory and principles of structured pro- gramming. The techniques you will learn here are applicable to most high-level languages, including JavaScript.
-
-**7.2 Algorithms** Any computable problem can be solved by executing a series of actions in a specific order. A **procedure** for solving a problem in terms of
+Any computable problem can be solved by executing a series of actions in a specific order. A **procedure** for solving a problem in terms of
 
 **1\.** the **actions** to be executed, and
 
@@ -43,15 +37,13 @@ Consider the “rise-and-shine algorithm” followed by one junior executive for
 
 **7.1** Introduction **7.2** Algorithms **7.3** Pseudocode **7.4** Control Structures **7.5** if Selection Statement **7.6** if…else Selection Statement **7.7** while Repetition Statement **7.8** Formulating Algorithms: Counter-Controlled Repetition **7.9** Formulating Algorithms: Sentinel-Controlled Repetition
 
-**7.10** Formulating Algorithms: Nested Control Statements **7.11** Assignment Operators **7.12** Increment and Decrement Operators **7.13** Wrap-Up **7.14** Web Resources
+## Pseudocode
 
-Summary | Terminology | Self-Review Exercises | Answers to Self-Review Exercises | Exercises
+Pseudocode is an artificial and informal language that helps programmers develop algo- rithms. The pseudocode we present here is useful for developing algorithms that will be converted to structured portions of JavaScript programs. Pseudocode is similar to everyday English; it is convenient and user friendly, although it is not an actual computer program- ming language.
 
-**236** Chapter 7 JavaScript: Control Statements I
+**Software Engineering Observation 7.1**
 
-**7.3 Pseudocode Pseudocode** is an artificial and informal language that helps programmers develop algo- rithms. The pseudocode we present here is useful for developing algorithms that will be converted to structured portions of JavaScript programs. Pseudocode is similar to everyday English; it is convenient and user friendly, although it is not an actual computer program- ming language.
-
-**Software Engineering Observation 7.1** _Pseudocode is often used to “think out” a program during the program-design process. Then the pseudocode program is converted to a programming language such as JavaScript._ 7.1
+> _Pseudocode is often used to “think out” a program during the program-design process. Then the pseudocode program is converted to a programming language such as JavaScript._ 7.1
 
 The style of pseudocode we present consists purely of characters, so that programmers may conveniently type pseudocode in an editor program. The computer can produce a fresh printed copy of a pseudocode program on demand. Carefully prepared pseudocode may easily be converted to a corresponding JavaScript program. This process is done in many cases simply by replacing pseudocode statements with their JavaScript equivalents. In this chapter, we give several examples of pseudocode.
 
@@ -61,15 +53,15 @@ var value1;
 
 instructs the JavaScript interpreter to reserve space in memory for the variable value1. This declaration does not cause any action—such as input, output or a calculation—to oc- cur when the script executes. Some programmers choose to list variables and mention the purpose of each variable at the beginning of a pseudocode program.
 
-**7.4 Control Structures** Normally, statements in a program execute one after the other in the order in which they are written. This process is called **sequential execution**. Various JavaScript statements we will soon discuss enable the programmer to specify that the next statement to execute may not be the next one in sequence. This is known as **transfer of control**.
+## Control Structures
+
+Normally, statements in a program execute one after the other in the order in which they are written. This process is called **sequential execution**. Various JavaScript statements we will soon discuss enable the programmer to specify that the next statement to execute may not be the next one in sequence. This is known as **transfer of control**.
 
 During the 1960s, it became clear that the indiscriminate use of transfers of control was the root of much difficulty experienced by software development groups. The finger of blame was pointed at the **goto statement**, which allowed the programmer to specify a transfer of control to one of a wide range of possible destinations in a program. The notion of so-called **structured programming** became almost synonymous with _“_**goto elimina- tion**.” JavaScript does not have a goto statement.
 
 The research of Bohm and Jacopini demonstrated that programs could be written without goto statements.1 The challenge of the era for programmers was to shift their styles to “goto-less programming.” It was not until the 1970s that programmers started taking structured programming seriously. The results were impressive, as software devel- opment groups reported reduced development times, more frequent on-time delivery of
 
 1\. Bohm, C., and G. Jacopini, “Flow Diagrams, Turing Machines, and Languages with Only Two For- mation Rules,” _Communications of the ACM_, Vol. 9, No. 5, May 1966, pp. 336–371.
-
-7.4 Control Structures **237**
 
 systems and more frequent within-budget completion of software projects. The key to these successes is that structured programs are clearer, easier to debug and modify and more likely to be bug free in the first place.
 
@@ -89,59 +81,42 @@ JavaScript provides three types of selection structures; we discuss each in this
 
 **Fig. 7.1** | Flowcharting JavaScript’s sequence structure.
 
-add grade to total total = total + grade;
-
-add 1 to counter counter = counter + 1;
-
-**238** Chapter 7 JavaScript: Control Statements I
-
 forms an action if a condition is true and performs a different action if the condition is false. The switch selection statement (Chapter 8) performs one of many different actions, depending on the value of an expression.
 
 The **if** statement is called a **single-selection structure** because it selects or ignores a single action (or, as we will soon see, a single group of actions). The if…else statement is a **double-selection structure** because it selects between two different actions (or groups of actions). The switch statement is a **multiple-selection structure** because it selects among many different actions (or groups of actions).
 
 JavaScript provides four repetition structure types, namely **while**, do…while, for and for…in. (do…while and for are covered in Chapter 8; for…in is covered in Chapter 10.) Each of the words if, else, switch, while, do, for and in is a JavaScript **keyword**. These words are reserved by the language to implement various features, such as JavaScript’s control structures. Keywords cannot be used as identifiers (e.g., for variable names). A complete list of JavaScript keywords is shown in Fig. 7.2.
 
-**Common Programming Error 7.1** _Using a keyword as an identifier is a syntax error._ 7.1
+**Common Programming Error 7.1**
+
+> _Using a keyword as an identifier is a syntax error._ 7.1
 
 As we have shown, JavaScript has only eight control structures: sequence, three types of selection and four types of repetition. A program is formed by combining control struc- tures as necessary to implement the program’s algorithm. As with the sequence structure in Fig. 7.1, we will see that each control structure is flowcharted with two small circle sym- bols, one at the entry point to the control structure and one at the exit point.
 
-JavaScript keywords
-
-break case catch continue default
-
-delete do else false finally
-
-for function if in instanceof
-
-new null return switch this
-
-throw true try typeof var
-
-void while with
-
-_Keywords that are reserved but not used by JavaScript_
-
-abstract boolean byte char class
-
-const debugger double enum export
-
-extends final float goto implements
-
-import int interface long native
-
-package private protected public short
-
-static super synchronized throws transient
-
-volatile
+|                   JavaScript keywords                   |          |              |          |            |
+| :-----------------------------------------------------: | :------: | :----------: | :------: | :--------: |
+|                          break                          |   case   |    catch     | continue |  default   |
+|                         delete                          |    do    |     else     |  false   |  finally   |
+|                           for                           | function |      if      |    in    | instanceof |
+|                           new                           |   null   |    return    |  switch  |    this    |
+|                          throw                          |   true   |     try      |  typeof  |    var     |
+|                          void                           |  while   |     with     |
+| _Keywords that are reserved but not used by JavaScript_ |
+|                        abstract                         | boolean  |     byte     |   char   |   class    |
+|                          const                          | debugger |    double    |   enum   |   export   |
+|                         extends                         |  final   |    float     |   goto   | implements |
+|                         import                          |   int    |  interface   |   long   |   native   |
+|                         package                         | private  |  protected   |  public  |   short    |
+|                         static                          |  super   | synchronized |  throws  | transient  |
+|                        volatile                         |
 
 **Fig. 7.2** | JavaScript keywords.
 
-7.5 if Selection Statement **239**
-
 **Single-entry/single-exit control structures** make it easy to build programs; the con- trol structures are attached to one another by connecting the exit point of one to the entry point of the next. This process is similar to the way in which a child stacks building blocks, so we call it **control-structure stacking**. We will learn that there is only one other way in which control structures may be connected—**control-structure nesting**. Thus, algorithms in JavaScript programs are constructed from only eight different types of control structures combined in only two ways.
 
-**7.5 if Selection Statement** A selection structure is used to choose among alternative courses of action in a program. For example, suppose that the passing grade on an examination is 60 (out of 100). Then the pseudocode statement
+## if Selection Statement
+
+A selection structure is used to choose among alternative courses of action in a program. For example, suppose that the passing grade on an examination is 60 (out of 100). Then the pseudocode statement
 
 _If student’s grade is greater than or equal to 60 Print “Passed”_
 
@@ -149,7 +124,9 @@ determines whether the condition “student’s grade is greater than or equal t
 
 Note that the second line of this selection structure is indented. Such indentation is optional but is highly recommended, because it emphasizes the inherent structure of struc- tured programs. The JavaScript interpreter ignores white-space characters—blanks, tabs and newlines used for indentation and vertical spacing. Programmers insert these white- space characters to enhance program clarity.
 
-**Good Programming Practice 7.1** _Consistently applying reasonable indentation conventions throughout your programs improves program readability. We suggest a fixed-size tab of about 1/4 inch or three spaces per indent._ 7.1
+**Good Programming Practice 7.1**
+
+> _Consistently applying reasonable indentation conventions throughout your programs improves program readability. We suggest a fixed-size tab of about 1/4 inch or three spaces per indent._ 7.1
 
 The preceding pseudocode _If_ statement can be written in JavaScript as
 
@@ -161,15 +138,19 @@ The flowchart in Fig. 7.3 illustrates the single-selection if statement. This fl
 
 or false—also known as a **boolean expression**).
 
-**240** Chapter 7 JavaScript: Control Statements I
+**Fig. 7.3** | Flowcharting the single-selection if statement.
 
-**Software Engineering Observation 7.2** _In JavaScript, any nonzero numeric value in a condition evaluates to true, and 0 evaluates to false. For strings, any string containing one or more characters evaluates to true, and the empty string (the string containing no characters, represented as "") evaluates to false. Also, a variable that has been declared with var but has not been assigned a value evaluates to false._ 7.2
+**Software Engineering Observation 7.2**
+
+> _In JavaScript, any nonzero numeric value in a condition evaluates to true, and 0 evaluates to false. For strings, any string containing one or more characters evaluates to true, and the empty string (the string containing no characters, represented as "") evaluates to false. Also, a variable that has been declared with var but has not been assigned a value evaluates to false._ 7.2
 
 Note that the if statement is a single-entry/single-exit control structure. We will soon learn that the flowcharts for the remaining control structures also contain (besides small circle symbols and flowlines) only rectangle symbols, to indicate the actions to be per- formed, and diamond symbols, to indicate decisions to be made. This type of flowchart represents the **action/decision model of programming**.
 
 We can envision eight bins, each containing only the control structures of one of the eight types. These control structures are empty. Nothing is written in the rectangles or in the diamonds. The programmer’s task, then, is to assemble a program from as many of each type of control structure as the algorithm demands, combining them in only two pos- sible ways (stacking or nesting), then filling in the actions and decisions in a manner appropriate for the algorithm. We will discuss the variety of ways in which actions and decisions may be written.
 
-**7.6 if…else Selection Statement** The if selection statement performs an indicated action only when the condition evalu- ates to true; otherwise, the action is skipped. The **if…else selection** statement allows the programmer to specify that a different action is to be performed when the condition is true than when the condition is false. For example, the pseudocode statement
+## if…else Selection Statement
+
+The if selection statement performs an indicated action only when the condition evalu- ates to true; otherwise, the action is skipped. The **if…else selection** statement allows the programmer to specify that a different action is to be performed when the condition is true than when the condition is false. For example, the pseudocode statement
 
 _If student’s grade is greater than or equal to 60 Print “Passed”_
 
@@ -177,25 +158,18 @@ _Else Print “Failed”_
 
 prints Passed if the student’s grade is greater than or equal to 60 and prints Failed if the student’s grade is less than 60. In either case, after printing occurs, the next pseudocode statement in sequence (i.e., the next statement after the whole if…else structure) is per- formed. Note that the body of the _Else_ part of the structure is also indented.
 
-**Fig. 7.3** | Flowcharting the single-selection if statement.
+**Good Programming Practice 7.2**
 
-grade >= 60 true
-
-false
-
-print “Passed”
-
-7.6 if…else Selection Statement **241**
-
-**Good Programming Practice 7.2** _Indent both body statements of an if…else statement._ 7.2
+> _Indent both body statements of an if…else statement._ 7.2
 
 The indentation convention you choose should be applied carefully throughout your programs (both in pseudocode and in JavaScript). It is difficult to read programs that do not use uniform spacing conventions.
 
 The preceding pseudocode _If…Else_ statement may be written in JavaScript as
 
-if ( studentGrade >= 60 ) document.writeln( "Passed" );
-
-else document.writeln( "Failed" );
+if ( studentGrade >= 60 )
+document.writeln( "Passed" );
+else
+document.writeln( "Failed" );
 
 The flowchart shown in Fig. 7.4 illustrates the if…else selection statement’s flow of con- trol. Once again, note that the only symbols in the flowchart (besides small circles and ar- rows) are rectangles (for actions) and a diamond (for a decision). We continue to emphasize this action/decision model of computing. Imagine again a deep bin containing as many empty double-selection structures as might be needed to build a JavaScript algo- rithm. The programmer’s job is to assemble the selection structures (by stacking and nest- ing) with other control structures required by the algorithm and to fill in the empty rectangles and empty diamonds with actions and decisions appropriate to the algorithm’s implementation.
 
@@ -204,16 +178,6 @@ JavaScript provides an operator, called the **conditional operator** (**?:**), t
 document.writeln( studentGrade >= 60 ? "Passed" : "Failed" );
 
 **Fig. 7.4** | Flowcharting the double-selection if…else statement.
-
-grade >= 60 true
-
-print “Failed”
-
-false
-
-print “Passed”
-
-**242** Chapter 7 JavaScript: Control Statements I
 
 contains a conditional expression that evaluates to the string "Passed" if the condition studentGrade >= 60 is true and evaluates to the string "Failed" if the condition is false. Thus, this statement with the conditional operator performs essentially the same operation as the preceding if…else statement. The precedence of the conditional operator is low, so the entire conditional expression is normally placed in parentheses to ensure that it eval- uates correctly.
 
@@ -251,9 +215,9 @@ document.writeln( "F" );
 
 If studentGrade is greater than or equal to 90, all four conditions will be true, but only the document.writeln statement after the first test will execute. After that particular doc- ument.writeln executes, the else part of the outer if…else statements is skipped.
 
-**Good Programming Practice 7.3** _If there are several levels of indentation, each level should be indented the same additional amount of space._ 7.3
+**Good Programming Practice 7.3**
 
-7.6 if…else Selection Statement **243**
+> _If there are several levels of indentation, each level should be indented the same additional amount of space._ 7.3
 
 Most JavaScript programmers prefer to write the preceding if structure as
 
@@ -299,15 +263,17 @@ if ( y > 5 ) document.writeln( "x and y are > 5" );
 
 document.writeln( "x is <= 5" );
 
-**244** Chapter 7 JavaScript: Control Statements I
-
 The braces ({}) indicate to the interpreter that the second if statement is in the body of the first if statement and that the else is matched with the first if statement. In Exercises 7.21 and 7.22, you will investigate the dangling-else problem further.
 
 The if selection statement expects only one statement in its body. To include several statements in an if statement’s body, enclose the statements in braces ({ and }). This can also be done in the else section of an if…else statement. A set of statements contained within a pair of braces is called a **block**.
 
-**Software Engineering Observation 7.3** _A block can be placed anywhere in a program that a single statement can be placed._ 7.3
+**Software Engineering Observation 7.3**
 
-**Software Engineering Observation 7.4** _Unlike individual statements, a block does not end with a semicolon. However, each statement within the braces of a block should end with a semicolon._ 7.4
+> _A block can be placed anywhere in a program that a single statement can be placed._ 7.3
+
+**Software Engineering Observation 7.4**
+
+> _Unlike individual statements, a block does not end with a semicolon. However, each statement within the braces of a block should end with a semicolon._ 7.4
 
 The following example includes a block in the else part of an if…else statement:
 
@@ -329,27 +295,39 @@ document.writeln( "You must take this course again." );
 
 would be outside the body of the else part of the if and would execute regardless of whether the grade is less than 60.
 
-**Common Programming Error 7.2** _Forgetting one or both of the braces that delimit a block can lead to syntax errors or logic errors._ 7.2
+**Common Programming Error 7.2**
+
+> _Forgetting one or both of the braces that delimit a block can lead to syntax errors or logic errors._ 7.2
 
 Syntax errors (e.g., when one brace in a block is left out of the program) are caught by the interpreter when it attempts to interpret the code containing the syntax error. A **logic error** (e.g., the one caused when both braces around a block are left out of the pro- gram) also has its effect at execution time. A **fatal logic error** causes a program to fail and terminate prematurely. A **nonfatal logic error** allows a program to continue executing, but the program produces incorrect results.
 
-**Good Programming Practice 7.4** _Some programmers prefer to type the beginning and ending braces of blocks before typing the in- dividual statements within the braces. This helps avoid omitting one or both of the braces._ 7.4
+**Good Programming Practice 7.4**
 
-7.7 while Repetition Statement **245**
+> _Some programmers prefer to type the beginning and ending braces of blocks before typing the in- dividual statements within the braces. This helps avoid omitting one or both of the braces._ 7.4
 
-**Software Engineering Observation 7.5** _Just as a block can be placed anywhere a single statement can be placed, it is also possible to have no statement at all (the empty statement) in such places. The empty statement is represented by placing a semicolon (;) where a statement would normally be._ 7.5
+**Software Engineering Observation 7.5**
 
-**Common Programming Error 7.3** _Placing a semicolon after the condition in an if structure leads to a logic error in single-selection if structures and a syntax error in double-selection if structures (if the if part contains a non- empty body statement)._ 7.3
+> _Just as a block can be placed anywhere a single statement can be placed, it is also possible to have no statement at all (the empty statement) in such places. The empty statement is represented by placing a semicolon (;) where a statement would normally be._ 7.5
 
-**7.7 while Repetition Statement** A repetition structure (also known as a **loop**) allows the programmer to specify that a script is to repeat an action while some condition remains true. The pseudocode statement
+**Common Programming Error 7.3**
+
+> _Placing a semicolon after the condition in an if structure leads to a logic error in single-selection if structures and a syntax error in double-selection if structures (if the if part contains a non- empty body statement)._ 7.3
+
+## while Repetition Statement
+
+A repetition structure (also known as a **loop**) allows the programmer to specify that a script is to repeat an action while some condition remains true. The pseudocode statement
 
 _While there are more items on my shopping list Purchase next item and cross it off my list_
 
 describes the repetition that occurs during a shopping trip. The condition “there are more items on my shopping list” may be true or false. If it’s true, then the action “Purchase next item and cross it off my list” is performed. This action is performed repeatedly while the condition remains true. The statement(s) contained in the _While_ repetition structure con- stitute its body*.* The body of a loop such as the _While_ structure may be a single statement or a block. Eventually, the condition becomes false (i.e., when the last item on the shop- ping list has been purchased and crossed off the list). At this point, the repetition termi- nates, and the first pseudocode statement after the repetition structure executes.
 
-**Common Programming Error 7.4** _If the body of a while statement never causes the while statement’s condition to become true, a logic error occurs. Normally, such a repetition structure will never terminate—an error called an **infinite loop**. Both Internet Explorer and Firefox show a dialog allowing the user to termi- nate a script that contains an infinite loop._ 7.4
+**Common Programming Error 7.4**
 
-**Common Programming Error 7.5** _Remember that JavaScript is a case-sensitive language. In code, spelling the keyword while with an uppercase W, as in While, is a syntax error. All of JavaScript’s reserved keywords, such as while, if and else, contain only lowercase letters._ 7.5
+> _If the body of a while statement never causes the while statement’s condition to become true, a logic error occurs. Normally, such a repetition structure will never terminate—an error called an **infinite loop**. Both Internet Explorer and Firefox show a dialog allowing the user to termi- nate a script that contains an infinite loop._ 7.4
+
+**Common Programming Error 7.5**
+
+> _Remember that JavaScript is a case-sensitive language. In code, spelling the keyword while with an uppercase W, as in While, is a syntax error. All of JavaScript’s reserved keywords, such as while, if and else, contain only lowercase letters._ 7.5
 
 As an example of a while statement, consider a program segment designed to find the first power of 2 larger than 1000. Variable product begins with the value 2. The statement is as follows:
 
@@ -357,9 +335,10 @@ var product = 2;
 
 while ( product <= 1000 ) product = 2 \* product;
 
-When the while statement finishes executing, product contains the result 1024. The flowchart in Fig. 7.5 illustrates the flow of control of the preceding while repetition state- ment. Once again, note that (besides small circles and arrows) the flowchart contains only a rectangle symbol and a diamond symbol.
+When the while statement finishes executing, product contains the result 1024. The flowchart in Fig. 7.5 illustrates the flow of control of the preceding while repetition state- ment. Once again, note that (besides small circles and arrows) the flowchart contains only a rectangle symbol and a
+diamond symbol.
 
-**246** Chapter 7 JavaScript: Control Statements I
+**Fig. 7.5** | Flowcharting the while repetition statement.
 
 When the script enters the while statement, product is 2. The script repeatedly mul- tiplies variable product by 2, so product takes on the values 4, 8, 16, 32, 64, 128, 256, 512 and 1024 successively. When product becomes 1024, the condition product <= 1000
 
@@ -367,7 +346,9 @@ in the while statement becomes false. This terminates the repetition, with 1024 
 
 The flowchart clearly shows the repetition. The flowline emerging from the rectangle wraps back to the decision, which the script tests each time through the loop until the deci- sion eventually becomes false. At this point, the while statement exits, and control passes to the next statement in the program.
 
-**7.8 Formulating Algorithms: Counter-Controlled Repetition** To illustrate how to develop algorithms, we solve several variations of a class-averaging problem. Consider the following problem statement:
+## Formulating Algorithms: Counter-Controlled Repetition
+
+To illustrate how to develop algorithms, we solve several variations of a class-averaging problem. Consider the following problem statement:
 
 _A class of ten students took a quiz. The grades (integers in the range 0 to 100) for this quiz are available to you. Determine the class average on the quiz._
 
@@ -377,35 +358,78 @@ Let us use pseudocode to list the actions to execute and specify the order in wh
 
 Note the references in the algorithm to a total and a counter. A **total** is a variable in which a script accumulates the sum of a series of values. A counter is a variable a script uses to count—in this case, to count the number of grades entered. Variables that store totals should normally be initialized to zero before they are used in a program.
 
-**Fig. 7.5** | Flowcharting the while repetition statement.
+_Set total to zero_
+_Set grade counter to one_
 
-product <= 1000 product = 2 \* product true
+_While grade counter is less than or equal to ten_
+_Input the next grade_
+_Add the grade into the total_
+_Add one to the grade counter_
 
-false
-
-7.8 Formulating Algorithms: Counter-Controlled Repetition **247**
-
-_Set total to zero Set grade counter to one_
-
-_While grade counter is less than or equal to ten Input the next grade Add the grade into the total Add one to the grade counter_
-
-_Set the class average to the total divided by ten Print the class average_
+_Set the class average to the total divided by ten_
+_Print the class average_
 
 **Fig. 7.6** | Pseudocode algorithm that uses counter-controlled repetition to solve the class- average problem.
 
-**1** <?xml version = "1.0" encoding = "utf-8"?> **2** <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" **3** "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> **4 5** <!-- Fig. 7.7: average.html --> **6** <!-- Counter-controlled repetition to calculate a class average. --> **7** <html xmlns = "http://www.w3.org/1999/xhtml"> **8** <head> **9** <title>Class Average Program</title>
+```
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-**10** <script type = "text/javascript"> **11** <!-- **12** var total; // sum of grades **13** var ; // number of grades entered **14** var grade; // grade typed by user (as a string) **15** var gradeValue; // grade value (converted to integer) **16** var average; // average of all grades **17 18** // Initialization Phase **19** total = 0; // clear total **20** // prepare to loop **21 22** // Processing Phase **23** // loop 10 times **24** { **25 26** // prompt for input and read grade from user **27** grade = window.prompt( "Enter integer grade:", "0" ); **28 29** // convert grade from a string to an integer **30** gradeValue = parseInt( grade ); **31 32** // add gradeValue to total **33** total = total + gradeValue; **34**
+<!-- Fig. 7.7: average.html -->
+<!-- Counter-controlled repetition to calculate a class average. -->
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+<title>Class Average Program</title>
+<script type = "text/javascript">
+<!--
+var total; // sum of grades
+var gradeCounter; // number of grades entered
+var grade; // grade typed by user (as a string)
+var gradeValue; // grade value (converted to integer)
+var average; // average of all grades
+
+// Initialization Phase
+total = 0; // clear total
+gradeCounter = 1;// prepare to loop
+
+// Processing Phase
+while ( gradeCounter <= 10 )// loop 10 times
+{
+
+// prompt for input and read grade from user
+grade = window.prompt( "Enter integer grade:", "0" );
+
+// convert grade from a string to an integer
+gradeValue = parseInt( grade );
+
+// add gradeValue to total
+total = total + gradeValue;
+```
 
 **Fig. 7.7** | Counter-controlled repetition to calculate a class average. (Part 1 of 2.)
 
-gradeCounter
+```js
+// add 1 to gradeCounter
+gradeCounter = gradeCounter + 1;
+} // end while
 
-gradeCounter = 1;
+// Termination Phase
+average = total / 10; // calculate the average
 
-while ( gradeCounter <= 10 )
+// display average of exam grades
+document.writeln(
+"<h1>Class average is " + average + "</h1>" );
+// -->
+</script>
+</head>
+<body>
+<p>Click Refresh (or Reload) to run the script again<p>
+</body>
+</html>
+```
 
-**248** Chapter 7 JavaScript: Control Statements I
+**Fig. 7.7** | Counter-controlled repetition to calculate a class average. (Part 2 of 2.)
 
 Lines 12–16 declare variables total, gradeCounter, grade, gradeValue, average. The variable grade will store the string the user types into the prompt dialog. The variable gradeValue will store the integer value of the grade the user enters into the prompt dialog.
 
@@ -413,17 +437,9 @@ Lines 19–20 are assignment statements that initialize total to 0 and gradeCoun
 
 to 1. Note that variables total and gradeCounter are initialized before they are used in a calculation.
 
-**Common Programming Error 7.6** \_Not initializing a variable that will be used in a calculation results in a logic error that produces the value NaN—Not a Number. You must initialize the variable before it is used in a calculation.\_7.6
+**Common Programming Error 7.6**
 
-**35** // add 1 to gradeCounter **36 37** } // end while **38 39** // Termination Phase **40** average = total / 10; // calculate the average **41 42** // display average of exam grades **43** document.writeln( **44** "<h1>Class average is " + average + "</h1>" ); **45** // --> **46** </script> **47** </head> **48** <body> **49** <p>Click Refresh (or Reload) to run the script again<p> **50** </body> **51** </html>
-
-**Fig. 7.7** | Counter-controlled repetition to calculate a class average. (Part 2 of 2.)
-
-gradeCounter = gradeCounter + 1;
-
-This dialog is displayed 10 times. User input is 100, 88, 93, 55, 68, 77, 83, 95, 73 and 62.
-
-7.8 Formulating Algorithms: Counter-Controlled Repetition **249**
+> _Not initializing a variable that will be used in a calculation results in a logic error that produces the value NaN—Not a Number. You must initialize the variable before it is used in a calculation_ \_7.6
 
 Line 23 indicates that the while statement continues iterating while the value of gradeCounter is less than or equal to 10. Line 27 corresponds to the pseudocode state- ment “_Input the next grade._” The statement displays a prompt dialog with the prompt "Enter integer grade:" on the screen.
 
@@ -435,21 +451,21 @@ The program now is ready to increment the variable gradeCounter to indicate that
 
 Line 40 assigns the results of the average calculation to variable average. Lines 43–44 write a line of XHTML text in the document that displays the string "Class average is "
 
-followed by the value of variable average as an <h1> element in the browser. Execute the script in a web browser by double clicking the XHTML document (from
+followed by the value of variable average as an <-h1> element in the browser. Execute the script in a web browser by double clicking the XHTML document (from Windows Explorer). This script parses any user input as an integer. In the sample program execution in Fig. 7.7, the sum of the values entered (100, 88, 93, 55, 68, 77, 83, 95, 73 and 62) is 794. Although the treats all input as integers, the averaging calculation in the program does not produce an integer. Rather, the calculation produces a **floating-point number** (i.e., a number containing a decimal point). The average of the 10 integers input by the user in this example is 79.4.
 
-Windows Explorer). This script parses any user input as an integer. In the sample program execution in Fig. 7.7, the sum of the values entered (100, 88, 93, 55, 68, 77, 83, 95, 73 and 62) is 794. Although the treats all input as integers, the averaging calculation in the program does not produce an integer. Rather, the calculation produces a **floating-point number** (i.e., a number containing a decimal point). The average of the 10 integers input by the user in this example is 79.4.
+**Software Engineering Observation 7.6**
 
-**Software Engineering Observation 7.6** _If the string passed to parseInt contains a floating-point numeric value, parseInt simply truncates the floating-point part. For example, the string "27.95" results in the integer 27, and the string "–123.45" results in the integer –123. If the string passed to parseInt is not a numeric value, parseInt returns NaN (not a number)._ 7.6
+> _If the string passed to parseInt contains a floating-point numeric value, parseInt simply truncates the floating-point part. For example, the string "27.95" results in the integer 27, and the string "–123.45" results in the integer –123. If the string passed to parseInt is not a numeric value, parseInt returns NaN (not a number)._ 7.6
 
-JavaScript actually represents all numbers as floating-point numbers in memory. Floating-point numbers often develop through division, as shown in this example. When we divide 10 by 3, the result is 3.3333333…, with the sequence of 3’s repeating infinitely. The computer allocates only a fixed amount of space to hold such a value, so the stored floating-point value can be only an approximation. Although floating-point numbers are not always 100 percent precise, they have numerous applications. For example, when we speak of a “normal” body temperature of 98.6, we do not need to be precise to a large number of digits. When we view the temperature on a thermometer and read it as 98.6, it may actually be 98.5999473210643. The point here is that few applications require high-
+JavaScript actually represents all numbers as floating-point numbers in memory. Floating-point numbers often develop through division, as shown in this example. When we divide 10 by 3, the result is 3.3333333…, with the sequence of 3’s repeating infinitely. The computer allocates only a fixed amount of space to hold such a value, so the stored floating-point value can be only an approximation. Although floating-point numbers are not always 100 percent precise, they have numerous applications. For example, when we speak of a “normal” body temperature of 98.6, we do not need to be precise to a large number of digits. When we view the temperature on a thermometer and read it as 98.6, it may actually be 98.5999473210643. The point here is that few applications require high precision floating-point values, so calling this number simply 98.6 is fine for most appli- cations.
 
-**250** Chapter 7 JavaScript: Control Statements I
+**Common Programming Error 7.7**
 
-precision floating-point values, so calling this number simply 98.6 is fine for most appli- cations.
+> _Using floating-point numbers in a manner that assumes they are represented precisely can lead to incorrect results. Real numbers are represented only approximately by computers. For example, no fixed-size floating-point representation of_ π _can ever be precise, because_ π _is a transcendental number whose value cannot be expressed as digits in a finite amount of space._ 7.7
 
-**Common Programming Error 7.7** _Using floating-point numbers in a manner that assumes they are represented precisely can lead to incorrect results. Real numbers are represented only approximately by computers. For example, no fixed-size floating-point representation of_ π _can ever be precise, because_ π _is a transcendental number whose value cannot be expressed as digits in a finite amount of space._ 7.7
+## Formulating Algorithms: Sentinel-Controlled Repetition
 
-**7.9 Formulating Algorithms: Sentinel-Controlled Repetition** Let us generalize the class-average problem. Consider the following problem:
+Let us generalize the class-average problem. Consider the following problem:
 
 _Develop a class-averaging program that will process an arbitrary number of grades each time the program is run._
 
@@ -459,7 +475,9 @@ One way to solve this problem is to use a special value called a **sentinel valu
 
 Clearly, one must choose a sentinel value that cannot be confused with an acceptable input value. –1 is an acceptable sentinel value for this problem because grades on a quiz are normally nonnegative integers from 0 to 100. Thus, an execution of the class-average program might process a stream of inputs such as 95, 96, 75, 74, 89 and –1. The program would compute and print the class average for the grades 95, 96, 75, 74 and 89 (–1 is the sentinel value, so it should not enter into the average calculation).
 
-**Common Programming Error 7.8** _Choosing a sentinel value that is also a legitimate data value results in a logic error and may prevent a sentinel-controlled loop from terminating properly._ 7.8
+**Common Programming Error 7.8**
+
+> _Choosing a sentinel value that is also a legitimate data value results in a logic error and may prevent a sentinel-controlled loop from terminating properly._ 7.8
 
 We approach the class-average program with a technique called **top-down, stepwise refinement**, a technique that is essential to the development of well-structured algorithms. We begin with a pseudocode representation of the **top**:
 
@@ -467,13 +485,13 @@ _Determine the class average for the quiz_
 
 The top is a single statement that conveys the program’s overall purpose. As such, the top is, in effect, a complete representation of a program. Unfortunately, the top rarely conveys sufficient detail from which to write the JavaScript algorithm. Therefore we must begin a refinement process. First, we divide the top into a series of smaller tasks and list them in the order in which they need to be performed, creating the following **first refinement**:
 
-7.9 Formulating Algorithms: Sentinel-Controlled Repetition **251**
-
 _Initialize variables Input, sum up and count the quiz grades Calculate and print the class average_
 
 Here, only the sequence structure is used; the steps listed are to be executed in order, one after the other.
 
-**Software Engineering Observation 7.7** _Each refinement, as well as the top itself, is a_ complete _specification of the algorithm; only the level of detail varies._ 7.7
+**Software Engineering Observation 7.7**
+
+> _Each refinement, as well as the top itself, is a_ complete _specification of the algorithm; only the level of detail varies._ 7.7
 
 To proceed to the next level of refinement (the **second refinement**), we commit to specific variables. We need a running total of the numbers, a count of how many numbers have been processed, a variable to receive the string representation of each grade as it is input, a variable to store the value of the grade after it is converted to an integer and a vari- able to hold the calculated average. The pseudocode statement
 
@@ -497,8 +515,6 @@ _Add this grade into the running total Add one to the grade counter Input the ne
 
 Note that in pseudocode, we do not use braces around the pseudocode that forms the body of the _While_ structure. We simply indent the pseudocode under the _While_, to show that it belongs to the body of the _While_. Remember, pseudocode is only an informal program- development aid.
 
-**252** Chapter 7 JavaScript: Control Statements I
-
 The pseudocode statement
 
 _Calculate and print the class average_
@@ -511,11 +527,17 @@ _Else Print “No grades were entered”_
 
 Note that we are testing for the possibility of **division by zero**—a logic error that, if unde- tected, would cause the program to produce invalid output. The complete second refine- ment of the pseudocode algorithm for the class-average problem is shown in Fig. 7.8.
 
-**Error-Prevention Tip 7.1** _When performing division by an expression whose value could be zero, explicitly test for this case, and handle it appropriately in your program (e.g., by printing an error message) rather than al- lowing the division by zero to occur._ 7.1
+**Error-Prevention Tip 7.1**
 
-**Good Programming Practice 7.5** _Include completely blank lines in pseudocode programs to make the pseudocode more readable. The blank lines separate pseudocode control structures and separate the program phases._ 7.5
+> _When performing division by an expression whose value could be zero, explicitly test for this case, and handle it appropriately in your program (e.g., by printing an error message) rather than al- lowing the division by zero to occur._ 7.1
 
-**Software Engineering Observation 7.8** _Many algorithms can be divided logically into three phases: an initialization phase that initializes the program variables, a processing phase that inputs data values and adjusts program variables accordingly, and a termination phase that calculates and prints the results._ 7.8
+**Good Programming Practice 7.5**
+
+> _Include completely blank lines in pseudocode programs to make the pseudocode more readable. The blank lines separate pseudocode control structures and separate the program phases._ 7.5
+
+**Software Engineering Observation 7.8**
+
+> _Many algorithms can be divided logically into three phases: an initialization phase that initializes the program variables, a processing phase that inputs data values and adjusts program variables accordingly, and a termination phase that calculates and prints the results._ 7.8
 
 The pseudocode algorithm in Fig. 7.8 solves the more general class-averaging problem. This algorithm was developed after only two refinements. Sometimes more refinements are necessary.
 
@@ -531,15 +553,21 @@ _Else Print “No grades were entered”_
 
 **Fig. 7.8** | Sentinel-controlled repetition to solve the class-average problem.
 
-7.9 Formulating Algorithms: Sentinel-Controlled Repetition **253**
+**Software Engineering Observation 7.9**
 
-**Software Engineering Observation 7.9** _The programmer terminates the top-down, stepwise refinement process after specifying the pseudocode algorithm in sufficient detail for the programmer to convert the pseudocode to a JavaScript program. Then, implementing the JavaScript program will normally be straightforward._ 7.9
+> _The programmer terminates the top-down, stepwise refinement process after specifying the pseudocode algorithm in sufficient detail for the programmer to convert the pseudocode to a JavaScript program. Then, implementing the JavaScript program will normally be straightforward._ 7.9
 
-**Good Programming Practice 7.6** _When converting a pseudocode program to JavaScript, keep the pseudocode in the JavaScript program as comments._ 7.6
+**Good Programming Practice 7.6**
 
-**Software Engineering Observation 7.10** _Experience has shown that the most difficult part of solving a problem on a computer is developing the algorithm for the solution. Once a correct algorithm is specified, the process of producing a working JavaScript program from the algorithm is normally straightforward._ 7.10
+> _When converting a pseudocode program to JavaScript, keep the pseudocode in the JavaScript program as comments._ 7.6
 
-**Software Engineering Observation 7.11** _Many experienced programmers write programs without ever using program-development tools like pseudocode. As they see it, their ultimate goal is to solve the problem on a computer, and writing pseudocode merely delays the production of final outputs. Although this approach may work for simple and familiar problems, it can lead to serious errors in large, complex projects._ 7.11
+**Software Engineering Observation 7.10**
+
+> _Experience has shown that the most difficult part of solving a problem on a computer is developing the algorithm for the solution. Once a correct algorithm is specified, the process of producing a working JavaScript program from the algorithm is normally straightforward._ 7.10
+
+**Software Engineering Observation 7.11**
+
+> _Many experienced programmers write programs without ever using program-development tools like pseudocode. As they see it, their ultimate goal is to solve the problem on a computer, and writing pseudocode merely delays the production of final outputs. Although this approach may work for simple and familiar problems, it can lead to serious errors in large, complex projects._ 7.11
 
 Figure 7.9 shows the JavaScript program and a sample execution. Although each grade is an integer, the averaging calculation is likely to produce a number with a decimal point (a real number).
 
@@ -547,39 +575,91 @@ In this example, we see that control structures may be stacked on top of one ano
 
 Line 21 initializes gradeCounter to 0, because no grades have been entered yet. Remember that the program uses sentinel-controlled repetition. To keep an accurate record of the number of grades entered, the script increments gradeCounter only after processing a valid grade value.
 
-**1** <?xml version = "1.0" encoding = "utf-8"?> **2** <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" **3** "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> **4 5** <!-- Fig. 7.9: average2.html --> **6** <!-- Sentinel-controlled repetition to calculate a class average. --> **7** <html xmlns = "http://www.w3.org/1999/xhtml"> **8** <head> **9** <title>Class Average Program: Sentinel-controlled Repetition</title>
+```js
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-**10 11** <script type = "text/javascript"> **12** <!--
+<!-- Fig. 7.9: average2.html -->
+<!-- Sentinel-controlled repetition to calculate a class average. -->
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+<title>Class Average Program: Sentinel-controlled Repetition</title>
+
+ <script type = "text/javascript">
+ <!--
+```
 
 **Fig. 7.9** | Sentinel-controlled repetition to calculate a class average. (Part 1 of 3.)
 
-**254** Chapter 7 JavaScript: Control Statements I
+```js
+var total; // sum of grades
+var gradeCounter; // number of grades entered
+var grade; // grade typed by user (as a string)
+var gradeValue; // grade value (converted to integer)
+var average; // average of all grades
 
-**13** var total; // sum of grades **14** var gradeCounter; // number of grades entered **15** var grade; // grade typed by user (as a string) **16** var gradeValue; // grade value (converted to integer) **17** var average; // average of all grades **18 19** // Initialization phase **20** total = 0; // clear total **21** // prepare to loop **22 23** // Processing phase **24** // prompt for input and read grade from user **25** grade = window.prompt( **26** "Enter Integer Grade, -1 to Quit:", "0" ); **27 28** // convert grade from a string to an integer **29** gradeValue = parseInt( grade ); **30 31** while ( gradeValue != -1 ) **32** { **33** // add gradeValue to total **34** total = total + gradeValue; **35 36** // add 1 to gradeCounter **37 38 39** // prompt for input and read grade from user **40** grade = window.prompt( **41** "Enter Integer Grade, -1 to Quit:", "0" ); **42 43** // convert grade from a string to an integer **44** gradeValue = parseInt( grade ); **45** } // end while **46 47** // Termination phase **48 49** { **50** average = total / gradeCounter; **51 52** // display average of exam grades **53** document.writeln( **54** "<h1>Class average is " + average + "</h1>" ); **55** } // end if **56 57** document.writeln( "<p>No grades were entered</p>" ); **58** // --> **59** </script> **60** </head> **61** <body> **62** <p>Click Refresh (or Reload) to run the script again</p> **63** </body> **64** </html>
+// Initialization phase
+total = 0; // clear total
+gradeCounter = 0;// prepare to loop
+
+// Processing phase
+// prompt for input and read grade from user
+grade = window.prompt(
+"Enter Integer Grade, -1 to Quit:", "0" );
+
+// convert grade from a string to an integer
+gradeValue = parseInt( grade );
+
+while ( gradeValue != -1 )
+{
+// add gradeValue to total
+total = total + gradeValue;
+
+// add 1 to gradeCounter
+gradeCounter = gradeCounter + 1;
+
+// prompt for input and read grade from user
+grade = window.prompt(
+"Enter Integer Grade, -1 to Quit:", "0" );
+
+// convert grade from a string to an integer
+gradeValue = parseInt( grade );
+} // end while
+
+// Termination phase
+if ( gradeCounter != 0 )
+{
+average = total / gradeCounter;
+
+// display average of exam grades
+document.writeln(
+"<h1>Class average is " + average + "</h1>" );
+} // end if
+else
+document.writeln( "<p>No grades were entered</p>" );
+// -->
+</script>
+</head>
+<body>
+<p>Click Refresh (or Reload) to run the script again</p>
+</body>
+</html>
+```
 
 **Fig. 7.9** | Sentinel-controlled repetition to calculate a class average. (Part 2 of 3.)
 
-gradeCounter = 0;
+**Fig. 7.9** | Sentinel-controlled repetition to calculate a class average. (Part 3 of 3.)
 
-gradeCounter = gradeCounter + 1;
+Note the difference in program logic for sentinel-controlled repetition as compared with the counter-controlled repetition in Fig. 7.7. In counter-controlled repetition, we read a value from the user during each iteration of the while statement’s body for the spec- ified number of iterations. In sentinel-controlled repetition, we read one value (lines 25– 26) and convert it to an integer (line 29) before the program reaches the while statement. The script uses this value to determine whether the program’s flow of control should enter the body of the while statement. If the while statement’s condition is false (i.e., the user typed the sentinel as the first grade), the script ignores the body of the while statement (i.e., no grades were entered). If the condition is true, the body begins execution and pro- cesses the value entered by the user (i.e., adds the value to the total in line 34). After pro- cessing the value, the script increments gradeCounter by 1 (line 37), inputs the next grade from the user (lines 40–41) and converts the grade to an integer (line 44), before the end of the while statement’s body. When the script reaches the closing right brace } of the body in line 45, execution continues with the next test of the condition of the while state- ment (line 31), using the new value just entered by the user to determine whether the while statement’s body should execute again. Note that the next value always is input from the user immediately before the script evaluates the condition of the while statement. This order allows us to determine whether the value just entered by the user is the sentinel value _before_ processing it (i.e., adding it to the total). If the value entered is the sentinel value, the while statement terminates and the script does not add the value to the total.
 
-if ( gradeCounter != 0 )
+**Good Programming Practice 7.7**
 
-else
-
-7.9 Formulating Algorithms: Sentinel-Controlled Repetition **255**
-
-Note the difference in program logic for sentinel-controlled repetition as compared with the counter-controlled repetition in Fig. 7.7. In counter-controlled repetition, we read a value from the user during each iteration of the while statement’s body for the spec- ified number of iterations. In sentinel-controlled repetition, we read one value (lines 25– 26) and convert it to an integer (line 29) before the program reaches the while statement. The script uses this value to determine whether the program’s flow of control should enter the body of the while statement. If the while statement’s condition is false (i.e., the user typed the sentinel as the first grade), the script ignores the body of the while statement (i.e., no grades were entered). If the condition is true, the body begins execution and pro- cesses the value entered by the user (i.e., adds the value to the total in line 34). After pro- cessing the value, the script increments gradeCounter by 1 (line 37), inputs the next grade from the user (lines 40–41) and converts the grade to an integer (line 44), before the end of the while statement’s body. When the script reaches the closing right brace (}) of the body in line 45, execution continues with the next test of the condition of the while state- ment (line 31), using the new value just entered by the user to determine whether the while statement’s body should execute again. Note that the next value always is input from the user immediately before the script evaluates the condition of the while statement. This order allows us to determine whether the value just entered by the user is the sentinel value _before_ processing it (i.e., adding it to the total). If the value entered is the sentinel value, the while statement terminates and the script does not add the value to the total.
-
-**Good Programming Practice 7.7** _In a sentinel-controlled loop, the prompts requesting data entry should explicitly remind the user what the sentinel value is._ 7.7
+> _In a sentinel-controlled loop, the prompts requesting data entry should explicitly remind the user what the sentinel value is._ 7.7
 
 Note the block in the while loop in Fig. 7.9 (lines 32–45). Without the braces, the last three statements in the body of the loop would fall outside of the loop, causing the computer to interpret the code incorrectly, as follows:
 
-**Fig. 7.9** | Sentinel-controlled repetition to calculate a class average. (Part 3 of 3.)
-
 This dialog is displayed four times. User input is 97, 88, 72 and –1.
-
-**256** Chapter 7 JavaScript: Control Statements I
 
 while ( gradeValue != -1 ) // add gradeValue to total total = total + gradeValue;
 
@@ -593,9 +673,13 @@ while ( gradeValue != -1 ) // add gradeValue to total total = total + gradeValue
 
 This interpretation would cause an infinite loop in the program if the user does not input the sentinel -1 as the first input value in lines 25–26 (i.e., before the while statement).
 
-**Common Programming Error 7.9** _Omitting the braces that delineate a block can lead to logic errors such as infinite loops._ 7.9
+**Common Programming Error 7.9**
 
-**7.10 Formulating Algorithms: Nested Control Statements** Let us work through another complete problem. We once again formulate the algorithm using pseudocode and top-down, stepwise refinement, and write a corresponding Java- Script program.
+> _Omitting the braces that delineate a block can lead to logic errors such as infinite loops._ 7.9
+
+## Formulating Algorithms: Nested Control Statements
+
+Let us work through another complete problem. We once again formulate the algorithm using pseudocode and top-down, stepwise refinement, and write a corresponding Java- Script program.
 
 Consider the following problem statement:
 
@@ -616,8 +700,6 @@ After reading the problem statement carefully, we make the following observation
 **1\.** The program must process test results for 10 students. A counter-controlled loop will be used.
 
 **2\.** Each test result is a number—either a 1 or a 2. Each time the program reads a test result, the program must determine whether the number is a 1 or a 2. We test for a 1 in our algorithm. If the number is not a 1, we assume that it is a 2. (An exercise at the end of the chapter considers the consequences of this assumption.)
-
-7.10 Formulating Algorithms: Nested Control Statements **257**
 
 **3\.** Two counters are used to keep track of the exam results—one to count the num- ber of students who passed the exam and one to count the number of students who failed the exam.
 
@@ -655,8 +737,6 @@ Note the use of blank lines to set off the _If…Else_ control structure to impr
 
 _Print a summary of the exam results and decide whether tuition should be raised_
 
-**258** Chapter 7 JavaScript: Control Statements I
-
 may be refined as follows:
 
 _Print the number of passes Print the number of failures If more than eight students passed_
@@ -683,29 +763,58 @@ _Print “Raise tuition”_
 
 **Fig. 7.10** | Examination-results problem pseudocode.
 
-**1** <?xml version = "1.0" encoding = "utf-8"?> **2** <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" **3** "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> **4 5** <!-- Fig. 7.11: analysis.html --> **6** <!-- Examination-results calculation. --> **7** <html xmlns = "http://www.w3.org/1999/xhtml"> **8** <head> **9** <title>Analysis of Examination Results</title>
+```js
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-**10** <script type = "text/javascript"> **11** <!-- **12** // initializing variables in declarations **13 14 15 16 17**
+<!-- Fig. 7.11: analysis.html -->
+<!-- Examination-results calculation. -->
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+<title>Analysis of Examination Results</title>
+<script type = "text/javascript">
+<!--
+// initializing variables in declarations
+var passes = 0; // number of passes
+var failures = 0; // number of failures
+var student = 1; // student counter
+var result; // one exam result
+```
 
 **Fig. 7.11** | Examination-results calculation. (Part 1 of 3.)
 
-var passes = 0; // number of passes var failures = 0; // number of failures var student = 1; // student counter var result; // one exam result
-
-7.10 Formulating Algorithms: Nested Control Statements **259**
-
-**18** // process 10 students; counter-controlled loop **19 20** { **21** result = window.prompt( "Enter result (1=pass,2=fail)", "0" ); **22 23 24 25 26 27 28 29** } // end while **30 31** // termination phase **32** document.writeln( "<h1>Examination Results</h1>" ); **33** document.writeln( **34** "Passed: " + passes + "<br />Failed: " + failures ); **35 36 37 38** // --> **39** </script> **40** </head> **41** <body> **42** <p>Click Refresh (or Reload) to run the script again</p> **43** </body> **44** </html>
-
-**Fig. 7.11** | Examination-results calculation. (Part 2 of 3.)
-
+```js
+// process 10 students; counter-controlled loop
 while ( student <= 10 )
+{
+result = window.prompt( "Enter result (1=pass,2=fail)", "0" );
 
-if ( result == "1" ) passes = passes + 1;
-
-else failures = failures + 1;
+if ( result == "1" )
+passes = passes + 1;
+else
+failures = failures + 1;
 
 student = student + 1;
+} // end while
 
-if ( passes > 8 ) document.writeln( "<br />Raise Tuition" );
+// termination phase
+document.writeln( "<h1>Examination Results</h1>" );
+document.writeln(
+"Passed: " + passes + "<br />Failed: " + failures );
+
+if ( passes > 8 )
+document.writeln( "<br />Raise Tuition" );
+// -->
+</script>
+</head>
+<body>
+<p>Click Refresh (or Reload) to run the script again</p>
+</body>
+</html>
+```
+
+**Fig. 7.11** | Examination-results calculation. (Part 2 of 3.)
 
 This dialog is displayed 10 times. User input is 1, 2, 1, 1, 1, 1, 1, 1, 1 and 1.
 
