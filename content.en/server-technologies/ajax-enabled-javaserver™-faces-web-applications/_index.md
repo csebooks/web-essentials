@@ -3,13 +3,15 @@ title: "Ajax-Enabled Javaserver™ Faces Web Applications"
 weight: 7
 ---
 
-**O B J E C T I V E S** In this chapter you will learn:
+**OBJECTIVES**
 
-■ To use data providers to access databases from web applications built in Netbeans.
+In this chapter you will learn:
 
-■ To include Ajax-enabled JSF components in a Netbeans web application project.
+- To use data providers to access databases from web applications built in Netbeans.
 
-■ To configure virtual forms that enable subsets of a form’s input components to be submitted to the server.
+- To include Ajax-enabled JSF components in a Netbeans web application project.
+
+- To configure virtual forms that enable subsets of a form’s input components to be submitted to the server.
 
 **_Whatever is in any way beautiful hath its source of beauty in itself, and is complete in itself; praise forms no part of it._ —Marcus Aurelius Antoninus**
 
@@ -21,13 +23,13 @@ weight: 7
 
 **_Painting is only a bridge linking the painter’s mind with that of the viewer._ —Eugéne Delacroix**
 
-**1188** Chapter 27 Ajax-Enabled JavaServer™ Faces Web Applications **O**
+
 
 **u tl**
 
 **in e**
 
-**27.1 Introduction** This chapter continues our discussion of web application development with several ad- vanced concepts. We discuss accessing, updating and searching databases in a web appli- cation, adding virtual forms to web pages to enable subsets of a form’s input components to be submitted to the server, and using Ajax-enabled component libraries to improve ap- plication performance and component responsiveness. \[_Note:_ This chapter assumes that you know Java. To learn more about Java, check out _Java How to Program, Seventh Edition_, or visit our Java Resource Centers at www.deitel.com/ResourceCenters.html.\]
+**27.1 Introduction** This chapter continues our discussion of web application development with several ad- vanced concepts. We discuss accessing, updating and searching databases in a web appli- cation, adding virtual forms to web pages to enable subsets of a form’s input components to be submitted to the server, and using Ajax-enabled component libraries to improve ap- plication performance and component responsiveness. [_Note:_ This chapter assumes that you know Java. To learn more about Java, check out _Java How to Program, Seventh Edition_, or visit our Java Resource Centers at www.deitel.com/ResourceCenters.html.]
 
 We present a single address book application developed in three stages to illustrate these concepts. The application is backed by a Java DB database for storing the contact names and their addresses.
 
@@ -67,7 +69,7 @@ The web page enables the user to enter new contacts in a form. This form consist
 
 Field. Set each **Text Field**’s required property to true by selecting the **Text Field**, then clicking the required property’s checkbox. Label each **Text Field** with a **Label** component and associate the **Label** with its corresponding **Text Field**. Finally, add a **Submit** and a **Clear** button. Set the **Submit** button’s **primary** property to true to make it stand out more on the page than the **Clear** button and to allow the user to submit a new contact by pressing _Enter_ rather than by clicking the **Submit** button. Set the **Clear** button’s **reset** property to true to prevent validation when the user clicks the **Clear** button. Since we are clearing the fields, we don’t need to ensure that they contain information. We discuss the action han- dler for the **Submit** button after we present the page bean file. The **Clear** button does not need an action-handler method, because setting the reset property to true automatically configures the button to reset all of the page’s input fields. When you have finished these steps, your form should look like Fig. 27.1.
 
-**1190** Chapter 27 Ajax-Enabled JavaServer™ Faces Web Applications
+
 
 **_Step 3: Adding a Table Component to the Page_** Drag a **Table** component from the **Basic** section of the **Palette** to the page and place it just below the two **Button** components. Name it addressesTable. The **Table** component for- mats and displays data from database tables. In the **Properties** window, change the **Table**’s title property to Contacts. We show how to configure the **Table** to interact with the AddressBook database shortly.
 
@@ -119,7 +121,7 @@ Sue Black 1000 Michigan Ave. Chicago IL 60605
 
 **Fig. 27.3** | Dialog for binding to the Addresses table.
 
-**1192** Chapter 27 Ajax-Enabled JavaServer™ Faces Web Applications
+
 
 An address book might contain many contacts, so we’d like to display only a few at a time. Clicking the checkbox next to the table’s paginationControls property in the **Prop- erties** window configures this **Table** for automatic pagination. This adds buttons to the bottom of the **Table** for moving forward and backward between groups of contacts. You may use the **Table Layout** dialog’s **Options** tab to select the number of rows to display at a time. To view this tab, right click the **Table**, select **Table Layout…**, then click the **Options** tab. For this example, we set the **Page Size** property to 5.
 
@@ -155,7 +157,7 @@ Finally, drag a **Message Group** component onto your page to the right of the *
 
 **Fig. 27.6** | AddressBook JSP with an add form and a **Table** JSF component (Part 1 of 5.)
 
-**1194** Chapter 27 Ajax-Enabled JavaServer™ Faces Web Applications
+
 
 **11** <f:view> **12** <webuijsf:page binding="#{AddressBook.page1}" id="page1"> **13** <webuijsf:html binding="#{AddressBook.html1}" id="html1"> **14** <webuijsf:head binding="#{AddressBook.head1}" id="head1"> **15** <webuijsf:link binding="#{AddressBook.link1}" id="link1" **16** url="/resources/stylesheet.css"/> **17** </webuijsf:head> **18** <webuijsf:body binding="#{AddressBook.body1}" id="body1" **19** style="-rave-layout: grid"> **20** <webuijsf:form binding="#{AddressBook.form1}" id="form1"> **21** <webuijsf:staticText binding="#{AddressBook.staticText1}" **22** id="staticText1" style="font-size: 18px; left: 24px; **23** top: 24px; position: absolute" **24** text="Add a contact to the address book:"/> **25** <webuijsf:label binding="#{AddressBook.fnameLabel}" **26** for="fnameTextField" id="fnameLabel" style= **27** "position: absolute; left: 24px; top: 72px" **28** text="First name:"/> **29** <webuijsf:textField binding="#{AddressBook.fnameTextField}" **30** id="fnameTextField" maxLength="30" required="true" **31** style="left: 100px; top: 72px; position: absolute; **32** width: 192px"/> **33** <webuijsf:label binding="#{AddressBook.lnameLabel}" **34** for="lnameTextField" id="lnameLabel" style="left: 312px; **35** top: 72px; position: absolute" text="Last name:"/> **36** <webuijsf:textField binding="#{AddressBook.lnameTextField}" **37** id="lnameTextField" maxLength="30" required="true" **38** style="left: 390px; top: 72px; position: absolute; **39** width: 214px"/> **40** <webuijsf:label binding="#{AddressBook.streetLabel}" **41** for="streetTextField" id="streetLabel" style="position: **42** absolute; left: 24px; top: 96px" text="Street:"/> **43** <webuijsf:textField binding= **44** "#{AddressBook.streetTextField}" id="streetTextField" **45** maxLength="150" required="true" style="left: 100px; **46** top: 96px; position: absolute; width: 504px"/> **47** <webuijsf:label binding="#{AddressBook.cityLabel}" **48** for="cityTextField" id="cityLabel" style="left: 24px; **49** top: 120px; position: absolute" text="City:"/> **50** <webuijsf:textField binding="#{AddressBook.cityTextField}" **51** id="cityTextField" maxLength="30" required="true" **52** style="left: 100px; top: 120px; position: absolute; **53** width: 240px"/> **54** <webuijsf:label binding="#{AddressBook.stateLabel}" **55** for="stateTextField" id="stateLabel" style="left: 360px; **56** top: 120px; position: absolute" text="State:"/> **57** <webuijsf:textField binding="#{AddressBook.stateTextField}" **58** id="stateTextField" maxLength="2" required="true" **59** style="left: 412px; top: 120px; position: absolute; **60** width: 48px"/> **61** <webuijsf:label binding="#{AddressBook.zipLabel}" **62** for="zipTextField" id="zipLabel" style="left: 490px; **63** top: 120px; position: absolute" text=" Zip:"/>
 
@@ -163,7 +165,7 @@ Finally, drag a **Message Group** component onto your page to the right of the *
 
 27.2 Accessing Databases in Web Applications **1195**
 
-**64** <webuijsf:textField binding="#{AddressBook.zipTextField}" **65** id="zipTextField" maxLength="5" required="true" **66** style="left: 534px; top: 120px; position: absolute; **67** width: 70px"/> **68** <webuijsf:button actionExpression= **69** "#{AddressBook.submitButton_action}" binding= **70** "#{AddressBook.submitButton}" id="submitButton" **71** primary="true" style="left: 100px; top: 168px; **72** position: absolute; width: 100px" text="Submit"/> **73** <webuijsf:button binding="#{AddressBook.clearButton}" **74** id="clearButton" reset="true" style="left: 215px; top: **75** 168px; position: absolute; width: 100px" text="Clear"/> **76** <webuijsf:messageGroup binding= **77** "#{AddressBook.messageGroup1}" id="messageGroup1" **78** showGlobalOnly="true" style="left: 624px; top: 72px; **79** position: absolute"/> **80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99** <webuijsf:tableColumn binding= **100** "#{AddressBook.lnameColumn}" **101** headerText="Last Name" id="lnameColumn" **102** sort="ADDRESSES.LASTNAME"> **103** <webuijsf:staticText binding= **104** "#{AddressBook.staticText3}" id="staticText3" **105** text="#{currentRow.value\[ **106** 'ADDRESSES.LASTNAME'\]}"/> **107** </webuijsf:tableColumn> **108** <webuijsf:tableColumn binding= **109** "#{AddressBook.streetColumn}" headerText="Street" **110** id="streetColumn" sort="ADDRESSES.STREET"> **111** <webuijsf:staticText binding= **112** "#{AddressBook.staticText4}" id="staticText4" **113** text="#{currentRow.value\[ **114** 'ADDRESSES.STREET'\]}"/> **115** </webuijsf:tableColumn>
+**64** <webuijsf:textField binding="#{AddressBook.zipTextField}" **65** id="zipTextField" maxLength="5" required="true" **66** style="left: 534px; top: 120px; position: absolute; **67** width: 70px"/> **68** <webuijsf:button actionExpression= **69** "#{AddressBook.submitButton_action}" binding= **70** "#{AddressBook.submitButton}" id="submitButton" **71** primary="true" style="left: 100px; top: 168px; **72** position: absolute; width: 100px" text="Submit"/> **73** <webuijsf:button binding="#{AddressBook.clearButton}" **74** id="clearButton" reset="true" style="left: 215px; top: **75** 168px; position: absolute; width: 100px" text="Clear"/> **76** <webuijsf:messageGroup binding= **77** "#{AddressBook.messageGroup1}" id="messageGroup1" **78** showGlobalOnly="true" style="left: 624px; top: 72px; **79** position: absolute"/> **80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99** <webuijsf:tableColumn binding= **100** "#{AddressBook.lnameColumn}" **101** headerText="Last Name" id="lnameColumn" **102** sort="ADDRESSES.LASTNAME"> **103** <webuijsf:staticText binding= **104** "#{AddressBook.staticText3}" id="staticText3" **105** text="#{currentRow.value[**106** 'ADDRESSES.LASTNAME']}"/> **107** </webuijsf:tableColumn> **108** <webuijsf:tableColumn binding= **109** "#{AddressBook.streetColumn}" headerText="Street" **110** id="streetColumn" sort="ADDRESSES.STREET"> **111** <webuijsf:staticText binding= **112** "#{AddressBook.staticText4}" id="staticText4" **113** text="#{currentRow.value[**114** 'ADDRESSES.STREET']}"/> **115** </webuijsf:tableColumn>
 
 **Fig. 27.6** | AddressBook JSP with an add form and a **Table** JSF component (Part 3 of 5.)
 
@@ -173,13 +175,13 @@ Finally, drag a **Message Group** component onto your page to the right of the *
 
 "#{AddressBook.fnameColumn}" headerText= "First Name" id="fnameColumn" sort="ADDRESSES.FIRSTNAME"> <webuijsf:staticText binding=
 
-"#{AddressBook.staticText2}" id="staticText2" text="#{currentRow.value\[ 'ADDRESSES.FIRSTNAME'\]}"/>
+"#{AddressBook.staticText2}" id="staticText2" text="#{currentRow.value['ADDRESSES.FIRSTNAME']}"/>
 
 </webuijsf:tableColumn>
 
-**1196** Chapter 27 Ajax-Enabled JavaServer™ Faces Web Applications
 
-**116** <webuijsf:tableColumn binding= **117** "#{AddressBook.cityColumn}" headerText="City" **118** id="cityColumn" sort="ADDRESSES.CITY"> **119** <webuijsf:staticText binding= **120** "#{AddressBook.staticText5}" id="staticText5" **121** text="#{currentRow.value\['ADDRESSES.CITY'\]}"/> **122** </webuijsf:tableColumn> **123** <webuijsf:tableColumn binding= **124** "#{AddressBook.stateColumn}" headerText="State" **125** id="stateColumn" sort="ADDRESSES.STATE"> **126** <webuijsf:staticText binding= **127** "#{AddressBook.staticText6}" id="staticText6" **128** text="#{currentRow.value\['ADDRESSES.STATE'\]}"/> **129** </webuijsf:tableColumn> **130** <webuijsf:tableColumn binding= **131** "#{AddressBook.zipColumn}" headerText="Zip" **132** id="zipColumn" sort="ADDRESSES.ZIP" width="106"> **133** <webuijsf:staticText binding= **134** "#{AddressBook.staticText7}" id="staticText7" **135** text="#{currentRow.value\['ADDRESSES.ZIP'\]}"/> **136** </webuijsf:tableColumn> **137** </webuijsf:tableRowGroup> **138** </webuijsf:table> **139** </webuijsf:form> **140** </webuijsf:body> **141** </webuijsf:html> **142** </webuijsf:page> **143** </f:view> **144** </jsp:root>
+
+**116** <webuijsf:tableColumn binding= **117** "#{AddressBook.cityColumn}" headerText="City" **118** id="cityColumn" sort="ADDRESSES.CITY"> **119** <webuijsf:staticText binding= **120** "#{AddressBook.staticText5}" id="staticText5" **121** text="#{currentRow.value['ADDRESSES.CITY']}"/> **122** </webuijsf:tableColumn> **123** <webuijsf:tableColumn binding= **124** "#{AddressBook.stateColumn}" headerText="State" **125** id="stateColumn" sort="ADDRESSES.STATE"> **126** <webuijsf:staticText binding= **127** "#{AddressBook.staticText6}" id="staticText6" **128** text="#{currentRow.value['ADDRESSES.STATE']}"/> **129** </webuijsf:tableColumn> **130** <webuijsf:tableColumn binding= **131** "#{AddressBook.zipColumn}" headerText="Zip" **132** id="zipColumn" sort="ADDRESSES.ZIP" width="106"> **133** <webuijsf:staticText binding= **134** "#{AddressBook.staticText7}" id="staticText7" **135** text="#{currentRow.value['ADDRESSES.ZIP']}"/> **136** </webuijsf:tableColumn> **137** </webuijsf:tableRowGroup> **138** </webuijsf:table> **139** </webuijsf:form> **140** </webuijsf:body> **141** </webuijsf:html> **142** </webuijsf:page> **143** </f:view> **144** </jsp:root>
 
 **Fig. 27.6** | AddressBook JSP with an add form and a **Table** JSF component (Part 4 of 5.)
 
@@ -199,23 +201,23 @@ Lines 21–75 contain the JSF components for the form that gathers user input. L
 
 b)
 
-**1198** Chapter 27 Ajax-Enabled JavaServer™ Faces Web Applications
 
-The \_init method (lines 14–29) configures addressesRowSet to interact with the AddressBook database (lines 16–28). Lines 16–17 connect the row set to the database. Lines 18–27 set addressesRowSet’s SQL command to the query configured in Fig. 27.5. Line 28 sets the RowSet’s table name.
+
+The _init method (lines 14–29) configures addressesRowSet to interact with the AddressBook database (lines 16–28). Lines 16–17 connect the row set to the database. Lines 18–27 set addressesRowSet’s SQL command to the query configured in Fig. 27.5. Line 28 sets the RowSet’s table name.
 
 **27.2.2 Modifying the Page Bean File for the AddressBook Application** After building the web page and configuring the components used in this example, double click the **Submit** button to create an action event handler for this button in the page bean file. The code to insert a contact into the database will be placed in this method. The page bean with the completed event handler is shown in Fig. 27.8 below.
 
-**9 10** public class SessionBean1 extends AbstractSessionBean **11** { **12** private int \_\_placeholder; **13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31** private CachedRowSetXImpl addressesRowSet = new CachedRowSetXImpl(); **32 33** public CachedRowSetXImpl getAddressesRowSet() **34** { **35** return addressesRowSet; **36** } **37 38** public void setAddressesRowSet( CachedRowSetXImpl crsxi ) **39** { **40** this.addressesRowSet = crsxi; **41** } **42 43 44 79** } // end class SessionBean1
+**9 10** public class SessionBean1 extends AbstractSessionBean **11** { **12** private int __placeholder; **13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31** private CachedRowSetXImpl addressesRowSet = new CachedRowSetXImpl(); **32 33** public CachedRowSetXImpl getAddressesRowSet() **34** { **35** return addressesRowSet; **36** } **37 38** public void setAddressesRowSet( CachedRowSetXImpl crsxi ) **39** { **40** this.addressesRowSet = crsxi; **41** } **42 43 44 79** } // end class SessionBean1
 
 **Fig. 27.7** | Session Bean that initializes the data source for the AddressBook database. (Part 2 of 2.)
 
-private void \_init() throws Exception {
+private void _init() throws Exception {
 
 addressesRowSet.setDataSourceName( "java:comp/env/jdbc/dataSource" );
 
 addressesRowSet.setCommand( "SELECT ALL IW3HTP4.ADDRESSES.FIRSTNAME, \\n" + "IW3HTP4.ADDRESSES.LASTNAME, \\n" + "IW3HTP4.ADDRESSES.STREET, \\n" + "IW3HTP4.ADDRESSES.CITY, \\n" + "IW3HTP4.ADDRESSES.STATE, \\n" + "IW3HTP4.ADDRESSES.ZIP \\n" + "FROM IW3HTP4.ADDRESSES\\n" + "ORDER BY IW3HTP4.ADDRESSES.LASTNAME ASC, \\n" + "IW3HTP4.ADDRESSES.FIRSTNAME ASC " );
 
-addressesRowSet.setTableName( "ADDRESSES" ); } // end method \_init
+addressesRowSet.setTableName( "ADDRESSES" ); } // end method _init
 
 // To save space, we omitted the code in lines 42-78. The complete // source code is provided with this chapter's examples.
 
@@ -223,7 +225,7 @@ addressesRowSet.setTableName( "ADDRESSES" ); } // end method \_init
 
 **1** // Fig. 27.8: AddressBook.java **2** // Page bean for AddressBook.jsp. **3** package addressbook; **4 5** import com.sun.data.provider.RowKey; **6** import com.sun.data.provider.impl.CachedRowSetDataProvider; **7** import com.sun.rave.web.ui.appbase.AbstractPageBean; **8** import com.sun.webui.jsf.component.Body; **9** import com.sun.webui.jsf.component.Button;
 
-**10** import com.sun.webui.jsf.component.Form; **11** import com.sun.webui.jsf.component.Head; **12** import com.sun.webui.jsf.component.Html; **13** import com.sun.webui.jsf.component.Label; **14** import com.sun.webui.jsf.component.Link; **15** import com.sun.webui.jsf.component.MessageGroup; **16** import com.sun.webui.jsf.component.Page; **17** import com.sun.webui.jsf.component.StaticText; **18** import com.sun.webui.jsf.component.Table; **19** import com.sun.webui.jsf.component.TableColumn; **20** import com.sun.webui.jsf.component.TableRowGroup; **21** import com.sun.webui.jsf.component.TextField; **22** import com.sun.webui.jsf.model.DefaultTableDataProvider; **23** import javax.faces.FacesException; **24 25** public class AddressBook extends AbstractPageBean **26** { **27** private int \_\_placeholder; **28 29** private void \_init() throws Exception **30** { **31** addressesDataProvider.setCachedRowSet( **32** ( javax.sql.rowset.CachedRowSet ) getValue( **33** "#{SessionBean1.addressesRowSet}" ) ); **34** addressesTable.setInternalVirtualForm( true ); **35** } // end method \_init **36 37 38 39 506** public void prerender() **507** { **508 509** } // end method prerender **510 511** public void destroy() **512** { **513 514** } // end method destroy **515 516 517 518**
+**10** import com.sun.webui.jsf.component.Form; **11** import com.sun.webui.jsf.component.Head; **12** import com.sun.webui.jsf.component.Html; **13** import com.sun.webui.jsf.component.Label; **14** import com.sun.webui.jsf.component.Link; **15** import com.sun.webui.jsf.component.MessageGroup; **16** import com.sun.webui.jsf.component.Page; **17** import com.sun.webui.jsf.component.StaticText; **18** import com.sun.webui.jsf.component.Table; **19** import com.sun.webui.jsf.component.TableColumn; **20** import com.sun.webui.jsf.component.TableRowGroup; **21** import com.sun.webui.jsf.component.TextField; **22** import com.sun.webui.jsf.model.DefaultTableDataProvider; **23** import javax.faces.FacesException; **24 25** public class AddressBook extends AbstractPageBean **26** { **27** private int __placeholder; **28 29** private void _init() throws Exception **30** { **31** addressesDataProvider.setCachedRowSet( **32** ( javax.sql.rowset.CachedRowSet ) getValue( **33** "#{SessionBean1.addressesRowSet}" ) ); **34** addressesTable.setInternalVirtualForm( true ); **35** } // end method _init **36 37 38 39 506** public void prerender() **507** { **508 509** } // end method prerender **510 511** public void destroy() **512** { **513 514** } // end method destroy **515 516 517 518**
 
 **Fig. 27.8** | Page bean for adding a contact to the address book. (Part 1 of 2.)
 
@@ -235,7 +237,7 @@ addressesDataProvider.close();
 
 // To save space, we omitted the code in lines 516-530. The complete // source code is provided with this chapter's examples.
 
-**1200** Chapter 27 Ajax-Enabled JavaServer™ Faces Web Applications
+
 
 Lines 533–572 contain the event-handling code for the **Submit** button. Line 535 determines whether a new row can be appended to the data provider. If so, a new row is appended at line 539. Every row in a CachedRowSetDataProvider has its own key; method **appendRow** returns the key for the new row. Line 540 sets the data provider’s cursor to the new row, so that any changes we make to the data provider affect that row. Lines 542–553 set each of the row’s columns to the values entered by the user in the cor-
 
@@ -301,7 +303,7 @@ Displays a list of suggestions in a drop-down list as the user types, similar to
 
 **Fig. 27.9** | Java BluePrints component library’s Ajax-enabled components.
 
-**1202** Chapter 27 Ajax-Enabled JavaServer™ Faces Web Applications
+
 
 **_Downloading the Java BluePrints Ajax-Enabled Components_** To use the Java BluePrints Ajax-enabled components in Netbeans, you must download and import them. The IDE provides a wizard for installing this group of components (In- ternet access is required). To access it, choose **Tools > Update Center** to display the **Update Center Wizard** dialog. Click **Next >** to search for available updates. In the **Available Updates and New Modules** area of the dialog, locate and select **BluePrints AJAX Components** then click the **Add >** button to add them to the list of items you’d like to install. Click **Next >** and follow the prompts to accept the terms of use and download the components. When the download completes, click **Next >** then click **Finish**. Click **OK** to restart the IDE.
 
@@ -331,7 +333,7 @@ toComplete should participate in the searchForm. Next, return to **Design** mode
 
 **Fig. 27.10** | **Configure Virtual Forms** dialog.
 
-**1204** Chapter 27 Ajax-Enabled JavaServer™ Faces Web Applications
+
 
 **27.4.2 JSP File with Virtual Forms and an AutoComplete Text Field**
 
@@ -357,21 +359,21 @@ xmlns:bp="http://java.sun.com/blueprints/ui/14"
 
 virtualFormsConfig="addForm | zipTextField lnameTextField fnameTextField streetTextField cityTextField stateTextField | submitButton , searchForm | nameAutoComplete | lookUpButton">
 
-**1206** Chapter 27 Ajax-Enabled JavaServer™ Faces Web Applications
 
-**61** <webuijsf:textField binding="#{AddressBook.stateTextField}" **62** id="stateTextField" maxLength="2" required="true" **63** style="left: 412px; top: 120px; position: absolute; **64** width: 48px"/> **65** <webuijsf:label binding="#{AddressBook.zipLabel}" **66** for="zipTextField" id="zipLabel" style="left: 490px; **67** top: 120px; position: absolute" text="Zip:"/> **68** <webuijsf:textField binding="#{AddressBook.zipTextField}" **69** id="zipTextField" maxLength="5" required="true" **70** style="left: 534px; top: 120px; position: absolute; **71** width: 70px"/> **72** <webuijsf:button actionExpression= **73** "#{AddressBook.submitButton_action}" binding= **74** "#{AddressBook.submitButton}" id="submitButton" primary= **75** "true" style="left: 100px; top: 168px; position: **76** absolute; width: 100px" text="Submit"/> **77** <webuijsf:button binding="#{AddressBook.clearButton}" **78** id="clearButton" reset="true" style="left: 215px; top: **79** 168px; position: absolute; width: 100px" text="Clear"/> **80** <webuijsf:messageGroup binding= **81** "#{AddressBook.messageGroup1}" id="messageGroup1" **82** showGlobalOnly="true" style="left: 624px; top: 72px; **83** position: absolute"/> **84** <webuijsf:table augmentTitle="false" binding= **85** "#{AddressBook.addressesTable}" id="addressesTable" **86** paginateButton="true" paginationControls="true" **87** style="left: 24px; top: 216px; position: absolute" **88** title="Contacts" width="816"> **89** <webuijsf:tableRowGroup binding= **90** "#{AddressBook.tableRowGroup1}" id="tableRowGroup1" **91** rows="5" sourceData= **92** "#{AddressBook.addressesDataProvider}" **93** sourceVar="currentRow"> **94** <webuijsf:tableColumn binding= **95** "#{AddressBook.fnameColumn}" headerText= **96** "First Name" id="fnameColumn" **97** sort="ADDRESSES.FIRSTNAME"> **98** <webuijsf:staticText binding= **99** "#{AddressBook.staticText2}" id="staticText2" **100** text="#{currentRow.value\[ **101** 'ADDRESSES.FIRSTNAME'\]}"/> **102** </webuijsf:tableColumn> **103** <webuijsf:tableColumn binding= **104** "#{AddressBook.lnameColumn}" **105** headerText="Last Name" id="lnameColumn" **106** sort="ADDRESSES.LASTNAME"> **107** <webuijsf:staticText binding= **108** "#{AddressBook.staticText3}" id="staticText3" **109** text="#{currentRow.value\[ **110** 'ADDRESSES.LASTNAME'\]}"/> **111** </webuijsf:tableColumn>
+
+**61** <webuijsf:textField binding="#{AddressBook.stateTextField}" **62** id="stateTextField" maxLength="2" required="true" **63** style="left: 412px; top: 120px; position: absolute; **64** width: 48px"/> **65** <webuijsf:label binding="#{AddressBook.zipLabel}" **66** for="zipTextField" id="zipLabel" style="left: 490px; **67** top: 120px; position: absolute" text="Zip:"/> **68** <webuijsf:textField binding="#{AddressBook.zipTextField}" **69** id="zipTextField" maxLength="5" required="true" **70** style="left: 534px; top: 120px; position: absolute; **71** width: 70px"/> **72** <webuijsf:button actionExpression= **73** "#{AddressBook.submitButton_action}" binding= **74** "#{AddressBook.submitButton}" id="submitButton" primary= **75** "true" style="left: 100px; top: 168px; position: **76** absolute; width: 100px" text="Submit"/> **77** <webuijsf:button binding="#{AddressBook.clearButton}" **78** id="clearButton" reset="true" style="left: 215px; top: **79** 168px; position: absolute; width: 100px" text="Clear"/> **80** <webuijsf:messageGroup binding= **81** "#{AddressBook.messageGroup1}" id="messageGroup1" **82** showGlobalOnly="true" style="left: 624px; top: 72px; **83** position: absolute"/> **84** <webuijsf:table augmentTitle="false" binding= **85** "#{AddressBook.addressesTable}" id="addressesTable" **86** paginateButton="true" paginationControls="true" **87** style="left: 24px; top: 216px; position: absolute" **88** title="Contacts" width="816"> **89** <webuijsf:tableRowGroup binding= **90** "#{AddressBook.tableRowGroup1}" id="tableRowGroup1" **91** rows="5" sourceData= **92** "#{AddressBook.addressesDataProvider}" **93** sourceVar="currentRow"> **94** <webuijsf:tableColumn binding= **95** "#{AddressBook.fnameColumn}" headerText= **96** "First Name" id="fnameColumn" **97** sort="ADDRESSES.FIRSTNAME"> **98** <webuijsf:staticText binding= **99** "#{AddressBook.staticText2}" id="staticText2" **100** text="#{currentRow.value[**101** 'ADDRESSES.FIRSTNAME']}"/> **102** </webuijsf:tableColumn> **103** <webuijsf:tableColumn binding= **104** "#{AddressBook.lnameColumn}" **105** headerText="Last Name" id="lnameColumn" **106** sort="ADDRESSES.LASTNAME"> **107** <webuijsf:staticText binding= **108** "#{AddressBook.staticText3}" id="staticText3" **109** text="#{currentRow.value[**110** 'ADDRESSES.LASTNAME']}"/> **111** </webuijsf:tableColumn>
 
 **Fig. 27.12** | AddressBook JSP with an **AutoComplete Text Field** component. (Part 3 of 5.)
 
 27.4 **AutoComplete Text Field** and Virtual Forms **1207**
 
-**112** <webuijsf:tableColumn binding= **113** "#{AddressBook.streetColumn}" headerText="Street" **114** id="streetColumn" sort="ADDRESSES.STREET"> **115** <webuijsf:staticText binding= **116** "#{AddressBook.staticText4}" id="staticText4" **117** text="#{currentRow.value\[ **118** 'ADDRESSES.STREET'\]}"/> **119** </webuijsf:tableColumn> **120** <webuijsf:tableColumn binding= **121** "#{AddressBook.cityColumn}" headerText="City" **122** id="cityColumn" sort="ADDRESSES.CITY"> **123** <webuijsf:staticText binding= **124** "#{AddressBook.staticText5}" id="staticText5" **125** text="#{currentRow.value\['ADDRESSES.CITY'\]}"/> **126** </webuijsf:tableColumn> **127** <webuijsf:tableColumn binding= **128** "#{AddressBook.stateColumn}" headerText="State" **129** id="stateColumn" sort="ADDRESSES.STATE"> **130** <webuijsf:staticText binding= **131** "#{AddressBook.staticText6}" id="staticText6" **132** text="#{currentRow.value\['ADDRESSES.STATE'\]}"/> **133** </webuijsf:tableColumn> **134** <webuijsf:tableColumn binding= **135** "#{AddressBook.zipColumn}" headerText="Zip" **136** id="zipColumn" sort="ADDRESSES.ZIP" width="106"> **137** <webuijsf:staticText binding= **138** "#{AddressBook.staticText7}" id="staticText7" **139** text="#{currentRow.value\['ADDRESSES.ZIP'\]}"/> **140** </webuijsf:tableColumn> **141** </webuijsf:tableRowGroup> **142** </webuijsf:table> **143** <webuijsf:staticText binding="#{AddressBook.searchHeader}" **144** id="searchHeader" style="font-size: 18px; left: 24px; **145** top: 420px; position: absolute" **146** text="Search the address book by last name:"/> **147 148 149 150 151 152** <webuijsf:label binding="#{AddressBook.label1}" **153** for="nameAutoComplete" id="label1" style="left: 24px; **154** top: 447px; position: absolute" text="Last name:"/> **155** <webuijsf:button binding="#{AddressBook.lookUpButton}" **156** id="lookUpButton" style="left: 288px; top: 446px; **157** position: absolute; width: 100px" text="Look Up"/> **158** </webuijsf:form> **159** </webuijsf:body> **160** </webuijsf:html> **161** </webuijsf:page> **162** </f:view> **163** </jsp:root>
+**112** <webuijsf:tableColumn binding= **113** "#{AddressBook.streetColumn}" headerText="Street" **114** id="streetColumn" sort="ADDRESSES.STREET"> **115** <webuijsf:staticText binding= **116** "#{AddressBook.staticText4}" id="staticText4" **117** text="#{currentRow.value[**118** 'ADDRESSES.STREET']}"/> **119** </webuijsf:tableColumn> **120** <webuijsf:tableColumn binding= **121** "#{AddressBook.cityColumn}" headerText="City" **122** id="cityColumn" sort="ADDRESSES.CITY"> **123** <webuijsf:staticText binding= **124** "#{AddressBook.staticText5}" id="staticText5" **125** text="#{currentRow.value['ADDRESSES.CITY']}"/> **126** </webuijsf:tableColumn> **127** <webuijsf:tableColumn binding= **128** "#{AddressBook.stateColumn}" headerText="State" **129** id="stateColumn" sort="ADDRESSES.STATE"> **130** <webuijsf:staticText binding= **131** "#{AddressBook.staticText6}" id="staticText6" **132** text="#{currentRow.value['ADDRESSES.STATE']}"/> **133** </webuijsf:tableColumn> **134** <webuijsf:tableColumn binding= **135** "#{AddressBook.zipColumn}" headerText="Zip" **136** id="zipColumn" sort="ADDRESSES.ZIP" width="106"> **137** <webuijsf:staticText binding= **138** "#{AddressBook.staticText7}" id="staticText7" **139** text="#{currentRow.value['ADDRESSES.ZIP']}"/> **140** </webuijsf:tableColumn> **141** </webuijsf:tableRowGroup> **142** </webuijsf:table> **143** <webuijsf:staticText binding="#{AddressBook.searchHeader}" **144** id="searchHeader" style="font-size: 18px; left: 24px; **145** top: 420px; position: absolute" **146** text="Search the address book by last name:"/> **147 148 149 150 151 152** <webuijsf:label binding="#{AddressBook.label1}" **153** for="nameAutoComplete" id="label1" style="left: 24px; **154** top: 447px; position: absolute" text="Last name:"/> **155** <webuijsf:button binding="#{AddressBook.lookUpButton}" **156** id="lookUpButton" style="left: 288px; top: 446px; **157** position: absolute; width: 100px" text="Look Up"/> **158** </webuijsf:form> **159** </webuijsf:body> **160** </webuijsf:html> **161** </webuijsf:page> **162** </f:view> **163** </jsp:root>
 
 **Fig. 27.12** | AddressBook JSP with an **AutoComplete Text Field** component. (Part 4 of 5.)
 
 <bp:autoComplete binding="#{AddressBook.nameAutoComplete}" completionMethod= "#{AddressBook.nameAutoComplete_complete}" id="nameAutoComplete" style="left: 96px; top: 444px; position: absolute"/>
 
-**1208** Chapter 27 Ajax-Enabled JavaServer™ Faces Web Applications
+
 
 **27.4.3 Providing Suggestions for an AutoComplete Text Field**
 
@@ -403,9 +405,9 @@ boolean hasNext = addressesDataProvider.cursorFirst();
 
 result.addItem( name ); } // end if
 
-**1210** Chapter 27 Ajax-Enabled JavaServer™ Faces Web Applications
 
-Method nameAutoComplete*complete (lines 629–669) is invoked after every key- stroke in the **AutoComplete Text Field** to update the list of suggestions based on the text the user has typed so far. The method receives a string (prefix) containing the text the user has entered and a CompletionResult object (result) that is used to display sugges- tions to the user. The method loops through the rows of the addressesDataProvider, retrieves the name from each row, checks whether the name begins with the letters typed so far and, if so, adds the name to result. Line 634 sets the cursor to the first row in the data provider. Line 636 determines whether there are more rows in the data provider. If so, lines 639–643 retrieve the last name and first name from the current row and create a String in the format \_last name, first name*. Line 647 compares the lowercase versions of name and prefix to determine whether the name starts with the characters typed so far. If so, the name is a match and line 649 adds it to result.
+
+Method nameAutoComplete*complete (lines 629–669) is invoked after every key- stroke in the **AutoComplete Text Field** to update the list of suggestions based on the text the user has typed so far. The method receives a string (prefix) containing the text the user has entered and a CompletionResult object (result) that is used to display sugges- tions to the user. The method loops through the rows of the addressesDataProvider, retrieves the name from each row, checks whether the name begins with the letters typed so far and, if so, adds the name to result. Line 634 sets the cursor to the first row in the data provider. Line 636 determines whether there are more rows in the data provider. If so, lines 639–643 retrieve the last name and first name from the current row and create a String in the format _last name, first name*. Line 647 compares the lowercase versions of name and prefix to determine whether the name starts with the characters typed so far. If so, the name is a match and line 649 adds it to result.
 
 Recall that the data provider wraps a CachedRowSet object that contains a SQL query which returns the rows in the database sorted by last name, then first name. This allows us to stop iterating through the data provider once we reach a row whose name comes alphabetically after the text entered by the user—names in the rows beyond this will all be alphabetically greater and thus are not potential matches. If the name does not match the text entered so far, line 655 tests whether the current name is alphabetically greater than the prefix. If so, line 657 terminates the loop.
 
@@ -441,7 +443,7 @@ Finally, drop a **Geocoding Service Object** (named geoCoder) from the **BluePri
 
 **_Adding a Data Provider to the Page_** To complete this application, you need a second data provider to search the AddressBook database based on the first and last name entered in the **AutoComplete Text Field**. We want to create a new data source rather than reuse the existing one, because the query to search for contacts is different from the query to display all the contacts. On the **Runtime** tab, ex-
 
-**1212** Chapter 27 Ajax-Enabled JavaServer™ Faces Web Applications
+
 
 pand the **Databases** node, the **AddressBook** database’s node and its **Tables** node to reveal the **Addresses** table. Drag the **Addresses** table onto the page to create the new data pro- vider. Select the new data provider in the **Navigator** tab and change its id to addresses-
 
@@ -455,7 +457,7 @@ WHERE JHTP7.ADDRESSES.FIRSTNAME = ? AND JHTP7.ADDRESSES.LASTNAME = ?
 
 have been added to the SQL statement. This indicates that the RowSet now executes a pa- rameterized SQL statement. The parameters can be set programmatically, with the first name as the first parameter and the last name as the second.
 
-**27.5.3 JSP File with a Map Viewer Component** Figure 27.14 presents the JSP file for the completed address-book application. It is nearly identical to the JSP for the previous two versions of this application. The new feature is the **Map Viewer** component (and its supporting components) used to display a map with the contact’s location. We discuss only the new elements of this file. \[_Note:_ This code will not run until you have specified your own Google Maps key in lines 165–166. You can paste your key into the **Map Viewer** component’s key property in the **Properties** window.\]
+**27.5.3 JSP File with a Map Viewer Component** Figure 27.14 presents the JSP file for the completed address-book application. It is nearly identical to the JSP for the previous two versions of this application. The new feature is the **Map Viewer** component (and its supporting components) used to display a map with the contact’s location. We discuss only the new elements of this file. [_Note:_ This code will not run until you have specified your own Google Maps key in lines 165–166. You can paste your key into the **Map Viewer** component’s key property in the **Properties** window.]
 
 Lines 162–168 define the mapViewer component that displays a map of the area sur- rounding the address. The component’s center attribute is bound to the page bean prop- erty mapViewer_center. This property is manipulated in the page bean file to center the map on the desired address.
 
@@ -471,21 +473,21 @@ Lines 162–168 define the mapViewer component that displays a map of the area s
 
 **Fig. 27.14** | AddressBook JSP with a **Map Viewer** component. (Part 2 of 5.)
 
-**1214** Chapter 27 Ajax-Enabled JavaServer™ Faces Web Applications
 
-**69** top: 120px; position: absolute" text="Zip:"/> **70** <webuijsf:textField binding="#{AddressBook.zipTextField}" **71** id="zipTextField" maxLength="5" required="true" **72** style="left: 534px; top: 120px; position: absolute; **73** width: 70px"/> **74** <webuijsf:button actionExpression= **75** "#{AddressBook.submitButton_action}" binding= **76** "#{AddressBook.submitButton}" id="submitButton" **77** primary="true" style="left: 100px; top: 168px; position: **78** absolute; width: 100px" text="Submit"/> **79** <webuijsf:button binding="#{AddressBook.clearButton}" **80** id="clearButton" reset="true" style="left: 215px; top: **81** 168px; position: absolute; width: 100px" text="Clear"/> **82** <webuijsf:messageGroup binding= **83** "#{AddressBook.messageGroup1}" id="messageGroup1" **84** showGlobalOnly="true" style="left: 624px; top: 72px; **85** position: absolute"/> **86** <webuijsf:table augmentTitle="false" binding= **87** "#{AddressBook.addressesTable}" id="addressesTable" **88** paginateButton="true" paginationControls="true" **89** style="left: 24px; top: 216px; position: absolute" **90** title="Contacts" width="816"> **91** <webuijsf:tableRowGroup binding= **92** "#{AddressBook.tableRowGroup1}" id="tableRowGroup1" **93** rows="5" sourceData= **94** "#{AddressBook.addressesDataProvider}" **95** sourceVar="currentRow"> **96** <webuijsf:tableColumn binding= **97** "#{AddressBook.fnameColumn}" **98** headerText="First Name" id="fnameColumn" **99** sort="ADDRESSES.FIRSTNAME"> **100** <webuijsf:staticText binding= **101** "#{AddressBook.staticText2}" id="staticText2" **102** text="#{currentRow.value\[ **103** 'ADDRESSES.FIRSTNAME'\]}"/> **104** </webuijsf:tableColumn> **105** <webuijsf:tableColumn binding= **106** "#{AddressBook.lnameColumn}" **107** headerText="Last Name" id="lnameColumn" **108** sort="ADDRESSES.LASTNAME"> **109** <webuijsf:staticText binding= **110** "#{AddressBook.staticText3}" id="staticText3" **111** text="#{currentRow.value\[ **112** 'ADDRESSES.LASTNAME'\]}"/> **113** </webuijsf:tableColumn> **114** <webuijsf:tableColumn binding= **115** "#{AddressBook.streetColumn}" headerText="Street" **116** id="streetColumn" sort="ADDRESSES.STREET"> **117** <webuijsf:staticText binding= **118** "#{AddressBook.staticText4}" id="staticText4" **119** text="#{currentRow.value\[ **120** 'ADDRESSES.STREET'\]}"/> **121** </webuijsf:tableColumn>
+
+**69** top: 120px; position: absolute" text="Zip:"/> **70** <webuijsf:textField binding="#{AddressBook.zipTextField}" **71** id="zipTextField" maxLength="5" required="true" **72** style="left: 534px; top: 120px; position: absolute; **73** width: 70px"/> **74** <webuijsf:button actionExpression= **75** "#{AddressBook.submitButton_action}" binding= **76** "#{AddressBook.submitButton}" id="submitButton" **77** primary="true" style="left: 100px; top: 168px; position: **78** absolute; width: 100px" text="Submit"/> **79** <webuijsf:button binding="#{AddressBook.clearButton}" **80** id="clearButton" reset="true" style="left: 215px; top: **81** 168px; position: absolute; width: 100px" text="Clear"/> **82** <webuijsf:messageGroup binding= **83** "#{AddressBook.messageGroup1}" id="messageGroup1" **84** showGlobalOnly="true" style="left: 624px; top: 72px; **85** position: absolute"/> **86** <webuijsf:table augmentTitle="false" binding= **87** "#{AddressBook.addressesTable}" id="addressesTable" **88** paginateButton="true" paginationControls="true" **89** style="left: 24px; top: 216px; position: absolute" **90** title="Contacts" width="816"> **91** <webuijsf:tableRowGroup binding= **92** "#{AddressBook.tableRowGroup1}" id="tableRowGroup1" **93** rows="5" sourceData= **94** "#{AddressBook.addressesDataProvider}" **95** sourceVar="currentRow"> **96** <webuijsf:tableColumn binding= **97** "#{AddressBook.fnameColumn}" **98** headerText="First Name" id="fnameColumn" **99** sort="ADDRESSES.FIRSTNAME"> **100** <webuijsf:staticText binding= **101** "#{AddressBook.staticText2}" id="staticText2" **102** text="#{currentRow.value[**103** 'ADDRESSES.FIRSTNAME']}"/> **104** </webuijsf:tableColumn> **105** <webuijsf:tableColumn binding= **106** "#{AddressBook.lnameColumn}" **107** headerText="Last Name" id="lnameColumn" **108** sort="ADDRESSES.LASTNAME"> **109** <webuijsf:staticText binding= **110** "#{AddressBook.staticText3}" id="staticText3" **111** text="#{currentRow.value[**112** 'ADDRESSES.LASTNAME']}"/> **113** </webuijsf:tableColumn> **114** <webuijsf:tableColumn binding= **115** "#{AddressBook.streetColumn}" headerText="Street" **116** id="streetColumn" sort="ADDRESSES.STREET"> **117** <webuijsf:staticText binding= **118** "#{AddressBook.staticText4}" id="staticText4" **119** text="#{currentRow.value[**120** 'ADDRESSES.STREET']}"/> **121** </webuijsf:tableColumn>
 
 **Fig. 27.14** | AddressBook JSP with a **Map Viewer** component. (Part 3 of 5.)
 
 27.5 Google Maps **Map Viewer** Component **1215**
 
-**122** <webuijsf:tableColumn binding= **123** "#{AddressBook.cityColumn}" headerText="City" **124** id="cityColumn" sort="ADDRESSES.CITY"> **125** <webuijsf:staticText binding= **126** "#{AddressBook.staticText5}" id="staticText5" **127** text="#{currentRow.value\['ADDRESSES.CITY'\]}"/> **128** </webuijsf:tableColumn> **129** <webuijsf:tableColumn binding= **130** "#{AddressBook.stateColumn}" headerText="State" **131** id="stateColumn" sort="ADDRESSES.STATE"> **132** <webuijsf:staticText binding= **133** "#{AddressBook.staticText6}" id="staticText6" **134** text="#{currentRow.value\['ADDRESSES.STATE'\]}"/> **135** </webuijsf:tableColumn> **136** <webuijsf:tableColumn binding= **137** "#{AddressBook.zipColumn}" headerText="Zip" **138** id="zipColumn" sort="ADDRESSES.ZIP" width="106"> **139** <webuijsf:staticText binding= **140** "#{AddressBook.staticText7}" id="staticText7" **141** text="#{currentRow.value\['ADDRESSES.ZIP'\]}"/> **142** </webuijsf:tableColumn> **143** </webuijsf:tableRowGroup> **144** </webuijsf:table> **145** <webuijsf:staticText binding="#{AddressBook.searchHeader}" **146** id="searchHeader" style="font-size: 18px; left: 24px; **147** top: 420px; position: absolute" **148** text="Search the address book by last name:"/> **149** <bp:autoComplete binding= **150** "#{AddressBook.nameAutoComplete}" completionMethod= **151** "#{AddressBook.nameAutoComplete_complete}" **152** id="nameAutoComplete" **153** style="left: 96px; top: 444px; position: absolute"/> **154** <webuijsf:label binding="#{AddressBook.label1}" **155** for="nameAutoComplete" id="label1" style="left: 24px; **156** top: 447px; position: absolute" text="Last name:"/> **157** <webuijsf:button actionExpression= **158** "#{AddressBook.lookUpButton_action}" **159** binding="#{AddressBook.lookUpButton}" id="lookUpButton" **160** style="left: 288px; top: 446px; position: absolute; **161** width: 100px" text="Look Up"/> **162 163 164 165** key="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX **166** XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" **167** style="height: 550px; left: 24px; top: 480px; **168** position: absolute; width: 814px" zoomLevel="4"/> **169** </webuijsf:form> **170** </webuijsf:body> **171** </webuijsf:html> **172** </webuijsf:page> **173** </f:view> **174** </jsp:root>
+**122** <webuijsf:tableColumn binding= **123** "#{AddressBook.cityColumn}" headerText="City" **124** id="cityColumn" sort="ADDRESSES.CITY"> **125** <webuijsf:staticText binding= **126** "#{AddressBook.staticText5}" id="staticText5" **127** text="#{currentRow.value['ADDRESSES.CITY']}"/> **128** </webuijsf:tableColumn> **129** <webuijsf:tableColumn binding= **130** "#{AddressBook.stateColumn}" headerText="State" **131** id="stateColumn" sort="ADDRESSES.STATE"> **132** <webuijsf:staticText binding= **133** "#{AddressBook.staticText6}" id="staticText6" **134** text="#{currentRow.value['ADDRESSES.STATE']}"/> **135** </webuijsf:tableColumn> **136** <webuijsf:tableColumn binding= **137** "#{AddressBook.zipColumn}" headerText="Zip" **138** id="zipColumn" sort="ADDRESSES.ZIP" width="106"> **139** <webuijsf:staticText binding= **140** "#{AddressBook.staticText7}" id="staticText7" **141** text="#{currentRow.value['ADDRESSES.ZIP']}"/> **142** </webuijsf:tableColumn> **143** </webuijsf:tableRowGroup> **144** </webuijsf:table> **145** <webuijsf:staticText binding="#{AddressBook.searchHeader}" **146** id="searchHeader" style="font-size: 18px; left: 24px; **147** top: 420px; position: absolute" **148** text="Search the address book by last name:"/> **149** <bp:autoComplete binding= **150** "#{AddressBook.nameAutoComplete}" completionMethod= **151** "#{AddressBook.nameAutoComplete_complete}" **152** id="nameAutoComplete" **153** style="left: 96px; top: 444px; position: absolute"/> **154** <webuijsf:label binding="#{AddressBook.label1}" **155** for="nameAutoComplete" id="label1" style="left: 24px; **156** top: 447px; position: absolute" text="Last name:"/> **157** <webuijsf:button actionExpression= **158** "#{AddressBook.lookUpButton_action}" **159** binding="#{AddressBook.lookUpButton}" id="lookUpButton" **160** style="left: 288px; top: 446px; position: absolute; **161** width: 100px" text="Look Up"/> **162 163 164 165** key="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX **166** XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" **167** style="height: 550px; left: 24px; top: 480px; **168** position: absolute; width: 814px" zoomLevel="4"/> **169** </webuijsf:form> **170** </webuijsf:body> **171** </webuijsf:html> **172** </webuijsf:page> **173** </f:view> **174** </jsp:root>
 
 **Fig. 27.14** | AddressBook JSP with a **Map Viewer** component. (Part 4 of 5.)
 
 <bp:mapViewer binding="#{AddressBook.mapViewer}" center="#{AddressBook.mapViewer_center}" id="mapViewer" info="#{AddressBook.mapMarker}"
 
-**1216** Chapter 27 Ajax-Enabled JavaServer™ Faces Web Applications
+
 
 The **Look Up** Button’s action attribute is now bound to method lookUpButton_action
 
@@ -503,7 +505,7 @@ in the page bean (lines 157–158). This action handler searches the AddressBook
 
 **7** import com.sun.j2ee.blueprints.ui.autocomplete.AutoCompleteComponent; **8** import com.sun.j2ee.blueprints.ui.autocomplete.CompletionResult; **9** import com.sun.j2ee.blueprints.ui.geocoder.GeoCoder;
 
-**10** import com.sun.j2ee.blueprints.ui.geocoder.GeoPoint; **11** import com.sun.j2ee.blueprints.ui.mapviewer.MapComponent; **12** import com.sun.j2ee.blueprints.ui.mapviewer.MapMarker; **13** import com.sun.j2ee.blueprints.ui.mapviewer.MapPoint; **14** import com.sun.rave.web.ui.appbase.AbstractPageBean; **15** import com.sun.webui.jsf.component.Body; **16** import com.sun.webui.jsf.component.Button; **17** import com.sun.webui.jsf.component.Form; **18** import com.sun.webui.jsf.component.Head; **19** import com.sun.webui.jsf.component.Html; **20** import com.sun.webui.jsf.component.Label; **21** import com.sun.webui.jsf.component.Link; **22** import com.sun.webui.jsf.component.MessageGroup; **23** import com.sun.webui.jsf.component.Page; **24** import com.sun.webui.jsf.component.StaticText; **25** import com.sun.webui.jsf.component.Table; **26** import com.sun.webui.jsf.component.TableColumn; **27** import com.sun.webui.jsf.component.TableRowGroup; **28** import com.sun.webui.jsf.component.TextField; **29** import javax.faces.FacesException; **30** import javax.faces.context.FacesContext; **31 32** public class AddressBook extends AbstractPageBean **33** { **34** private int \_\_placeholder; **35 36** private void \_init() throws Exception **37** { **38** addressesDataProvider.setCachedRowSet( **39** ( javax.sql.rowset.CachedRowSet ) getValue( **40** "#{SessionBean1.addressesRowSet}" ) ); **41** addressesTable.setInternalVirtualForm( true ); **42 43 44 45 46** } // end method \_init **47 48 49 50 742** // action handler for the lookUpButton that searches the address book **743** // database and displays the requested address on a corresponding map. **744** public String lookUpButton_action() **745** { **746** // split text in autocomplete field into first and last name **747** String name = String.valueOf( nameAutoComplete.getValue() ); **748** int splitIndex = name.indexOf( "," ); **749** String lname = name.substring( 0, splitIndex ); **750** String fname = name.substring( splitIndex + 2 );
+**10** import com.sun.j2ee.blueprints.ui.geocoder.GeoPoint; **11** import com.sun.j2ee.blueprints.ui.mapviewer.MapComponent; **12** import com.sun.j2ee.blueprints.ui.mapviewer.MapMarker; **13** import com.sun.j2ee.blueprints.ui.mapviewer.MapPoint; **14** import com.sun.rave.web.ui.appbase.AbstractPageBean; **15** import com.sun.webui.jsf.component.Body; **16** import com.sun.webui.jsf.component.Button; **17** import com.sun.webui.jsf.component.Form; **18** import com.sun.webui.jsf.component.Head; **19** import com.sun.webui.jsf.component.Html; **20** import com.sun.webui.jsf.component.Label; **21** import com.sun.webui.jsf.component.Link; **22** import com.sun.webui.jsf.component.MessageGroup; **23** import com.sun.webui.jsf.component.Page; **24** import com.sun.webui.jsf.component.StaticText; **25** import com.sun.webui.jsf.component.Table; **26** import com.sun.webui.jsf.component.TableColumn; **27** import com.sun.webui.jsf.component.TableRowGroup; **28** import com.sun.webui.jsf.component.TextField; **29** import javax.faces.FacesException; **30** import javax.faces.context.FacesContext; **31 32** public class AddressBook extends AbstractPageBean **33** { **34** private int __placeholder; **35 36** private void _init() throws Exception **37** { **38** addressesDataProvider.setCachedRowSet( **39** ( javax.sql.rowset.CachedRowSet ) getValue( **40** "#{SessionBean1.addressesRowSet}" ) ); **41** addressesTable.setInternalVirtualForm( true ); **42 43 44 45 46** } // end method _init **47 48 49 50 742** // action handler for the lookUpButton that searches the address book **743** // database and displays the requested address on a corresponding map. **744** public String lookUpButton_action() **745** { **746** // split text in autocomplete field into first and last name **747** String name = String.valueOf( nameAutoComplete.getValue() ); **748** int splitIndex = name.indexOf( "," ); **749** String lname = name.substring( 0, splitIndex ); **750** String fname = name.substring( splitIndex + 2 );
 
 **Fig. 27.15** | Page bean that gets a map to display in the **Map Viewer** component. (Part 2 of 3.)
 
@@ -513,7 +515,7 @@ mapViewer.setRendered( false ); addressesSearchDataProvider.setCachedRowSet(
 
 // To save space, we omitted the code in lines 48-741. The complete // source code is provided with this chapter's examples.
 
-**1218** Chapter 27 Ajax-Enabled JavaServer™ Faces Web Applications
+
 
 **751 752** try **753** { **754** // set the parameters for the addressesSearchDataProvider **755 756 757 758 759 760** String street = (String) addressesSearchDataProvider.getValue( **761** "ADDRESSES.STREET" ); **762** String city = (String) addressesSearchDataProvider.getValue( **763** "ADDRESSES.CITY" ); **764** String state = (String) addressesSearchDataProvider.getValue( **765** "ADDRESSES.STATE" ); **766** String zip = (String) addressesSearchDataProvider.getValue( **767** "ADDRESSES.ZIP" ); **768 769** // format the address for Google Maps **770** String googleAddress = street + ", " + city + ", " + state + **771** " " + zip; **772 773** // get the geopoints for the address **774 775 776** // if Google Maps cannot find the address **777** if ( points == null ) **778** { **779** error( "Map for " + googleAddress + " could not be found" ); **780 781** return null; **782** } // end if **783 784** // center the map for the given address **785 786 787 788** // create a marker for the address and set its display text **789 790 791 792 793 794 795** } // end try **796** catch ( Exception e ) **797** { **798** error( "Error processing search. " + e.getMessage() ); **799** } // end catch **800 801** return null; **802** } // end method lookUpButton_action **803** } // end class AddressBook
 
@@ -525,13 +527,13 @@ addressesSearchDataProvider.getCachedRowSet().setObject( 2, lname );
 
 addressesSearchDataProvider.refresh();
 
-GeoPoint points\[\] = geoCoder.geoCode( googleAddress );
+GeoPoint points[] = geoCoder.geoCode( googleAddress );
 
 mapViewer.setRendered( false ); // hide map
 
-mapViewer_center.setLatitude( points\[0\].getLatitude() ); mapViewer_center.setLongitude( points\[0\].getLongitude() );
+mapViewer_center.setLatitude( points[0].getLatitude() ); mapViewer_center.setLongitude( points[0].getLongitude() );
 
-mapMarker.setLatitude( points\[0\].getLatitude() ); mapMarker.setLongitude( points\[0\].getLongitude() ); mapMarker.setMarkup( fname + " " + lname + "<br/>" + street +
+mapMarker.setLatitude( points[0].getLatitude() ); mapMarker.setLongitude( points[0].getLongitude() ); mapMarker.setMarkup( fname + " " + lname + "<br/>" + street +
 
 "<br/>" + city + ", " + state + " " + zip );
 
@@ -553,7 +555,7 @@ Lines 796–799 catch any exceptions generated throughout the method body and di
 
 You learned how to download and import the Java BluePrints Ajax-enabled compo- nent library. We then extended the AddressBook application to include an **AutoComplete Text Field** component. We showed how to use a database to display suggestions in the **AutoComplete Text Field**. You also learned how to use virtual forms to submit subsets of a form’s input components to the server for processing.
 
-**1220** Chapter 27 Ajax-Enabled JavaServer™ Faces Web Applications
+
 
 Finally, we completed the third part of the AddressBook application by adding func- tionality to the search form. You learned how to use a **Map Viewer**, a **Map Marker** and a **Geocoding Service Object** from the Java BluePrints Ajax-enabled component library to display a Google map that shows a contact’s location.
 
@@ -619,7 +621,7 @@ or web service) as the user types.
 
 • Virtual forms enable you to display multiple forms on the same page. They allow you to specify a submitter and one or more participants for each form. When the virtual form’s submitter com- ponent is clicked, only the values of its participant components will be submitted to the server.
 
-**1222** Chapter 27 Ajax-Enabled JavaServer™ Faces Web Applications
+
 
 • To add virtual forms to a page, right click the submitter component on the form and choose **Con- figure Virtual Forms…** from the pop-up menu to display the **Configure Virtual Forms** dialog. Click **New** to add a virtual form, then click in the **Name** column and specify the new form’s name. Dou- ble click the **Submit** column and change the option to **Yes** to indicate that this button should be used to submit the virtual form. Click **OK** to exit the dialog. Next, select all the input components that will participate in the virtual form. Right click one of the selected components and choose **Configure Virtual Forms…**. In the **Participate** column of the appropriate virtual form, change the option to **Yes** to indicate that the values in these components should be submitted to the server when the form is submitted.
 
@@ -689,7 +691,7 @@ vided by the .
 
 **Answers to Self-Review Exercises 27.1** a) False. Table components are used to display data from databases. b) True. c) False. The CachedRowSetDataProvider is a property of the page bean. It wraps a CachedRowSet, which is stored in the SessionBean and executes SQL queries. d) True. e) False. You must call method refresh on the data provider to re-execute the SQL command. f) True.
 
-**1224** Chapter 27 Ajax-Enabled JavaServer™ Faces Web Applications
+
 
 **27.2** a) commitChanges, CachedRowSetDataProvider. b) **Geocoding Service Object**. c) partici- pants. d) Java BluePrints Ajax component library.
 
