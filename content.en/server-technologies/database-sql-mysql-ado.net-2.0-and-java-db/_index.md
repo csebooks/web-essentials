@@ -3,17 +3,19 @@ title: "Database Sql Mysql Ado.Net 2.0 And Java  Db"
 weight: 2
 ---
 
-**O B J E C T I V E S** In this chapter you will learn:
+**OBJECTIVES** 
 
-■ Relational database concepts.
+In this chapter you will learn:
 
-■ To use Structured Query Language (SQL) to retrieve data from and manipulate data in a database.
+- Relational database concepts.
 
-■ To install and configure MySQL.
+- To use Structured Query Language (SQL) to retrieve data from and manipulate data in a database.
 
-■ To create a MySQL database.
+- To install and configure MySQL.
 
-■ The ADO.NET 2.0 object model.
+- To create a MySQL database.
+
+- The ADO.NET 2.0 object model.
 
 **_It is a capital mistake to theorize before one has data._ —Arthur Conan Doyle**
 
@@ -23,7 +25,7 @@ weight: 2
 
 **_I like two kinds of men: domestic and foreign._ —Mae West**
 
-**880** Chapter 22 Database: SQL, MySQL, ADO.NET 2.0 and Java DB **O**
+
 
 **u tl**
 
@@ -31,7 +33,7 @@ weight: 2
 
 **22.1 Introduction** A **database** is an organized collection of data. There are many different strategies for orga- nizing data to facilitate easy access and manipulation. A **database management system** (**DBMS**) provides mechanisms for storing, organizing, retrieving and modifying data. Database management systems allow for the access and storage of data without concern for the internal representation of the data in the database.
 
-Today’s most popular database systems are relational databases, where the data is stored without consideration of its physical structure (Section 22.2). A language called **SQL**—pronounced “sequel,” or as its individual letters—is the international standard lan- guage used almost universally with relational databases to perform **queries** (i.e., to request information that satisfies given criteria) and to manipulate data. \[_Note:_ As you learn about SQL, you will see some authors writing “a SQL statement” (which assumes the pronunci- ation “sequel”) and others writing “an SQL statement” (which assumes that the individual letters are pronounced). In this book we pronounce SQL as “sequel.”\] Some popular **rela- tional database management systems** (**RDBMSs**) are Microsoft SQL Server, Oracle, Sybase, IBM DB2, Informix, PostgreSQL and MySQL.
+Today’s most popular database systems are relational databases, where the data is stored without consideration of its physical structure (Section 22.2). A language called **SQL**—pronounced “sequel,” or as its individual letters—is the international standard lan- guage used almost universally with relational databases to perform **queries** (i.e., to request information that satisfies given criteria) and to manipulate data. [_Note:_ As you learn about SQL, you will see some authors writing “a SQL statement” (which assumes the pronunci- ation “sequel”) and others writing “an SQL statement” (which assumes that the individual letters are pronounced). In this book we pronounce SQL as “sequel.”] Some popular **rela- tional database management systems** (**RDBMSs**) are Microsoft SQL Server, Oracle, Sybase, IBM DB2, Informix, PostgreSQL and MySQL.
 
 Programs connect to, and interact with, a relational database via an **interface**—soft- ware that facilitates communication between a database management system and a pro- gram. For example, Java developers can use the JDBC interface to interact with databases. Similarly, ASP.NET programmers communicate with databases and manipulate their data through the interface provided by ADO.NET.
 
@@ -141,7 +143,7 @@ New Jersey Orlando Los Angeles
 
 Department Location
 
-**882** Chapter 22 Database: SQL, MySQL, ADO.NET 2.0 and Java DB
+
 
 **22.3 Relational Database Overview: A books Database** We now overview relational databases in the context of a sample books database we created for this chapter. Before we discuss SQL, we overview the tables of the books database. We use this database to introduce various database concepts, including how to use SQL to ob- tain information from the database and to manipulate the data. We provide a script to cre- ate the database. You can find the script in the examples directory for this chapter. Section 22.8 explains how to use this script.
 
@@ -181,7 +183,7 @@ isbn The ISBN for a book, a foreign key to the titles table.
 
 22.3 Relational Database Overview: A books Database **883**
 
-one row in authors may be associated with many rows in titles, and vice versa. Figure 22.6 contains sample data from the authorISBN table. \[_Note:_ To save space, we split the table’s contents into two columns, each containing the authorID and isbn columns.\] The authorID column (and similarly, the isbn column) is a **foreign key**—a column in this table that matches the primary-key column in another table (i.e., authorID in the authors table). Foreign keys are specified when creating a table. The foreign key helps maintain the **Rule of Referential Integrity**—every foreign-key value must appear as another table’s pri- mary-key value. This enables the DBMS to determine whether the authorID value for a particular book is valid. Foreign keys also allow related data in multiple tables to be selected from those tables for analytic purposes—this is known as **joining** the data. If you were to remove an author from the authors table, you’d also want to remove the corre- sponding rows in the authorISBN table.
+one row in authors may be associated with many rows in titles, and vice versa. Figure 22.6 contains sample data from the authorISBN table. [_Note:_ To save space, we split the table’s contents into two columns, each containing the authorID and isbn columns.] The authorID column (and similarly, the isbn column) is a **foreign key**—a column in this table that matches the primary-key column in another table (i.e., authorID in the authors table). Foreign keys are specified when creating a table. The foreign key helps maintain the **Rule of Referential Integrity**—every foreign-key value must appear as another table’s pri- mary-key value. This enables the DBMS to determine whether the authorID value for a particular book is valid. Foreign keys also allow related data in multiple tables to be selected from those tables for analytic purposes—this is known as **joining** the data. If you were to remove an author from the authors table, you’d also want to remove the corre- sponding rows in the authorISBN table.
 
 The titles table described in Fig. 22.7 consists of four columns that stand for each book’s ISBN, the title, the edition number and the copyright year. The table is in Fig. 22.8.
 
@@ -219,7 +221,7 @@ isbn title editionNumber copyright
 
 **Fig. 22.8** | Sample data from the titles table of the books database. (Part 1 of 2.)
 
-**884** Chapter 22 Database: SQL, MySQL, ADO.NET 2.0 and Java DB
+
 
 There is a one-to-many relationship between a primary key and a corresponding for- eign key (e.g., one author can write many books). A foreign key creates a relationship between two tables in which the record with a given primary key can be referenced many times in the foreign key’s table. Figure 22.9 is an **entity-relationship** (**ER**) **diagram** for the books database. This diagram shows the database tables and the relationships among them. The first compartment in each box contains the table’s name. The names in italic are primary keys. A table’s primary key uniquely identifies each row in the table. Every row must have a primary-key value, and that value must be unique in the table. This is known as the **Rule of Entity Integrity**.
 
@@ -277,7 +279,7 @@ The line between the titles and authorISBN tables illustrates another one-to-man
 
 **22.4 SQL** We now provide an overview of SQL in the context of our books database. You will be able to use the SQL discussed here in the examples later in the chapter and in examples in Chapters 23–28.
 
-The next several subsections discuss most of the SQL keywords listed in Fig. 22.10 in the context of SQL queries and statements. Other SQL keywords are beyond this text’s scope. To learn other keywords, refer to the SQL reference guide supplied by the vendor of the RDBMS you are using. \[_Note:_ For more information on SQL, refer to the web resources in Section 22.12.\]
+The next several subsections discuss most of the SQL keywords listed in Fig. 22.10 in the context of SQL queries and statements. Other SQL keywords are beyond this text’s scope. To learn other keywords, refer to the SQL reference guide supplied by the vendor of the RDBMS you are using. [_Note:_ For more information on SQL, refer to the web resources in Section 22.12.]
 
 **22.4.1 Basic SELECT Query** Let us consider several SQL queries that extract information from database books. A SQL query “selects” rows and columns from one or more tables in a database. Such selections are performed by queries with the SELECT keyword. The basic form of a SELECT query is
 
@@ -305,7 +307,7 @@ DELETE Delete rows from a specified table.
 
 **Fig. 22.10** | SQL query keywords.
 
-**886** Chapter 22 Database: SQL, MySQL, ADO.NET 2.0 and Java DB
+
 
 in which the **asterisk (\*)** indicates that all rows and columns from the _tableName_ table should be retrieved. For example, to retrieve all the data in the authors table, use
 
@@ -343,7 +345,7 @@ authorID lastName
 
 SELECT title, editionNumber, copyright FROM titles WHERE copyright > '2005'
 
-Figure 22.12 shows the result of the preceding query. The WHERE clause criteria can contain the operators <, >, <=, >=, =, <> and LIKE. Operator **LIKE** is used for **pattern matching** with wildcard characters **percent** (**%**) and **underscore** (\_). Pattern matching allows SQL to search for strings that match a given pattern.
+Figure 22.12 shows the result of the preceding query. The WHERE clause criteria can contain the operators <, >, <=, >=, =, <> and LIKE. Operator **LIKE** is used for **pattern matching** with wildcard characters **percent** (**%**) and **underscore** (_). Pattern matching allows SQL to search for strings that match a given pattern.
 
 A pattern that contains a percent character (%) searches for strings that have zero or more characters at the percent character’s position in the pattern. For example, the next query locates the rows of all the authors whose last name starts with the letter D:
 
@@ -355,7 +357,7 @@ clause’s LIKE pattern indicates that any number of characters can appear after
 
 **Portability Tip 22.1** _See the documentation for your database system to determine whether SQL is case sensitive on your system and to determine the syntax for SQL keywords (i.e., should they be all uppercase let- ters, all lowercase letters or some combination of the two?)._ 22.1
 
-An underscore ( \_ ) in the pattern string indicates a single wildcard character at that position in the pattern. For example, the following query locates the rows of all the authors
+An underscore ( _ ) in the pattern string indicates a single wildcard character at that position in the pattern. For example, the following query locates the rows of all the authors
 
 title editionNumber copyright
 
@@ -377,11 +379,11 @@ authorID firstName lastName
 
 **Fig. 22.13** | Authors whose last name starts with D from the authors table.
 
-**888** Chapter 22 Database: SQL, MySQL, ADO.NET 2.0 and Java DB
 
-whose last names start with any character (specified by \_), followed by the letter o, fol- lowed by any number of additional characters (specified by %):
 
-SELECT authorID, firstName, lastName FROM authors WHERE lastName LIKE '\_o%'
+whose last names start with any character (specified by _), followed by the letter o, fol- lowed by any number of additional characters (specified by %):
+
+SELECT authorID, firstName, lastName FROM authors WHERE lastName LIKE '_o%'
 
 The preceding query produces the row shown in Fig. 22.14, because only one author in our database has a last name that contains the letter o as its second letter.
 
@@ -457,7 +459,7 @@ authorID firstName lastName
 
 **Fig. 22.17** | authors sample data in ascending order by lastName and firstName.
 
-**890** Chapter 22 Database: SQL, MySQL, ADO.NET 2.0 and Java DB
+
 
 **22.4.4 Combining Data from Multiple Tables: INNER JOIN** Database designers often split related data into separate tables to ensure that a database does not store data redundantly. For example, the books database has tables authors and titles. We use an authorISBN table to store the relationship data between authors and their corresponding titles. If we did not separate this information into individual tables, we would need to include author information with each entry in the titles table. Then the database would store duplicate author information for authors who wrote multiple books. Often, it is necessary to combine data from multiple tables into a single result. Re- ferred to as joining the tables, this is specified by an INNER JOIN operator in the query. An INNER JOIN combines rows from two tables by matching values in columns that are com- mon to the tables. The basic form of an INNER JOIN is:
 
@@ -495,11 +497,11 @@ copy- right
 
 same syntax can be used in any query to distinguish columns in different tables that have the same name. In some systems, table names qualified with the database name can be used to perform cross-database queries. As always, the query can contain an ORDER BY clause. Figure 22.19 depicts a portion of the results of the preceding query, ordered by lastName
 
-and firstName. \[_Note:_ To save space, we split the result of the query into two columns, each containing the firstName, lastName and isbn columns.\]
+and firstName. [_Note:_ To save space, we split the result of the query into two columns, each containing the firstName, lastName and isbn columns.]
 
 **Software Engineering Observation 22.2** _If a SQL statement includes columns with the same name from multiple tables, the statement must precede those column names with their table names and a dot (e.g., authors.authorID)._ 22.2
 
-**Common Programming Error 22.5** \_Failure to qualify names for columns that have the same name in two or more tables is an error.\_22.2
+**Common Programming Error 22.5** _Failure to qualify names for columns that have the same name in two or more tables is an error._22.2
 
 **22.4.5 INSERT Statement** The INSERT statement inserts a row into a table. The basic form of this statement is
 
@@ -531,7 +533,7 @@ Harvey Deitel 0131828274 Andrew Goldberg 0131450913
 
 **Fig. 22.19** | Sampling of authors and ISBNs for the books they have written in ascending order by lastName and firstName.
 
-**892** Chapter 22 Database: SQL, MySQL, ADO.NET 2.0 and Java DB
+
 
 **Good Programming Practice 22.1** _Always explicitly list the columns when inserting rows. If the table’s column order changes or a new column is added, omitting the columns list may cause an error._ 22.1
 
@@ -539,7 +541,7 @@ The INSERT statement
 
 INSERT INTO authors ( firstName, lastName ) VALUES ( 'Sue', 'Smith' )
 
-inserts a row into the authors table. The statement indicates that values are provided for the firstName and lastName columns. The corresponding values are 'Sue' and 'Smith'. We do not specify an authorID in this example because authorID is an autoincremented column in the authors table. For every row added to this table, the database assigns a unique authorID value that is the next value in the autoincremented sequence (i.e., 1, 2, 3 and so on). In this case, Sue Smith would be assigned authorID number 5. Figure 22.20 shows the authors table after the INSERT operation. \[_Note:_ Not every database manage- ment system supports autoincremented columns. Check the documentation for your DBMS for alternatives to autoincremented columns.\]
+inserts a row into the authors table. The statement indicates that values are provided for the firstName and lastName columns. The corresponding values are 'Sue' and 'Smith'. We do not specify an authorID in this example because authorID is an autoincremented column in the authors table. For every row added to this table, the database assigns a unique authorID value that is the next value in the autoincremented sequence (i.e., 1, 2, 3 and so on). In this case, Sue Smith would be assigned authorID number 5. Figure 22.20 shows the authors table after the INSERT operation. [_Note:_ Not every database manage- ment system supports autoincremented columns. Check the documentation for your DBMS for alternatives to autoincremented columns.]
 
 **Common Programming Error 22.6** _It is normally an error to specify a value for an autoincrement column._ 22.2
 
@@ -569,7 +571,7 @@ where _tableName_ is the table to update. The _tableName_ is followed by keyword
 
 UPDATE authors SET lastName = 'Jones' WHERE lastName = 'Smith' AND firstName = 'Sue'
 
-updates a row in the authors table. The statement indicates that lastName will be assigned the value Jones for the row in which lastName is equal to Smith and firstName is equal to Sue. \[_Note:_ If there are multiple rows with the first name “Sue” and the last name “Smith,” this statement will modify all such rows to have the last name “Jones.”\] If we know the authorID in advance of the UPDATE operation (possibly because we searched for it previously), the WHERE clause can be simplified as follows:
+updates a row in the authors table. The statement indicates that lastName will be assigned the value Jones for the row in which lastName is equal to Smith and firstName is equal to Sue. [_Note:_ If there are multiple rows with the first name “Sue” and the last name “Smith,” this statement will modify all such rows to have the last name “Jones.”] If we know the authorID in advance of the UPDATE operation (possibly because we searched for it previously), the WHERE clause can be simplified as follows:
 
 WHERE authorID = 5
 
@@ -603,7 +605,7 @@ authorID firstName lastName
 
 **Fig. 22.21** | Sample data from table authors after an UPDATE operation.
 
-**894** Chapter 22 Database: SQL, MySQL, ADO.NET 2.0 and Java DB
+
 
 **22.5 MySQL** In 1994, TcX, a Swedish consulting firm, needed a fast and flexible way to access its tables. Unable to find a database server that could accomplish the required task adequately, Michael Widenius, the principal developer at TcX, decided to create his own database server. The resulting product was called _MySQL_ (pronounced “my sequel”), a robust and scalable relational database management system (RDBMS).
 
@@ -619,9 +621,9 @@ MySQL is a multiuser, multithreaded (i.e., allows multiple simultaneous connec- 
 
 **5\.** Handling large databases (e.g., tens of thousands of tables with millions of rows).
 
-For these reasons and more, MySQL is the database of choice for many businesses, universities and individuals. MySQL is an open source software product. \[_Note:_ Under certain situations, a commercial license is required for MySQL. See www.mysql.com/
+For these reasons and more, MySQL is the database of choice for many businesses, universities and individuals. MySQL is an open source software product. [_Note:_ Under certain situations, a commercial license is required for MySQL. See www.mysql.com/
 
-company/legal/licensing/ for details\]
+company/legal/licensing/ for details]
 
 **22.6 Instructions for Installing MySQL MySQL 5.0 Community Edition** is an open source database management system that ex- ecutes on many platforms, including Windows, Solaris, Linux, and Macintosh. Complete information about MySQL is available from www.mysql.com.
 
@@ -643,9 +645,9 @@ authorID firstName lastName
 
 22.7 Instructions for Setting Up a MySQL User Account **895**
 
-**2\.** Visit dev.mysql.com/downloads/mysql/5.0.html and download the installer for your platform. For our MySQL examples, you need only the Windows Essen- tials package on Microsoft Windows, or the Standard package on most other plat- forms. \[_Note:_ For these instructions, we assume you are running Microsoft Windows. Complete installation instructions for other platforms are available at dev.mysql.com/doc/refman/5.0/en/installing.html.\]
+**2\.** Visit dev.mysql.com/downloads/mysql/5.0.html and download the installer for your platform. For our MySQL examples, you need only the Windows Essen- tials package on Microsoft Windows, or the Standard package on most other plat- forms. [_Note:_ For these instructions, we assume you are running Microsoft Windows. Complete installation instructions for other platforms are available at dev.mysql.com/doc/refman/5.0/en/installing.html.]
 
-**3\.** Double click mysql-essential-5.0.45-win32.msi to start the installer. \[_Note:_ This filename may differ, based on the current version of MySQL 5.0.\]
+**3\.** Double click mysql-essential-5.0.45-win32.msi to start the installer. [_Note:_ This filename may differ, based on the current version of MySQL 5.0.]
 
 **4\.** Choose **Typical** for the **Setup Type** and click **Next >**. Then click **Install**.
 
@@ -669,7 +671,7 @@ mysql -h localhost -u root
 
 The -h option indicates the host (i.e., computer) on which the MySQL server is running—in this case your local computer (localhost). The -u option indicates the user account that will be used to log in to the server—root is the default user account that is created during installation to allow you to configure the server. Once you’ve logged in, you’ll see a mysql> prompt at which you can type com- mands to interact with the MySQL server.
 
-**896** Chapter 22 Database: SQL, MySQL, ADO.NET 2.0 and Java DB
+
 
 **3\.** Next, you’ll add the iw3htp4 user account to the mysql built-in database. To cre- ate the iw3htp4 user account with the password iw3htp4, execute the following commands from the mysql> prompt:
 
@@ -731,7 +733,7 @@ are both located in namespace System.Data. An object of class **System.Data.Data
 
 **_ADO.NET’s Disconnected Model_** An advantage of using class DataSet is that it is **disconnected**—the program does not need a persistent connection to the data source to work with data in a DataSet. Instead, the pro- gram connects to the data source to **populate the DataSet** (i.e., fill the DataSet’s Data- Tables with data), but disconnects from the data source immediately after retrieving the desired data. The program then accesses and potentially manipulates the data stored in the DataSet. The program operates on this local cache of data, rather than the original data in the data source. If the program makes changes to the data in the DataSet that need to be permanently saved in the data source, the program reconnects to the data source to per- form an update, then disconnects promptly. Thus the program does not require any active, persistent connection to the data source.
 
-**898** Chapter 22 Database: SQL, MySQL, ADO.NET 2.0 and Java DB
+
 
 An object of class **SqlDataAdapter** (namespace System.Data.SqlClient) connects to a SQL Server data source and executes SQL statements to both populate a DataSet and update the data source based on the current contents of a DataSet. A SqlDataAdapter
 
@@ -801,7 +803,7 @@ of columns in which values are stored.
 
 • The foreign key helps maintain the Rule of Referential Integrity: Every foreign-key value must appear as another table’s primary-key value. Foreign keys can be used to combine information from multiple tables. There is a one-to-many relationship between a primary key and its corre- sponding foreign key.
 
-**900** Chapter 22 Database: SQL, MySQL, ADO.NET 2.0 and Java DB
+
 
 **_Section 22.4.1 Basic SELECT Query_** • The basic form of a query is
 
@@ -817,11 +819,11 @@ of a query with selection criteria is
 
 SELECT _columnName1_, _columnName2_, _…_ FROM _tableName_ WHERE _criteria_
 
-• The WHERE clause can contain operators <, >, <=, >=, =, <> and LIKE. Operator LIKE is used for string pattern matching with wildcard characters percent (%) and underscore (\_).
+• The WHERE clause can contain operators <, >, <=, >=, =, <> and LIKE. Operator LIKE is used for string pattern matching with wildcard characters percent (%) and underscore (_).
 
 • A percent character (%) in a pattern indicates that a string matching the pattern can have zero or more characters at the percent character’s location in the pattern.
 
-• An underscore (\_) in the pattern string indicates a single character at that position in the pattern.
+• An underscore (_) in the pattern string indicates a single character at that position in the pattern.
 
 **_Section 22.4.3 ORDER BY Clause_** • The result of a query can be sorted in ascending or descending order using the optional ORDER BY
 
@@ -899,7 +901,7 @@ tem (RDBMS) that was created by the Swedish consulting firm TcX in 1994.
 
 • A DataTable contains a collection of DataRows that represent the table’s data. A DataTable also has a collection of DataColumns that describe the columns in a table.
 
-**902** Chapter 22 Database: SQL, MySQL, ADO.NET 2.0 and Java DB
+
 
 • A DataSet, which consists of a set of DataTables and the relationships among them, represents a cache of data—data that a program stores temporarily in local memory.
 
@@ -913,7 +915,7 @@ tem (RDBMS) that was created by the Swedish consulting firm TcX in 1994.
 
 pure Java database Java DB (the Sun branded version of Apache Derby) with the JDK.
 
-**Terminology** % SQL wildcard character \* SQL wildcard character \_ SQL wildcard character active database connection ADO.NET object model AND SQL keyword Apache Derby ASC SQL keyword ascending order asterisk (\*) SQL wildcard character autoincremented column value column column number in a result set combine records from tables data source database database management system (DBMS) DataColumn class DataRow class DataSet class DataTable class DELETE SQL statement DESC SQL keyword disconnected object model entity-relationship diagram escape character foreign key FROM SQL clause GROUP BY SQL clause INNER JOIN SQL clause INSERT SQL statement Java DB joining database tables LIKE SQL clause many-to-many relationship Microsoft SQL Server
+**Terminology** % SQL wildcard character \* SQL wildcard character _ SQL wildcard character active database connection ADO.NET object model AND SQL keyword Apache Derby ASC SQL keyword ascending order asterisk (\*) SQL wildcard character autoincremented column value column column number in a result set combine records from tables data source database database management system (DBMS) DataColumn class DataRow class DataSet class DataTable class DELETE SQL statement DESC SQL keyword disconnected object model entity-relationship diagram escape character foreign key FROM SQL clause GROUP BY SQL clause INNER JOIN SQL clause INSERT SQL statement Java DB joining database tables LIKE SQL clause many-to-many relationship Microsoft SQL Server
 
 MySQL mysqld-nt.exe
 
@@ -921,7 +923,7 @@ ON SQL clause one-to-many relationship ORDER BY SQL clause pattern matching perc
 
 predicate primary key qualified name query relational database relational database management system
 
-(RDBMS) relational database table row Rule of Entity Integrity Rule of Referential Integrity SELECT SQL keyword selecting data from a table selection criteria SET SQL clause single-quote character .sql filename extension SQL script SqlCommand class SqlConnection class SqlDataAdapter class Structured Query Language (SQL) System.Data namespace System.Data.OleDb namespace System.Data.SqlClient namespace table underscore (\_) SQL wildcard character
+(RDBMS) relational database table row Rule of Entity Integrity Rule of Referential Integrity SELECT SQL keyword selecting data from a table selection criteria SET SQL clause single-quote character .sql filename extension SQL script SqlCommand class SqlConnection class SqlDataAdapter class Structured Query Language (SQL) System.Data namespace System.Data.OleDb namespace System.Data.SqlClient namespace table underscore (_) SQL wildcard character
 
 Self-Review Exercise **903**
 
@@ -971,7 +973,7 @@ c) Add a new author to the Authors table. d) Add a new title for an author (reme
 
 AuthorISBN table).
 
-**904** Chapter 22 Database: SQL, MySQL, ADO.NET 2.0 and Java DB
+
 
 **22.5** Fill in the blanks in each of the following statements: a) The states that every column in a primary key must have a value, and the
 

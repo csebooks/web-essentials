@@ -3,25 +3,25 @@ title: "Web Services"
 weight: 8
 ---
 
-**O B J E C T I V E S** In this chapter you will learn:
+**OBJECTIVES** In this chapter you will learn:
 
-■ What a web service is.
+- What a web service is.
 
-■ How to publish and consume Java web services in Netbeans.
+- How to publish and consume Java web services in Netbeans.
 
-■ The elements that comprise web services, such as service descriptions and classes that implement web services.
+- The elements that comprise web services, such as service descriptions and classes that implement web services.
 
-■ How to create client desktop and web applications that invoke web service methods.
+- How to create client desktop and web applications that invoke web service methods.
 
-■ The important part that XML and the Simple Object Access Protocol (SOAP) play in enabling web services.
+- The important part that XML and the Simple Object Access Protocol (SOAP) play in enabling web services.
 
-■ How to use session tracking in web services to maintain client state information.
+- How to use session tracking in web services to maintain client state information.
 
-■ How to connect to databases from web services.
+- How to connect to databases from web services.
 
-■ How to pass objects of user-defined types to and return them from a web service.
+- How to pass objects of user-defined types to and return them from a web service.
 
-■ How to build a REST-based web service in ASP.NET.
+- How to build a REST-based web service in ASP.NET.
 
 **_A client is to me a mere unit, a factor in a problem._ —Sir Arthur Conan Doyle**
 
@@ -31,7 +31,7 @@ weight: 8
 
 **_Protocol is everything_ —Francoise Giuliani**
 
-**1226** Chapter 28 Web Services **O**
+
 
 **u tl**
 
@@ -67,7 +67,7 @@ Summary | Terminology | Self-Review Exercises | Answers to Self-Review Exercises
 
 28.1 Introduction **1227**
 
-cludes information on designing and implementing web services in many languages, and information about web services offered by companies such as Google, Amazon and eBay. You’ll also find many additional tools for publishing and consuming web services. \[_Note:_ This chapter assumes that you know Java for Sections 28.2–28.8. To learn more about Ja- va, check out _Java How to Program, Seventh Edition_, or visit our Java Resource Centers at www.deitel.com/ResourceCenters.html. For Section 28.9, the chapter assumes you know Visual Basic and ASP.NET. To learn more about Visual Basic and ASP.NET, check out our book _Visual Basic 2005 How to Program, Third Edition_ or visit our Visual Basic Resource Center (www.deitel.com/visualbasic/) and our ASP.NET Resource Center (www.deitel.com/aspdotnet/).\]
+cludes information on designing and implementing web services in many languages, and information about web services offered by companies such as Google, Amazon and eBay. You’ll also find many additional tools for publishing and consuming web services. [_Note:_ This chapter assumes that you know Java for Sections 28.2–28.8. To learn more about Ja- va, check out _Java How to Program, Seventh Edition_, or visit our Java Resource Centers at www.deitel.com/ResourceCenters.html. For Section 28.9, the chapter assumes you know Visual Basic and ASP.NET. To learn more about Visual Basic and ASP.NET, check out our book _Visual Basic 2005 How to Program, Third Edition_ or visit our Visual Basic Resource Center (www.deitel.com/visualbasic/) and our ASP.NET Resource Center (www.deitel.com/aspdotnet/).]
 
 Web services have important implications for **business-to-business** (**B2B**) **transac- tions**. They enable businesses to conduct transactions via standardized, widely available web services rather than relying on proprietary applications. Web services and SOAP are platform and language independent, so companies can collaborate via web services without worrying about the compatibility of their hardware, software and communica- tions technologies. Companies such as Amazon, Google, eBay, PayPal and many others are using web services to their advantage by making their server-side applications available to partners via web services.
 
@@ -77,7 +77,7 @@ Any Java programmer with a knowledge of web services can write applications that
 
 **_Netbeans_** Netbeans—developed by Sun—is one of the many tools that enable programmers to “publish” and/or “consume” web services. We demonstrate how to use Netbeans to im- plement web services and invoke them from client applications. For each example, we pro- vide the web service’s code, then present a client application that uses the web service. Our first examples build web services and client applications in Netbeans. Then we demon- strate web services that use more sophisticated features, such as manipulating databases with JDBC and manipulating class objects. For information on downloading and install- ing the Netbeans 5.5.1 IDE, its Visual Web Pack and the Sun Java System Application Server (SJSAS), see Section 26.1.
 
-**1228** Chapter 28 Web Services
+
 
 **28.2 Java Web Services Basics** A web service normally resides on a **server**. The application (i.e., the client) that accesses the web service sends a method call over a network to the remote machine, which processes the call and returns a response over the network to the application. This kind of distribut- ed computing is beneficial in many applications. For example, a client application without direct access to a database on a remote server might be able to retrieve the data via a web service. Similarly, an application lacking the processing power to perform specific compu- tations could use a web service to take advantage of another system’s superior resources.
 
@@ -137,7 +137,7 @@ The IDE generates a sample web service class with the name you specified in _Ste
 
 **28.3.2 Defining the HugeInteger Web Service in Netbeans** Figure 28.2 contains the HugeInteger web service’s code. You can implement this code yourself in the HugeInteger.java file created in Section 28.3.1, or you can simply replace the code in HugeInteger.java with a copy of our code from this example’s folder. You
 
-**1230** Chapter 28 Web Services
+
 
 can find this file in the project’s src\\java\\com\\deitel\\iw3htp4\\ch28\\hugeinteger
 
@@ -145,7 +145,7 @@ folder. The book’s examples can be downloaded from www.deitel.com/books/iw3htp
 
 **1** // Fig. 28.2: HugeInteger.java **2** // HugeInteger web service that performs operations on large integers. **3** package com.deitel.iw3htp4.ch28.hugeinteger; **4 5 6 7 8 9**
 
-**10 11 12** public class HugeInteger **13** { **14** private final static int MAXIMUM = 100; // maximum number of digits **15** public int\[\] number = new int\[ MAXIMUM \]; // stores the huge integer **16 17** // returns a String representation of a HugeInteger **18** public String toString() **19** { **20** String value = ""; **21 22** // convert HugeInteger to a String **23** for ( int digit : number ) **24** value = digit + value; // places next digit at beginning of value **25 26** // locate position of first non-zero digit **27** int length = value.length(); **28** int position = -1; **29 30** for ( int i = 0; i < length; i++ ) **31** { **32** if ( value.charAt( i ) != '0' ) **33** { **34** position = i; // first non-zero digit **35** break; **36** } **37** } // end for **38 39** return ( position != -1 ? value.substring( position ) : "0" ); **40** } // end method toString **41 42** // creates a HugeInteger from a String **43** public static HugeInteger parseHugeInteger( String s ) **44** { **45** HugeInteger temp = new HugeInteger(); **46** int size = s.length(); **47 48** for ( int i = 0; i < size; i++ ) **49** temp.number\[ i \] = s.charAt( size - i - 1 ) - '0';
+**10 11 12** public class HugeInteger **13** { **14** private final static int MAXIMUM = 100; // maximum number of digits **15** public int[] number = new int[MAXIMUM]; // stores the huge integer **16 17** // returns a String representation of a HugeInteger **18** public String toString() **19** { **20** String value = ""; **21 22** // convert HugeInteger to a String **23** for ( int digit : number ) **24** value = digit + value; // places next digit at beginning of value **25 26** // locate position of first non-zero digit **27** int length = value.length(); **28** int position = -1; **29 30** for ( int i = 0; i < length; i++ ) **31** { **32** if ( value.charAt( i ) != '0' ) **33** { **34** position = i; // first non-zero digit **35** break; **36** } **37** } // end for **38 39** return ( position != -1 ? value.substring( position ) : "0" ); **40** } // end method toString **41 42** // creates a HugeInteger from a String **43** public static HugeInteger parseHugeInteger( String s ) **44** { **45** HugeInteger temp = new HugeInteger(); **46** int size = s.length(); **47 48** for ( int i = 0; i < size; i++ ) **49** temp.number[i] = s.charAt( size - i - 1 ) - '0';
 
 **Fig. 28.2** | HugeInteger web service that performs operations on large integers. (Part 1 of 3.)
 
@@ -155,7 +155,7 @@ import javax.jws.WebService; // program uses the annotation @WebService import j
 
 28.3 Creating, Publishing, Testing and Describing a Web Service **1231**
 
-**50 51** return temp; **52** } // end method parseHugeInteger **53 54** // WebMethod that adds huge integers represented by String arguments **55 56 57 58** { **59** int carry = 0; // the value to be carried **60** HugeInteger operand1 = HugeInteger.parseHugeInteger( first ); **61** HugeInteger operand2 = HugeInteger.parseHugeInteger( second ); **62** HugeInteger result = new HugeInteger(); // stores addition result **63 64** // perform addition on each digit **65** for ( int i = 0; i < MAXIMUM; i++ ) **66** { **67** // add corresponding digits in each number and the carried value; **68** // store result in the corresponding column of HugeInteger result **69** result.number\[ i \] = **70** ( operand1.number\[ i \] + operand2.number\[ i \] + carry ) % 10; **71 72** // set carry for next column **73** carry = **74** ( operand1.number\[ i \] + operand2.number\[ i \] + carry ) / 10; **75** } // end for **76 77** return result.toString(); **78** } // end WebMethod add **79 80** // WebMethod that subtracts integers represented by String arguments **81 82 83 84** { **85** HugeInteger operand1 = HugeInteger.parseHugeInteger( first ); **86** HugeInteger operand2 = HugeInteger.parseHugeInteger( second ); **87** HugeInteger result = new HugeInteger(); // stores difference **88 89** // subtract bottom digit from top digit **90** for ( int i = 0; i < MAXIMUM; i++ ) **91** { **92** // if the digit in operand1 is smaller than the corresponding **93** // digit in operand2, borrow from the next digit **94** if ( operand1.number\[ i \] < operand2.number\[ i \] ) **95** operand1.borrow( i ); **96 97** // subtract digits **98** result.number\[ i \] = operand1.number\[ i \] - operand2.number\[ i \]; **99** } // end for **100 101** return result.toString(); **102** } // end WebMethod subtract
+**50 51** return temp; **52** } // end method parseHugeInteger **53 54** // WebMethod that adds huge integers represented by String arguments **55 56 57 58** { **59** int carry = 0; // the value to be carried **60** HugeInteger operand1 = HugeInteger.parseHugeInteger( first ); **61** HugeInteger operand2 = HugeInteger.parseHugeInteger( second ); **62** HugeInteger result = new HugeInteger(); // stores addition result **63 64** // perform addition on each digit **65** for ( int i = 0; i < MAXIMUM; i++ ) **66** { **67** // add corresponding digits in each number and the carried value; **68** // store result in the corresponding column of HugeInteger result **69** result.number[i] = **70** ( operand1.number[i] + operand2.number[i] + carry ) % 10; **71 72** // set carry for next column **73** carry = **74** ( operand1.number[i] + operand2.number[i] + carry ) / 10; **75** } // end for **76 77** return result.toString(); **78** } // end WebMethod add **79 80** // WebMethod that subtracts integers represented by String arguments **81 82 83 84** { **85** HugeInteger operand1 = HugeInteger.parseHugeInteger( first ); **86** HugeInteger operand2 = HugeInteger.parseHugeInteger( second ); **87** HugeInteger result = new HugeInteger(); // stores difference **88 89** // subtract bottom digit from top digit **90** for ( int i = 0; i < MAXIMUM; i++ ) **91** { **92** // if the digit in operand1 is smaller than the corresponding **93** // digit in operand2, borrow from the next digit **94** if ( operand1.number[i] < operand2.number[i] ) **95** operand1.borrow( i ); **96 97** // subtract digits **98** result.number[i] = operand1.number[i] - operand2.number[i]; **99** } // end for **100 101** return result.toString(); **102** } // end WebMethod subtract
 
 **Fig. 28.2** | HugeInteger web service that performs operations on large integers. (Part 2 of 3.)
 
@@ -167,11 +167,11 @@ import javax.jws.WebService; // program uses the annotation @WebService import j
 
 @WebParam( name = "second" ) String second )
 
-**1232** Chapter 28 Web Services
+
 
 Lines 5–7 import the annotations used in this example. By default, each new web ser- vice class created with the JAX-WS APIs is a **POJO (plain old Java object)**, meaning that—unlike prior Java web service APIs—you do not need to extend a class or implement an interface to create a web service. When you compile a class that uses these JAX-WS 2.0 annotations, the compiler creates all the **server-side artifacts** that support the web ser-
 
-**103 104** // borrow 1 from next digit **105** private void borrow( int place ) **106** { **107** if ( place >= MAXIMUM ) **108** throw new IndexOutOfBoundsException(); **109** else if ( number\[ place + 1 \] == 0 ) // if next digit is zero **110** borrow( place + 1 ); // borrow from next digit **111 112** number\[ place \] += 10; // add 10 to the borrowing digit **113** \--number\[ place + 1 \]; // subtract one from the digit to the left **114** } // end method borrow **115 116** // WebMethod that returns true if first integer is greater than second **117 118 119 120** { **121** try // try subtracting first from second **122** { **123** String difference = subtract( first, second ); **124** return !difference.matches( "^\[0\]+$" ); **125** } // end try **126** catch ( IndexOutOfBoundsException e ) // first is less than second **127** { **128** return false; **129** } // end catch **130** } // end WebMethod bigger **131 132** // WebMethod that returns true if the first integer is less than second **133 134 135 136** { **137** return bigger( second, first ); **138** } // end WebMethod smaller **139 140** // WebMethod that returns true if the first integer equals the second **141 142 143 144** { **145** return !( bigger( first, second ) || smaller( first, second ) ); **146** } // end WebMethod equals **147** } // end class HugeInteger
+**103 104** // borrow 1 from next digit **105** private void borrow( int place ) **106** { **107** if ( place >= MAXIMUM ) **108** throw new IndexOutOfBoundsException(); **109** else if ( number[place + 1] == 0 ) // if next digit is zero **110** borrow( place + 1 ); // borrow from next digit **111 112** number[place] += 10; // add 10 to the borrowing digit **113** \--number[place + 1]; // subtract one from the digit to the left **114** } // end method borrow **115 116** // WebMethod that returns true if first integer is greater than second **117 118 119 120** { **121** try // try subtracting first from second **122** { **123** String difference = subtract( first, second ); **124** return !difference.matches( "^[0]+$" ); **125** } // end try **126** catch ( IndexOutOfBoundsException e ) // first is less than second **127** { **128** return false; **129** } // end catch **130** } // end WebMethod bigger **131 132** // WebMethod that returns true if the first integer is less than second **133 134 135 136** { **137** return bigger( second, first ); **138** } // end WebMethod smaller **139 140** // WebMethod that returns true if the first integer equals the second **141 142 143 144** { **145** return !( bigger( first, second ) || smaller( first, second ) ); **146** } // end WebMethod equals **147** } // end class HugeInteger
 
 **Fig. 28.2** | HugeInteger web service that performs operations on large integers. (Part 3 of 3.)
 
@@ -193,7 +193,7 @@ vice—that is, the compiled code framework that allows the web service to wait 
 
 Lines 9–11 contain a @WebService annotation (imported at line 5) with properties name and serviceName. The **@WebService annotation** indicates that class HugeInteger
 
-implements a web service. The annotation is followed by a set of parentheses containing optional elements. The annotation’s **name element** (line 10) specifies the name of the proxy class that will be generated for the client. The annotation’s **serviceName element** (line 11) specifies the name of the class that the client uses to obtain an object of the proxy class. \[_Note:_ If the serviceName element is not specified, the web service’s name is assumed to be the class name followed by the word Service.\] Netbeans places the @WebService
+implements a web service. The annotation is followed by a set of parentheses containing optional elements. The annotation’s **name element** (line 10) specifies the name of the proxy class that will be generated for the client. The annotation’s **serviceName element** (line 11) specifies the name of the class that the client uses to obtain an object of the proxy class. [_Note:_ If the serviceName element is not specified, the web service’s name is assumed to be the class name followed by the word Service.] Netbeans places the @WebService
 
 annotation at the beginning of each new web service class you create. You can then add the name and serviceName properties in the parentheses following the annotation.
 
@@ -211,7 +211,7 @@ Each web method in class HugeInteger specifies parameters that are annotated wit
 
 Lines 55–78 and 81–102 declare HugeInteger web methods add and subtract. We assume for simplicity that add does not result in overflow (i.e., the result will be 100 digits or fewer) and that subtract’s first argument will always be larger than the second. The subtract method calls method borrow (lines 105–114) when it is necessary to borrow 1 from the next digit to the left in the first argument—that is, when a particular digit in the
 
-**1234** Chapter 28 Web Services
+
 
 left operand is smaller than the corresponding digit in the right operand. Method borrow
 
@@ -219,11 +219,11 @@ adds 10 to the appropriate digit and subtracts 1 from the next digit to the left
 
 Lines 117–130 declare HugeInteger web method bigger. Line 123 invokes method subtract to calculate the difference between the numbers. If the first number is less than the second, this results in an exception. In this case, bigger returns false. If subtract does not throw an exception, then line 124 returns the result of the expression
 
-!difference.matches( "^\[0\]+$" )
+!difference.matches( "^[0]+$" )
 
 This expression calls String method matches to determine whether the String differ-
 
-ence matches the regular expression "^\[0\]+$", which determines if the String consists only of one or more 0s. The symbols ^ and $ indicate that matches should return true
+ence matches the regular expression "^[0]+$", which determines if the String consists only of one or more 0s. The symbols ^ and $ indicate that matches should return true
 
 only if the entire String difference matches the regular expression. We then use the log- ical negation operator (!) to return the opposite boolean value. Thus, if the numbers are equal (i.e., their difference is 0), the preceding expression returns false—the first number is not greater than the second. Otherwise, the expression returns true.
 
@@ -267,7 +267,7 @@ Runs the project
 
 Deploys the project to the application server
 
-**1236** Chapter 28 Web Services
+
 
 Note that you can access the web service only when the application server is running. If Netbeans launches the application server for you, it will automatically shut it down when you close Netbeans. To keep the application server up and running, you can launch it independently of Netbeans before you deploy or run web applications in Netbeans. For Sun Java System Application Server running on Windows, you can do this by selecting
 
@@ -303,7 +303,7 @@ To allow other computers to connect to your Windows Vista computer using HTTP, p
 
 b) Results of calling the HugeInteger web service’s add method with "99999999999999999" and "1".
 
-**1238** Chapter 28 Web Services
+
 
 **2\.** In the **Windows Firewall** dialog click the **Change Settings…** link.
 
@@ -349,11 +349,11 @@ where _host_ is the hostname or IP address of the computer on which the web serv
 
 **2\.** Select **New > Web Service Client…** from the pop-up menu to display the **New Web Service Client** dialog (Fig. 28.7).
 
-**1240** Chapter 28 Web Services
+
 
 **3\.** In the **WSDL URL** field, specify the URL http://localhost:8080/HugeInteger/
 
-HugeIntegerService?WSDL (Fig. 28.7). This URL tells the IDE where to find the web service’s WSDL description. \[_Note:_ If the Sun Java System Application Serv- er is located on a different computer, replace localhost with the hostname or IP address of that computer.\] The IDE uses this WSDL description to generate the client-side artifacts that compose and support the proxy. Note that the **New Web Service Client** dialog enables you to search for web services in several locations. Many companies simply distribute the exact WSDL URLs for their web services, which you can place in the **WSDL URL** field.
+HugeIntegerService?WSDL (Fig. 28.7). This URL tells the IDE where to find the web service’s WSDL description. [_Note:_ If the Sun Java System Application Serv- er is located on a different computer, replace localhost with the hostname or IP address of that computer.] The IDE uses this WSDL description to generate the client-side artifacts that compose and support the proxy. Note that the **New Web Service Client** dialog enables you to search for web services in several locations. Many companies simply distribute the exact WSDL URLs for their web services, which you can place in the **WSDL URL** field.
 
 **4\.** In the **Package** field, specify com.deitel.iw3htp4.ch28.usinghugeinteger as the package name.
 
@@ -385,7 +385,7 @@ Client-side artifacts generated by Netbeans to support the web
 
 service proxy object
 
-**1242** Chapter 28 Web Services
+
 
 **28.4.2 Consuming the HugeInteger Web Service** For this example, we use a GUI application to interact with the web service HugeInteger
 
@@ -431,7 +431,7 @@ hugeIntegerService = new HugeIntegerService(); hugeIntegerProxy = hugeIntegerSer
 
 resultsJTextArea.setText( hugeIntegerProxy.add( firstNumber, secondNumber ) );
 
-**1244** Chapter 28 Web Services
+
 
 **170** JOptionPane.showMessageDialog( this, e.toString(), **171** "Add method failed", JOptionPane.ERROR_MESSAGE ); **172** e.printStackTrace(); **173** } // end catch **174** } // end if **175** } // end method addJButtonActionPerformed **176 177** // invokes HugeInteger web service's subtract method to subtract the **178** // second HugeInteger from the first **179** private void subtractJButtonActionPerformed( **180** java.awt.event.ActionEvent evt ) **181** { **182** String firstNumber = firstJTextField.getText(); **183** String secondNumber = secondJTextField.getText(); **184 185** if ( isValid( firstNumber ) && isValid( secondNumber ) ) **186** { **187** try **188** { **189 190 191** } // end try **192** catch ( Exception e ) **193** { **194** JOptionPane.showMessageDialog( this, e.toString(), **195** "Subtract method failed", JOptionPane.ERROR_MESSAGE ); **196** e.printStackTrace(); **197** } // end catch **198** } // end if **199** } // end method subtractJButtonActionPerformed **200 201** // invokes HugeInteger web service's bigger method to determine whether **202** // the first HugeInteger is greater than the second **203** private void biggerJButtonActionPerformed( **204** java.awt.event.ActionEvent evt ) **205** { **206** String firstNumber = firstJTextField.getText(); **207** String secondNumber = secondJTextField.getText(); **208 209** if ( isValid( firstNumber ) && isValid( secondNumber ) ) **210** { **211** try **212** { **213 214 215** resultsJTextArea.setText( String.format( "%s %s %s %s", **216** firstNumber, ( result ? "is" : "is not" ), "greater than", **217** secondNumber ) ); **218** } // end try **219** catch ( Exception e ) **220** { **221** JOptionPane.showMessageDialog( this, e.toString(), **222** "Bigger method failed", JOptionPane.ERROR_MESSAGE );
 
@@ -451,9 +451,9 @@ boolean result = hugeIntegerProxy.smaller( firstNumber, secondNumber );
 
 boolean result = hugeIntegerProxy.equals( firstNumber, secondNumber );
 
-**1246** Chapter 28 Web Services
 
-**275** JOptionPane.showMessageDialog( this, e.toString(), **276** "Equals method failed", JOptionPane.ERROR_MESSAGE ); **277** e.printStackTrace(); **278** } // end catch **279** } // end if **280** } // end method equalsJButtonActionPerformed **281 282** // checks the size of a String to ensure that it is not too big **283** // to be used as a HugeInteger; ensure only digits in String **284** private boolean isValid( String number ) **285** { **286** // check String's length **287** if ( number.length() > 100 ) **288** { **289** JOptionPane.showMessageDialog( this, **290** "HugeIntegers must be <= 100 digits.", "HugeInteger Overflow", **291** JOptionPane.ERROR_MESSAGE ); **292** return false; **293** } // end if **294 295** // look for nondigit characters in String **296** for ( char c : number.toCharArray() ) **297** { **298** if ( !Character.isDigit( c ) ) **299** { **300** JOptionPane.showMessageDialog( this, **301** "There are nondigits in the String", **302** "HugeInteger Contains Nondigit Characters", **303** JOptionPane.ERROR_MESSAGE ); **304** return false; **305** } // end if **306** } // end for **307 308** return true; // number can be used as a HugeInteger **309** } // end method validate **310 311** // main method begins execution **312** public static void main( String args\[\] ) **313** { **314** java.awt.EventQueue.invokeLater( **315** new Runnable() **316** { **317** public void run() **318** { **319** new UsingHugeIntegerJFrame().setVisible( true ); **320** } // end method run **321** } // end anonymous inner class **322** ); // end call to java.awt.EventQueue.invokeLater **323** } // end method main **324 325** // Variables declaration - do not modify **326** private javax.swing.JButton addJButton;‘
+
+**275** JOptionPane.showMessageDialog( this, e.toString(), **276** "Equals method failed", JOptionPane.ERROR_MESSAGE ); **277** e.printStackTrace(); **278** } // end catch **279** } // end if **280** } // end method equalsJButtonActionPerformed **281 282** // checks the size of a String to ensure that it is not too big **283** // to be used as a HugeInteger; ensure only digits in String **284** private boolean isValid( String number ) **285** { **286** // check String's length **287** if ( number.length() > 100 ) **288** { **289** JOptionPane.showMessageDialog( this, **290** "HugeIntegers must be <= 100 digits.", "HugeInteger Overflow", **291** JOptionPane.ERROR_MESSAGE ); **292** return false; **293** } // end if **294 295** // look for nondigit characters in String **296** for ( char c : number.toCharArray() ) **297** { **298** if ( !Character.isDigit( c ) ) **299** { **300** JOptionPane.showMessageDialog( this, **301** "There are nondigits in the String", **302** "HugeInteger Contains Nondigit Characters", **303** JOptionPane.ERROR_MESSAGE ); **304** return false; **305** } // end if **306** } // end for **307 308** return true; // number can be used as a HugeInteger **309** } // end method validate **310 311** // main method begins execution **312** public static void main( String args[] ) **313** { **314** java.awt.EventQueue.invokeLater( **315** new Runnable() **316** { **317** public void run() **318** { **319** new UsingHugeIntegerJFrame().setVisible( true ); **320** } // end method run **321** } // end anonymous inner class **322** ); // end call to java.awt.EventQueue.invokeLater **323** } // end method main **324 325** // Variables declaration - do not modify **326** private javax.swing.JButton addJButton;‘
 
 **Fig. 28.11** | Client desktop application for the HugeInteger web service. (Part 4 of 6.)
 
@@ -463,7 +463,7 @@ boolean result = hugeIntegerProxy.equals( firstNumber, secondNumber );
 
 **Fig. 28.11** | Client desktop application for the HugeInteger web service. (Part 5 of 6.)
 
-**1248** Chapter 28 Web Services
+
 
 **28.5 SOAP** SOAP (Simple Object Access Protocol) is a platform-independent protocol that uses XML to facilitate remote procedure calls, typically over HTTP. SOAP is one common protocol for passing information between web service clients and web services. The protocol that transmits request-and-response messages is also known as the web service’s **wire format** or **wire protocol**, because it defines how information is sent “along the wire.”
 
@@ -495,7 +495,7 @@ matically, so you don’t need to understand the details of SOAP or XML to take 
 
 **Fig. 28.12** | SOAP messages for the HugeInteger web service’s add method as shown by the Sun Java System Application Server’s Tester web page.
 
-**1250** Chapter 28 Web Services
+
 
 session tracking into a web service. Suppose a client application needs to call several meth- ods from the same web service, possibly several times each. In such a case, it can be bene- ficial for the web service to maintain state information for the client, thus eliminating the need for client information to be passed between the client and the web service multiple times. For example, a web service that provides local restaurant reviews could store the cli- ent user’s street address during the initial request, then use it to return personalized, local- ized results in subsequent requests. Storing session information also enables a web service to distinguish between clients.
 
@@ -525,9 +525,9 @@ ArrayList< String > deck = ( ArrayList< String > ) session.getAttribute( "deck" 
 
 MessageContext.SERVLET_REQUEST ) ).getSession();
 
-**1252** Chapter 28 Web Services
 
-**54 55** String tempCard; // holds card temporarily during swapping **56** Random randomObject = new Random(); // generates random numbers **57** int index; // index of randomly selected card **58 59** for ( int i = 0; i < deck.size() ; i++ ) // shuffle **60** { **61** index = randomObject.nextInt( deck.size() - 1 ); **62 63** // swap card at position i with randomly selected card **64** tempCard = deck.get( i ); **65** deck.set( i, deck.get( index ) ); **66** deck.set( index, tempCard ); **67** } // end for **68 69 70 71** } // end WebMethod shuffle **72 73** // determine a hand's value **74** @WebMethod( operationName = "getHandValue" ) **75** public int getHandValue( @WebParam( name = "hand" ) String hand ) **76** { **77** // split hand into cards **78** String\[\] cards = hand.split( "\\t" ); **79** int total = 0; // total value of cards in hand **80** int face; // face of current card **81** int aceCount = 0; // number of aces in hand **82 83** for ( int i = 0; i < cards.length; i++ ) **84** { **85** // parse string and get first int in String **86** face = Integer.parseInt( **87** cards\[ i \].substring( 0, cards\[ i \].indexOf( " " ) ) ); **88 89** switch ( face ) **90** { **91** case 1: // if ace, increment aceCount **92** ++aceCount; **93** break; **94** case 11: // jack **95** case 12: // queen **96** case 13: // king **97** total += 10; **98** break; **99** default: // otherwise, add face **100** total += face; **101** break; **102** } // end switch **103** } // end for **104**
+
+**54 55** String tempCard; // holds card temporarily during swapping **56** Random randomObject = new Random(); // generates random numbers **57** int index; // index of randomly selected card **58 59** for ( int i = 0; i < deck.size() ; i++ ) // shuffle **60** { **61** index = randomObject.nextInt( deck.size() - 1 ); **62 63** // swap card at position i with randomly selected card **64** tempCard = deck.get( i ); **65** deck.set( i, deck.get( index ) ); **66** deck.set( index, tempCard ); **67** } // end for **68 69 70 71** } // end WebMethod shuffle **72 73** // determine a hand's value **74** @WebMethod( operationName = "getHandValue" ) **75** public int getHandValue( @WebParam( name = "hand" ) String hand ) **76** { **77** // split hand into cards **78** String[] cards = hand.split( "\\t" ); **79** int total = 0; // total value of cards in hand **80** int face; // face of current card **81** int aceCount = 0; // number of aces in hand **82 83** for ( int i = 0; i < cards.length; i++ ) **84** { **85** // parse string and get first int in String **86** face = Integer.parseInt( **87** cards[i].substring( 0, cards[i].indexOf( " " ) ) ); **88 89** switch ( face ) **90** { **91** case 1: // if ace, increment aceCount **92** ++aceCount; **93** break; **94** case 11: // jack **95** case 12: // queen **96** case 13: // king **97** total += 10; **98** break; **99** default: // otherwise, add face **100** total += face; **101** break; **102** } // end switch **103** } // end for **104**
 
 **Fig. 28.13** | Blackjack web service that deals cards and evaluates hands. (Part 2 of 3.)
 
@@ -553,7 +553,7 @@ Lines 49–70 generate an ArrayList representing a deck of cards, shuffle the de
 
 **Fig. 28.13** | Blackjack web service that deals cards and evaluates hands. (Part 3 of 3.)
 
-**1254** Chapter 28 Web Services
+
 
 Lines 25–37 define method dealCard as a web method. Lines 30–31 use the session object to obtain the "deck" session attribute that was stored in line 70 of method shuffle. Method getAttribute takes as a parameter a String that identifies the Object to obtain from the session state. The HttpSession can store many Objects, provided that each has a unique identifier. Note that method shuffle must be called before method dealCard is called the first time for a client—otherwise, an exception occurs at line 33 because get-
 
@@ -595,7 +595,7 @@ import javax.xml.ws.BindingProvider; import com.deitel.iw3htp4.ch28.blackjackcli
 
 private BlackjackService blackjackService; // used to obtain proxy private Blackjack blackjackProxy; // used to access the web service
 
-**1256** Chapter 28 Web Services
+
 
 **38** // due to a bug in Netbeans, we must change the JFrame's background **39** // color here rather than in the designer **40** getContentPane().setBackground( new Color( 0, 180, 0 ) ); **41 42** // initialize the blackjack proxy **43** try **44** { **45 46 47 48 49 50 51 52** } // end try **53** catch ( Exception e ) **54** { **55** e.printStackTrace(); **56** } // end catch **57 58** // add JLabels to cardBoxes ArrayList for programmatic manipulation **59** cardboxes = new ArrayList< JLabel >(); **60 61** cardboxes.add( 0, dealerCard1JLabel ); **62** cardboxes.add( dealerCard2JLabel ); **63** cardboxes.add( dealerCard3JLabel ); **64** cardboxes.add( dealerCard4JLabel ); **65** cardboxes.add( dealerCard5JLabel ); **66** cardboxes.add( dealerCard6JLabel ); **67** cardboxes.add( dealerCard7JLabel ); **68** cardboxes.add( dealerCard8JLabel ); **69** cardboxes.add( dealerCard9JLabel ); **70** cardboxes.add( dealerCard10JLabel ); **71** cardboxes.add( dealerCard11JLabel ); **72** cardboxes.add( playerCard1JLabel ); **73** cardboxes.add( playerCard2JLabel ); **74** cardboxes.add( playerCard3JLabel ); **75** cardboxes.add( playerCard4JLabel ); **76** cardboxes.add( playerCard5JLabel ); **77** cardboxes.add( playerCard6JLabel ); **78** cardboxes.add( playerCard7JLabel ); **79** cardboxes.add( playerCard8JLabel ); **80** cardboxes.add( playerCard9JLabel ); **81** cardboxes.add( playerCard10JLabel ); **82** cardboxes.add( playerCard11JLabel ); **83** } // end no-argument constructor **84 85** // play the dealer’s hand **86** private void dealerPlay() **87** { **88** try **89** {
 
@@ -609,7 +609,7 @@ BindingProvider.SESSION_MAINTAIN_PROPERTY, true );
 
 28.6 Session Tracking in Web Services **1257**
 
-**90** // while the value of the dealer's hand is below 17 **91** // the dealer must continue to take cards **92** String\[\] cards = dealerCards.split( "\\t" ); **93 94** // display dealer's cards **95** for ( int i = 0; i < cards.length; i++ ) **96** displayCard( i, cards\[ i \]); **97 98 99** { **100 101** dealerCards += "\\t" + newCard; // deal new card **102** displayCard( currentDealerCard, newCard ); **103** ++currentDealerCard; **104** JOptionPane.showMessageDialog( this, "Dealer takes a card", **105** "Dealer's turn", JOptionPane.PLAIN_MESSAGE ); **106** } // end while **107 108 109 110 111** // if dealer busted, player wins **112** if ( dealersTotal > 21 ) **113** { **114** gameOver( GameStatus.WIN ); **115** return; **116** } // end if **117 118** // if dealer and player are below 21 **119** // higher score wins, equal scores is a push **120** if ( dealersTotal > playersTotal ) **121** gameOver( GameStatus.LOSE ); **122** else if ( dealersTotal < playersTotal ) **123** gameOver( GameStatus.WIN ); **124** else **125** gameOver( GameStatus.PUSH ); **126** } // end try **127** catch ( Exception e ) **128** { **129** e.printStackTrace(); **130** } // end catch **131** } // end method dealerPlay **132 133** // displays the card represented by cardValue in specified JLabel **134** public void displayCard( int card, String cardValue ) **135** { **136** try **137** { **138** // retrieve correct JLabel from cardBoxes **139** JLabel displayLabel = cardboxes.get( card ); **140**
+**90** // while the value of the dealer's hand is below 17 **91** // the dealer must continue to take cards **92** String[] cards = dealerCards.split( "\\t" ); **93 94** // display dealer's cards **95** for ( int i = 0; i < cards.length; i++ ) **96** displayCard( i, cards[i]); **97 98 99** { **100 101** dealerCards += "\\t" + newCard; // deal new card **102** displayCard( currentDealerCard, newCard ); **103** ++currentDealerCard; **104** JOptionPane.showMessageDialog( this, "Dealer takes a card", **105** "Dealer's turn", JOptionPane.PLAIN_MESSAGE ); **106** } // end while **107 108 109 110 111** // if dealer busted, player wins **112** if ( dealersTotal > 21 ) **113** { **114** gameOver( GameStatus.WIN ); **115** return; **116** } // end if **117 118** // if dealer and player are below 21 **119** // higher score wins, equal scores is a push **120** if ( dealersTotal > playersTotal ) **121** gameOver( GameStatus.LOSE ); **122** else if ( dealersTotal < playersTotal ) **123** gameOver( GameStatus.WIN ); **124** else **125** gameOver( GameStatus.PUSH ); **126** } // end try **127** catch ( Exception e ) **128** { **129** e.printStackTrace(); **130** } // end catch **131** } // end method dealerPlay **132 133** // displays the card represented by cardValue in specified JLabel **134** public void displayCard( int card, String cardValue ) **135** { **136** try **137** { **138** // retrieve correct JLabel from cardBoxes **139** JLabel displayLabel = cardboxes.get( card ); **140**
 
 **Fig. 28.14** | Blackjack game that uses the Blackjack web service. (Part 3 of 10.)
 
@@ -619,9 +619,9 @@ String newCard = blackjackProxy.dealCard();
 
 int dealersTotal = blackjackProxy.getHandValue( dealerCards ); int playersTotal = blackjackProxy.getHandValue( playerCards );
 
-**1258** Chapter 28 Web Services
 
-**141** // if string representing card is empty, display back of card **142** if ( cardValue.equals( "" ) ) **143** { **144** displayLabel.setIcon( new ImageIcon( getClass().getResource( **145** "/com/deitel/iw3htp4/ch28/blackjackclient/" + **146** "blackjack_images/cardback.png" ) ) ) ; **147** return; **148** } // end if **149 150** // retrieve the face value of the card **151** String face = cardValue.substring( 0, cardValue.indexOf( " " ) ); **152 153** // retrieve the suit of the card **154** String suit = **155** cardValue.substring( cardValue. indexOf( " " ) + 1 ); **156 157** char suitLetter; // suit letter used to form image file **158 159** switch ( Integer.parseInt( suit ) ) **160** { **161** case 0: // hearts **162** suitLetter = 'h'; **163** break; **164** case 1: // diamonds **165** suitLetter = 'd'; **166** break; **167** case 2: // clubs **168** suitLetter = 'c'; **169** break; **170** default: // spades **171** suitLetter = 's'; **172** break; **173** } // end switch **174 175** // set image for displayLabel **176** displayLabel.setIcon( new ImageIcon( getClass().getResource( **177** "/com/deitel/iw3htp4/ch28/blackjackclient/blackjack_images/" + **178** face + suitLetter + ".png" ) ) ); **179** } // end try **180** catch ( Exception e ) **181** { **182** e.printStackTrace(); **183** } // end catch **184** } // end method displayCard **185 186** // displays all player cards and shows appropriate message **187** public void gameOver( GameStatus winner ) **188** { **189** String\[\] cards = dealerCards.split( "\\t" ); **190 191** // display blackjackProxy's cards **192** for ( int i = 0; i < cards.length; i++ ) **193** displayCard( i, cards\[ i \]);
+
+**141** // if string representing card is empty, display back of card **142** if ( cardValue.equals( "" ) ) **143** { **144** displayLabel.setIcon( new ImageIcon( getClass().getResource( **145** "/com/deitel/iw3htp4/ch28/blackjackclient/" + **146** "blackjack_images/cardback.png" ) ) ) ; **147** return; **148** } // end if **149 150** // retrieve the face value of the card **151** String face = cardValue.substring( 0, cardValue.indexOf( " " ) ); **152 153** // retrieve the suit of the card **154** String suit = **155** cardValue.substring( cardValue. indexOf( " " ) + 1 ); **156 157** char suitLetter; // suit letter used to form image file **158 159** switch ( Integer.parseInt( suit ) ) **160** { **161** case 0: // hearts **162** suitLetter = 'h'; **163** break; **164** case 1: // diamonds **165** suitLetter = 'd'; **166** break; **167** case 2: // clubs **168** suitLetter = 'c'; **169** break; **170** default: // spades **171** suitLetter = 's'; **172** break; **173** } // end switch **174 175** // set image for displayLabel **176** displayLabel.setIcon( new ImageIcon( getClass().getResource( **177** "/com/deitel/iw3htp4/ch28/blackjackclient/blackjack_images/" + **178** face + suitLetter + ".png" ) ) ); **179** } // end try **180** catch ( Exception e ) **181** { **182** e.printStackTrace(); **183** } // end catch **184** } // end method displayCard **185 186** // displays all player cards and shows appropriate message **187** public void gameOver( GameStatus winner ) **188** { **189** String[] cards = dealerCards.split( "\\t" ); **190 191** // display blackjackProxy's cards **192** for ( int i = 0; i < cards.length; i++ ) **193** displayCard( i, cards[i]);
 
 **Fig. 28.14** | Blackjack game that uses the Blackjack web service. (Part 4 of 10.)
 
@@ -639,7 +639,7 @@ String card = blackjackProxy.dealCard(); // deal new card
 
 int total = blackjackProxy.getHandValue( playerCards );
 
-**1260** Chapter 28 Web Services
+
 
 **557** if ( total > 21 ) // player busts **558** gameOver( GameStatus.LOSE ); **559** if ( total == 21 ) // player cannot take any more cards **560** { **561** hitJButton.setEnabled( false ); **562** dealerPlay(); **563** } // end if **564** } // end method hitJButtonActionPerformed **565 566** // handles dealJButton click **567** private void dealJButtonActionPerformed( **568** java.awt.event.ActionEvent evt ) **569** { **570** String card; // stores a card temporarily until it's added to a hand **571 572** // clear card images **573** for ( int i = 0; i < cardboxes.size(); i++ ) **574** cardboxes.get( i ).setIcon( null ); **575 576** statusJLabel.setText( "" ); **577** dealerTotalJLabel.setText( "" ); **578** playerTotalJLabel.setText( "" ); **579 580** // create a new, shuffled deck on remote machine **581 582 583** // deal two cards to player **584 585** displayCard( 11, playerCards ); // display first card **586 587** displayCard( 12, card ); // display second card **588** playerCards += "\\t" + card; // add second card to hand **589 590** // deal two cards to blackjackProxy, but only show first **591 592** displayCard( 0, dealerCards ); // display first card **593 594** displayCard( 1, "" ); // display back of card **595** dealerCards += "\\t" + card; // add second card to hand **596 597** standJButton.setEnabled( true ); **598** hitJButton.setEnabled( true ); **599** dealJButton.setEnabled( false ); **600 601** // determine the value of the two hands **602 603 604 605** // if hands both equal 21, it is a push **606** if ( playersTotal == dealersTotal && playersTotal == 21 ) **607** gameOver( GameStatus.PUSH ); **608** else if ( dealersTotal == 21 ) // blackjackProxy has blackjack **609** gameOver( GameStatus.LOSE );
 
@@ -659,11 +659,11 @@ int dealersTotal = blackjackProxy.getHandValue( dealerCards ); int playersTotal 
 
 28.6 Session Tracking in Web Services **1261**
 
-**610** else if ( playersTotal == 21 ) // blackjack **611** gameOver( GameStatus.BLACKJACK ); **612 613** // next card for blackjackProxy has index 2 **614** currentDealerCard = 2; **615 616** // next card for player has index 13 **617** currentPlayerCard = 13; **618** } // end method dealJButtonActionPerformed **619 620** // begins application execution **621** public static void main( String args\[\] ) **622** { **623** java.awt.EventQueue.invokeLater( **624** new Runnable() **625** { **626** public void run() **627** { **628** new BlackjackGameJFrame().setVisible(true); **629** } **630** } **631** ); // end call to java.awt.EventQueue.invokeLater **632** } // end method main **633 634** // Variables declaration - do not modify **635** private javax.swing.JButton dealJButton; **636** private javax.swing.JLabel dealerCard10JLabel; **637** private javax.swing.JLabel dealerCard11JLabel; **638** private javax.swing.JLabel dealerCard1JLabel; **639** private javax.swing.JLabel dealerCard2JLabel; **640** private javax.swing.JLabel dealerCard3JLabel; **641** private javax.swing.JLabel dealerCard4JLabel; **642** private javax.swing.JLabel dealerCard5JLabel; **643** private javax.swing.JLabel dealerCard6JLabel; **644** private javax.swing.JLabel dealerCard7JLabel; **645** private javax.swing.JLabel dealerCard8JLabel; **646** private javax.swing.JLabel dealerCard9JLabel; **647** private javax.swing.JLabel dealerJLabel; **648** private javax.swing.JLabel dealerTotalJLabel; **649** private javax.swing.JButton hitJButton; **650** private javax.swing.JLabel playerCard10JLabel; **651** private javax.swing.JLabel playerCard11JLabel; **652** private javax.swing.JLabel playerCard1JLabel; **653** private javax.swing.JLabel playerCard2JLabel; **654** private javax.swing.JLabel playerCard3JLabel; **655** private javax.swing.JLabel playerCard4JLabel; **656** private javax.swing.JLabel playerCard5JLabel; **657** private javax.swing.JLabel playerCard6JLabel; **658** private javax.swing.JLabel playerCard7JLabel; **659** private javax.swing.JLabel playerCard8JLabel; **660** private javax.swing.JLabel playerCard9JLabel; **661** private javax.swing.JLabel playerJLabel; **662** private javax.swing.JLabel playerTotalJLabel;
+**610** else if ( playersTotal == 21 ) // blackjack **611** gameOver( GameStatus.BLACKJACK ); **612 613** // next card for blackjackProxy has index 2 **614** currentDealerCard = 2; **615 616** // next card for player has index 13 **617** currentPlayerCard = 13; **618** } // end method dealJButtonActionPerformed **619 620** // begins application execution **621** public static void main( String args[] ) **622** { **623** java.awt.EventQueue.invokeLater( **624** new Runnable() **625** { **626** public void run() **627** { **628** new BlackjackGameJFrame().setVisible(true); **629** } **630** } **631** ); // end call to java.awt.EventQueue.invokeLater **632** } // end method main **633 634** // Variables declaration - do not modify **635** private javax.swing.JButton dealJButton; **636** private javax.swing.JLabel dealerCard10JLabel; **637** private javax.swing.JLabel dealerCard11JLabel; **638** private javax.swing.JLabel dealerCard1JLabel; **639** private javax.swing.JLabel dealerCard2JLabel; **640** private javax.swing.JLabel dealerCard3JLabel; **641** private javax.swing.JLabel dealerCard4JLabel; **642** private javax.swing.JLabel dealerCard5JLabel; **643** private javax.swing.JLabel dealerCard6JLabel; **644** private javax.swing.JLabel dealerCard7JLabel; **645** private javax.swing.JLabel dealerCard8JLabel; **646** private javax.swing.JLabel dealerCard9JLabel; **647** private javax.swing.JLabel dealerJLabel; **648** private javax.swing.JLabel dealerTotalJLabel; **649** private javax.swing.JButton hitJButton; **650** private javax.swing.JLabel playerCard10JLabel; **651** private javax.swing.JLabel playerCard11JLabel; **652** private javax.swing.JLabel playerCard1JLabel; **653** private javax.swing.JLabel playerCard2JLabel; **654** private javax.swing.JLabel playerCard3JLabel; **655** private javax.swing.JLabel playerCard4JLabel; **656** private javax.swing.JLabel playerCard5JLabel; **657** private javax.swing.JLabel playerCard6JLabel; **658** private javax.swing.JLabel playerCard7JLabel; **659** private javax.swing.JLabel playerCard8JLabel; **660** private javax.swing.JLabel playerCard9JLabel; **661** private javax.swing.JLabel playerJLabel; **662** private javax.swing.JLabel playerTotalJLabel;
 
 **Fig. 28.14** | Blackjack game that uses the Blackjack web service. (Part 7 of 10.)
 
-**1262** Chapter 28 Web Services
+
 
 **663** private javax.swing.JButton standJButton; **664** private javax.swing.JLabel statusJLabel; **665** // End of variables declaration **666** } // end class BlackjackGameJFrame
 
@@ -681,7 +681,7 @@ c) Dealer and player hands after the user clicks **Stand** based on the initial 
 
 d) Dealer and player hands after the user is dealt blackjack.
 
-**1264** Chapter 28 Web Services
+
 
 Method gameOver (lines 187–215) displays all the dealer’s cards, shows the appro- priate message in statusJLabel and displays the final point totals of both the dealer and the player. Method gameOver receives as an argument a member of the GameStatus enu- meration (defined in lines 25–31). The enumeration represents whether the player tied, lost or won the game; its four members are PUSH, LOSE, WIN and BLACKJACK.
 
@@ -727,11 +727,11 @@ so that you could keep track of each client’s session state. You also learned 
 
 **Fig. 28.15** | Seats table’s data. (Part 1 of 2.)
 
-**1266** Chapter 28 Web Services
+
 
 **_Creating the Reservation Web Service_** You can now create a web service that uses the Reservation database (Fig. 28.16). The airline reservation web service has a single web method—reserve (lines 26–78)—which searches the Seats table to locate a seat matching a user’s request. The method takes two arguments—a String representing the desired seat type (i.e., "Window", "Middle" or "Aisle") and a String representing the desired class type (i.e., "Economy" or "First"). If it finds an appropriate seat, method reserve updates the database to make the reservation and returns true; otherwise, no reservation is made, and the method returns false. Note that the statements at lines 34–39 and lines 44–48 that query and update the database use objects of JDBC types ResultSet and PreparedStatement.
 
-**Software Engineering Observation 28.1** _Using PreparedStatements to create SQL statements is highly recommended to secure against so-called SQL injection attacks in which executable code is inserted SQL code. The site www.owasp.org/index.php/Preventing\_SQL\_Injection\_in\_Java provides a summary of SQL injection attacks and ways to mitigate against them.._ 28.1
+**Software Engineering Observation 28.1** _Using PreparedStatements to create SQL statements is highly recommended to secure against so-called SQL injection attacks in which executable code is inserted SQL code. The site www.owasp.org/index.php/Preventing_SQL_Injection_in_Java provides a summary of SQL injection attacks and ways to mitigate against them.._ 28.1
 
 Our database contains four columns—the seat number (i.e., 1–10), the seat type (i.e., Window, Middle or Aisle), the class type (i.e., Economy or First) and a column containing either 1 (true) or 0 (false) to indicate whether the seat is taken. Lines 34–39 retrieve the seat numbers of any available seats matching the requested seat and class type. This state- ment fills the resultSet with the results of the query
 
@@ -781,7 +781,7 @@ lookupSeat = connection.prepareStatement( "SELECT \\"NUMBER\\" FROM \\"SEATS\\" 
 
 lookupSeat.setString( 1, seatType ); lookupSeat.setString( 2, classType ); ResultSet resultSet = lookupSeat.executeQuery();
 
-**1268** Chapter 28 Web Services
+
 
 **28.7.2 Creating a Web Application to Interact with the Reservation Web Service** This section presents a ReservationClient web application that consumes the Reserva-
 
@@ -813,7 +813,7 @@ DropDown, classTypeDropDown and reserveButton.
 
 **Fig. 28.17** | JSP that allows a user to select a seat. (Part 1 of 3.)
 
-**1270** Chapter 28 Web Services
+
 
 **38** <webuijsf:button actionExpression= **39** "#{Reserve.reserveButton_action}" binding= **40** "#{Reserve.reserveButton}" id="reserveButton" style= **41** "height: 20px; left: 460px; top: 21px; position: **42** absolute; width: 100px" text="Reserve"/> **43** <webuijsf:label binding="#{Reserve.errorLabel}" **44** id="errorLabel" rendered="false" style="color: red; **45** left: 24px; top: 48px; position: absolute" text="This **46** type of seat is not available. Please modify your **47** request and try again."/> **48** <webuijsf:label binding="#{Reserve.successLabel}" **49** id="successLabel" rendered="false" style="left: 24px; **50** top: 24px; position: absolute" **51** text="Your reservation has been made. Thank you!"/> **52** </webuijsf:form> **53** </webuijsf:body> **54** </webuijsf:html> **55** </webuijsf:page> **56** </f:view> **57** </jsp:root>
 
@@ -839,9 +839,9 @@ c) Attempting to reserve another window seat in economy when there are no such s
 
 d) No seats match the requested seat type and class:
 
-**1272** Chapter 28 Web Services
 
-**18 19 20 21** public class Reserve extends AbstractPageBean **22** { **23** private int \_\_placeholder; **24 25 26 27** private void \_init() throws Exception **28** { **29** seatTypeDropDownDefaultOptions.setOptions( **30** new com.sun.webui.jsf.model.Option\[\] { **31** new com.sun.webui.jsf.model.Option( "Aisle", "Aisle" ), **32** new com.sun.webui.jsf.model.Option( "Middle", "Middle" ), **33** new com.sun.webui.jsf.model.Option( "Window", "Window" ) } ); **34** classTypeDropDownDefaultOptions.setOptions( **35** new com.sun.webui.jsf.model.Option\[\] { **36** new com.sun.webui.jsf.model.Option( "Economy", "Economy" ), **37** new com.sun.webui.jsf.model.Option( "First", "First" ) } ); **38 39 40** } // end method **41 42 43 44 261** // store selected class in session bean **262** public void classTypeDropDown_processValueChange( **263** ValueChangeEvent event ) **264** { **265 266 267** } // end method classTypeDropDown_processValueChange **268 269** // store selected seat type in session bean **270** public void seatTypeDropDown_processValueChange( **271** ValueChangeEvent event ) **272** { **273 274 275** } // end method seatTypeDropDown_processValueChange **276 277** // invoke the web service when the user clicks Reserve button **278** public String reserveButton_action() **279** { **280** try **281** { **282 283 284 285**
+
+**18 19 20 21** public class Reserve extends AbstractPageBean **22** { **23** private int __placeholder; **24 25 26 27** private void _init() throws Exception **28** { **29** seatTypeDropDownDefaultOptions.setOptions( **30** new com.sun.webui.jsf.model.Option[] { **31** new com.sun.webui.jsf.model.Option( "Aisle", "Aisle" ), **32** new com.sun.webui.jsf.model.Option( "Middle", "Middle" ), **33** new com.sun.webui.jsf.model.Option( "Window", "Window" ) } ); **34** classTypeDropDownDefaultOptions.setOptions( **35** new com.sun.webui.jsf.model.Option[] { **36** new com.sun.webui.jsf.model.Option( "Economy", "Economy" ), **37** new com.sun.webui.jsf.model.Option( "First", "First" ) } ); **38 39 40** } // end method **41 42 43 44 261** // store selected class in session bean **262** public void classTypeDropDown_processValueChange( **263** ValueChangeEvent event ) **264** { **265 266 267** } // end method classTypeDropDown_processValueChange **268 269** // store selected seat type in session bean **270** public void seatTypeDropDown_processValueChange( **271** ValueChangeEvent event ) **272** { **273 274 275** } // end method seatTypeDropDown_processValueChange **276 277** // invoke the web service when the user clicks Reserve button **278** public String reserveButton_action() **279** { **280** try **281** { **282 283 284 285**
 
 **Fig. 28.18** | Page scope backing bean class for seat reservation client. (Part 2 of 3.)
 
@@ -871,7 +871,7 @@ consisting of random numbers with the proper number of digits. The client applic
 
 **Fig. 28.18** | Page scope backing bean class for seat reservation client. (Part 3 of 3.)
 
-**1274** Chapter 28 Web Services
+
 
 **_Requirements for User-Defined Types Used with Web Methods_** A class that is used to specify parameter or return types in web methods must meet several requirements:
 
@@ -899,7 +899,7 @@ Any instance variable that is not serialized simply receives its default value (
 
 **Fig. 28.19** | Class Equation that stores information about an equation. (Part 2 of 3.)
 
-**1276** Chapter 28 Web Services
+
 
 Class Equation defines methods getLeftHandSide and setLeftHandSide (lines 41– 44 and 77–80); getRightHandSide and setRightHandSide (lines 47–50 and 83–86); getLeftOperand and setLeftOperand (lines 53–56 and 89–92); getRightOperand and setRightOperand (lines 59–62 and 95–98); getReturnValue and setReturnValue (lines 65–68 and 101–104); and getOperationType and setOperationType (lines 71–74 and
 
@@ -927,7 +927,7 @@ Equation
 
 return new Equation( randomObject.nextInt( maximum - minimum ) + minimum, randomObject.nextInt( maximum - minimum ) + minimum, operation );
 
-**1278** Chapter 28 Web Services
+
 
 **_Testing the EquationGenerator Web Service_** Figure 28.21 shows the result of testing the EquationGenerator service with the Tester
 
@@ -955,7 +955,7 @@ a) Using the EquationGenerator web service’s Tester web page to generate an Eq
 
 b) Result of generating an Equation.
 
-**1280** Chapter 28 Web Services
+
 
 The tutor then displays the left-hand side of the Equation and waits for user input. Line 9 declares a GeneratorService instance variable that we use to obtain an EquationGener-
 
@@ -981,9 +981,9 @@ private Equation equation; // represents an equation
 
 equation = proxy.generateEquation( operation, difficulty ); answer = equation.getReturnValue(); equationJLabel.setText( equation.getLeftHandSide() + " =" );
 
-**1282** Chapter 28 Web Services
 
-**98** catch ( Exception e ) **99** { **100** e.printStackTrace(); **101** } // end catch **102** } // end method generateJButtonActionPerformed **103 104** // begins program execution **105** public static void main( String args\[\] ) **106** { **107** java.awt.EventQueue.invokeLater( **108** new Runnable() **109** { **110** public void run() **111** { **112** new EquationGeneratorClientJFrame().setVisible( true ); **113** } // end method run **114** } // end anonymous inner class **115** ); // end call to java.awt.EventQueue.invokeLater **116** } // end method main **117 118** // Variables declaration - do not modify **119** private javax.swing.JLabel answerJLabel; **120** private javax.swing.JTextField answerJTextField; **121** private javax.swing.JButton checkAnswerJButton; **122** private javax.swing.JLabel equationJLabel; **123** private javax.swing.JButton generateJButton; **124** private javax.swing.JComboBox levelJComboBox; **125** private javax.swing.JLabel levelJLabel; **126** private javax.swing.JComboBox operationJComboBox; **127** private javax.swing.JLabel operationJLabel; **128** private javax.swing.JLabel questionJLabel; **129** // End of variables declaration **130** } // end class EquationGeneratorClientJFrame
+
+**98** catch ( Exception e ) **99** { **100** e.printStackTrace(); **101** } // end catch **102** } // end method generateJButtonActionPerformed **103 104** // begins program execution **105** public static void main( String args[] ) **106** { **107** java.awt.EventQueue.invokeLater( **108** new Runnable() **109** { **110** public void run() **111** { **112** new EquationGeneratorClientJFrame().setVisible( true ); **113** } // end method run **114** } // end anonymous inner class **115** ); // end call to java.awt.EventQueue.invokeLater **116** } // end method main **117 118** // Variables declaration - do not modify **119** private javax.swing.JLabel answerJLabel; **120** private javax.swing.JTextField answerJTextField; **121** private javax.swing.JButton checkAnswerJButton; **122** private javax.swing.JLabel equationJLabel; **123** private javax.swing.JButton generateJButton; **124** private javax.swing.JComboBox levelJComboBox; **125** private javax.swing.JLabel levelJLabel; **126** private javax.swing.JComboBox operationJComboBox; **127** private javax.swing.JLabel operationJLabel; **128** private javax.swing.JLabel questionJLabel; **129** // End of variables declaration **130** } // end class EquationGeneratorClientJFrame
 
 **Fig. 28.22** | Math tutoring application. (Part 3 of 4.)
 
@@ -997,7 +997,7 @@ When the user clicks the **Generate Equation** JButton, method generateButton-
 
 ActionPerformed (lines 207–221) invokes the EquationGenerator web service’s gener- ateEquation (line 212) method. After receiving an Equation object from the web service, the handler displays the left-hand side of the equation in equationJLabel (line 214) and enables the checkAnswerJButton so that the user can submit an answer. When the user clicks the **Check Answer** JButton, method checkAnswerJButtonActionPerformed (lines 180–204) determines whether the user provided the correct answer.
 
-**28.9 REST-Based Web Services in ASP.NET** \[_Note:_ This section assumes you already know ASP.NET (Chapter 25).\] In this section, we discuss how to build ASP.NET REST-based web services. **Representational State Transfer (REST)** (originally proposed in Roy Thomas Fielding’s doctoral dissertation1) refers to an architectural style for implementing web services. Though REST is not a stan- dard, RESTful web services are implemented using web standards, such as HTTP, XML and JSON. Each operation in a RESTful web service is easily identified by a unique URL. So, when the server receives a request, it immediately knows what operation to perform. Such web services can be invoked from a program or directly from a web browser by en- tering the URL in the browser’s address field. In some cases, the results of a particular op- eration may be cached locally by the browser. This can make subsequent requests for the same operation faster by loading the result directly from the browser’s cache.2 Many Web 2.0 web services provide RESTful interfaces.3
+**28.9 REST-Based Web Services in ASP.NET** [_Note:_ This section assumes you already know ASP.NET (Chapter 25).] In this section, we discuss how to build ASP.NET REST-based web services. **Representational State Transfer (REST)** (originally proposed in Roy Thomas Fielding’s doctoral dissertation1) refers to an architectural style for implementing web services. Though REST is not a stan- dard, RESTful web services are implemented using web standards, such as HTTP, XML and JSON. Each operation in a RESTful web service is easily identified by a unique URL. So, when the server receives a request, it immediately knows what operation to perform. Such web services can be invoked from a program or directly from a web browser by en- tering the URL in the browser’s address field. In some cases, the results of a particular op- eration may be cached locally by the browser. This can make subsequent requests for the same operation faster by loading the result directly from the browser’s cache.2 Many Web 2.0 web services provide RESTful interfaces.3
 
 1\. Fielding, R. T. “Architectural Styles and the Design of Network-based Software Architectures.” <http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm>.
 
@@ -1005,15 +1005,15 @@ ActionPerformed (lines 207–221) invokes the EquationGenerator web service’s 
 
 **Fig. 28.22** | Math tutoring application. (Part 4 of 4.)
 
-**1284** Chapter 28 Web Services
+
 
 We use ASP.NET here because it provides a simple way to build REST-based web services. We take advantage of the tools provided in Microsoft’s Visual Web Developer 2005 Express, which you can download from msdn.microsoft.com/vstudio/express. The example in this section is the web service that we consumed in our Calendar applica- tion from Fig. 15.11 in the Ajax chapter.
 
 **28.9.1 REST-Based Web Service Functionality** Figure 28.23 presents the code-behind file for the CalendarSevice web service that you’ll build in Section 28.9.2. When creating a web service in Visual Web Developer, you work almost exclusively in the code-behind file. This web service is designed to give the client access to a database of events. A client can access all events that occur on a specific day us- ing the getItemsByDate method or request a specific event using the getItemById meth- od. In addition, the client can modify an event by calling the Save method.
 
-**1** ' Fig. 28.23 CalendarService.vb **2** ' REST-based event web service. **3** Imports System.Web **4** Imports System.Web.Services **5** Imports System.Web.Services.Protocols **6** Imports System.Data ' Used to access a database **7** Imports System.Web.Script.Serialization ' Used to return JSON **8 9** <WebService(Namespace:="http://www.deitel.com/")> \_
+**1** ' Fig. 28.23 CalendarService.vb **2** ' REST-based event web service. **3** Imports System.Web **4** Imports System.Web.Services **5** Imports System.Web.Services.Protocols **6** Imports System.Data ' Used to access a database **7** Imports System.Web.Script.Serialization ' Used to return JSON **8 9** <WebService(Namespace:="http://www.deitel.com/")> _
 
-**10** <WebServiceBinding(ConformsTo:=WsiProfiles.BasicProfile1_1)> \_ **11** <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> \_ **12** Public Class CalendarService **13** Inherits System.Web.Services.WebService **14 15** ' variables used to access the database **16** Private calendarDataSet As New CalendarDataSet() **17** Private eventsTableAdapter As \_ **18** New CalendarDataSetTableAdapters.EventsTableAdapter() **19 20** ' retrieve the event from the database given an id **21** <WebMethod(Description:="Gets a list of events for a given id.")> \_ **22** Public Sub getItemById(ByVal id As Integer) **23** ' set up the data set **24** eventsTableAdapter.FillById(calendarDataSet.Events, id) **25 26** ' insert the data into an Item object. **27** Dim identification As String = calendarDataSet.Events(0).ID **28** Dim description As String = calendarDataSet.Events(0).Description **29** Dim itemObject As New Item(identification, description) **30 31** ' convert the data to JSON and send it back to the client **32** Dim serializer As JavaScriptSerializer = New JavaScriptSerializer() **33** Dim response As String = serializer.Serialize(itemObject) **34** HttpContext.Current.Response.Write(response) ' send to client **35** End Sub ' getItemById **36**
+**10** <WebServiceBinding(ConformsTo:=WsiProfiles.BasicProfile1_1)> _ **11** <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _ **12** Public Class CalendarService **13** Inherits System.Web.Services.WebService **14 15** ' variables used to access the database **16** Private calendarDataSet As New CalendarDataSet() **17** Private eventsTableAdapter As _ **18** New CalendarDataSetTableAdapters.EventsTableAdapter() **19 20** ' retrieve the event from the database given an id **21** <WebMethod(Description:="Gets a list of events for a given id.")> _ **22** Public Sub getItemById(ByVal id As Integer) **23** ' set up the data set **24** eventsTableAdapter.FillById(calendarDataSet.Events, id) **25 26** ' insert the data into an Item object. **27** Dim identification As String = calendarDataSet.Events(0).ID **28** Dim description As String = calendarDataSet.Events(0).Description **29** Dim itemObject As New Item(identification, description) **30 31** ' convert the data to JSON and send it back to the client **32** Dim serializer As JavaScriptSerializer = New JavaScriptSerializer() **33** Dim response As String = serializer.Serialize(itemObject) **34** HttpContext.Current.Response.Write(response) ' send to client **35** End Sub ' getItemById **36**
 
 **Fig. 28.23** | REST-based event web service. (Part 1 of 2.)
 
@@ -1025,11 +1025,11 @@ Line 9 contains a **WebService** attribute. Attaching this attribute to a web se
 
 Visual Web Developer places line 10 in all newly created web services. This line indi- cates that the web service conforms to the **Basic Profile 1.1** (**BP 1.1**) developed by the **Web Services Interoperability Organization** (**WS-I**), a group dedicated to promoting interoper- ability among web services developed on different platforms with different programming languages. BP 1.1 is a document that defines best practices for various aspects of web service creation and consumption (www.WS-I.org). Setting the **WebServiceBinding** attribute’s **ConformsTo** property to **WsiProfiles.BasicProfile1_1** instructs Visual Web Developer to perform its “behind-the-scenes” work, such as generating WSDL file and the ASMX file
 
-**37** ' retrieve the list of events that occur on a specific date **38** <WebMethod(Description:="Gets a list of events for a given date.")> \_ **39** Public Sub getItemsByDate(ByVal eventDate As String) **40** eventsTableAdapter.FillByDate(calendarDataSet.Events, eventDate) **41** Dim identification As String ' string used to store the id **42** Dim description As String ' string used to store the description **43** Dim eventRow As DataRow ' used to iterate over the DataSet **44** Dim length As Integer = calendarDataSet.Events.Rows.Count **45** Dim itemObject As = New Item(0 To length - 1) {} ' initialize array **46** Dim count As Integer = 0 **47 48** ' insert the data into an array of Item objects **49** For Each eventRow In calendarDataSet.Events.Rows **50** identification = eventRow.Item("ID") **51** description = eventRow.Item("Description") **52** itemObject(count) = New Item(identification, description) **53** count += 1 **54** Next **55 56** ' convert the data to JSON and send it back to the client **57** Dim serializer As New JavaScriptSerializer() **58** Dim response As String = serializer.Serialize(itemObject) **59** HttpContext.Current.Response.Write(response) **60** End Sub ' getItemsByDate **61 62** ' modify the description of the event with the given id **63** <WebMethod(Description:="Updates an event’s description.")> \_ **64** Public Sub Save(ByVal id As String, ByVal descr As String) **65** eventsTableAdapter.UpdateDescription(descr, id) **66** getItemById(id) **67** End Sub ' Save **68** End Class ' CalendarService
+**37** ' retrieve the list of events that occur on a specific date **38** <WebMethod(Description:="Gets a list of events for a given date.")> _ **39** Public Sub getItemsByDate(ByVal eventDate As String) **40** eventsTableAdapter.FillByDate(calendarDataSet.Events, eventDate) **41** Dim identification As String ' string used to store the id **42** Dim description As String ' string used to store the description **43** Dim eventRow As DataRow ' used to iterate over the DataSet **44** Dim length As Integer = calendarDataSet.Events.Rows.Count **45** Dim itemObject As = New Item(0 To length - 1) {} ' initialize array **46** Dim count As Integer = 0 **47 48** ' insert the data into an array of Item objects **49** For Each eventRow In calendarDataSet.Events.Rows **50** identification = eventRow.Item("ID") **51** description = eventRow.Item("Description") **52** itemObject(count) = New Item(identification, description) **53** count += 1 **54** Next **55 56** ' convert the data to JSON and send it back to the client **57** Dim serializer As New JavaScriptSerializer() **58** Dim response As String = serializer.Serialize(itemObject) **59** HttpContext.Current.Response.Write(response) **60** End Sub ' getItemsByDate **61 62** ' modify the description of the event with the given id **63** <WebMethod(Description:="Updates an event’s description.")> _ **64** Public Sub Save(ByVal id As String, ByVal descr As String) **65** eventsTableAdapter.UpdateDescription(descr, id) **66** getItemById(id) **67** End Sub ' Save **68** End Class ' CalendarService
 
 **Fig. 28.23** | REST-based event web service. (Part 2 of 2.)
 
-**1286** Chapter 28 Web Services
+
 
 (which provides access to the web service) in conformance with the guidelines laid out in BP 1.1. For more information on web services interoperability and the Basic Profile 1.1, visit the WS-I web site at www.ws-i.org.
 
@@ -1075,7 +1075,7 @@ After the Item objects have been created and initialized with data from the data
 
 **Fig. 28.24** | A simple class to create objects to be converted into JSON format.
 
-**1288** Chapter 28 Web Services
+
 
 vert the objects into JSON strings. Then, lines 34 and 59 obtain a response object for the current client, using the Current property of the HttpContext object. Then we use this object to write the newly constructed JSON string as part of the response attribute, initi- ating the server response to the Ajax application in Fig. 15.11. To learn more about JSON visit our JSON Resource Center at www.deitel.com/JSON.
 
@@ -1103,7 +1103,7 @@ vice.vb (by right clicking the file in the **Solution Explorer** and choosing **
 
 **Fig. 28.26** | Code view of a web service.
 
-**1290** Chapter 28 Web Services
+
 
 **_Step 5: Examining the ASMX File_** The **Solution Explorer** lists a Service.asmx file in addition to the code-behind file. A web service’s ASMX page, when accessed through a web browser, displays information about the web service’s methods and provides access to the web service’s WSDL information. However, if you open the ASMX file on disk, you will see that it actually contains only
 
@@ -1143,7 +1143,7 @@ Adapter classes for interacting with the database tables.
 
 **_Step 4: Configuring a SELECT Query to Obtain a Specific Event_** Now let’s create a query which selects an event with a particular ID. Select **ID** and **Descrip- tion** from the **Events** table at the top of the **Query Builder** dialog. Next, specify the criteria for selecting seats. In the **Filter** column of the **ID** row specify =@id to indicate that this filter value also will be specified as a method argument. The **Query Builder** dialog should now appear as shown in Fig. 28.27. Click **OK** to close the **Query Builder** dialog. Click **Next >** to choose the names of the methods to generate. Name the Fill method FillById. Click the **Finish** button to generate this method.
 
-**1292** Chapter 28 Web Services
+
 
 **_Step 5: Adding Another Query to the EventsTableAdapter for the CalendarDataSet_** Now, you’ll create an UPDATE query that modifies a description of a specific event. In the design area for the CalendarDataSet, click **EventsTableAdapter** to select it, then right click it and select **Add Query…** to display the **TableAdapter Query Configuration Wizard**. Select **Use SQL Statements** and click **Next >**. Select **Update** as the query type and click **Next >**. Clear the text field and click **Query Builder…** to display the **Query Builder** and **Add Table** dialogs. Then add the Events table as you did in _Step 3_ and click **Close** to return to the **Query Builder** dialog.
 
@@ -1163,7 +1163,7 @@ scription, then click **Finish** to close the **TableAdapter Query Configuration
 
 **Fig. 28.29** | The test page for the CalendarService web service. (Part 1 of 2.)
 
-**1294** Chapter 28 Web Services
+
 
 Calling a REST-based web service is simpler than calling SOAP web services demon- strated earlier. Fig. 28.29 shows that you can invoke the web service directly from your browser. For example, if you type the URL http://localhost/calendarService/
 
@@ -1217,9 +1217,9 @@ Wikipedia resource explaining Representational State Transfer (REST). www.xfront
 
 Article entitled “Building Web Services the REST Way.”
 
-**1296** Chapter 28 Web Services
 
-www.ics.uci.edu/~fielding/pubs/dissertation/rest\_arch\_style.htm
+
+www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm
 
 The dissertation that originally proposed the concept of REST-based services. rest.blueoxen.net/cgi-bin/wiki.pl?ShortSummaryOfRest
 
@@ -1309,7 +1309,7 @@ service’s methods from a web browser. You can enable this feature via the proj
 
 vided with the web service’s description.
 
-**1298** Chapter 28 Web Services
+
 
 • JAX-WS uses the Web Service Description Language (WSDL)—a standard XML vocabulary for describing web services in a platform-independent manner.
 
@@ -1397,7 +1397,7 @@ er.SESSION_MAINTAIN_PROPERTY to true, which enables session tracking from the cl
 
 default or no-argument constructor. Also, any instance variables that should be serialized must have public _set_ and _get_ methods or the instance variables must be declared public.
 
-**1300** Chapter 28 Web Services
+
 
 • Any instance variable that is not serialized simply receives its default value (or the value provided by the no-argument constructor) when an object of the class is deserialized.
 
@@ -1461,7 +1461,7 @@ The INSERT statement that inserts a new entry into the PhoneBook database should
 
 INSERT INTO PhoneBook (LastName, FirstName, PhoneNumber) VALUES (_LastName_, _FirstName_, _PhoneNumber_)
 
-**1302** Chapter 28 Web Services
+
 
 **28.4** _(Phone Book Web Service Modification)_ Modify Exercise 28.3 so that it uses a class named PhoneBookEntry to represent a row in the database. The client application should provide objects of type PhoneBookEntry to the web service when adding contacts and should receive objects of type PhoneBookEntry when searching for contacts.
 
