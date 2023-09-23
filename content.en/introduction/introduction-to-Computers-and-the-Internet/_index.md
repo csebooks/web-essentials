@@ -133,11 +133,17 @@ From your standpoint, obviously, high-level languages are preferable to machine 
 
 The process of compiling a high-level language program into machine language can take a considerable amount of computer time. **Interpreter** programs were developed to execute high-level language programs directly, although much more slowly. In this book, we study several key programming languages, including JavaScript, ActionScript, PHP and Ruby on Rails—each of these **scripting languages** is processed by interpreters. We also study markup languages such as XHTML and XML, which can be processed by inter- preted scripting languages. You’ll see that interpreters have played an especially important role in helping scripting languages and markup languages achieve their goal of portability across a variety of platforms.
 
-**Performance Tip 1.1** _Interpreters have an advantage over compilers in scripting. An interpreted program can begin executing as soon as it is downloaded to the client’s machine, without the need to be compiled before it can execute. On the downside, scripts generally run much slower than compiled code._ 1.1
+**Performance Tip 1.1**
 
-**Portability Tip 1.1** _Interpreted languages are more portable than compiled languages. Interpreters can be imple- mented for each platform on which the interpreted languages need to execute._ 1.1
+> _Interpreters have an advantage over compilers in scripting. An interpreted program can begin executing as soon as it is downloaded to the client’s machine, without the need to be compiled before it can execute. On the downside, scripts generally run much slower than compiled code._ 1.1
 
-**Software Engineering Observation 1.1** _Interpreted languages are more dynamic than compiled languages. For example, server-side applications can generate code in response to user interactions, and that code can then be interpreted in a browser._ 1.1
+**Portability Tip 1.1**
+
+> _Interpreted languages are more portable than compiled languages. Interpreters can be imple- mented for each platform on which the interpreted languages need to execute._ 1.1
+
+**Software Engineering Observation 1.1**
+
+> _Interpreted languages are more dynamic than compiled languages. For example, server-side applications can generate code in response to user interactions, and that code can then be interpreted in a browser._ 1.1
 
 ## History of the Internet and World Wide Web
 
@@ -221,9 +227,13 @@ We live in a world of objects. Just look around you. There are cars, planes, peo
 
 A key problem with procedural programming is that the program units do not effec- tively mirror real-world entities, so these units are not particularly reusable. It’s not unusual for programmers to “start fresh” on each new project and have to write similar software “from scratch.” This wastes time and money, as people repeatedly “reinvent the wheel.” With object technology, the software entities created (called **classes**), if properly designed, tend to be reusable on future projects. Using libraries of reusable componentry can greatly reduce effort required to implement certain kinds of systems (compared to the effort that would be required to reinvent these capabilities on new projects).
 
-**Software Engineering Observation 1.2** _Extensive class libraries of reusable software components are available on the Internet. Many of these libraries are free._ 1.2
+**Software Engineering Observation 1.2**
 
-**Software Engineering Observation 1.3** _Some organizations report that the key benefit object-oriented programming gives them is not software that is reusable but, rather, software that is more understandable, better organized and easier to maintain, modify and debug. This can be significant, because perhaps as much as 80 percent of software cost is associated not with the original efforts to develop the software, but with the continued evolution and maintenance of that software throughout its lifetime._ 1.3
+> _Extensive class libraries of reusable software components are available on the Internet. Many of these libraries are free._ 1.2
+
+**Software Engineering Observation 1.3**
+
+> _Some organizations report that the key benefit object-oriented programming gives them is not software that is reusable but, rather, software that is more understandable, better organized and easier to maintain, modify and debug. This can be significant, because perhaps as much as 80 percent of software cost is associated not with the original efforts to develop the software, but with the continued evolution and maintenance of that software throughout its lifetime._ 1.3
 
 ## JavaScript: Object-Based Scripting for the Web
 
@@ -235,19 +245,31 @@ The JavaScript chapters of the book are more than just an introduction to the la
 
 JavaScript is a powerful scripting language. Experienced programmers sometimes take pride in creating strange, contorted, convoluted JavaScript code. This kind of coding makes programs more difficult to read, test and debug. This book is also geared for novice programmers; for all readers we stress program clarity.
 
-**Good Programming Practice 1.1** _Write your programs in a simple and straightforward manner. This is sometimes referred to as KIS (“keep it simple”). One key aspect of keeping it simple is another interpretation of KIS— “keep it small.” Do not “stretch” the language by trying bizarre uses._ 1.1
+**Good Programming Practice 1.1**
+
+> _Write your programs in a simple and straightforward manner. This is sometimes referred to as KIS (“keep it simple”). One key aspect of keeping it simple is another interpretation of KIS— “keep it small.” Do not “stretch” the language by trying bizarre uses._ 1.1
 
 You’ll see that JavaScript is a portable scripting language and that programs written in JavaScript can run in many web browsers. Actually, portability is an elusive goal. \\
 
-**Portability Tip 1.2** _Although it is easier to write portable programs in JavaScript than in many other programming languages, differences among interpreters and browsers make portability difficult to achieve. Simply writing programs in JavaScript does not guarantee portability. Programmers occasionally need to research platform variations and write their code accordingly._ 1.2
+**Portability Tip 1.2**
 
-**Portability Tip 1.3** _When writing JavaScript programs, you need to deal directly with cross-browser portability is- sues. Such issues are hidden by JavaScript libraries (e.g., Dojo, Prototype, Script.aculo.us and ASP.NET Ajax) which provide powerful, ready-to-use capabilities that simplify JavaScript cod- ing by making it cross-browser compatible._ 1.3
+> _Although it is easier to write portable programs in JavaScript than in many other programming languages, differences among interpreters and browsers make portability difficult to achieve. Simply writing programs in JavaScript does not guarantee portability. Programmers occasionally need to research platform variations and write their code accordingly._ 1.2
 
-**Error-Prevention Tip 1.1** _Always test your JavaScript programs on all systems and in all web browsers for which they are intended._ 1.1
+**Portability Tip 1.3**
 
-**Good Programming Practice 1.2** _Read the documentation for the JavaScript version you are using to access JavaScript’s rich col- lection of features._ 1.2
+> _When writing JavaScript programs, you need to deal directly with cross-browser portability is- sues. Such issues are hidden by JavaScript libraries (e.g., Dojo, Prototype, Script.aculo.us and ASP.NET Ajax) which provide powerful, ready-to-use capabilities that simplify JavaScript cod- ing by making it cross-browser compatible._ 1.3
 
-**Error-Prevention Tip 1.2** _Your computer and JavaScript interpreter are good teachers. If you are not sure how a feature works, even after studying the documentation, experiment and see what happens. Study each er- ror or warning message and adjust the code accordingly._ 1.2
+**Error-Prevention Tip 1.1**
+
+> _Always test your JavaScript programs on all systems and in all web browsers for which they are intended._ 1.1
+
+**Good Programming Practice 1.2**
+
+> _Read the documentation for the JavaScript version you are using to access JavaScript’s rich col- lection of features._ 1.2
+
+**Error-Prevention Tip 1.2**
+
+> _Your computer and JavaScript interpreter are good teachers. If you are not sure how a feature works, even after studying the documentation, experiment and see what happens. Study each er- ror or warning message and adjust the code accordingly._ 1.2
 
 JavaScript was created by Netscape, the company that created the first widely suc- cessful web browser. Both Netscape and Microsoft have been instrumental in the stan- dardization of JavaScript by ECMA International (formerly the European Computer Manufacturers Association) as ECMAScript. In Chapters 16–17, we discuss Adobe Flash, which uses another scripting language named ActionScript. ActionScript and JavaScript are converging in the next version of the JavaScript standard (JavaScript 2/ECMA Script version 4) currently under development by ECMA. This will result in a universal client scripting language, greatly simplifying web application development.
 
@@ -255,7 +277,9 @@ JavaScript was created by Netscape, the company that created the first widely su
 
 Ensuring a consistent look and feel on client-side browsers is one of the great challenges of developing web-based applications. Currently, a standard does not exist to which soft- ware developers must adhere when creating web browsers. Although browsers share a com- mon set of features, each browser might render pages differently. Browsers are available in many versions and on many different platforms (Microsoft Windows, Apple Macintosh, Linux, UNIX, etc.). Vendors add features to each new version that sometimes result in cross-platform incompatibility issues. Clearly it is difficult to develop web pages that ren- der correctly on all versions of each browser. In this book we develop web applications that execute on both the Internet Explorer 7 and Firefox 2 browsers.
 
-**Portability Tip 1.4** _The web is populated with many different browsers, which makes it difficult for authors and web application developers to create universal solutions. The W3C is working toward the goal of a universal client-side platform._ 1.4
+**Portability Tip 1.4**
+
+> _The web is populated with many different browsers, which makes it difficult for authors and web application developers to create universal solutions. The W3C is working toward the goal of a universal client-side platform._ 1.4
 
 ## C, C++ and Java
 
@@ -299,7 +323,9 @@ real.37signals.com/toc.php. Many Ruby on Rails developers have reported signific
 
 Software has generally been viewed as a product; most software still is offered this way. If you want to run an application, you buy a software package from a software vendor. You then install that software on your computer and run it as needed. As new versions of the software appear, you upgrade your software, often at significant expense. This process can become cumbersome for organizations with tens of thousands of systems that must be maintained on a diverse array of computer equipment. With **Software as a Service (SaaS)**, the software runs on servers elsewhere on the Internet. When those servers are updated, all clients worldwide see the new capabilities; no local installation is needed. You access the service through a browser—these are quite portable, so you can run the same applications on different kinds of computers from anywhere in the world. Salesforce.com, Google, Microsoft and 37Signals all offer SaaS.
 
-## Notes about _Internet & World Wide Web How to Program, 4/e_
+## Notes about
+
+_Internet & World Wide Web How to Program, 4/e_
 
 In 1995, we saw an explosion of interest in the Internet and the World Wide Web. We immersed ourselves in these technologies, and a clear picture started to emerge in our minds of the next direction to take in writing textbooks for introductory programming courses. **Electronic commerce**, or **e-commerce**, as it is typically called, began to dominate the business, financial and computer industry news. This was a reconceptualization of the way business should be conducted. We still wanted to teach programming principles, but we felt compelled to do it in the context of the technologies that businesses and organiza- tions need to create Internet-based and web-based applications. With this realization, the first edition of _Internet & World Wide Web How to Program_ was born and published in December of 1999.
 
@@ -324,145 +350,3 @@ The About.com _Internet for Beginners_ guide provides valuable resources for fur
 _Learn the Net_ is a website containing a complete overview of the Internet, the web and the underly- ing technologies. The site contains much information appropriate for novices. www.w3.org
 
 The World Wide Web Consortium (W3C) website offers a comprehensive description of web tech- nologies. For each Internet technology with which the W3C is involved, the site provides a descrip- tion of the technology, its benefits to web designers, the history of the technology and the future goals of the W3C in developing the technology.
-
-**Summary**
-
-**_Section 1.1 Introduction_**
-
-- In an era of steadily rising costs, computing costs have been decreasing dramatically because of rapid developments in both hardware and software technologies.
-
-- Technologies such as Extensible HyperText Markup Language (XHTML), JavaScript, Flash, Flex, Dreamweaver and Extensible Markup Language (XML) are used to build the portions of web-based applications that reside on the client side (i.e., the portions of applications that typi- cally run on web browsers such as Firefox or Microsoft’s Internet Explorer).
-
-- Technologies such as web servers, databases, ASP.NET, PHP, Ruby on Rails and JavaServer Fac- es are used to build the server side of web-based applications. These parts of applications typically run on “heavy-duty” computer systems on which organizations’ business-critical websites reside.
-
-**_Section 1.2 What Is a Computer?_**
-
-- A computer is a device capable of performing computations and making logical decisions at speeds billions of times faster than human beings can.
-
-- A computer processes data under the control of sets of instructions called computer programs, which guide it through orderly sets of actions specified by computer programmers.
-
-- The various devices that comprise a computer system are referred to as hardware.
-
-- The computer programs that run on a computer are referred to as software.
-
-**_Section 1.3 Computer Organization_**
-
-- The input unit is the “receiving” section of the computer. It obtains information from input devices and places it at the disposal of the other units for processing.
-
-- The output unit is the “shipping” section of the computer. It takes information processed by the computer and places it on output devices to make it available for use outside the computer.
-
-- The memory unit is the rapid-access, relatively low-capacity “warehouse” section of the comput- er. It retains information that has been entered through the input unit, making it immediately available for processing when needed, and retains information that has already been processed until it can be placed on output devices by the output unit.
-
-- The arithmetic and logic unit (ALU) is the “manufacturing” section of the computer. It is re- sponsible for performing calculations and making decisions.
-
-- The central processing unit (CPU) is the “administrative” section of the computer. It coordinates and supervises the operation of the other sections.
-
-- The secondary storage unit is the long-term, high-capacity “warehousing” section of the comput- er. Programs or data not being used by the other units are normally placed on secondary storage devices (e.g., disks) until they are needed, possibly hours, days, months or even years later.
-
-**_Section 1.4 Machine Languages, Assembly Languages and High-Level Languages_**
-
-- Any computer can directly understand only its own machine language, which generally consists of strings of numbers ultimately reduced to 1s and 0s that instruct the computer to perform its most elementary operations.
-
-- English-like abbreviations form the basis of assembly languages. Translator programs called as- semblers convert assembly-language programs to machine language.
-
-- Compilers translate high-level language programs into machine-language programs. High-level languages contain English words and conventional mathematical notations.
-
-- Interpreter programs directly execute high-level language programs, eliminating the need to compile them into machine language.
-
-**_Section 1.5 History of the Internet and World Wide Web_**
-
-- In the late 1960s, ARPA, the Advanced Research Projects Agency of the U.S. Department of Defense rolled out the blueprints for networking the main computer systems of about a dozen ARPA-funded universities and research institutions. ARPA then proceeded to implement the ARPANET, the predecessor to today’s Internet.
-
-- The World Wide Web allows computer users to locate and view multimedia-based documents (i.e., documents with text, graphics, animations, audios or videos) on almost any subject.
-
-- In 1989, Tim Berners-Lee of CERN began to develop the World Wide Web and several com- munication protocols that form the backbone of the web.
-
-- Web use exploded with the availability in 1993 of the Mosaic browser, which featured a user- friendly graphical interface. Marc Andreessen, whose team at NCSA developed Mosaic, went on to found Netscape, the company that many people credit with initiating the explosive Internet economy of the late 1990s.
-
-**_Section 1.6 World Wide Web Consortium (W3C)_**
-
-- In October 1994, Tim Berners-Lee founded the World Wide Web Consortium (W3C)—an organization devoted to developing nonproprietary, interoperable technologies for the web.
-
-**_Section 1.7 Web 2.0_**
-
-- Web 2.0 companies use the web as a platform to create collaborative, community-based sites (e.g., social networking sites, blogs, wikis, etc.).
-
-- Web 1.0 (the state of the web through the 1990s and early 2000s) was focused on a relatively small number of companies and advertisers producing content for users to access.
-
-- Web 2.0 embraces an architecture of participation—a design that encourages user interaction and community contributions.
-
-- Using the collective intelligence—the concept that a large diverse group of people will create smart ideas—communities collaborate to develop open source software that many people believe is better and more robust than proprietary software.
-
-- Rich Internet Applications (RIAs) are being developed using technologies (such as Ajax) that have the look and feel of desktop software, enhancing a user’s overall experience.
-
-- Web services, inexpensive computers, abundant high-speed Internet access, open source software and many other elements have inspired new, exciting, lightweight business models that people can launch with only a small investment.
-
-**_Section 1.8 Personal, Distributed and Client/Server Computing_**
-
-- Apple Computer popularized personal computing.
-
-- IBM’s Personal Computer quickly legitimized personal computing in business, industry and government organizations, where IBM mainframes were heavily used.
-
-- Although early personal computers were not powerful enough to timeshare several users, these machines could be linked together in computer networks, sometimes over telephone lines and sometimes in local area networks (LANs) within an organization. This led to the phenomenon of distributed computing.
-
-- Today’s personal computers are as powerful as the million-dollar machines of just a few decades ago, and information is shared easily across computer networks.
-
-**_Section 1.9 Hardware Trends_**
-
-- Moore’s Law states that the power of hardware doubles every two years, while the price remainsessentially the same.
-
-**_Section 1.10 Key Software Trend: Object Technology_**
-
-- Objects are essentially reusable software components that model real-world items.
-
-- Not until object-oriented programming became widely used in the 1990s did software develop- ers feel they had the tools to make major strides in the software development process.
-
-- Object technology is a packaging scheme that helps us create meaningful software units.
-
-- A key problem with procedural programming is that the program units do not effectively mirror real-world entities, so these units are not particularly reusable.
-
-- With object technology, the software entities created (called classes), if properly designed, tend to be reusable on future projects. Using libraries of reusable componentry can greatly reduce ef- fort required to implement certain kinds of systems.
-
-- Some organizations report that the key benefit object-oriented programming gives them is the production of software which is more understandable, better organized and easier to maintain, modify and debug.
-
-**_Section 1.11 JavaScript: Object-Based Scripting for the Web_**
-
-- JavaScript is an object-based scripting language with strong support for proper software engineering techniques.
-
-- JavaScript was created by Netscape. Both Netscape and Microsoft have been instrumental in the standardization of JavaScript by ECMA International as ECMAScript.
-
-**_Section 1.12 Browser Portability_**
-
-- Ensuring a consistent look and feel on client-side browsers is one of the great challenges of developing web-based applications.
-
-**_Section 1.13 C, C++ and Java_**
-
-- C initially became known as the development language of the UNIX operating system. Today,virtually all new major operating systems are written in C and/or C++.
-
-- C++ provides a number of features that “spruce up” the C language, but more importantly, it provides capabilities for object-oriented programming.
-
-- Java is used to create dynamic and interactive content for web pages, develop enterprise applica- tions, enhance web-server functionality, provide applications for consumer devices and more.
-
-**_Section 1.14 BASIC, Visual Basic, Visual C++, C# and .NET_**
-
-- The BASIC programming language was developed in the mid-1960s at Dartmouth College. Its primary purpose was to familiarize novices with programming techniques.
-
-- Microsoft’s Visual Basic was introduced in the early 1990s to simplify the process of developing Microsoft Windows applications.
-
-- Microsoft has a corporatewide strategy for integrating the Internet and the web into computer applications. This strategy is implemented in Microsoft’s .NET platform.
-
-- The .NET platform’s three primary programming languages are Visual Basic, Visual C++ and Visual C#.
-
-- .NET developers can write software components in their preferred language, then form applica- tions by combining those components with components written in any .NET language.
-
-**_Section 1.15 Software Technologies_**
-
-- Agile Software Development is a set of methodologies that try to get software implemented quickly with fewer resources than previous methodologies.
-
-- Refactoring involves reworking code to make it clearer and easier to maintain while preserving its functionality.
-
-- Design patterns are proven architectures for constructing flexible and maintainable object-ori- ented software.
-
-- Open source development allows individuals and companies to contribute their efforts in devel- oping, maintaining and evolving software in exchange for the right to use that software for their own purposes, typically at no charge.
-
-- With Software as a Service (SaaS), the software runs on servers elsewhere on the Internet, rather than on the desktop.
