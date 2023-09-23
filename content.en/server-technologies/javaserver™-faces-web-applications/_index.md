@@ -3,17 +3,17 @@ title: "Javaserver™ Faces Web Applications"
 weight: 6
 ---
 
-**O B J E C T I V E S** In this chapter you will learn:
+**OBJECTIVES** In this chapter you will learn:
 
-■ Web application development using Java Technologies and Netbeans.
+- Web application development using Java Technologies and Netbeans.
 
-■ To create JavaServer Pages with JavaServer Faces components.
+- To create JavaServer Pages with JavaServer Faces components.
 
-■ To create web applications consisting of multiple pages.
+- To create web applications consisting of multiple pages.
 
-■ To validate user input on a web page.
+- To validate user input on a web page.
 
-■ To maintain state information about a user with session tracking and cookies.
+- To maintain state information about a user with session tracking and cookies.
 
 **_If any man will draw up his case, and put his name at the foot of the first page, I will give him an immediate reply. Where he compels me to turn over the sheet, he must wait my leisure._ —Lord Sandwich**
 
@@ -29,7 +29,7 @@ weight: 6
 
 **in e**
 
-**26.1 Introduction** In this chapter, we introduce web application development with Java-based technology. Web-based applications create web content for web browser clients. This web content in- cludes Extensible HyperText Markup Language (XHTML), client-side scripting, images and binary data. If you are not familiar with XHTML, you should read Chapter 4 before studying this chapter. \[_Note:_ This chapter assumes that you know Java. To learn more about Java, check out _Java How to Program, Seventh Edition_, or visit our Java Resource Centers at www.deitel.com/ResourceCenters.html.\]
+**26.1 Introduction** In this chapter, we introduce web application development with Java-based technology. Web-based applications create web content for web browser clients. This web content in- cludes Extensible HyperText Markup Language (XHTML), client-side scripting, images and binary data. If you are not familiar with XHTML, you should read Chapter 4 before studying this chapter. [_Note:_ This chapter assumes that you know Java. To learn more about Java, check out _Java How to Program, Seventh Edition_, or visit our Java Resource Centers at www.deitel.com/ResourceCenters.html.]
 
 This chapter begins with an overview of multitier application architecture and Java’s web technologies for implementing multitier applications. We then present several exam- ples that demonstrate web application development. The first example introduces you to Java web development. In the second example, we build a web application that simply shows the look-and-feel of several web application GUI components. Next, we demon- strate how to use validation components and custom validation methods to ensure that user input is valid before it is submitted for processing on the server. The chapter finishes with two examples of customizing a user’s experience with session tracking.
 
@@ -49,7 +49,7 @@ In Chapter 27, we continue our discussion of Java web application development wi
 
 Summary | Terminology | Self-Review Exercises | Answers to Self-Review Exercises | Exercises
 
-**1120** Chapter 26 JavaServer™ Faces Web Applications
+
 
 Throughout this chapter and Chapter 27, we use the **Netbeans 5.5.1** IDE, its **Visual Web Pack** and the **Sun Java System Application Server (SJSAS)**. The Visual Web Pack helps you build web applications using Java technologies such as JavaServer Pages and JavaServer Faces. To implement the examples presented in this chapter, you must install all three software products. A bundle of Netbeans 5.5.1 and SJSAS is available at
 
@@ -87,7 +87,7 @@ method is called to release any resources held by the servlet.
 
 **_Static Content_** JSPs can contain other static content. For example, JSPs normally include XHTML or XML markup. Such markup is known as **fixed-template data** or **fixed-template text**. Any
 
-**1122** Chapter 26 JavaServer™ Faces Web Applications
+
 
 literal text or XHTML markup in a JSP is translated to a String literal in the servlet rep- resentation of the JSP.
 
@@ -107,7 +107,7 @@ Every JSP file created in Netbeans represents a web page and has a corresponding
 
 Every Netbeans web application has three other JavaBeans. The **RequestBean** object is maintained in **request scope**—this object exists only for an HTTP request’s duration. A **SessionBean** object has **session scope**—the object exists throughout a user’s browsing ses- sion or until the session times out. There is a unique SessionBean object for each user. Finally, the **ApplicationBean** object has **application scope**—this object is shared by all instances of an application and exists as long as the application remains deployed on a web server. This object is used for application-wide data storage or processing; only one instance exists for the application, regardless of the number of open sessions.
 
-**26.3 Creating and Running a Simple Application in Netbeans** Our first example displays the web server’s time of day in a browser window. When run, this program displays the text "Current Time on the Web Server", followed by the web server’s time. The application contains a single web page and, as mentioned previously, consists of two related files—a JSP file (Fig. 26.1) and a supporting page bean file (Fig. 26.3). The application also has the three scoped data beans for request, session, and application scopes. Since this application does not store data, these beans are not used in this example. We first discuss the markup in the JSP file, the code in the page bean file and the application output, then we provide step-by-step instructions for creating the pro- gram. \[_Note:_ The markup in Fig. 26.1 and other JSP file listings in this chapter is the same as the markup that appears in Netbeans, but we have reformatted these listings for presen- tation purposes to make the code more readable.\]
+**26.3 Creating and Running a Simple Application in Netbeans** Our first example displays the web server’s time of day in a browser window. When run, this program displays the text "Current Time on the Web Server", followed by the web server’s time. The application contains a single web page and, as mentioned previously, consists of two related files—a JSP file (Fig. 26.1) and a supporting page bean file (Fig. 26.3). The application also has the three scoped data beans for request, session, and application scopes. Since this application does not store data, these beans are not used in this example. We first discuss the markup in the JSP file, the code in the page bean file and the application output, then we provide step-by-step instructions for creating the pro- gram. [_Note:_ The markup in Fig. 26.1 and other JSP file listings in this chapter is the same as the markup that appears in Netbeans, but we have reformatted these listings for presen- tation purposes to make the code more readable.]
 
 **1** <?xml version = "1.0" encoding = "UTF-8"?> **2 3** <!-- Fig. 26.1: Time.jsp --> **4** <!-- JSP file generated by Netbeans that displays --> **5** <!-- the current time on the web server --> **6 7 8 9**
 
@@ -117,7 +117,7 @@ Every Netbeans web application has three other JavaBeans. The **RequestBean** ob
 
 <jsp:root version = "1.2" xmlns:f = "http://java.sun.com/jsf/core" xmlns:h = "http://java.sun.com/jsf/html" xmlns:jsp = "http://java.sun.com/JSP/Page" xmlns:webuijsf = "http://www.sun.com/webui/webuijsf">
 
-**1124** Chapter 26 JavaServer™ Faces Web Applications
+
 
 Netbeans generates all the markup shown in Fig. 26.1 when you set the web page’s title, drag two **Static Text** components onto the page and set the properties of the **Static Text** components. **Static Text** components display text that cannot be edited by the user. We show these steps shortly.
 
@@ -173,7 +173,7 @@ webuijsf:body (children are visible components)
 
 webuijsf:StaticText
 
-**1126** Chapter 26 JavaServer™ Faces Web Applications
+
 
 For the markup in this file to be displayed in a browser, all the JSP’s elements are auto- matically mapped to XHTML elements that the browser recognizes. The same web com- ponent can map to different XHTML elements, depending on the client browser and the component’s property settings. In this example, the webuijsf:staticText components (lines 25–28, 29–32) map to XHTML **span** elements. A span element contains text that is displayed on a web page and is typically used to control the formatting of the text. The style attributes of a JSP’s webuijsf:staticText element will be represented as part of the corresponding span element’s style attribute when the browser renders the page. We show momentarily the XHTML document that results when Time.jsp is requested by a browser.
 
@@ -181,7 +181,7 @@ For the markup in this file to be displayed in a browser, all the JSP’s elemen
 
 **1** // Fig. 26.3: Time.java **2** // Page bean file that sets clockText to the time on the Web server. **3** package webtime; **4 5** import com.sun.rave.web.ui.appbase.AbstractPageBean; **6** import com.sun.webui.jsf.component.Body; **7** import com.sun.webui.jsf.component.Form; **8** import com.sun.webui.jsf.component.Head; **9** import com.sun.webui.jsf.component.Html;
 
-**10** import com.sun.webui.jsf.component.Link; **11** import com.sun.webui.jsf.component.Meta; **12** import com.sun.webui.jsf.component.Page; **13** import com.sun.webui.jsf.component.StaticText; **14** import java.text.DateFormat; **15** import java.util.Date; **16** import javax.faces.FacesException; **17 18** public class Time extends AbstractPageBean **19** { **20** private int \_\_placeholder; **21 22** // auto-generated component initialization method. **23** private void \_init() throws Exception **24** { **25** } // end method \_init **26 27** private Page page1 = new Page(); **28**
+**10** import com.sun.webui.jsf.component.Link; **11** import com.sun.webui.jsf.component.Meta; **12** import com.sun.webui.jsf.component.Page; **13** import com.sun.webui.jsf.component.StaticText; **14** import java.text.DateFormat; **15** import java.util.Date; **16** import javax.faces.FacesException; **17 18** public class Time extends AbstractPageBean **19** { **20** private int __placeholder; **21 22** // auto-generated component initialization method. **23** private void _init() throws Exception **24** { **25** } // end method _init **26 27** private Page page1 = new Page(); **28**
 
 **Fig. 26.3** | Page bean file that sets clockText to the time on the web server. (Part 1 of 5.)
 
@@ -191,7 +191,7 @@ For the markup in this file to be displayed in a browser, all the JSP’s elemen
 
 **Fig. 26.3** | Page bean file that sets clockText to the time on the web server. (Part 2 of 5.)
 
-**1128** Chapter 26 JavaServer™ Faces Web Applications
+
 
 **82** public void setBody1( Body b ) **83** { **84** this.body1 = b; **85** } // end method setBody1 **86 87** private Form form1 = new Form(); **88 89** public Form getForm1() **90** { **91** return form1; **92** } // end method getForm1 **93 94** public void setForm1( Form f ) **95** { **96** this.form1 = f; **97** } // end method setForm1 **98 99** private StaticText timeHeader = new StaticText(); **100 101** public StaticText getTimeHeader() **102** { **103** return timeHeader; **104** } // end method getTimeHeader **105 106** public void setTimeHeader( StaticText st ) **107** { **108** this.timeHeader = st; **109** } // end method setTimeHeader **110 111 112 113** public StaticText getClockText() **114** { **115** return clockText; **116** } // end method getClockText **117 118 119** { **120** this.clockText = st; **121** } // end method setClockText **122 123** private Meta meta1 = new Meta(); **124 125** public Meta getMeta1() **126** { **127** return meta1; **128** } // end method getMeta1 **129 130** public void setMeta1( Meta m ) **131** { **132** this.meta1 = m; **133** } // end method setMeta1 **134**
 
@@ -203,13 +203,13 @@ public void setClockText( StaticText st )
 
 26.3 Creating and Running a Simple Application in Netbeans **1129**
 
-**135** public Time() **136** { **137** } // end Time constructor **138 139** // initializes page content **140** public void init() **141** { **142** super.init(); **143 144** try **145** { **146** \_init(); **147** } // end try **148** catch ( Exception e ) **149** { **150** log( "Time Initialization Failure", e ); **151** throw e instanceof FacesException ? ( FacesException ) e : **152** new FacesException( e ); **153** } // end catch **154** } // end method init **155 156** // method called when postback occurs **157** public void preprocess() **158** { **159** } // end method preprocess **160 161** // method called before the page is rendered **162** public void prerender() **163** { **164 165 166** } // end method prerender **167 168** // method called after rendering completes, if init was called **169** public void destroy() **170** { **171** } // end method destroy **172 173** // return a reference to the scoped data bean **174** protected SessionBean1 getSessionBean1() **175** { **176** return ( SessionBean1 ) getBean( "SessionBean1" ); **177** } // end method getSessionBean1 **178 179** // return a reference to the scoped data bean **180** protected ApplicationBean1 getApplicationBean1() **181** { **182** return ( ApplicationBean1 ) getBean( "ApplicationBean1" ); **183** } // end method getApplicationBean1 **184 185** // return a reference to the scoped data bean **186** protected RequestBean1 getRequestBean1() **187** {
+**135** public Time() **136** { **137** } // end Time constructor **138 139** // initializes page content **140** public void init() **141** { **142** super.init(); **143 144** try **145** { **146** _init(); **147** } // end try **148** catch ( Exception e ) **149** { **150** log( "Time Initialization Failure", e ); **151** throw e instanceof FacesException ? ( FacesException ) e : **152** new FacesException( e ); **153** } // end catch **154** } // end method init **155 156** // method called when postback occurs **157** public void preprocess() **158** { **159** } // end method preprocess **160 161** // method called before the page is rendered **162** public void prerender() **163** { **164 165 166** } // end method prerender **167 168** // method called after rendering completes, if init was called **169** public void destroy() **170** { **171** } // end method destroy **172 173** // return a reference to the scoped data bean **174** protected SessionBean1 getSessionBean1() **175** { **176** return ( SessionBean1 ) getBean( "SessionBean1" ); **177** } // end method getSessionBean1 **178 179** // return a reference to the scoped data bean **180** protected ApplicationBean1 getApplicationBean1() **181** { **182** return ( ApplicationBean1 ) getBean( "ApplicationBean1" ); **183** } // end method getApplicationBean1 **184 185** // return a reference to the scoped data bean **186** protected RequestBean1 getRequestBean1() **187** {
 
 **Fig. 26.3** | Page bean file that sets clockText to the time on the web server. (Part 4 of 5.)
 
 clockText.setValue( DateFormat.getTimeInstance( DateFormat.LONG ).format( new Date() ) );
 
-**1130** Chapter 26 JavaServer™ Faces Web Applications
+
 
 This page bean file provides _get_ and _set_ methods for every element of the JSP file of Fig. 26.1. These methods are generated automatically by the IDE. We included the com- plete page bean file in this first example, but in future examples these properties and their _get_ and _set_ methods will be omitted to save space. Lines 99–109 and 111–121 of the page bean file define the two **Static Text** components that we dropped onto the page and their _get_ and _set_ methods. These components are objects of class StaticText in package com.sun.webui.jsf.component.
 
@@ -219,7 +219,7 @@ The only logic required in this page is to set the clockText component’s text 
 
 The **init method** (Fig. 26.3, lines 140–154) is called by the JSP container the first time the page is requested and on postbacks. A **postback** occurs when form data is sub- mitted, and the page and its contents are sent to the server to be processed. Method init
 
-invokes its superclass version (line 142) then tries to call the method \_init (declared in lines 23–25). The \_init method is also automatically generated and handles component initial- ization tasks (if there are any), such as setting the options for a group of radio buttons.
+invokes its superclass version (line 142) then tries to call the method _init (declared in lines 23–25). The _init method is also automatically generated and handles component initial- ization tasks (if there are any), such as setting the options for a group of radio buttons.
 
 The **preprocess method** (lines 157–159) is called after init, but only if the page is processing a postback. The **prerender method** (lines 162–166) is called just before a page is rendered (i.e., displayed) by the browser. This method should be used to set component properties; properties that are set sooner (such as in method init) may be overwritten before the page is actually rendered by the browser. For this reason, we set the value of clockText in the prerender method.
 
@@ -233,15 +233,15 @@ Finally, the **destroy method** (lines 169–171) is called after the page has b
 
 **26.3.4 Relationship Between the JSP and Page Bean Files** The page bean has a property for every element that appears in the JSP file of Fig. 26.1, from the html element to the two Static Text components. Recall that the elements in the JSP file were explicitly bound to these properties by each element’s binding attribute using a JSF Expression Language statement. Because this is a JavaBean class, _get_ and _set_ methods for each of these properties are also included (lines 27–133). This code is auto- matically generated by the IDE for every web application project.
 
-**26.3.5 Examining the XHTML Generated by a Java Web Application** Figure 26.4 shows the XHTML generated when Time.jsp (Fig. 26.1) is requested by a cli- ent web browser. To view this XHTML, select **View > Source** in Internet Explorer or **View > Page Source** in Firefox. \[_Note:_ We reformatted the XHTML to conform to our coding conventions.\]
+**26.3.5 Examining the XHTML Generated by a Java Web Application** Figure 26.4 shows the XHTML generated when Time.jsp (Fig. 26.1) is requested by a cli- ent web browser. To view this XHTML, select **View > Source** in Internet Explorer or **View > Page Source** in Firefox. [_Note:_ We reformatted the XHTML to conform to our coding conventions.]
 
 **1** <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" **2** "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> **3** <html xmlns = "http://www.w3.org/1999/xhtml" **4** xmlns:wairole = "http://www.w3.org/2005/01/wai-rdf/GUIRoleTaxonomy#" **5** xmlns:waistate = "http://www.w3.org/2005/07/aaa"> **6** <head> **7** <meta content = "no-cache" http-equiv = "Pragma" /> **8** <meta content = "no-cache" http-equiv = "Cache-Control" /> **9** <meta content = "no-store" http-equiv = "Cache-Control" />
 
-**10** <meta content = "max-age=0" http-equiv = "Cache-Control" /> **11** <meta content = "1" http-equiv = "Expires" /> **12** <title>Web Time: A Simple Example</title> **13** <link rel = "stylesheet" type = "text/css" href = "/WebTime/theme/ **14** com/sun/webui/jsf/suntheme/css/css\_master.css" /> **15** <link rel = "stylesheet" type = "text/css" href = "/WebTime/theme/ **16** com/sun/webui/jsf/suntheme/css/ie7.css" /> **17** <script type = "text/javascript"> **18** djConfig = { **19** "isDebug": false, **20** "parseWidgets": false, **21** "debugAtAllCosts": false **22** }; **23** </script> **24** <script type = "text/javascript" **25** src = "/WebTime/theme/META-INF/dojo/dojo.js"></script> **26** <script type = "text/javascript" **27** src = "/WebTime/theme/META-INF/json/json.js"></script> **28** <script type = "text/javascript" **29** src = "/WebTime/theme/META-INF/prototype/prototype.js"></script> **30** <script type = "text/javascript" **31** src = "/WebTime/theme/META-INF/com_sun_faces_ajax.js"></script>
+**10** <meta content = "max-age=0" http-equiv = "Cache-Control" /> **11** <meta content = "1" http-equiv = "Expires" /> **12** <title>Web Time: A Simple Example</title> **13** <link rel = "stylesheet" type = "text/css" href = "/WebTime/theme/ **14** com/sun/webui/jsf/suntheme/css/css_master.css" /> **15** <link rel = "stylesheet" type = "text/css" href = "/WebTime/theme/ **16** com/sun/webui/jsf/suntheme/css/ie7.css" /> **17** <script type = "text/javascript"> **18** djConfig = { **19** "isDebug": false, **20** "parseWidgets": false, **21** "debugAtAllCosts": false **22** }; **23** </script> **24** <script type = "text/javascript" **25** src = "/WebTime/theme/META-INF/dojo/dojo.js"></script> **26** <script type = "text/javascript" **27** src = "/WebTime/theme/META-INF/json/json.js"></script> **28** <script type = "text/javascript" **29** src = "/WebTime/theme/META-INF/prototype/prototype.js"></script> **30** <script type = "text/javascript" **31** src = "/WebTime/theme/META-INF/com_sun_faces_ajax.js"></script>
 
 **Fig. 26.4** | XHTML response generated when the browser requests Time.jsp. (Part 1 of 2.)
 
-**1132** Chapter 26 JavaServer™ Faces Web Applications
+
 
 The XHTML document in Fig. 26.4 is similar in structure to the JSP file of Fig. 26.1. Lines 1–2 are the document type declaration, which declares this document to be an XHTML
 
@@ -251,7 +251,7 @@ Lines 41–60 define the body of the document. Lines 42–55 define an XHTML for
 
 Note that the two **Static Text** components (i.e., timeHeader and clockText) are rep- resented by two span elements in the XHTML document (lines 45–47, 48–50) as previ- ously discussed. The formatting options that were specified as properties of timeHeader and clockText, such as the font size and text color in the components, are now specified in each span element’s style attribute.
 
-**32** <script type = "text/javascript"> **33** dojo.hostenv.setModulePrefix( "webui.suntheme", **34** "/WebTime/theme/com/sun/webui/jsf/suntheme/javascript" ); **35** dojo.require( 'webui.suntheme.\*' ); **36** </script> **37** <link id = "link1" rel = "stylesheet" type = "text/css" **38** href = "/WebTime/resources/stylesheet.css" /> **39** <meta id = "j\_id\_id7" http-equiv = "refresh" content = "60" /> **40** </head> **41** <body id = "body1" style = "-rave-layout:grid" onload="" onunload=""> **42** <form id = "form1" class = "form" method = "post" **43** action = "/WebTime/faces/Time.jsp" **44** enctype = "application/x-www-form-urlencoded"> **45 46 47 48 49 50 51** <input id = "form1_hidden" name = "form1_hidden" **52** value = "form1_hidden" type = "hidden" /> **53** <input type = "hidden" name = "javax.faces.ViewState" **54** id = "javax.faces.ViewState" value = "j_id173:j_id174" /> **55** </form> **56** <script type = "text/javascript"> **57** webui.suntheme.common.body = new webui.suntheme.body( **58** '/Time.jsp', '/WebTime/faces/Time.jsp', null, null, **59** 'com_sun_webui_util_FocusManager_focusElementId');</script> **60** </body> **61** </html>
+**32** <script type = "text/javascript"> **33** dojo.hostenv.setModulePrefix( "webui.suntheme", **34** "/WebTime/theme/com/sun/webui/jsf/suntheme/javascript" ); **35** dojo.require( 'webui.suntheme.\*' ); **36** </script> **37** <link id = "link1" rel = "stylesheet" type = "text/css" **38** href = "/WebTime/resources/stylesheet.css" /> **39** <meta id = "j_id_id7" http-equiv = "refresh" content = "60" /> **40** </head> **41** <body id = "body1" style = "-rave-layout:grid" onload="" onunload=""> **42** <form id = "form1" class = "form" method = "post" **43** action = "/WebTime/faces/Time.jsp" **44** enctype = "application/x-www-form-urlencoded"> **45 46 47 48 49 50 51** <input id = "form1_hidden" name = "form1_hidden" **52** value = "form1_hidden" type = "hidden" /> **53** <input type = "hidden" name = "javax.faces.ViewState" **54** id = "javax.faces.ViewState" value = "j_id173:j_id174" /> **55** </form> **56** <script type = "text/javascript"> **57** webui.suntheme.common.body = new webui.suntheme.body( **58** '/Time.jsp', '/WebTime/faces/Time.jsp', null, null, **59** 'com_sun_webui_util_FocusManager_focusElementId');</script> **60** </body> **61** </html>
 
 **Fig. 26.4** | XHTML response generated when the browser requests Time.jsp. (Part 2 of 2.)
 
@@ -281,7 +281,7 @@ View JSP file
 
 View Java page bean file
 
-**1134** Chapter 26 JavaServer™ Faces Web Applications
+
 
 resolution for viewing the page and lets you see what the page will look like in different screen resolutions.
 
@@ -289,7 +289,7 @@ resolution for viewing the page and lets you see what the page will look like in
 
 **_Step 4: Examining the Projects Window_** Figure 26.7 displays the **Projects** window, which appears in the upper-left corner of the IDE. This window displays the hierarchy of all files included in the project. The JSP files for each page are listed under the **Web Pages** node. This node also includes the **resources** folder, which contains the CSS stylesheet for the project and any other files the pages may need to display properly, such as image files. All of the Java source code, including the page bean file for each web page and the application, session and request scope beans, can be found under the **Source Packages** node. Another useful file displayed in the project win- dow is the **Page Navigation** file, which defines rules for navigating the project’s pages based on the outcome of some user-initiated event, such as clicking a button or a link. The **Page Navigation** file can also be accessed by right clicking in the Visual Editor while in **Design** mode and selecting **Page Navigation**.
 
-**_Step 5: Examining the JSP and Java Files in the IDE_** Figure 26.8 displays Page1.jsp—the JSP file generated by Netbeans for Page1. \[_Note:_ We reformatted the code to match our coding conventions.\] Click the **JSP** button at the top
+**_Step 5: Examining the JSP and Java Files in the IDE_** Figure 26.8 displays Page1.jsp—the JSP file generated by Netbeans for Page1. [_Note:_ We reformatted the code to match our coding conventions.] Click the **JSP** button at the top
 
 **Fig. 26.6** | **Palette** in Netbeans.
 
@@ -315,7 +315,7 @@ Page Navigation definition file
 
 Java page bean file
 
-**1136** Chapter 26 JavaServer™ Faces Web Applications
+
 
 This file contains a Java class with the same name as the page (i.e., Page1), which extends the class AbstractPageBean. As previously mentioned, AbstractPageBean has several methods that manage the page’s life cycle. Four of these methods—init, preprocess, prerender and destroy—are overridden by Page1.java. Other than method init, these methods are initially empty. They serve as placeholders for you to customize the behavior of your web application. The page bean file also includes _get_ and _set_ methods for all of the page’s elements—page, html, head, body and link to start. You can view these _get_ and _set_ methods by clicking the plus (**+**) sign on the line that says **Managed Component Definition**.
 
@@ -343,7 +343,7 @@ Drop a second **Static Text** component onto the page and set its id to clockTex
 
 **_Step 9: Adding Page Logic_** After designing the user interface, you can modify the page bean file to set the text of the clockText element. In this example, we add a statement to method prerender (lines 170–
 
-**1138** Chapter 26 JavaServer™ Faces Web Applications
+
 
 174 of Fig. 26.3). Recall that we use method prerender to ensure that clockText will be updated each time the page is refreshed. Lines 164–165 of Fig. 26.3 programmatically set the text of clockText to the current time on the server. For this statement to work, you’ll also need the two imports shown in lines 14–15 of Fig. 26.3.
 
@@ -359,7 +359,7 @@ page automatically every 60 seconds. You can also add this tag by dragging a **M
 
 **_Step 10: Examining the Outline Window_** Figure 26.12 displays the **Outline window** in Netbeans. The **Time** node representing the page bean file is expanded and shows the contents of the component tree. The request, session and application scope beans are collapsed by default, as we have not added any properties to these beans in this example. Clicking an item in the page’s component tree selects the item in the Visual Editor.
 
-**_Step 11: Running the Application_** After creating the web page, you can view it several ways. First, you can select **Build > Build Main Project**, and after the build completes, select **Run > Run Main Project**, to run the appli- cation in a browser window. You can run a project that has already been built by pressing the **Run Main Project** icon ( ) in the toolbar at the top of the IDE. Note that if changes are made to a project, the project must be rebuilt before they will be reflected when the ap- plication is viewed in a browser. Because this application was built on the local file system, the URL displayed in the address bar of the browser when the application is run will be http://localhost:8080/WebTime/ (Fig. 26.3), where 8080 is the port number on which the test server—**Sun Java System Application Server (SJSAS)**—runs by default. \[_Note:_ The port number will depend on the server to which you deploy your web application.\]
+**_Step 11: Running the Application_** After creating the web page, you can view it several ways. First, you can select **Build > Build Main Project**, and after the build completes, select **Run > Run Main Project**, to run the appli- cation in a browser window. You can run a project that has already been built by pressing the **Run Main Project** icon ( ) in the toolbar at the top of the IDE. Note that if changes are made to a project, the project must be rebuilt before they will be reflected when the ap- plication is viewed in a browser. Because this application was built on the local file system, the URL displayed in the address bar of the browser when the application is run will be http://localhost:8080/WebTime/ (Fig. 26.3), where 8080 is the port number on which the test server—**Sun Java System Application Server (SJSAS)**—runs by default. [_Note:_ The port number will depend on the server to which you deploy your web application.]
 
 Alternatively, you can press _F5_ to build the application, then run it in debug mode— the Netbeans built-in debugger can help you troubleshoot applications. If you type _F6_, the program executes without debugging enabled.
 
@@ -369,7 +369,7 @@ Finally, you can run your built application by opening a browser window and typi
 
 **Fig. 26.12** | **Outline** window in Netbeans.
 
-**1140** Chapter 26 JavaServer™ Faces Web Applications
+
 
 erwise, you can start the server from the IDE by opening the **Runtime** tab (located in the same panel as the **Projects**), expanding the **Servers** node, right clicking **Sun Java System Application Server 9** and selecting **Start**. Then you can type the URL (including the port number for the application server, 8080) in the browser to execute the application. For this example it is not necessary to type the entire URL, http://localhost:8080/
 
@@ -415,7 +415,7 @@ contains. The **Grid Panel** component allows the designer to specify the number
 
 <h:panelGrid binding = "#{WebComponents.gridPanel}" columns = "4" id = "gridPanel" style = "height: 96px; left: 24px; top: 96px; position: absolute" width = "576">
 
-**1142** Chapter 26 JavaServer™ Faces Web Applications
+
 
 **43 44 45 46** <webuijsf:image binding = "#{WebComponents.image2}" **47** id = "image2" url = "/resources/lname.JPG" /> **48** <webuijsf:textField **49** binding = "#{WebComponents.lastNameTextField}" **50** id = "lastNameTextField" /> **51** <webuijsf:image binding = "#{WebComponents.image4}" **52** id = "image4" url = "/resources/email.JPG" /> **53** <webuijsf:textField **54** binding = "#{WebComponents.emailTextField}" **55** id = "emailTextField" /> **56** <webuijsf:image binding = "#{WebComponents.image3}" **57** id = "image3" url = "/resources/phone.JPG" /> **58** <webuijsf:textField **59** binding = "#{WebComponents.phoneTextField}" **60** id = "phoneTextField" /> **61** </h:panelGrid> **62** <webuijsf:image binding = "#{WebComponents.image5}" **63** id = "image5" style = "left: 24px; top: 216px; **64** position: absolute" **65** url = "/resources/publications.JPG" /> **66** <webuijsf:staticText **67** binding = "#{WebComponents.publicationLabel}" **68** id = "publicationLabel" style = "font-size: 12px; **69** left: 216px; top: 216px; position: absolute" **70** text = "Which book would you like information about?"/> **71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89** <webuijsf:image binding = "#{WebComponents.image6}" **90** id = "image6" style = "left: 24px; top: 312px; **91** position: absolute" url = "/resources/os.JPG" /> **92** <webuijsf:staticText binding = "#{WebComponents.osLabel}" **93** id = "osLabel" style = "font-size: 12px; left: 216px; **94** top: 312px; position: absolute" **95** text = "What operating system are you using?" />
 
@@ -437,7 +437,7 @@ contains. The **Grid Panel** component allows the designer to specify the number
 
 **Fig. 26.14** | Registration form that demonstrates JSF components. (Part 3 of 3.)
 
-<webuijsf:hyperlink binding = "#{WebComponents.deitelHyperlink}" id = "deitelHyperlink" style = "left: 24px; top: 264px; position: absolute" target = "\_blank" text = "Click here to learn more about our books" url = "http://www.deitel.com" />
+<webuijsf:hyperlink binding = "#{WebComponents.deitelHyperlink}" id = "deitelHyperlink" style = "left: 24px; top: 264px; position: absolute" target = "_blank" text = "Click here to learn more about our books" url = "http://www.deitel.com" />
 
 **Drop Down List**
 
@@ -449,7 +449,7 @@ contains. The **Grid Panel** component allows the designer to specify the number
 
 **Button**
 
-**1144** Chapter 26 JavaServer™ Faces Web Applications
+
 
 **_Examining Web Components on a Sample Registration Form_** Lines 34–36 of Fig. 26.14 define an **Image** component, an object of class ImageComponent which inserts an image into a web page. The images used in this example are located in this chapter’s examples directory. Images to be displayed on a web page must be placed in the project’s resources folder. To add images to the project, drop an **Image** component onto the page and click the ellipsis button next to the **url** property in the **Properties** win- dow. This opens a dialog in which you can select the image to display. Since no images have been added to the resources folder yet, click the **Add File** button, locate the image on your computer’s file system and click **Add File**. This copies the file you selected into the project’s resources directory. Now you can select the image from the list of files in the resources folder and click **OK** to insert the image into the page.
 
@@ -459,17 +459,17 @@ The order in which **Text Fields** are dragged to the page is important, because
 
 Lines 71–77 define a **Drop Down List**. When a user clicks the drop-down list, it expands and displays a list from which the user can make a selection. This component is an object of class DropDown and is bound to the object booksDropDownDefaultOptions, a SingleSelectOptionsList object that controls the list of options. This object can be con- figured automatically by right clicking the drop-down list in **Design** mode and selecting **Configure Default Options…**, which opens the **Options Customizer** dialog box to add options to the list. Each option consists of a display String that will represent the option in the browser and a value String that will be returned when programmatically retrieving the user’s selection from the drop-down list. Netbeans constructs the SingleSelectOp-
 
-tionsList object in the page bean file based on the display-value pairs entered in the **Options Customizer** dialog box. To view the code that constructs the object, close the dialog box by clicking **OK**, open the page bean file, and expand the **Creator-managed Com- ponent Definition** node near the top of the file. The object is constructed in the \_init
+tionsList object in the page bean file based on the display-value pairs entered in the **Options Customizer** dialog box. To view the code that constructs the object, close the dialog box by clicking **OK**, open the page bean file, and expand the **Creator-managed Com- ponent Definition** node near the top of the file. The object is constructed in the _init
 
 method, which is called from method init the first time the page loads. Lines 78–84 define a **Radio Button Group** component of class RadioButtonGroup,
 
-which provides a series of radio buttons from which the user can select only one. Like **Drop Down List**, a **Radio Button Group** is bound to a SingleSelectOptionList object. The options can be edited by right clicking the component and selecting **Configure Default Options…**. Also like the drop-down list, the SingleSelectOptionsList is automatically generated by the IDE and placed in the \_init method of the page bean class.
+which provides a series of radio buttons from which the user can select only one. Like **Drop Down List**, a **Radio Button Group** is bound to a SingleSelectOptionList object. The options can be edited by right clicking the component and selecting **Configure Default Options…**. Also like the drop-down list, the SingleSelectOptionsList is automatically generated by the IDE and placed in the _init method of the page bean class.
 
 26.4 JSF Components **1145**
 
 Lines 85–88 define a **Button** component of class Button that triggers an action when clicked. A **Button** component typically maps to an input XHTML element with attribute type set to submit. As stated earlier, clicking the **Register** button in this example does not do anything.
 
-The **Hyperlink** component (lines 96–101) of class Hyperlink adds a link to a web page. The url property of this component specifies the resource (http://www.deitel.com in this case) that is requested when a user clicks the hyperlink. Setting the target property to \_blank specifies that the requested web page should open in a new browser window. By default, **Hyperlink** components cause pages to open in the same browser window.
+The **Hyperlink** component (lines 96–101) of class Hyperlink adds a link to a web page. The url property of this component specifies the resource (http://www.deitel.com in this case) that is requested when a user clicks the hyperlink. Setting the target property to _blank specifies that the requested web page should open in a new browser window. By default, **Hyperlink** components cause pages to open in the same browser window.
 
 **26.4.2 Validation Using Validator Components and Custom Validators** This section introduces form **validation**. Validating user input is an important step in col- lecting information from users. Validation helps prevent processing errors due to incom- plete or improperly formatted user input. For example, you may perform validation to ensure that all required fields have been filled out or that a zip-code field contains exactly five digits. Netbeans provides three validator components. A **Length Validator** determines whether a field contains an acceptable number of characters. **Double Range Validators** and **Long Range Validators** determine whether numeric input falls within acceptable ranges. Package **javax.faces.validators** contains the classes for these validators. Netbeans also allows custom validation with validator methods in the page bean file. The following ex- ample demonstrates validation using both a validator component and custom validation.
 
@@ -477,7 +477,7 @@ The **Hyperlink** component (lines 96–101) of class Hyperlink adds a link to a
 
 **_Building the Web Page_** This web application introduces two additional JSF components—**Label** and **Message** from the **Basic** section of the **Palette**. Each of the page’s three text fields should have its own label and message. **Label** components describe other components and can be associ- ated with user input fields by setting their for property. **Message** components display er- ror messages when validation fails. This page requires three **Text Field**s, three **Label**s and three **Message**s, as well as a submit **Button**. To associate the **Label** components and **Mes- sage** components with their corresponding **Text Field** components, hold the _Ctrl_ and _Shift_ keys, then drag the label or message to the appropriate **Text Field**. In the **Properties** win- dow, notice that each **Label** and **Message** component’s for property is set to the appro- priate **Text Field**.
 
-**1146** Chapter 26 JavaServer™ Faces Web Applications
+
 
 You should also add a **Static Text** component to display a validation success message at the bottom of the page. Set the text to "Thank you for your submission.<br/>We received the following information:" and change the component’s id to resultText. In the **Properties** window, unset the component’s rendered and escaped properties. The **rendered** property controls whether the component will be displayed the first time the page loads. Setting **escaped** to false enables the browser to recognize the <br/> tag so it can start a new line of text rather than display the characters "<br/>" in the web page.
 
@@ -505,7 +505,7 @@ validatorExpression = "#{Validation.phoneTextField_validate}"
 
 actionExpression = "#{Validation.submitButton_action}"
 
-**1148** Chapter 26 JavaServer™ Faces Web Applications
+
 
 **82** background-color: #ffff99; height: 96px; left: 24px; **83** top: 264px; position: absolute" width = "288"> **84** <webuijsf:staticText binding = **85** "#{Validation.nameResultLabel}" **86** id = "nameResultLabel" text = "Name:"/> **87** <webuijsf:staticText binding = **88** "#{Validation.nameResult}" id = "nameResult"/> **89** <webuijsf:staticText binding = **90** "#{Validation.emailResultLabel}" **91** id = "emailResultLabel" text = "E-Mail:"/> **92** <webuijsf:staticText binding = **93** "#{Validation.emailResult}" id = "emailResult"/> **94** <webuijsf:staticText binding = **95** "#{Validation.phoneResultLabel}" **96** id = "phoneResultLabel" text = "Phone:"/> **97** <webuijsf:staticText binding = **98** "#{Validation.phoneResult}" id = "phoneResult"/> **99** </h:panelGrid> **100** </webuijsf:form> **101** </webuijsf:body> **102** </webuijsf:html> **103** </webuijsf:page> **104** </f:view> **105** </jsp:root>
 
@@ -525,7 +525,7 @@ actionExpression = "#{Validation.submitButton_action}"
 
 (d)
 
-**1150** Chapter 26 JavaServer™ Faces Web Applications
+
 
 **_Using the LengthValidator Component_** In this example, we use the **Length Validator** component (found in the **Validators** section of the **Palette**) to ensure that the length of the user’s name does not exceed 30 characters. This might be useful to ensure that a value will fit in a particular database field.
 
@@ -547,23 +547,23 @@ The two custom validator methods in this page bean file validate a text field’
 
 **1** // Fig. 26.16: Validation.java **2** // Validating user input. **3** package validation; **4 5** import com.sun.rave.web.ui.appbase.AbstractPageBean; **6** import com.sun.webui.jsf.component.Body; **7** import com.sun.webui.jsf.component.Button; **8** import com.sun.webui.jsf.component.Form; **9** import com.sun.webui.jsf.component.Head;
 
-**10** import com.sun.webui.jsf.component.Html; **11** import com.sun.webui.jsf.component.Label; **12** import com.sun.webui.jsf.component.Link; **13** import com.sun.webui.jsf.component.Message; **14** import com.sun.webui.jsf.component.Page; **15** import com.sun.webui.jsf.component.StaticText; **16** import com.sun.webui.jsf.component.TextField; **17** import javax.faces.FacesException; **18** import javax.faces.application.FacesMessage; **19** import javax.faces.component.UIComponent; **20** import javax.faces.component.html.HtmlPanelGrid; **21** import javax.faces.context.FacesContext; **22** import javax.faces.validator.LengthValidator; **23** import javax.faces.validator.ValidatorException; **24 25** public class Validation extends AbstractPageBean **26** { **27** private int \_\_placeholder; **28 29** private void \_init() throws Exception **30** { **31** nameLengthValidator.setMaximum( 30 ); **32** } // end method \_init **33 34 35 36 408** // validates entered email address against the regular expression **409** // that represents the form of a valid email address. **410** public void emailTextField_validate( FacesContext context, **411** UIComponent component, Object value ) **412** { **413** String email = String.valueOf( value ); **414 415** // if entered email address is not in a valid format **416 417 418 419 420 421 422** } // end method emailTextField_validate **423**
+**10** import com.sun.webui.jsf.component.Html; **11** import com.sun.webui.jsf.component.Label; **12** import com.sun.webui.jsf.component.Link; **13** import com.sun.webui.jsf.component.Message; **14** import com.sun.webui.jsf.component.Page; **15** import com.sun.webui.jsf.component.StaticText; **16** import com.sun.webui.jsf.component.TextField; **17** import javax.faces.FacesException; **18** import javax.faces.application.FacesMessage; **19** import javax.faces.component.UIComponent; **20** import javax.faces.component.html.HtmlPanelGrid; **21** import javax.faces.context.FacesContext; **22** import javax.faces.validator.LengthValidator; **23** import javax.faces.validator.ValidatorException; **24 25** public class Validation extends AbstractPageBean **26** { **27** private int __placeholder; **28 29** private void _init() throws Exception **30** { **31** nameLengthValidator.setMaximum( 30 ); **32** } // end method _init **33 34 35 36 408** // validates entered email address against the regular expression **409** // that represents the form of a valid email address. **410** public void emailTextField_validate( FacesContext context, **411** UIComponent component, Object value ) **412** { **413** String email = String.valueOf( value ); **414 415** // if entered email address is not in a valid format **416 417 418 419 420 421 422** } // end method emailTextField_validate **423**
 
 **Fig. 26.16** | Page bean for validating user input and redisplaying that input if valid. (Part 1 of 2.)
 
 // To save space, we omitted the code in lines 34-407. The complete // source code is provided with this chapter's examples.
 
-if ( !email.matches( "\\\\w+(\[-+.'\]\\\\w+)\*@\\\\w+(\[-.\]\\\\w+)\*\\\\.\\\\w+(\[-.\]\\\\w+)\*" ) )
+if ( !email.matches( "\\\\w+([-+.']\\\\w+)\*@\\\\w+([-.]\\\\w+)\*\\\\.\\\\w+([-.]\\\\w+)\*" ) )
 
 { throw new ValidatorException( new FacesMessage(
 
 "Enter a valid email address, e.g. user@domain.com" ) ); } // end if
 
-**1152** Chapter 26 JavaServer™ Faces Web Applications
+
 
 For the emailTextField_validate method, we use the validation expression
 
-\\w+(\[-+.'\]\\w+)\*@\\w+(\[-.\]\\w+)\*\\.\\w+(\[-.\]\\w+)\*
+\\w+([-+.']\\w+)\*@\\w+([-.]\\w+)\*\\.\\w+([-.]\\w+)\*
 
 Note that each backslash in the regular expression String (line 417) must be escaped with another backslash (as in \\\\), because the backslash character normally represents the beginning of an escape sequence in Java. This regular expression indicates that an e-mail address is valid if the part before the @ symbol contains one or more word characters (i.e., alphanumeric characters or underscores), followed by zero or more Strings comprised of a hyphen, plus sign, period or apostrophe and additional word characters. After the @ sym- bol, a valid e-mail address must contain one or more groups of word characters potentially separated by hyphens or periods, followed by a required period and another group of one or more word characters potentially separated by hyphens or periods. For example, the e- mail addresses bob's-personal.email@white.email.com, bob-white@my-email.com and bob.white@email.com are all valid. If the user enters text in emailTextField that does not have the correct format and attempts to submit the form, lines 419–420 throw a Valida-
 
@@ -599,7 +599,7 @@ If all six validators are successful (i.e., each TextField contains data, the na
 
 **_Privacy_** A trade-off exists, however, between personalized e-business service and protection of pri- vacy. Some consumers embrace the idea of tailored content, but others fear the possible adverse consequences if the info they provide to e-businesses is released or collected by tracking technologies. Consumers and privacy advocates ask: What if the e-business to which we give personal data sells or gives that information to another organization without
 
-**1154** Chapter 26 JavaServer™ Faces Web Applications
+
 
 our knowledge? What if we do not want our actions on the Internet—a supposedly anon- ymous medium—to be tracked and recorded by unknown parties? What if unauthorized parties gain access to sensitive private data, such as credit card numbers or medical history? All of these are questions that must be debated and addressed by programmers, consumers, e-businesses and lawmakers alike.
 
@@ -629,7 +629,7 @@ The JSP file in Fig. 26.17 contains a **Radio Button Group** (lines 26–30) wit
 
 **Fig. 26.17** | JSP file that allows the user to select a programming language. (Part 1 of 4.)
 
-**1156** Chapter 26 JavaServer™ Faces Web Applications
+
 
 **7** xmlns:h = "http://java.sun.com/jsf/html" **8** xmlns:jsp = "http://java.sun.com/JSP/Page" **9** xmlns:webuijsf = "http://www.sun.com/webui/webuijsf">
 
@@ -647,7 +647,7 @@ The JSP file in Fig. 26.17 contains a **Radio Button Group** (lines 26–30) wit
 
 (c)
 
-**1158** Chapter 26 JavaServer™ Faces Web Applications
+
 
 When the user clicks **Submit**, the webuijsf:staticText, webuijsf:radioButton- Group and webuijsf:button elements used to select a language are hidden, and a webuijsf:staticText and two webuijsf:hyperlink elements are displayed. One webuijsf:staticText and both webuijsf:hyperlinks initially have their rendered prop- erties set to false (lines 37, 43, and 49). This indicates that these components are not vis- ible the first time the page loads, as we want the user’s first view of the page to include only the components for selecting a programming language and submitting the selection.
 
@@ -677,9 +677,9 @@ Figure 26.19 contains the code that writes a cookie to the client machine when t
 
 **Fig. 26.19** | Page bean that stores the user’s language selection in a client cookie. (Part 1 of 3.)
 
-**1160** Chapter 26 JavaServer™ Faces Web Applications
 
-**22** public class Options extends AbstractPageBean **23** { **24** private int \_\_placeholder; **25 26** private void \_init() throws Exception **27** { **28** languageRadioGroupDefaultOptions.setOptions( **29** new com.sun.webui.jsf.model.Option\[\] { **30** new com.sun.webui.jsf.model.Option( "Java", "Java" ), **31** new com.sun.webui.jsf.model.Option( "C++", "C++" ), **32** new com.sun.webui.jsf.model.Option( "Visual-Basic-2005", **33** "Visual Basic 2005" ), **34** new com.sun.webui.jsf.model.Option( "Visual-C#-2005", **35** "Visual C# 2005" ), **36** new com.sun.webui.jsf.model.Option( "Internet-&-Web", **37** "Internet & Web" ) **38** } // end array initializer **39** ); // end call to setOptions **40** } // end method \_init **41 42 43 44 200** private Properties books = new Properties(); **201 202** // Construct a new page bean instance and initialize the properties **203** // that map languages to ISBN numbers of recommended books. **204** public Options() **205** { **206** // initialize the Properties object of values to be stored as **207** // cookies. **208** books.setProperty( "Java", "0132222205" ); **209** books.setProperty( "C++", "0136152503" ); **210** books.setProperty( "Visual Basic 2005", "0131869000" ); **211** books.setProperty( "Visual C# 2005", "0131525239" ); **212** books.setProperty( "Internet & Web", "0131752421" ); **213** } // end Options constructor **214 215 216 217 258** // Action handler for the Submit button. Checks whether a language **259** // was selected and, if so, registers a cookie for that language and **260** // sets the responseText to indicate the chosen language. **261** public String submitButton_action() **262** { **263** String msg = "Welcome to Cookies! You "; **264 265** // if the user made a selection **266** if ( languageRadioGroup.getSelected() != null ) **267** { **268** String language = languageRadioGroup.getSelected().toString(); **269** msg += "selected " + language.replace( '-', ' ' ) + ".";
+
+**22** public class Options extends AbstractPageBean **23** { **24** private int __placeholder; **25 26** private void _init() throws Exception **27** { **28** languageRadioGroupDefaultOptions.setOptions( **29** new com.sun.webui.jsf.model.Option[] { **30** new com.sun.webui.jsf.model.Option( "Java", "Java" ), **31** new com.sun.webui.jsf.model.Option( "C++", "C++" ), **32** new com.sun.webui.jsf.model.Option( "Visual-Basic-2005", **33** "Visual Basic 2005" ), **34** new com.sun.webui.jsf.model.Option( "Visual-C#-2005", **35** "Visual C# 2005" ), **36** new com.sun.webui.jsf.model.Option( "Internet-&-Web", **37** "Internet & Web" ) **38** } // end array initializer **39** ); // end call to setOptions **40** } // end method _init **41 42 43 44 200** private Properties books = new Properties(); **201 202** // Construct a new page bean instance and initialize the properties **203** // that map languages to ISBN numbers of recommended books. **204** public Options() **205** { **206** // initialize the Properties object of values to be stored as **207** // cookies. **208** books.setProperty( "Java", "0132222205" ); **209** books.setProperty( "C++", "0136152503" ); **210** books.setProperty( "Visual Basic 2005", "0131869000" ); **211** books.setProperty( "Visual C# 2005", "0131525239" ); **212** books.setProperty( "Internet & Web", "0131752421" ); **213** } // end Options constructor **214 215 216 217 258** // Action handler for the Submit button. Checks whether a language **259** // was selected and, if so, registers a cookie for that language and **260** // sets the responseText to indicate the chosen language. **261** public String submitButton_action() **262** { **263** String msg = "Welcome to Cookies! You "; **264 265** // if the user made a selection **266** if ( languageRadioGroup.getSelected() != null ) **267** { **268** String language = languageRadioGroup.getSelected().toString(); **269** msg += "selected " + language.replace( '-', ' ' ) + ".";
 
 **Fig. 26.19** | Page bean that stores the user’s language selection in a client cookie. (Part 2 of 3.)
 
@@ -689,7 +689,7 @@ Figure 26.19 contains the code that writes a cookie to the client machine when t
 
 26.5 Session Tracking **1161**
 
-As mentioned previously, the \_init method handles component initialization. Since this page contains a RadioButtonGroup object that requires initialization, method \_init
+As mentioned previously, the _init method handles component initialization. Since this page contains a RadioButtonGroup object that requires initialization, method _init
 
 (lines 26–40) constructs an array of Option objects to be displayed by the buttons. Lines 208–212 in the constructor initialize a Properties object—a data structure
 
@@ -709,7 +709,7 @@ on the Properties object with that value’s key as an argument.
 
 ( HttpServletResponse ) getExternalContext().getResponse(); response.addCookie( cookie );
 
-**1162** Chapter 26 JavaServer™ Faces Web Applications
+
 
 **Software Engineering Observation 26.1** _Netbeans can automatically import any missing packages your Java file needs. For example, after adding the Properties object to Options.java, you can right click in the Java editor window and select **Fix Imports** to automatically import java.util.Properties._ 26.1
 
@@ -739,7 +739,7 @@ Recommendations.jsp contains a **Label** (lines 23–27), a **Listbox** (lines 2
 
 **Fig. 26.20** | JSP file that displays book recommendations based on cookies. (Part 2 of 2.)
 
-**1164** Chapter 26 JavaServer™ Faces Web Applications
+
 
 select a language." The **Hyperlink** allows the user to return to Options.jsp to select additional languages. You can configure this hyperlink using the **Page Navigation** file as described earlier in this section.
 
@@ -747,7 +747,7 @@ select a language." The **Hyperlink** allows the user to return to Options.jsp t
 
 **1** // Fig. 26.21: Recommendations.java **2** // Displays book recommendations based on cookies storing user's selected **3** // programming languages. **4** package sessiontrackingcookies; **5 6** import com.sun.rave.web.ui.appbase.AbstractPageBean; **7** import com.sun.webui.jsf.component.Body; **8** import com.sun.webui.jsf.component.Form; **9** import com.sun.webui.jsf.component.Head;
 
-**10** import com.sun.webui.jsf.component.Html; **11** import com.sun.webui.jsf.component.Hyperlink; **12** import com.sun.webui.jsf.component.Label; **13** import com.sun.webui.jsf.component.Link; **14** import com.sun.webui.jsf.component.Listbox; **15** import com.sun.webui.jsf.component.Page; **16** import com.sun.webui.jsf.component.StaticText; **17** import com.sun.webui.jsf.model.DefaultOptionsList; **18** import com.sun.webui.jsf.model.Option; **19** import javax.faces.FacesException; **20** import javax.servlet.http.Cookie; **21** import javax.servlet.http.HttpServletRequest; **22 23** public class Recommendations extends AbstractPageBean **24** { **25** private int \_\_placeholder; **26 27** private void \_init() throws Exception **28** { **29** recommendationsListboxDefaultOptions.setOptions( **30** new com.sun.webui.jsf.model.Option\[\] {} ); **31** } **32**
+**10** import com.sun.webui.jsf.component.Html; **11** import com.sun.webui.jsf.component.Hyperlink; **12** import com.sun.webui.jsf.component.Label; **13** import com.sun.webui.jsf.component.Link; **14** import com.sun.webui.jsf.component.Listbox; **15** import com.sun.webui.jsf.component.Page; **16** import com.sun.webui.jsf.component.StaticText; **17** import com.sun.webui.jsf.model.DefaultOptionsList; **18** import com.sun.webui.jsf.model.Option; **19** import javax.faces.FacesException; **20** import javax.servlet.http.Cookie; **21** import javax.servlet.http.HttpServletRequest; **22 23** public class Recommendations extends AbstractPageBean **24** { **25** private int __placeholder; **26 27** private void _init() throws Exception **28** { **29** recommendationsListboxDefaultOptions.setOptions( **30** new com.sun.webui.jsf.model.Option[] {} ); **31** } **32**
 
 **Fig. 26.21** | Page bean that displays book recommendations based on cookies storing user’s selected languages. (Part 1 of 2.)
 
@@ -755,7 +755,7 @@ select a language." The **Hyperlink** allows the user to return to Options.jsp t
 
 Line 191 determines whether at least one cookie exists. Lines 195–200 add the infor- mation in the cookie(s) to an Option array. Arrays of Option objects can be displayed as a list of items in a **Listbox** component. The loop retrieves the name and value of each cookie,
 
-**33 34 35 179** // displays the book recommendations in the Listbox **180** public void prerender() **181** { **182 183 184 185 186 187** // if there are cookies, store the corresponding books and ISBN **188** // numbers in an array of Options **189** Option \[\] recommendations; **190 191** if ( cookies.length > 1 ) **192** { **193** recommendations = new Option\[ cookies.length - 1 \]; **194 195** for ( int i = 0; i < cookies.length - 1; i++ ) **196** { **197** String language = .replace( '-', ' ' ); **198** recommendations\[ i \] = new Option( language + **199** " How to Program. ISBN#: " + ); **200** } // end for **201** } // end if **202** else **203** { **204** recommendations = new Option\[ 1 \]; **205** recommendations\[ 0 \] = new Option( **206** "No recommendations. Please select a language." ) ; **207** } // end else **208 209** recommendationsListbox.setItems( recommendations ); **210** } // end method prerender **211 212 213 214 231** // redirects user to Options.jsp **232** public String optionsLink_action() **233** { **234** return "case1"; // returns to Options.jsp **235** } // end method optionsLink_action **236** } // end class Recommendations
+**33 34 35 179** // displays the book recommendations in the Listbox **180** public void prerender() **181** { **182 183 184 185 186 187** // if there are cookies, store the corresponding books and ISBN **188** // numbers in an array of Options **189** Option [] recommendations; **190 191** if ( cookies.length > 1 ) **192** { **193** recommendations = new Option[cookies.length - 1]; **194 195** for ( int i = 0; i < cookies.length - 1; i++ ) **196** { **197** String language = .replace( '-', ' ' ); **198** recommendations[i] = new Option( language + **199** " How to Program. ISBN#: " + ); **200** } // end for **201** } // end if **202** else **203** { **204** recommendations = new Option[1]; **205** recommendations[0] = new Option( **206** "No recommendations. Please select a language." ) ; **207** } // end else **208 209** recommendationsListbox.setItems( recommendations ); **210** } // end method prerender **211 212 213 214 231** // redirects user to Options.jsp **232** public String optionsLink_action() **233** { **234** return "case1"; // returns to Options.jsp **235** } // end method optionsLink_action **236** } // end class Recommendations
 
 **Fig. 26.21** | Page bean that displays book recommendations based on cookies storing user’s selected languages. (Part 2 of 2.)
 
@@ -763,15 +763,15 @@ Line 191 determines whether at least one cookie exists. Lines 195–200 add the 
 
 // retrieve client's cookies HttpServletRequest request =
 
-( HttpServletRequest ) getExternalContext().getRequest(); Cookie \[\] cookies = request.getCookies();
+( HttpServletRequest ) getExternalContext().getRequest(); Cookie [] cookies = request.getCookies();
 
-cookies\[ i \].getName()
+cookies[i].getName()
 
-cookies\[ i \].getValue()
+cookies[i].getValue()
 
 // To save space, we omitted the code in lines 212-230. The complete // source code is provided with this chapter's examples.
 
-**1166** Chapter 26 JavaServer™ Faces Web Applications
+
 
 using the control variable to determine the current value in the cookie array. If no language was selected, lines 204–206 add to an Options array a message instructing the user to select a language. Line 209 sets recommendationsListBox to display the resulting Options array. We summarize commonly used Cookie methods in Fig. 26.22.
 
@@ -805,7 +805,7 @@ getValue Returns a String containing the cookie’s value.
 
 text = "#{SessionBean1.numSelections}"
 
-**1168** Chapter 26 JavaServer™ Faces Web Applications
+
 
 **53** position: absolute" **54** text = "Click here to choose another language."/> **55** <webuijsf:hyperlink actionExpression = **56** "#{Options.recommendationsLink_action}" binding = **57** "#{Options.recommendationsLink}" id = **58** "recommendationsLink" rendered = "false" style = **59** "left: 24px; top: 144px; position: absolute" **60** text = "Click here to get book recommendations." **61** url = "/faces/Recommendations.jsp"/> **62** </webuijsf:form> **63** </webuijsf:body> **64** </webuijsf:html> **65** </webuijsf:page> **66** </f:view> **67** </jsp:root>
 
@@ -831,7 +831,7 @@ Property numSelections is manipulated in the page bean file to store the number 
 
 (d)
 
-**1170** Chapter 26 JavaServer™ Faces Web Applications
+
 
 property’s value changes, the text changes as well, so that you need not programmatically set the text in the page bean file.
 
@@ -857,13 +857,13 @@ private int numSelections;
 
 private java.util.Properties selectedLanguages = new java.util.Properties();
 
-**1172** Chapter 26 JavaServer™ Faces Web Applications
+
 
 **_Manipulating SessionBean Properties in a Page Bean File_** The page bean file for the Options.jsp page is displayed in Fig. 26.27. Because much of this example is identical to the preceding one, we concentrate on the new features.
 
 **1** // Fig. 26.27: Options.java **2** // Page bean that stores language selections in a SessionBean property. **3** package sessiontrackingsessions; **4 5** import com.sun.rave.web.ui.appbase.AbstractPageBean; **6** import com.sun.webui.jsf.component.Body; **7** import com.sun.webui.jsf.component.Button; **8** import com.sun.webui.jsf.component.Form; **9** import com.sun.webui.jsf.component.Head;
 
-**10** import com.sun.webui.jsf.component.Html; **11** import com.sun.webui.jsf.component.Hyperlink; **12** import com.sun.webui.jsf.component.Link; **13** import com.sun.webui.jsf.component.Page; **14** import com.sun.webui.jsf.component.RadioButtonGroup; **15** import com.sun.webui.jsf.component.StaticText; **16** import com.sun.webui.jsf.model.SingleSelectOptionsList; **17** import java.util.Properties; **18** import javax.faces.FacesException; **19** import javax.servlet.http.Cookie; **20** import javax.servlet.http.HttpServletResponse; **21 22** public class Options extends AbstractPageBean **23** { **24** private int \_\_placeholder; **25 26** private void \_init() throws Exception **27** { **28** languageRadioGroupDefaultOptions.setOptions( **29** new com.sun.webui.jsf.model.Option\[\] { **30** new com.sun.webui.jsf.model.Option( "Java", "Java" ), **31** new com.sun.webui.jsf.model.Option( "C++", "C++" ), **32** new com.sun.webui.jsf.model.Option( "Visual Basic 2005", **33** "Visual Basic 2005" ), **34** new com.sun.webui.jsf.model.Option( "Visual C# 2005", **35** "Visual C# 2005" ), **36** new com.sun.webui.jsf.model.Option( "Internet & Web", **37** "Internet & Web") **38** } // end array initializer **39** ); // end call to setOptions **40** } // end method \_init **41 42 43 44 226** // Construct a new page bean instance and initialize the properties **227** // that map languages to ISBN numbers of recommended books. **228** public Options() **229** {
+**10** import com.sun.webui.jsf.component.Html; **11** import com.sun.webui.jsf.component.Hyperlink; **12** import com.sun.webui.jsf.component.Link; **13** import com.sun.webui.jsf.component.Page; **14** import com.sun.webui.jsf.component.RadioButtonGroup; **15** import com.sun.webui.jsf.component.StaticText; **16** import com.sun.webui.jsf.model.SingleSelectOptionsList; **17** import java.util.Properties; **18** import javax.faces.FacesException; **19** import javax.servlet.http.Cookie; **20** import javax.servlet.http.HttpServletResponse; **21 22** public class Options extends AbstractPageBean **23** { **24** private int __placeholder; **25 26** private void _init() throws Exception **27** { **28** languageRadioGroupDefaultOptions.setOptions( **29** new com.sun.webui.jsf.model.Option[] { **30** new com.sun.webui.jsf.model.Option( "Java", "Java" ), **31** new com.sun.webui.jsf.model.Option( "C++", "C++" ), **32** new com.sun.webui.jsf.model.Option( "Visual Basic 2005", **33** "Visual Basic 2005" ), **34** new com.sun.webui.jsf.model.Option( "Visual C# 2005", **35** "Visual C# 2005" ), **36** new com.sun.webui.jsf.model.Option( "Internet & Web", **37** "Internet & Web") **38** } // end array initializer **39** ); // end call to setOptions **40** } // end method _init **41 42 43 44 226** // Construct a new page bean instance and initialize the properties **227** // that map languages to ISBN numbers of recommended books. **228** public Options() **229** {
 
 **Fig. 26.27** | Page bean that stores language selections in a SessionBean property. (Part 1 of 3.)
 
@@ -881,7 +881,7 @@ private java.util.Properties selectedLanguages = new java.util.Properties();
 
 int numSelected = getSessionBean1().getNumSelections(); getSessionBean1().setNumSelections( ++numSelected );
 
-**1174** Chapter 26 JavaServer™ Faces Web Applications
+
 
 The submitButton’s action handler (lines 285–323) stores the user’s selections in the SessionBean and increments the number of selections made, if necessary. Line 299 retrieves from the SessionBean the Properties object that contains the user’s selections. Line 300 adds the current selection to the Properties object. Method setProperty
 
@@ -911,7 +911,7 @@ returns the value previously associated with the new key, or null if this key wa
 
 // retrieve user's selections and number of selections made Properties languages = getSessionBean1().getSelectedLanguages(); Enumeration selectionsEnum = languages.propertyNames();
 
-**1176** Chapter 26 JavaServer™ Faces Web Applications
+
 
 Line 182 retrieves the Properties object containing the user’s selections from the SessionBean, and line 183 gets an enumeration of all of the keys in that Properties
 
@@ -919,13 +919,13 @@ object. Line 184 retrieves the number of selections made from the SessionBean. I
 
 **26.6 Wrap-Up** In this chapter, we introduced web application development using JavaServer Pages and JavaServer Faces in Netbeans. We began by discussing the simple HTTP transactions that take place when you request and receive a web page through a web browser. We then dis-
 
-**184 185 186** Option \[\] recommendations; **187 188** // if at least one selection was made **189** if ( numSelected > 0 ) **190** { **191** recommendations = new Option\[ numSelected \]; **192 193** for ( int i = 0; i < numSelected; i++ ) **194** { **195 196 197 198 199** } // end for **200** } // end if **201** else **202** { **203** recommendations = new Option\[ 1 \]; **204** recommendations\[ 0 \] = new Option( **205** "No recommendations. Please select a language." ); **206** } // end else **207 208** recommendationsListbox.setItems( recommendations ); **209** } // end method prerender **210 211 212 213 230** // redirects user to Options.jsp **231** public String optionsLink_action() **232** { **233** return "case1"; // returns to Options.jsp **234** } // end method optionsLink_action **235** } // end class Recommendations
+**184 185 186** Option [] recommendations; **187 188** // if at least one selection was made **189** if ( numSelected > 0 ) **190** { **191** recommendations = new Option[numSelected]; **192 193** for ( int i = 0; i < numSelected; i++ ) **194** { **195 196 197 198 199** } // end for **200** } // end if **201** else **202** { **203** recommendations = new Option[1]; **204** recommendations[0] = new Option( **205** "No recommendations. Please select a language." ); **206** } // end else **207 208** recommendationsListbox.setItems( recommendations ); **209** } // end method prerender **210 211 212 213 230** // redirects user to Options.jsp **231** public String optionsLink_action() **232** { **233** return "case1"; // returns to Options.jsp **234** } // end method optionsLink_action **235** } // end class Recommendations
 
 **Fig. 26.29** | Displays book recommendations based on a SessionBean property. (Part 2 of 2.)
 
 int numSelected = getSessionBean1().getNumSelections();
 
-String language = (String) selectionsEnum.nextElement(); recommendations\[ i \] = new Option( language +
+String language = (String) selectionsEnum.nextElement(); recommendations[i] = new Option( language +
 
 " How to Program. ISBN#: " + languages.getProperty( language ) );
 
@@ -963,7 +963,7 @@ and greater separation of the application’s tiers. This separation makes web a
 
 • Servlets extend a server’s functionality by allowing the server to generate dynamic content. A servlet container executes and interacts with servlets.
 
-**1178** Chapter 26 JavaServer™ Faces Web Applications
+
 
 • Packages javax.servlet and javax.servlet.http contain the servlet classes and interfaces.
 
@@ -1049,7 +1049,7 @@ Each has the filename extension .jsp and contains the web page’s GUI elements.
 
 • All pages containing JSF components are represented in a component tree with the root JSF el- ement f:view (of type UIViewRoot). All JSF component elements are placed in this element.
 
-**1180** Chapter 26 JavaServer™ Faces Web Applications
+
 
 • Many ui page elements have a binding attribute to bind their values to properties in the web ap- plication’s JavaBeans. JSF Expression Language is used to perform these bindings.
 
@@ -1083,7 +1083,7 @@ stroy) in the page bean that tie into the JSF event-processing life cycle. These
 
 • The init method is called by the JSP container the first time the page is requested and on post- backs. A postback occurs when form data is submitted, and the page and its contents are sent to the server to be processed.
 
-• Method init invokes its superclass version, then tries to call the method \_init, which handles component initialization tasks.
+• Method init invokes its superclass version, then tries to call the method _init, which handles component initialization tasks.
 
 • The preprocess method is called after init, but only if the page is processing a postback. The prerender method is called just before a page is rendered by the browser. This method should be used to set component properties; properties that are set sooner (such as in method init) may be overwritten before the page is actually rendered by the browser.
 
@@ -1133,7 +1133,7 @@ and drop new components onto the page, **Design** mode allows you to see how you
 
 • Select **Build > Build Main Project** then **Run > Run Main Project** to run the application.
 
-**1182** Chapter 26 JavaServer™ Faces Web Applications
+
 
 • You can run a project that has already been built by pressing the **Run Main Project** icon ( ) in the toolbar at the top of the IDE.
 
@@ -1213,7 +1213,7 @@ information about the client during and between browser sessions.
 
 • Every HTTP-based interaction between a client and a server includes a header containing infor- mation either about the request (when the communication is from the client to the server) or about the response (when the communication is from the server to the client).
 
-**1184** Chapter 26 JavaServer™ Faces Web Applications
+
 
 • When a page receives a request, the header includes information such as the request type and any cookies that have been sent previously from the server to be stored on the client machine. When the server formulates its response, the header information contains any cookies the server wants to store on the client computer and other information, such as the MIME type of the response.
 
@@ -1283,7 +1283,7 @@ to the server is called a(n) . c) Every page bean class inherits from class . d)
 
 event.
 
-**1186** Chapter 26 JavaServer™ Faces Web Applications
+
 
 e) The file contains the functionality for a JSP. f) A(n) can be used in a custom validator method to validate the format of user
 
@@ -1303,4 +1303,4 @@ size. Configure these drop-down lists so that the page refreshes whenever the us
 
 **26.5** _(Page Hit Counter with Cookies)_ Create a JSP that uses a persistent cookie (i.e., a cookie with an expiration date in the future) to keep track of how many times the client computer has visited the page. Use the setMaxAge method to cause the cookie to remain on the client’s computer for one month. Display the number of page hits (i.e., the cookie’s value) every time the page loads.
 
-**26.6** _(Page Hit Counter with **ApplicationBean**)_ Create a JSP that uses the ApplicationBean to keep track of how many times a page has been visited. \[_Note:_ If you were to deploy this page on the web, it would count the number of times that any computer requested the page, unlike in the pre- vious exercise.\] Display the number of page hits (i.e., the value of an int property in the ApplicationBean) every time the page loads.
+**26.6** _(Page Hit Counter with **ApplicationBean**)_ Create a JSP that uses the ApplicationBean to keep track of how many times a page has been visited. [_Note:_ If you were to deploy this page on the web, it would count the number of times that any computer requested the page, unlike in the pre- vious exercise.] Display the number of page hits (i.e., the value of an int property in the ApplicationBean) every time the page loads.

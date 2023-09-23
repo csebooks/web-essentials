@@ -3,23 +3,23 @@ title: "Asp.Net 2.0 And Asp.Net Ajax"
 weight: 5
 ---
 
-**O B J E C T I V E S** In this chapter you will learn:
+**OBJECTIVES** In this chapter you will learn:
 
-■ Web application development using Active Server Pages .NET (ASP.NET).
+- Web application development using Active Server Pages .NET (ASP.NET).
 
-■ To create Web Forms.
+- To create Web Forms.
 
-■ To create ASP.NET applications consisting of multiple Web Forms.
+- To create ASP.NET applications consisting of multiple Web Forms.
 
-■ To maintain state information about a user with session tracking and cookies.
+- To maintain state information about a user with session tracking and cookies.
 
-■ To use the **Web Site Administration Tool** to modify web application configuration settings.
+- To use the **Web Site Administration Tool** to modify web application configuration settings.
 
-■ To control user access to web applications using forms authentication and ASP.NET login controls.
+- To control user access to web applications using forms authentication and ASP.NET login controls.
 
-■ To use databases in ASP.NET applications.
+- To use databases in ASP.NET applications.
 
-■ To design a master page and content pages to create a uniform look-and-feel for a website.
+- To design a master page and content pages to create a uniform look-and-feel for a website.
 
 **_If any man will draw up his case, and put his name at the foot of the first page, I will give him an immediate reply. Where he compels me to turn over the sheet, he must wait my leisure._ —Lord Sandwich**
 
@@ -29,13 +29,13 @@ weight: 5
 
 **_You will come here and get books that will open your eyes, and your ears, and your curiosity, and turn you inside out or outside in._ —Ralph Waldo Emerson**
 
-**1010** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax **O**
+
 
 **u tl**
 
 **in e**
 
-**25.1 Introduction** This chapter introduces **web application development** with Microsoft’s **Active Server Pages .NET (ASP.NET) 2.0** technology. Web-based applications create web content for web-browser clients. This web content includes Extensible HyperText Markup Language (XHTML), client-side scripting, images and binary data. If you are not familiar with XHTML, you should read Chapter 4 before studying this chapter. \[_Note:_ This chapter as- sumes that you know Visual Basic and are familiar with the .NET platform version 2.0. To learn more about Visual Basic, check out _Visual Basic 2005 How to Program, Third Edi- tion_, or visit our Visual Basic Resource Center at www.deitel.com/visualbasic.\]
+**25.1 Introduction** This chapter introduces **web application development** with Microsoft’s **Active Server Pages .NET (ASP.NET) 2.0** technology. Web-based applications create web content for web-browser clients. This web content includes Extensible HyperText Markup Language (XHTML), client-side scripting, images and binary data. If you are not familiar with XHTML, you should read Chapter 4 before studying this chapter. [_Note:_ This chapter as- sumes that you know Visual Basic and are familiar with the .NET platform version 2.0. To learn more about Visual Basic, check out _Visual Basic 2005 How to Program, Third Edi- tion_, or visit our Visual Basic Resource Center at www.deitel.com/visualbasic.]
 
 We present several examples that demonstrate web application development using **Web Forms**, **web controls** (also called **ASP.NET server controls**) and Visual Basic pro- gramming. We also introduce ASP.NET Ajax and use it to enhance one of the earlier exam- ples. Web Form files have the filename extension **.aspx** and contain the web page’s GUI. You customize Web Forms by adding web controls including labels, text boxes, images, buttons and other GUI components. The Web Form file generates the web page that is sent to the client browser. From this point onward, we refer to Web Form files as **ASPX files**.
 
@@ -61,7 +61,7 @@ To develop the code and GUIs in this chapter, we used Microsoft Visual Web Devel
 
 default.aspx) or a complete version of Visual Studio 2005 to implement the programs in this chapter.
 
-**25.2 Creating and Running a Simple Web Form Example** Our first example displays the web server’s time of day in a browser window. When run, this program displays the text A Simple Web Form Example, followed by the web server’s time. As mentioned previously, the program consists of two related files—an ASPX file (Fig. 25.1) and a Visual Basic code-behind file (Fig. 25.2), which we’ll discuss in Section 25.2.5. We first display the markup, code and output, then we carefully guide you through the step-by-step process of creating this program. \[_Note:_ The markup in Fig. 25.1 and other ASPX file listings in this chapter is the same as the markup that appears in Visual Web Developer, but we’ve reformatted it for presentation purposes to make the code more readable.\]
+**25.2 Creating and Running a Simple Web Form Example** Our first example displays the web server’s time of day in a browser window. When run, this program displays the text A Simple Web Form Example, followed by the web server’s time. As mentioned previously, the program consists of two related files—an ASPX file (Fig. 25.1) and a Visual Basic code-behind file (Fig. 25.2), which we’ll discuss in Section 25.2.5. We first display the markup, code and output, then we carefully guide you through the step-by-step process of creating this program. [_Note:_ The markup in Fig. 25.1 and other ASPX file listings in this chapter is the same as the markup that appears in Visual Web Developer, but we’ve reformatted it for presentation purposes to make the code more readable.]
 
 Visual Web Developer generates all the markup shown in Fig. 25.1 when you set the web page’s title, type text in the Web Form, drag a Label onto the Web Form and set the properties of the page’s text and the Label. We discuss these steps in Section 25.2.6.
 
@@ -77,15 +77,15 @@ runat="server"
 
 runat="server"
 
-**1012** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 **25.2.1 Examining an ASPX File** The ASPX file contains other information in addition to XHTML. Lines 1–2 are **ASP.NET comments** that indicate the figure number, the filename and the purpose of the file. ASP.NET comments begin with **<%--** and terminate with **\--%>**. We added these com- ments to the file. ASP.NET comments are not output as part of the XHTML sent to the client. Lines 3–4 use a **Page** directive (in an ASPX file a **directive** is delimited by **<%@** and **%>**) to specify information needed by ASP.NET to process this file. The **Language** at- tribute of the Page directive specifies the language of the code-behind file as Visual Basic ("VB"); the code-behind file (i.e., the **CodeFile**) is WebTime.aspx.vb. A code-behind file- name usually consists of the full ASPX filename (e.g., WebTime.aspx) followed by a filena- me extension indicating the programming language (.vb in this chapter’s examples).
 
 The **AutoEventWireup** attribute (line 3) determines how Web Form events are han- dled. When AutoEventWireup is set to true, ASP.NET determines which methods in the class are called in response to events generated in the Page. For example, ASP.NET will call methods Page_Init and Page_Load in the code-behind file to handle the Page’s Init and Load events, respectively. AutoEventWireup requires the event-handling methods to follow specific naming copnventions. (We discuss these events later in the chapter.)
 
-The **Inherits** attribute (line 4) specifies the page’s class name—in this case, WebTime. We say more about Inherits momentarily. \[_Note:_ We explicitly set the **EnableSession-**
+The **Inherits** attribute (line 4) specifies the page’s class name—in this case, WebTime. We say more about Inherits momentarily. [_Note:_ We explicitly set the **EnableSession-**
 
-**State** attribute (line 4) to False. We explain the significance of this attribute later in the chapter. The IDE sometimes generates attribute values (e.g., true and false) and control names (as you will see later in the chapter) that do not adhere to our standard code capi- talization conventions (i.e., True and False). Like Visual Basic, ASP.NET markup is not case sensitive, so using a different case is not problematic. To remain consistent with the code generated by the IDE, we do not modify these values in our code listings or in our accompanying discussions.\]
+**State** attribute (line 4) to False. We explain the significance of this attribute later in the chapter. The IDE sometimes generates attribute values (e.g., true and false) and control names (as you will see later in the chapter) that do not adhere to our standard code capi- talization conventions (i.e., True and False). Like Visual Basic, ASP.NET markup is not case sensitive, so using a different case is not problematic. To remain consistent with the code generated by the IDE, we do not modify these values in our code listings or in our accompanying discussions.]
 
 For this first ASPX file, we provide a brief discussion of the XHTML markup. For more information on XHTML, see Chapter 4. Lines 6–7 contain the document type dec- laration, which specifies the document element name (HTML) and the PUBLIC Uniform Resource Identifier (URI) for the DTD that defines the XHTML vocabulary.
 
@@ -117,7 +117,7 @@ In this example, the asp:Label control maps to the XHTML **span** element (i.e.,
 
 The web control in this example contains the runat="server" attribute–value pair (line 19), because this control must be processed on the server so that the server can trans- late the control into XHTML that can be rendered in the client browser. If this attribute pair is not present, the asp:Label element is written as text to the client (i.e., the control is not converted into a span element and does not render properly).
 
-**1014** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 **25.2.2 Examining a Code-Behind File** Figure 25.2 presents the code-behind file. Recall that the ASPX file in Fig. 25.1 references WebTime.aspx.vb in line 3.
 
@@ -127,7 +127,7 @@ Line 4 indicates that WebTime inherits from class **Page** in namespace **System
 
 Lines 7–11 define method **Page_Init**, which handles the page’s **Init** event. This event indicates that all the controls on the page have been created and initialized and addi- tional application-specific initialization can now be performed. The only initialization required for this page is setting timeLabel’s Text property to the time on the server (i.e., the computer on which this code executes). The statement in line 10 retrieves the current time and formats it as _hh_:_mm_:_ss_. For example, 9 AM is formatted as 09:00:00, and 2:30 PM is formatted as 14:30:00. Notice that the code-behind file can access timeLabel (the ID of the Label in the ASPX file) programmatically, even though the file does not contain a declaration for a variable named timeLabel. You will learn why momentarily.
 
-**1** ' Fig. 25.5: WebTime.aspx.vb **2** ' Code-behind file for a page that displays the current time. **3** Partial Class WebTime **4** Inherits System.Web.UI.Page **5 6** ' initializes the contents of the page **7** Protected Sub Page_Init(ByVal sender As Object, \_ **8** ByVal e As System.EventArgs) Handles Me.Init **9**
+**1** ' Fig. 25.5: WebTime.aspx.vb **2** ' Code-behind file for a page that displays the current time. **3** Partial Class WebTime **4** Inherits System.Web.UI.Page **5 6** ' initializes the contents of the page **7** Protected Sub Page_Init(ByVal sender As Object, _ **8** ByVal e As System.EventArgs) Handles Me.Init **9**
 
 **10 11** End Sub ' Page_Init **12** End Class ' WebTime
 
@@ -145,7 +145,7 @@ Label, so the generated partial class would contain a declaration for a variable
 
 The partial class generated by ASP.NET is based on the ASPX file that defines the page’s visual representation. This partial class is combined with the one in Fig. 25.2, which defines the page’s logic. The first time the web page is requested, this class is compiled and an instance is created. This instance represents the page and creates the XHTML that is sent to the client. The assembly created from the compiled partial classes is placed in a sub- directory of
 
-C:\\WINDOWS\\Microsoft.NET\\Framework\\_VersionNumber_\\ Temporary ASP.NET Files\\WebTime
+C:\\WINDOWS\\Microsoft.NET\\Framework\_VersionNumber_\\ Temporary ASP.NET Files\\WebTime
 
 where _VersionNumber_ is the version number of the .NET Framework (e.g., v2.0.50727) installed on your computer.
 
@@ -153,7 +153,7 @@ Once the web page has been compiled, no recompilation is required on subsequent 
 
 **25.2.4 How the Code in an ASP.NET Web Page Executes** Let’s look briefly at how the code for our web page executes. When an instance of the page is created, the **PreInit** event occurs first, invoking method **Page_PreInit**, which can be used to set a page’s theme and look-and-feel (and perform other tasks that are beyond this chapter’s scope). The Init event occurs next, invoking method Page_Init. Method Page_Init is used to initialize objects and other aspects of the page. After Page_Init exe- cutes, the **Load** event occurs, and the **Page_Load** event handler executes. Although not present in this example, the PreInit and Load events are inherited from class Page. You will see examples of the Page_Load event handler later in the chapter. After the Load event handler finishes executing, the page processes events that are generated by the page’s con-
 
-**1016** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 trols, such as user interactions with the GUI. When the user’s request is considered fully processed, an **Unload** event occurs, which calls the **Page_Unload** event handler. This event, too, is inherited from class Page. Page_Unload typically contains code that releases re- sources used by the page. Other events occur as well, but are typically used only by ASP.NET controls to generate XHTML to render client-side controls. You can learn more about a Page’s event life cycle at msdn2.microsoft.com/en-US/library/ms178472.aspx.
 
@@ -169,7 +169,7 @@ XHTML forms can contain visual and nonvisual components. Visual components inclu
 
 **Fig. 25.3** | XHTML response when the browser requests WebTime.aspx.
 
-<input type="hidden" name="\_\_VIEWSTATE" id="\_\_VIEWSTATE" value= "/wEPDwUJODExMDE5NzY5ZGSzVbs789nqEeoNueQCnCJQEUgykw==" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value= "/wEPDwUJODExMDE5NzY5ZGSzVbs789nqEeoNueQCnCJQEUgykw==" />
 
 <span id="timeLabel" style="color:Yellow; background-color:Black;font-size:XX-Large;">13:51:12</span>
 
@@ -193,7 +193,7 @@ attribute–value pair or specified as web controls are modified or replaced whe
 
 **Fig. 25.4** | Creating an **ASP.NET Web Site** in Visual Web Developer.
 
-**1018** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 cation you are creating. If it is not already selected, select **HTTP** from the drop-down list closest to **Location**. This indicates that the web application should be configured to run as an IIS application using HTTP (either on your computer or on a remote computer). We want our project to be located in http://localhost, which is the URL for IIS’s root di- rectory (this URL normally corresponds to the C:\\InetPub\\wwwroot directory on your machine). The name **localhost** indicates that the server resides on local computer. If the web server were located on a different computer, localhost would be replaced with the appropriate IP address or hostname. By default, Visual Web Developer sets the location where the website will be created to http://localhost/WebSite, which we change to http://localhost/WebTime.
 
@@ -231,7 +231,7 @@ The **Properties** and **Refresh** buttons in Visual Web Developer’s **Solutio
 
 (a) (b)
 
-**1020** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 **_Step 4: Examining the Web Forms Designer_** Figure 25.7 shows the Web Forms Designer in **Source** mode, which appears in the center of the IDE. When the project loads for the first time, the Web Forms Designer displays the autogenerated ASPX file (i.e., Default.aspx) in **Source** mode, which allows you to view and edit the markup that comprises the web page. The markup listed in Fig. 25.7 was created by the IDE and serves as a template that we will modify shortly. Clicking the **De- sign** button in the lower-left corner of the Web Forms Designer switches to **Design** mode (Fig. 25.8), which allows you to drag and drop controls from the **Toolbox** onto the Web Form and see the controls. You can also type at the current cursor location to add text to the web page. We demonstrate this shortly. In response to such actions, the IDE generates the appropriate markup in the ASPX file. Notice that **Design** mode indicates the XHTML element where the cursor is currently located. Clicking the **Source** button returns the Web Forms Designer to **Source** mode, where you can see the generated markup.
 
@@ -253,7 +253,7 @@ Cursor’s current location in the document
 
 **_Step 6: Renaming the ASPX File_** Now that you’ve seen the contents of the default ASPX and code-behind files, let’s rename these files. Right click the ASPX file in the **Solution Explorer** and select **Rename**. Enter the new filename WebTime.aspx and press _Enter_. This updates the name of both the ASPX file and the code-behind file. The IDE also updates the Page directive’s CodeFile attribute in WebTime.aspx.
 
-**_Step 7: Renaming the Class in the Code-Behind File and Updating the ASPX File_** Although renaming the ASPX file causes the name of the code-behind file to change, this action does not affect the name of the partial class declared in the code-behind file. Open the code-behind file and change the class name from \_Default (line 2 in Fig. 25.9) to WebTime, so the partial class declaration appears as in line 3 of Fig. 25.2. Recall that this class is also referenced by the Page directive in the ASPX file. Using the Web Forms De- signer’s **Source** mode, modify the Inherits attribute of the Page directive in WebTime.as-
+**_Step 7: Renaming the Class in the Code-Behind File and Updating the ASPX File_** Although renaming the ASPX file causes the name of the code-behind file to change, this action does not affect the name of the partial class declared in the code-behind file. Open the code-behind file and change the class name from _Default (line 2 in Fig. 25.9) to WebTime, so the partial class declaration appears as in line 3 of Fig. 25.2. Recall that this class is also referenced by the Page directive in the ASPX file. Using the Web Forms De- signer’s **Source** mode, modify the Inherits attribute of the Page directive in WebTime.as-
 
 px, so it appears as in line 4 of Fig. 25.1. The value of the Inherits attribute and the class name in the code-behind file must be identical; otherwise, you’ll get errors when you build the web application.
 
@@ -263,7 +263,7 @@ px, so it appears as in line 4 of Fig. 25.1. The value of the Inherits attribute
 
 **Fig. 25.9** | Code-behind file for Default.aspx generated by Visual Web Developer.
 
-**1022** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 Web Form itself, each control is an object that has properties, methods and events. You can set these properties and events visually using the **Properties** window or programmati- cally in the code-behind file. However, unlike working with a Windows Form, you can type text directly on a Web Form at the cursor location or insert XHTML elements from the **Toolbox**.
 
@@ -293,13 +293,13 @@ Next, set the Label’s EnableViewState property to False. Finally, select DOCUM
 
 Label
 
-**1024** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 **_Step 10: Adding Page Logic_** Now that you’ve designed the user interface, you’ll add Visual Basic code to the code-be- hind file to obtain the server’s time. Open WebTime.aspx.vb by double clicking its node in the **Solution Explorer**. In this example, we add a Page_Init event handler (lines 7–11 of Fig. 25.2) to the code-behind file. Recall that Page_Init handles the Init event and con- tains code to initialize the page. The statement in line 10 of Fig. 25.2 sets timeLabel’s text to the server’s current time.
 
 **_Step 11: Running the Program_** After creating the Web Form, you can view it several ways. First, you can select **Debug > Start Without Debugging**, which runs the application by opening it in a browser window. If you created the application on your local IIS server (as we did in this example), the URL shown in the browser will be http://localhost/WebTime/WebTime.aspx (Fig. 25.2), in- dicating that the web page (the ASPX file) is located within the virtual directory WebTime
 
-on the local IIS web server. IIS must be running to test the website in a browser. IIS can be started by executing inetmgr.exe from **Start > Run...**, right clicking **Default Web Site** and selecting **Start**. \[_Note:_ You might need to expand the node representing your computer to display the **Default Web Site**.\]
+on the local IIS web server. IIS must be running to test the website in a browser. IIS can be started by executing inetmgr.exe from **Start > Run...**, right clicking **Default Web Site** and selecting **Start**. [_Note:_ You might need to expand the node representing your computer to display the **Default Web Site**.]
 
 If you created the ASP.NET application on the local file system, the URL shown in the browser will be http://localhost:_PortNumber_/WebTime/WebTime.aspx, where _Port- Number_ is the number of the randomly assigned port on which Visual Web Developer’s built-in test server runs. The IDE assigns the port number on a per-solution basis. This URL indicates that the WebTime project folder is being accessed through the root directory of the test server running at localhost:_PortNumber_. When you select **Debug > Start Without Debugging**, a tray icon appears near the bottom-right of your screen next to the computer’s date and time to show that the **ASP.NET Development Server** is running. The test server stops when you exit Visual Web Developer.
 
@@ -339,9 +339,9 @@ Image Displays images (e.g., GIF and JPG).
 
 **Fig. 25.12** | Commonly used web controls.
 
-**1026** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
 
-Fig. 25.13 was generated by Visual Web Developer in response to dragging controls onto the page in **Design** mode. To begin, create an ASP.NET website named WebControls. \[_Note:_ This example does not contain any functionality—i.e., no action occurs when the user clicks **Register**. We ask you to provide the functionality as an exercise. In subsequent examples, we demonstrate how to add functionality to many of these web controls.\]
+
+Fig. 25.13 was generated by Visual Web Developer in response to dragging controls onto the page in **Design** mode. To begin, create an ASP.NET website named WebControls. [_Note:_ This example does not contain any functionality—i.e., no action occurs when the user clicks **Register**. We ask you to provide the functionality as an exercise. In subsequent examples, we demonstrate how to add functionality to many of these web controls.]
 
 **1** <%-- Fig. 25.13: WebControls.aspx --%> **2** <%-- Registration form that demonstrates Web controls. --%> **3** <%@ Page Language="VB" AutoEventWireup="false" **4** CodeFile="WebControls.aspx.vb" Inherits="WebControls" %> **5 6** <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" **7** "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> **8 9** <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -369,7 +369,7 @@ Fig. 25.13 was generated by Visual Web Developer in response to dragging control
 
 </asp:DropDownList>
 
-<asp:HyperLink ID="booksHyperLink" runat="server" EnableViewState="False" NavigateUrl="http://www.deitel.com" Target="\_blank"> Click here to view more information about our books
+<asp:HyperLink ID="booksHyperLink" runat="server" EnableViewState="False" NavigateUrl="http://www.deitel.com" Target="_blank"> Click here to view more information about our books
 
 </asp:HyperLink>
 
@@ -377,7 +377,7 @@ Fig. 25.13 was generated by Visual Web Developer in response to dragging control
 
 </asp:RadioButtonList>
 
-**1028** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 Before discussing the web controls used in this ASPX file, we explain the XHTML that creates the layout seen in Fig. 25.13. The page contains an h3 heading element (line 16), followed by a series of additional XHTML blocks. We place most of the web controls inside p elements (i.e., paragraphs), but we use an XHTML table element (lines 25–55) to organize the Image and TextBox controls in the user information section of the page. In the preceding section, we described how to add heading elements and paragraphs visually without manipulating any XHTML in the ASPX file directly. Visual Web Developer allows you to add a table in a similar manner.
 
@@ -417,13 +417,13 @@ control. When a user clicks the drop-down list, it expands and displays a list f
 
 element (lines 66–72). After dragging a DropDownList control onto a Web Form, you can add items to it using the **ListItem Collection Editor**. This process is similar to customizing a ListBox in a Windows application. In Visual Web Developer, you can access the **ListItem Collection Editor** by clicking the ellipsis next to the Items property of the DropDownList,
 
-**1030** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 or by using the **DropDownList Tasks** menu. You can open this menu by clicking the small arrowhead that appears in the upper-right corner of the control in **Design** mode (Fig. 25.14). This menu is called a **smart tag menu**. Visual Web Developer displays smart tag menus for many ASP.NET controls to facilitate common tasks. Clicking **Edit Items...** in the **DropDownList Tasks** menu opens the **ListItem Collection Editor**, which allows you to add ListItem elements to the DropDownList.
 
 The **HyperLink** control (lines 76–80 of Fig. 25.13) adds a hyperlink to a web page. The **NavigateUrl** property (line 77) of this control specifies the resource (i.e., http:// www.deitel.com) that is requested when a user clicks the hyperlink. Setting the **Target**
 
-property to \_blank specifies that the requested web page should open in a new browser window. By default, HyperLink controls cause pages to open in the same browser window.
+property to _blank specifies that the requested web page should open in a new browser window. By default, HyperLink controls cause pages to open in the same browser window.
 
 Lines 89–96 define a **RadioButtonList** control, which provides a series of radio but- tons from which the user can select only one. Like options in a DropDownList, individual radio buttons are defined by ListItem elements. Note that, like the **DropDownList Tasks** smart tag menu, the **RadioButtonList Tasks** smart tag menu also provides an **Edit Items…** link to open the **ListItem Collection Editor**.
 
@@ -461,7 +461,7 @@ AlternateText displayed in a tooltip
 
 AdRotator image
 
-**1032** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 the first time the page is requested, when the American flag is shown. In the second request, as shown in Fig. 25.15(b), the French flag is displayed. Figure 25.15(c) depicts the web page that loads when the French flag is clicked.
 
@@ -493,7 +493,7 @@ The **AlternateText** element (line 10) nested in each Ad element contains text 
 
 **Fig. 25.16** | XML file containing advertisement information used in AdRotator example. (Part 1 of 3.)
 
-**1034** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 **23** <Ad> **24** <ImageUrl>Images/italy.png</ImageUrl> **25** <NavigateUrl>http://www.cia.gov/library/publications/ **26** the-world-factbook/geos/it.html **27** </NavigateUrl> **28** <AlternateText>Italy Information</AlternateText> **29** <Impressions>1</Impressions> **30** </Ad> **31 32** <Ad> **33** <ImageUrl>Images/spain.png</ImageUrl> **34** <NavigateUrl>http://www.cia.gov/library/publications/ **35** the-world-factbook/geos/sp.html **36** </NavigateUrl> **37** <AlternateText>Spain Information</AlternateText> **38** <Impressions>1</Impressions> **39** </Ad> **40 41** <Ad> **42** <ImageUrl>Images/latvia.png</ImageUrl> **43** <NavigateUrl>http://www.cia.gov/library/publications/ **44** the-world-factbook/geos/lg.html **45** </NavigateUrl> **46** <AlternateText>Latvia Information</AlternateText> **47** <Impressions>1</Impressions> **48** </Ad> **49 50** <Ad> **51** <ImageUrl>Images/peru.png</ImageUrl> **52** <NavigateUrl>http://www.cia.gov/library/publications/ **53** the-world-factbook/geos/pe.html **54** </NavigateUrl> **55** <AlternateText>Peru Information</AlternateText> **56** <Impressions>1</Impressions> **57** </Ad> **58 59** <Ad> **60** <ImageUrl>Images/senegal.png</ImageUrl> **61** <NavigateUrl>http://www.cia.gov/library/publications/ **62** the-world-factbook/geos/sg.html **63** </NavigateUrl> **64** <AlternateText>Senegal Information</AlternateText> **65** <Impressions>1</Impressions> **66** </Ad> **67 68** <Ad> **69** <ImageUrl>Images/sweden.png</ImageUrl> **70** <NavigateUrl>http://www.cia.gov/library/publications/ **71** the-world-factbook/geos/sw.html **72** </NavigateUrl> **73** <AlternateText>Sweden Information</AlternateText>
 
@@ -511,7 +511,7 @@ Figure 25.17 presents the ASPX file. Like the Web Form in Fig. 25.13, this Web F
 
 **Fig. 25.16** | XML file containing advertisement information used in AdRotator example. (Part 3 of 3.)
 
-**1036** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 TextBoxes for retrieving the user’s name, e-mail address and phone number, respectively, and line 78 defines a **Submit** button. Lines 80–82 create a Label named outputLabel that displays the response from the server when the user successfully submits the form. Notice that outputLabel’s **Visible** property is initially set to False (line 81), so the Label does not appear in the client’s browser when the page loads for the first time.
 
@@ -545,7 +545,7 @@ ID="emailFormatValidator" runat="server" ControlToValidate="emailTextBox" Displa
 
 "Please enter an e-mail address in a valid format." ValidationExpression=
 
-"\\w+(\[-+.'\]\\w+)\*@\\w+(\[-.\]\\w+)\*\\.\\w+(\[-.\]\\w+)\*"> </asp:RegularExpressionValidator>
+"\\w+([-+.']\\w+)\*@\\w+([-.]\\w+)\*\\.\\w+([-.]\\w+)\*"> </asp:RegularExpressionValidator>
 
 <asp:RequiredFieldValidator ID="phoneInputValidator" runat="server" ControlToValidate="phoneTextBox" Display="Dynamic" ErrorMessage="Please enter your phone number.">
 
@@ -553,7 +553,7 @@ ID="emailFormatValidator" runat="server" ControlToValidate="emailTextBox" Displa
 
 ID="phoneFormatValidator" runat="server" ControlToValidate="phoneTextBox" Display="Dynamic"
 
-**1038** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 **69 70 71 72 73 74** </td> **75** </tr> **76** </table> **77** <br /> **78** <asp:Button ID="submitButton" runat="server" Text="Submit" /><br /> **79** <br /> **80** <asp:Label ID="outputLabel" runat="server" **81** Text="Thank you for your submission." Visible="False"> **82** </asp:Label> **83** </div> **84** </form> **85** </body> **86** </html>
 
@@ -573,7 +573,7 @@ ValidationExpression= "((\\(\\d{3}\\) ?)|(\\d{3}-))?\\d{3}-\\d{4}">
 
 A RegularExpressionValidator’s **ValidationExpression** property specifies the reg- ular expression that validates the ControlToValidate’s contents. Clicking the ellipsis next to property ValidationExpression in the **Properties** window displays the **Regular Expres- sion Editor** dialog, which contains a list of **Standard expressions** for phone numbers, zip codes and other formatted information. You can also write your own custom expression. For the emailFormatValidator, we selected the standard expression **Internet e-mail address**, which uses the validation expression
 
-\\w+(\[-+.'\]\\w+)\*@\\w+(\[-.\]\\w+)\*\\.\\w+(\[-.\]\\w+)\*
+\\w+([-+.']\\w+)\*@\\w+([-.]\\w+)\*\\.\\w+([-.]\\w+)\*
 
 **Fig. 25.17** | Form that demonstrates using validators to validate user input. (Part 4 of 4.)
 
@@ -581,7 +581,7 @@ A RegularExpressionValidator’s **ValidationExpression** property specifies the
 
 (d)
 
-**1040** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 This regular expression indicates that an e-mail address is valid if the part of the address before the @ symbol contains one or more word characters (i.e., alphanumeric characters or underscores), followed by zero or more strings comprised of a hyphen, plus sign, period or apostrophe and additional word characters. After the @ symbol, a valid e-mail address must contain one or more groups of word characters potentially separated by hyphens or periods, followed by a required period and another group of one or more word characters potentially separated by hyphens or periods. For example, bob.white@email.com, bob- white@my-email.com and bob's-personal.email@white.email.com are all valid e-mail addresses. If the user enters text in the emailTextBox that does not have the correct format and either clicks in a different text box or attempts to submit the form, the ErrorMessage text is displayed in red. You can learn more about regular expressions at www.regular- expressions.info.
 
@@ -595,7 +595,7 @@ If all five validators are successful (i.e., each TextBox is filled in, and the 
 
 **_Examining the Code-Behind File for a Web Form That Receives User Input_** Figure 25.18 depicts the code-behind file for the ASPX file in Fig. 25.17. Notice that this code-behind file does not contain any implementation related to the validators. We say more about this soon.
 
-**1** ' Fig. 25.18: Validation.aspx.vb **2** ' Code-behind file for the form demonstrating validation controls. **3** Partial Class Validation **4** Inherits System.Web.UI.Page **5 6** ' Page_Load event handler executes when the page is loaded **7** Protected Sub Page_Load(ByVal sender As Object, \_ **8** ByVal e As System.EventArgs) Handles Me.Load **9** ' if this is not the first time the page is loading
+**1** ' Fig. 25.18: Validation.aspx.vb **2** ' Code-behind file for the form demonstrating validation controls. **3** Partial Class Validation **4** Inherits System.Web.UI.Page **5 6** ' Page_Load event handler executes when the page is loaded **7** Protected Sub Page_Load(ByVal sender As Object, _ **8** ByVal e As System.EventArgs) Handles Me.Load **9** ' if this is not the first time the page is loading
 
 **10** ' (i.e., the user has already submitted form data) **11** If IsPostBack Then **12** ' retrieve the values submitted by the user **13** Dim name As String = nameTextBox.Text **14** Dim email As String = emailTextBox.Text
 
@@ -613,21 +613,21 @@ putLabel’s Text a line break, an additional message and an XHTML table contain
 
 idation.aspx loads after the postback. (We added the comments in lines 1–2.) To view this code, select **View > Source** in Internet Explorer. Lines 27–55, lines 126–190 and lines 196–212 contain the ECMAScript that provides the implementation for the validation controls and for performing the postback. ASP.NET generates this ECMAScript. You do not need to be able to create or even understand ECMAScript—the functionality defined for the controls in our application is converted to working ECMAScript for us.
 
-The EnableViewState attribute determines whether a web control’s value is retained when a postback occurs. Previously, we explicitly set this attribute to False. The default value, True, indicates that the control’s value is retained. In Fig. 25.17(d), notice that the user input is retained after the postback occurs. A hidden input in the XHTML document (lines 17–25 of Fig. 25.19) contains the data of the controls on this page. This element is always named **\_\_VIEWSTATE** and stores the controls’ data as an encoded string.
+The EnableViewState attribute determines whether a web control’s value is retained when a postback occurs. Previously, we explicitly set this attribute to False. The default value, True, indicates that the control’s value is retained. In Fig. 25.17(d), notice that the user input is retained after the postback occurs. A hidden input in the XHTML document (lines 17–25 of Fig. 25.19) contains the data of the controls on this page. This element is always named **__VIEWSTATE** and stores the controls’ data as an encoded string.
 
-**15** Dim phone As String = phoneTextBox.Text **16 17** ' create a table indicating the submitted values **18** outputLabel.Text &= \_ **19** "<br />We received the following information:" & \_ **20** "<table style=""background-color: yellow"">" & \_ **21** "<tr><td>Name: </td><td>" & name & "</td></tr>" & \_ **22** "<tr><td>E-mail address: </td><td>" & email & "</td></tr>" & \_ **23** "<tr><td>Phone number: </td><td>" & phone & "</td></tr>" & \_ **24** "<table>" **25** outputLabel.Visible = True ' display the output message **26** End If **27** End Sub ' Page_Load **28** End Class ' Validation
+**15** Dim phone As String = phoneTextBox.Text **16 17** ' create a table indicating the submitted values **18** outputLabel.Text &= _ **19** "<br />We received the following information:" & _ **20** "<table style=""background-color: yellow"">" & _ **21** "<tr><td>Name: </td><td>" & name & "</td></tr>" & _ **22** "<tr><td>E-mail address: </td><td>" & email & "</td></tr>" & _ **23** "<tr><td>Phone number: </td><td>" & phone & "</td></tr>" & _ **24** "<table>" **25** outputLabel.Visible = True ' display the output message **26** End If **27** End Sub ' Page_Load **28** End Class ' Validation
 
 **Fig. 25.18** | Code-behind file for the form demonstrating validation controls. (Part 2 of 2.)
 
-**1042** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 **1** <!-- Fig. 25.19 --> **2** <!-- The XHTML and ECMAScript generated for Validation.aspx --> **3** <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" **4** "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> **5** <html xmlns="http://www.w3.org/1999/xhtml" > **6** <head> **7** <title>Demonstrating Validation Controls</title> **8** </head> **9** <body>
 
-**10** <form name="form1" method="post" action="Validation.aspx" **11** onsubmit="javascript:return WebForm_OnSubmit();" id="form1"> **12** <div> **13** <input type="hidden" name="\_\_EVENTTARGET" id="\_\_EVENTTARGET" **14** value="" /> **15** <input type="hidden" name="\_\_EVENTARGUMENT" id="\_\_EVENTARGUMENT" **16** value="" /> **17 18 19 20 21 22 23 24 25 26** </div> **27** <script type="text/javascript"> **28** <!-- **29** var theForm = document.forms\['form1'\]; **30** if (!theForm) { **31** theForm = document.form1; **32** } **33** function \_\_doPostBack(eventTarget, eventArgument) { **34** if (!theForm.onsubmit || (theForm.onsubmit() != false)) { **35** theForm.\_\_EVENTTARGET.value = eventTarget; **36** theForm.\_\_EVENTARGUMENT.value = eventArgument; **37** theForm.submit(); **38** } **39** } **40** // --> **41** </script> **42** <script src="/Validation/WebResource.axd?d=g4BXOwpt2-0jwFwNi7BCNQ2 **43** &amp;t=632670465355304640" type="text/javascript"></script> **44** <script src="/Validation/WebResource.axd?d=ZlFGPYdc0paOPqraRf9s2PN8QeuH **45** PzQxnkR5mPVtAVc1&amp;t=632670465355304640" **46** type="text/javascript"></script> **47** <script type="text/javascript"> **48** <!-- **49** function WebForm_OnSubmit() { **50** if (typeof(ValidatorOnSubmit) == "function" && **51** ValidatorOnSubmit() == false) return false;
+**10** <form name="form1" method="post" action="Validation.aspx" **11** onsubmit="javascript:return WebForm_OnSubmit();" id="form1"> **12** <div> **13** <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" **14** value="" /> **15** <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" **16** value="" /> **17 18 19 20 21 22 23 24 25 26** </div> **27** <script type="text/javascript"> **28** <!-- **29** var theForm = document.forms['form1']; **30** if (!theForm) { **31** theForm = document.form1; **32** } **33** function __doPostBack(eventTarget, eventArgument) { **34** if (!theForm.onsubmit || (theForm.onsubmit() != false)) { **35** theForm.__EVENTTARGET.value = eventTarget; **36** theForm.__EVENTARGUMENT.value = eventArgument; **37** theForm.submit(); **38** } **39** } **40** // --> **41** </script> **42** <script src="/Validation/WebResource.axd?d=g4BXOwpt2-0jwFwNi7BCNQ2 **43** &amp;t=632670465355304640" type="text/javascript"></script> **44** <script src="/Validation/WebResource.axd?d=ZlFGPYdc0paOPqraRf9s2PN8QeuH **45** PzQxnkR5mPVtAVc1&amp;t=632670465355304640" **46** type="text/javascript"></script> **47** <script type="text/javascript"> **48** <!-- **49** function WebForm_OnSubmit() { **50** if (typeof(ValidatorOnSubmit) == "function" && **51** ValidatorOnSubmit() == false) return false;
 
 **Fig. 25.19** | XHTML and ECMAScript generated by ASP.NET and sent to the browser when Validation.aspx is requested. (Part 1 of 5.)
 
-<input type="hidden" name="\_\_VIEWSTATE" id="\_\_VIEWSTATE" value="/wEPDwUJMzg4NDI1NzgzD2QWAgIDD2QWAgITDw8WBB4EVGV4dAWVAlRoY W5rIHlvdSBmb3IgeW91ciBzdWJtaXNzaW9uLjxiciAvPldlIHJlY2VpdmVkIHRoZ SBmb2xsb3dpbmcgaW5mb3JtYXRpb246PHRhYmxlIHN0eWxlPSJiYWNrZ3JvdW5kL WNvbG9yOiB5ZWxsb3ciPjx0cj48dGQ+TmFtZTogPC90ZD48dGQ+Qm9iIFdoaXRlP C90ZD48L3RyPjx0cj48dGQ+RS1tYWlsIGFkZHJlc3M6IDwvdGQ+PHRkPmJ3aGl0
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMzg4NDI1NzgzD2QWAgIDD2QWAgITDw8WBB4EVGV4dAWVAlRoY W5rIHlvdSBmb3IgeW91ciBzdWJtaXNzaW9uLjxiciAvPldlIHJlY2VpdmVkIHRoZ SBmb2xsb3dpbmcgaW5mb3JtYXRpb246PHRhYmxlIHN0eWxlPSJiYWNrZ3JvdW5kL WNvbG9yOiB5ZWxsb3ciPjx0cj48dGQ+TmFtZTogPC90ZD48dGQ+Qm9iIFdoaXRlP C90ZD48L3RyPjx0cj48dGQ+RS1tYWlsIGFkZHJlc3M6IDwvdGQ+PHRkPmJ3aGl0
 
 ZUBlbWFpbC5jb208L3RkPjwvdHI+PHRyPjx0ZD5QaG9uZSBudW1iZXI6IDwvdGQ+ PHRkPig1NTUpIDU1NS0xMjM0PC90ZD48L3RyPjx0YWJsZT4eB1Zpc2libGVnZGRk qbjgKg1/lLZfogqihtkd1C7nmSk=" />
 
@@ -637,19 +637,19 @@ ZUBlbWFpbC5jb208L3RkPjwvdHI+PHRyPjx0ZD5QaG9uZSBudW1iZXI6IDwvdGQ+ PHRkPig1NTUpIDU
 
 **Fig. 25.19** | XHTML and ECMAScript generated by ASP.NET and sent to the browser when Validation.aspx is requested. (Part 2 of 5.)
 
-**1044** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
 
-**103** new WebForm_PostBackOptions(&quot;submitButton&quot;, **104** &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, **105** false))" id="submitButton" /> **106** <br /> **107** <br /> **108** <span id="outputLabel">Thank you for your submission.<br /> **109** We received the following information: **110** <table style="background-color: yellow"> **111** <tr> **112** <td>Name: </td> **113** <td>Bob White</td> **114** </tr> **115** <tr> **116** <td>E-mail address: </td> **117** <td>bwhite@email.com</td> **118** </tr> **119** <tr> **120** <td>Phone number: </td> **121** <td>(555) 555-1234</td> **122** </tr> **123** <table> **124** </span> **125** </div> **126** <script type="text/javascript"> **127** <!-- **128** var Page\_Validators = new Array( **129** document.getElementById("nameInputValidator"), **130** document.getElementById("emailInputValidator"), **131** document.getElementById("emailFormatValidator"), **132** document.getElementById("phoneInputValidator"), **133** document.getElementById("phoneFormatValidator")); **134** // --> **135** </script> **136** <script type="text/javascript"> **137** <!-- **138** var nameInputValidator = document.all ? **139** document.all\["nameInputValidator"\] : **140** document.getElementById("nameInputValidator"); **141** nameInputValidator.controltovalidate = "nameTextBox"; **142** nameInputValidator.errormessage = "Please enter your name."; **143** nameInputValidator.display = "Dynamic"; **144** nameInputValidator.evaluationfunction = **145** "RequiredFieldValidatorEvaluateIsValid"; **146** nameInputValidator.initialvalue = ""; **147** var emailInputValidator = document.all ? **148** document.all\["emailInputValidator"\] : **149** document.getElementById("emailInputValidator"); **150** emailInputValidator.controltovalidate = "emailTextBox"; **151** emailInputValidator.errormessage = **152** "Please enter your e-mail address."; **153** emailInputValidator.display = "Dynamic";
+
+**103** new WebForm_PostBackOptions(&quot;submitButton&quot;, **104** &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, **105** false))" id="submitButton" /> **106** <br /> **107** <br /> **108** <span id="outputLabel">Thank you for your submission.<br /> **109** We received the following information: **110** <table style="background-color: yellow"> **111** <tr> **112** <td>Name: </td> **113** <td>Bob White</td> **114** </tr> **115** <tr> **116** <td>E-mail address: </td> **117** <td>bwhite@email.com</td> **118** </tr> **119** <tr> **120** <td>Phone number: </td> **121** <td>(555) 555-1234</td> **122** </tr> **123** <table> **124** </span> **125** </div> **126** <script type="text/javascript"> **127** <!-- **128** var Page_Validators = new Array( **129** document.getElementById("nameInputValidator"), **130** document.getElementById("emailInputValidator"), **131** document.getElementById("emailFormatValidator"), **132** document.getElementById("phoneInputValidator"), **133** document.getElementById("phoneFormatValidator")); **134** // --> **135** </script> **136** <script type="text/javascript"> **137** <!-- **138** var nameInputValidator = document.all ? **139** document.all["nameInputValidator"] : **140** document.getElementById("nameInputValidator"); **141** nameInputValidator.controltovalidate = "nameTextBox"; **142** nameInputValidator.errormessage = "Please enter your name."; **143** nameInputValidator.display = "Dynamic"; **144** nameInputValidator.evaluationfunction = **145** "RequiredFieldValidatorEvaluateIsValid"; **146** nameInputValidator.initialvalue = ""; **147** var emailInputValidator = document.all ? **148** document.all["emailInputValidator"] : **149** document.getElementById("emailInputValidator"); **150** emailInputValidator.controltovalidate = "emailTextBox"; **151** emailInputValidator.errormessage = **152** "Please enter your e-mail address."; **153** emailInputValidator.display = "Dynamic";
 
 **Fig. 25.19** | XHTML and ECMAScript generated by ASP.NET and sent to the browser when Validation.aspx is requested. (Part 3 of 5.)
 
 25.3 Web Controls **1045**
 
-**154** emailInputValidator.evaluationfunction = **155** "RequiredFieldValidatorEvaluateIsValid"; **156** emailInputValidator.initialvalue = ""; **157** var emailFormatValidator = document.all ? **158** document.all\["emailFormatValidator"\] : **159** document.getElementById("emailFormatValidator"); **160** emailFormatValidator.controltovalidate = "emailTextBox"; **161** emailFormatValidator.errormessage = **162** "Please enter an e-mail address in a valid format."; **163** emailFormatValidator.display = "Dynamic"; **164** emailFormatValidator.evaluationfunction = **165** "RegularExpressionValidatorEvaluateIsValid"; **166** emailFormatValidator.validationexpression = **167** "\\\\w+(\[-+.\\'\]\\\\w+)\*@\\\\w+(\[-.\]\\\\w+)\*\\\\.\\\\w+(\[-.\]\\\\w+)\*"; **168** var phoneInputValidator = document.all ? **169** document.all\["phoneInputValidator"\] : **170** document.getElementById("phoneInputValidator"); **171** phoneInputValidator.controltovalidate = "phoneTextBox"; **172** phoneInputValidator.errormessage = **173** "Please enter your phone number."; **174** phoneInputValidator.display = "Dynamic"; **175** phoneInputValidator.evaluationfunction = **176** "RequiredFieldValidatorEvaluateIsValid"; **177** phoneInputValidator.initialvalue = ""; **178** var phoneFormatValidator = document.all ? **179** document.all\["phoneFormatValidator"\] : **180** document.getElementById("phoneFormatValidator"); **181** phoneFormatValidator.controltovalidate = "phoneTextBox"; **182** phoneFormatValidator.errormessage = **183** "Please enter a phone number in a valid format."; **184** phoneFormatValidator.display = "Dynamic"; **185** phoneFormatValidator.evaluationfunction = **186** "RegularExpressionValidatorEvaluateIsValid"; **187** phoneFormatValidator.validationexpression = **188** "((\\\\(\\\\d{3}\\\\) ?)|(\\\\d{3}-))?\\\\d{3}-\\\\d{4}"; **189** // --> **190** </script> **191** <div> **192** <input type="hidden" name="\_\_EVENTVALIDATION" id="\_\_EVENTVALIDATION" **193** value="/wEWBQL6jZCbCAKLsYSOBwKCkfPgDAKE8IO1CQKSuuDUC0eNO370TaQqZQ **194** 0WPApD0KktGC5N" /> **195** </div> **196** <script type="text/javascript"> **197** <!-- **198** var Page_ValidationActive = false; **199** if (typeof(ValidatorOnLoad) == "function") { **200** ValidatorOnLoad(); **201** } **202 203** function ValidatorOnSubmit() { **204** if (Page_ValidationActive) {
+**154** emailInputValidator.evaluationfunction = **155** "RequiredFieldValidatorEvaluateIsValid"; **156** emailInputValidator.initialvalue = ""; **157** var emailFormatValidator = document.all ? **158** document.all["emailFormatValidator"] : **159** document.getElementById("emailFormatValidator"); **160** emailFormatValidator.controltovalidate = "emailTextBox"; **161** emailFormatValidator.errormessage = **162** "Please enter an e-mail address in a valid format."; **163** emailFormatValidator.display = "Dynamic"; **164** emailFormatValidator.evaluationfunction = **165** "RegularExpressionValidatorEvaluateIsValid"; **166** emailFormatValidator.validationexpression = **167** "\\\\w+([-+.\\']\\\\w+)\*@\\\\w+([-.]\\\\w+)\*\\\\.\\\\w+([-.]\\\\w+)\*"; **168** var phoneInputValidator = document.all ? **169** document.all["phoneInputValidator"] : **170** document.getElementById("phoneInputValidator"); **171** phoneInputValidator.controltovalidate = "phoneTextBox"; **172** phoneInputValidator.errormessage = **173** "Please enter your phone number."; **174** phoneInputValidator.display = "Dynamic"; **175** phoneInputValidator.evaluationfunction = **176** "RequiredFieldValidatorEvaluateIsValid"; **177** phoneInputValidator.initialvalue = ""; **178** var phoneFormatValidator = document.all ? **179** document.all["phoneFormatValidator"] : **180** document.getElementById("phoneFormatValidator"); **181** phoneFormatValidator.controltovalidate = "phoneTextBox"; **182** phoneFormatValidator.errormessage = **183** "Please enter a phone number in a valid format."; **184** phoneFormatValidator.display = "Dynamic"; **185** phoneFormatValidator.evaluationfunction = **186** "RegularExpressionValidatorEvaluateIsValid"; **187** phoneFormatValidator.validationexpression = **188** "((\\\\(\\\\d{3}\\\\) ?)|(\\\\d{3}-))?\\\\d{3}-\\\\d{4}"; **189** // --> **190** </script> **191** <div> **192** <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" **193** value="/wEWBQL6jZCbCAKLsYSOBwKCkfPgDAKE8IO1CQKSuuDUC0eNO370TaQqZQ **194** 0WPApD0KktGC5N" /> **195** </div> **196** <script type="text/javascript"> **197** <!-- **198** var Page_ValidationActive = false; **199** if (typeof(ValidatorOnLoad) == "function") { **200** ValidatorOnLoad(); **201** } **202 203** function ValidatorOnSubmit() { **204** if (Page_ValidationActive) {
 
 **Fig. 25.19** | XHTML and ECMAScript generated by ASP.NET and sent to the browser when Validation.aspx is requested. (Part 4 of 5.)
 
-**1046** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 **Performance Tip 25.1** _Setting EnableViewState to False reduces the amount of data passed to the web server with each request._ 25.1
 
@@ -675,7 +675,7 @@ Note that our previous examples set the Web Form’s EnableSessionState property
 
 **25.4.1 Cookies Cookies** provide web developers with a tool for identifying and tracking web users. A cookie is a piece of data stored in a small text file on the user’s computer. A cookie main- tains information about the client during and between browser sessions. The first time a user visits the website, the user’s computer might receive a cookie; this cookie is then re- trieved each time the user revisits that site. The collected information is intended to be an anonymous record containing data that is used to personalize the user’s future visits to the site. For example, cookies in a shopping application might store unique identifiers for us- ers. When a user adds items to an online shopping cart or performs another task resulting in a request to the web server, the server receives a cookie containing the user’s unique
 
-**1048** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 identifier. The server then uses the unique identifier to locate the shopping cart and per- form any necessary processing.
 
@@ -711,7 +711,7 @@ When the postback occurs, certain controls are hidden and others are displayed. 
 
 <asp:HyperLink ID="recommendationsLink" runat="server" NavigateUrl="~/Recommendations.aspx" Visible="False">
 
-**1050** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 **_Adding and Linking to a New Web Form_** Setting the NavigateUrl property to a page in the current application requires that the destination page exist already. Thus, to set the NavigateUrl property of the second link (the one that requests the page with book recommendations) to Recommendations.aspx, you must first create this file by right clicking the project location in the **Solution Explorer** and selecting **Add New Item…** from the menu that appears. In the **Add New Item** dialog, select **Web Form** from the **Templates** pane and change the name of the file to Recommen-
 
@@ -733,7 +733,7 @@ Click here to get book recommendations </asp:HyperLink>
 
 **1** ' Fig. 25.21: Options.aspx.vb **2** ' Processes user's selection of a programming language **3** ' by displaying links and writing a cookie to the user's machine. **4** Partial Class Options **5** Inherits System.Web.UI.Page **6 7 8 9** ' initializes the Hashtable of values to be stored as cookies
 
-**10** Protected Sub Page_Init(ByVal sender As Object, \_ **11** ByVal e As System.EventArgs) Handles Me.Init **12 13 14 15 16 17** End Sub ' Page_Init **18 19** ' if postback, hide form and display links to make additional **20** ' selections or view recommendations **21** Protected Sub Page_Load(ByVal sender As Object, \_ **22** ByVal e As System.EventArgs) Handles Me.Load **23 24** If IsPostBack Then **25** ' user has submitted information, so display message **26** ' and appropriate hyperlinks **27** responseLabel.Visible = True **28** languageLink.Visible = True **29** recommendationsLink.Visible = True **30 31** ' hide other controls used to make language selection **32** promptLabel.Visible = False **33** languageList.Visible = False **34** submitButton.Visible = False **35 36 37 38 39 40 41 42 43** End If **44** End Sub ' Page_Load **45**
+**10** Protected Sub Page_Init(ByVal sender As Object, _ **11** ByVal e As System.EventArgs) Handles Me.Init **12 13 14 15 16 17** End Sub ' Page_Init **18 19** ' if postback, hide form and display links to make additional **20** ' selections or view recommendations **21** Protected Sub Page_Load(ByVal sender As Object, _ **22** ByVal e As System.EventArgs) Handles Me.Load **23 24** If IsPostBack Then **25** ' user has submitted information, so display message **26** ' and appropriate hyperlinks **27** responseLabel.Visible = True **28** languageLink.Visible = True **29** recommendationsLink.Visible = True **30 31** ' hide other controls used to make language selection **32** promptLabel.Visible = False **33** languageList.Visible = False **34** submitButton.Visible = False **35 36 37 38 39 40 41 42 43** End If **44** End Sub ' Page_Load **45**
 
 **Fig. 25.21** | Code-behind file that writes a cookie to the client. (Part 1 of 2.)
 
@@ -743,13 +743,13 @@ books.Add("Visual Basic 2005", "0-13-186900-0") books.Add("Visual C# 2005", "0-1
 
 ' if the user made a selection, display it in responseLabel If languageList.SelectedItem IsNot Nothing Then
 
-responseLabel.Text &= " You selected " & \_ languageList.SelectedItem.Text.ToString()
+responseLabel.Text &= " You selected " & _ languageList.SelectedItem.Text.ToString()
 
 Else responseLabel.Text &= " You did not select a language."
 
 End If
 
-**1052** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 Line 7 creates variable books as a **Hashtable** (namespace System.Collections)—a data structure that stores **key–value pairs**. A program uses the key to store and retrieve the associated value in the Hashtable. In this example, the keys are strings containing the programming languages’ names, and the values are strings containing the ISBN numbers for the recommended books. Class Hashtable provides method **Add**, which takes as argu- ments a key and a value. A value that is added via method Add is placed in the Hashtable
 
@@ -769,7 +769,7 @@ Label (lines 38–39). Otherwise, text indicating that a language was not select
 
 (Fig. 25.22) to display the recommendations based on the user’s language selections.
 
-**46** ' write a cookie to record the user's selection **47** Protected Sub submitButton_Click(ByVal sender As Object, \_ **48** ByVal e As System.EventArgs) Handles submitButton.Click **49** ' if the user made a selection **50** If languageList.SelectedItem IsNot Nothing Then **51** Dim language As String = languageList.SelectedItem.ToString() **52 53 54 55 56 57 58 59 60 61** End If **62** End Sub ' submitButton_Click **63** End Class ' Options
+**46** ' write a cookie to record the user's selection **47** Protected Sub submitButton_Click(ByVal sender As Object, _ **48** ByVal e As System.EventArgs) Handles submitButton.Click **49** ' if the user made a selection **50** If languageList.SelectedItem IsNot Nothing Then **51** Dim language As String = languageList.SelectedItem.ToString() **52 53 54 55 56 57 58 59 60 61** End If **62** End Sub ' submitButton_Click **63** End Class ' Options
 
 **Fig. 25.21** | Code-behind file that writes a cookie to the client. (Part 2 of 2.)
 
@@ -791,17 +791,17 @@ Recommendations.aspx contains a Label (lines 16–18), a ListBox (lines 20–21)
 
 <asp:ListBox ID="booksListBox" runat="server" Height="125px" Width="450px"></asp:ListBox><br />
 
-**1054** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 displays the recommendations specified by the code-behind file (Fig. 25.23). The Hyper-
 
 Link allows the user to return to Options.aspx to select additional languages.
 
-**_Code-Behind File That Creates Book Recommendations from Cookies_** In the code-behind file (Fig. 25.23), method Page*Init (lines 7–28) retrieves the cookies from the client, using the Request object’s **Cookies** property (line 10). This returns a col- lection of type **HttpCookieCollection**, containing cookies that have previously been writ- ten to the client. Cookies can be read by an application only if they were created in the domain in which the application is running—a web server can never access cookies created outside the domain associated with that server. For example, a cookie created by a web server in the deitel.com domain cannot be read by a web server in any other domain. \[\_Note:* Depending on the settings in web.config and whether other pages store cookies, other cookie values may be displayed by this web application.\]
+**_Code-Behind File That Creates Book Recommendations from Cookies_** In the code-behind file (Fig. 25.23), method Page*Init (lines 7–28) retrieves the cookies from the client, using the Request object’s **Cookies** property (line 10). This returns a col- lection of type **HttpCookieCollection**, containing cookies that have previously been writ- ten to the client. Cookies can be read by an application only if they were created in the domain in which the application is running—a web server can never access cookies created outside the domain associated with that server. For example, a cookie created by a web server in the deitel.com domain cannot be read by a web server in any other domain. [_Note:* Depending on the settings in web.config and whether other pages store cookies, other cookie values may be displayed by this web application.]
 
 Line 13 determines whether at least one cookie exists. Lines 14–17 add the informa- tion in the cookie(s) to the booksListBox. The loop retrieves the name and value of each cookie using i, the loop’s control variable, to determine the current value in the cookie collection. The **Name** and **Value** properties of class HttpCookie, which contain the lan- guage and corresponding ISBN, respectively, are concatenated with " How to Program.
 
-**1** ' Fig. 25.23: Recommendations.aspx.vb **2** ' Creates book recommendations based on cookies. **3** Partial Class Recommendations **4** Inherits System.Web.UI.Page **5 6** ' read cookies and populate ListBox with any book recommendations **7** Protected Sub Page_Init(ByVal sender As Object, \_ **8** ByVal e As System.EventArgs) Handles Me.Init **9**
+**1** ' Fig. 25.23: Recommendations.aspx.vb **2** ' Creates book recommendations based on cookies. **3** Partial Class Recommendations **4** Inherits System.Web.UI.Page **5 6** ' read cookies and populate ListBox with any book recommendations **7** Protected Sub Page_Init(ByVal sender As Object, _ **8** ByVal e As System.EventArgs) Handles Me.Init **9**
 
 **10 11 12** ' if there are cookies, list the appropriate books and ISBN numbers **13** If <> 0 Then **14** For i As Integer = 0 To - 1 **15 16 17** Next **18** Else **19** ' if there are no cookies, then no language was chosen, so **20** ' display appropriate message and clear and hide booksListBox **21** recommendationsLabel.Text = "No Recommendations" **22** booksListBox.Items.Clear() **23** booksListBox.Visible = False **24 25** ' modify languageLink because no language was selected **26** languageLink.Text = "Click here to choose a language" **27** End If **28** End Sub ' Page_Init **29** End Class ' Recommendations
 
@@ -811,7 +811,7 @@ Line 13 determines whether at least one cookie exists. Lines 14–17 add the inf
 
 cookies.Count cookies.Count
 
-booksListBox.Items.Add(cookies(i).Name & \_ " How to Program. ISBN#: " & cookies(i).Value)
+booksListBox.Items.Add(cookies(i).Name & _ " How to Program. ISBN#: " & cookies(i).Value)
 
 25.4 Session Tracking **1055**
 
@@ -839,7 +839,7 @@ Value Returns a String containing the cookie’s value.
 
 **Fig. 25.24** | HttpCookie properties.
 
-**1056** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 **session items**. Next, a postback occurs. Each time the user clicks **Submit**, submitButton_Click adds a new session item to the HttpSessionState object. Because much of this example is identical to the last example, we concentrate on the new features.
 
@@ -869,11 +869,11 @@ Like a cookie, an HttpSessionState object can store name–value pairs. These se
 
 (c) (d)
 
-**1058** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 **1** ' Fig. 25.26: Options.aspx.vb **2** ' Processes user's selection of a programming language **3** ' by displaying links and writing information in a Session object. **4** Partial Class Options **5** Inherits System.Web.UI.Page **6** ' stores values to represent books **7** Private books As New System.Collections.Hashtable() **8 9** ' initializes the Hashtable of values to be stored in a Session
 
-**10** Protected Sub Page_Init(ByVal sender As Object, \_ **11** ByVal e As System.EventArgs) Handles Me.Init **12** books.Add("Visual Basic 2005", "0-13-186900-0") **13** books.Add("Visual C# 2005", "0-13-152523-9") **14** books.Add("C", "0-13-142644-3") **15** books.Add("C++", "0-13-185757-6") **16** books.Add("Java", "0-13-148398-6") **17** End Sub ' Page_Init **18 19** ' if postback, hide form and display links to make additional **20** ' selections or view recommendations **21** Protected Sub Page_Load(ByVal sender As Object, \_ **22** ByVal e As System.EventArgs) Handles Me.Load **23 24** If IsPostBack Then **25** ' user has submitted information, so display message **26** ' and appropriate hyperlinks **27** responseLabel.Visible = True **28** idLabel.Visible = True **29** timeoutLabel.Visible = True **30** languageLink.Visible = True **31** recommendationsLink.Visible = True **32 33** ' hide other controls used to make language selection **34** promptLabel.Visible = False **35** languageList.Visible = False **36** submitButton.Visible = False **37 38** ' if the user made a selection, display it in responseLabel **39** If languageList.SelectedItem IsNot Nothing Then **40** responseLabel.Text &= " You selected " & \_ **41** languageList.SelectedItem.Text.ToString() **42** Else **43** responseLabel.Text &= " You did not select a language." **44** End If **45 46 47 48 49 50 51** End If **52** End Sub ' Page_Load
+**10** Protected Sub Page_Init(ByVal sender As Object, _ **11** ByVal e As System.EventArgs) Handles Me.Init **12** books.Add("Visual Basic 2005", "0-13-186900-0") **13** books.Add("Visual C# 2005", "0-13-152523-9") **14** books.Add("C", "0-13-142644-3") **15** books.Add("C++", "0-13-185757-6") **16** books.Add("Java", "0-13-148398-6") **17** End Sub ' Page_Init **18 19** ' if postback, hide form and display links to make additional **20** ' selections or view recommendations **21** Protected Sub Page_Load(ByVal sender As Object, _ **22** ByVal e As System.EventArgs) Handles Me.Load **23 24** If IsPostBack Then **25** ' user has submitted information, so display message **26** ' and appropriate hyperlinks **27** responseLabel.Visible = True **28** idLabel.Visible = True **29** timeoutLabel.Visible = True **30** languageLink.Visible = True **31** recommendationsLink.Visible = True **32 33** ' hide other controls used to make language selection **34** promptLabel.Visible = False **35** languageList.Visible = False **36** submitButton.Visible = False **37 38** ' if the user made a selection, display it in responseLabel **39** If languageList.SelectedItem IsNot Nothing Then **40** responseLabel.Text &= " You selected " & _ **41** languageList.SelectedItem.Text.ToString() **42** Else **43** responseLabel.Text &= " You did not select a language." **44** End If **45 46 47 48 49 50 51** End If **52** End Sub ' Page_Load
 
 **Fig. 25.26** | Processes user's selection of a programming language by displaying links and writing information in a Session object. (Part 1 of 2.)
 
@@ -889,7 +889,7 @@ objects and cookies to maintain state information. The HttpSessionStrate propert
 
 SessionState object can be inactive before it is discarded. Figure 25.27 lists some common HttpSessionState properties.
 
-**53 54** ' record the user's selection in the Session **55** Protected Sub submitButton_Click(ByVal sender As Object, \_ **56** ByVal e As System.EventArgs) Handles submitButton.Click **57** ' if the user made a selection **58** If languageList.SelectedItem IsNot Nothing Then **59** Dim language As String = languageList.SelectedItem.ToString() **60 61** ' get ISBN number of book for the given language **62** Dim ISBN As String = books(language).ToString() **63 64 65** End If **66** End Sub ' submitButton_Click **67** End Class ' Options
+**53 54** ' record the user's selection in the Session **55** Protected Sub submitButton_Click(ByVal sender As Object, _ **56** ByVal e As System.EventArgs) Handles submitButton.Click **57** ' if the user made a selection **58** If languageList.SelectedItem IsNot Nothing Then **59** Dim language As String = languageList.SelectedItem.ToString() **60 61** ' get ISBN number of book for the given language **62** Dim ISBN As String = books(language).ToString() **63 64 65** End If **66** End Sub ' submitButton_Click **67** End Class ' Options
 
 Properties Description
 
@@ -905,7 +905,7 @@ IsReadOnly Indicates whether the Session object is read-only.
 
 Session.Add(language, ISBN) ' add name/value pair to Session
 
-**1060** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 **_Displaying Recommendations Based on Session Values_** As in the cookies example, this application provides a link to Recommendations.aspx
 
@@ -931,7 +931,7 @@ Properties Description
 
 **_Code-Behind File That Creates Book Recommendations from a Session_** Figure 25.29 presents the code-behind file for Recommendations.aspx. Event handler Page_Init (lines 7–30) retrieves the session information. If a user has not selected a lan- guage on Options.aspx, our Session object’s **Count** property will be 0. This property pro- vides the number of session items contained in a Session object. If Session object’s Count property is 0 (i.e., no language was selected), then we display the text **No Recommendations** and update the Text of the HyperLink back to Options.aspx.
 
-**1** ' Fig. 25.29: Recommendations.aspx.vb **2** ' Creates book recommendations based on a Session object. **3** Partial Class Recommendations **4** Inherits System.Web.UI.Page **5 6** ' read Session items and populate ListBox with any book recommendations **7** Protected Sub Page_Init(ByVal sender As Object, \_ **8** ByVal e As System.EventArgs) Handles Me.Init **9** ' determine whether Session contains any information
+**1** ' Fig. 25.29: Recommendations.aspx.vb **2** ' Creates book recommendations based on a Session object. **3** Partial Class Recommendations **4** Inherits System.Web.UI.Page **5 6** ' read Session items and populate ListBox with any book recommendations **7** Protected Sub Page_Init(ByVal sender As Object, _ **8** ByVal e As System.EventArgs) Handles Me.Init **9** ' determine whether Session contains any information
 
 **10** If <> 0 Then **11** For i As Integer = 0 To Session.Count - 1 **12 13 14 15 16 17 18 19** Next **20** Else
 
@@ -943,11 +943,11 @@ Session.Count
 
 ' get current key name from Session object Dim keyName As String = Session.Keys(i)
 
-' use keyName to display one of Session's name-value pairs booksListBox.Items.Add(keyName & \_
+' use keyName to display one of Session's name-value pairs booksListBox.Items.Add(keyName & _
 
-" How to Program. ISBN#: " & \_ Session(keyName).ToString())
+" How to Program. ISBN#: " & _ Session(keyName).ToString())
 
-**1062** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 If the user has chosen a language, the loop in lines 11–19 iterates through our Session object’s session items, temporarily storing each key name (line 13). The value in a key– value pair is retrieved from the Session object by indexing the Session object with the key name, using the same process by which we retrieved a value from our Hashtable in the preceding section.
 
@@ -983,7 +983,7 @@ TextBox in the top three table cells in the right column. Set messageTextBox to 
 
 GridView control
 
-**1064** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 open with several choices. In this example, we chose **Simple**. We soon show how to set the GridView’s data source (i.e., where it gets the data to display in its rows and columns).
 
@@ -1015,7 +1015,7 @@ SqlDataSource now appears on the Web Form directly below the GridView (Fig. 25.3
 
 **Fig. 25.32** | Configuring the SELECT statement used by the SqlDataSource to retrieve data.
 
-**1066** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 **Fig. 25.33** | Previewing the data retrieved by the SqlDataSource.
 
@@ -1034,8 +1034,6 @@ To configure the SqlDataSource to allow such an insertion, select the messagesSq
 sage. You must provide values for these parameters before they are inserted into the database. Each parameter is listed in the **Parameters** section of the **Command and Param- eter Editor**. Because we will set the **Date** parameter programmatically, we do not modify it here. For each of the remaining three parameters, select the parameter, then select **Control** from the **Parameter source** drop-down list. This indicates that the value of the parameter should be taken from a control. The **ControlID** drop-down list contains all the controls on the Web Form. Select the appropriate control for each parameter, then click **OK**. Now the SqlDataSource is configured to insert the user’s name, e-mail address and message in the
 
 **Fig. 25.35** | Removing the MessageID column from the GridView.
-
-**1068** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
 
 Messages table of the Guestbook database. We show how to set the date parameter and initiate the insert operation when the user clicks **Submit** shortly.
 
@@ -1059,9 +1057,9 @@ ConnectionString stored in the ConnectionStrings section of the application’s 
 
 **Fig. 25.37** | ASPX file for the guestbook application. (Part 1 of 4.)
 
-**1070** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
 
-**42** <td style="width: 300px" valign="top"> **43** <asp:TextBox ID="messageTextBox" runat="server" **44** Height="100px" Rows="8" Width="300px"> **45** </asp:TextBox> **46** </td> **47** </tr> **48** <tr> **49** <td style="width: 130px" valign="top"> **50** </td> **51** <td style="width: 300px" valign="top"> **52** <asp:Button ID="submitButton" runat="server" **53** Text="Submit" /> **54** <asp:Button ID="clearButton" runat="server" **55** Text="Clear" /> **56** </td> **57** </tr> **58** </table> **59** <br /> **60 61** AutoGenerateColumns="False" CellPadding="4" **62** DataKeyNames="MessageID" **63** ForeColor="#333333" GridLines="None" Width="600px"> **64** <FooterStyle BackColor="#1C5E55" Font-Bold="True" **65** ForeColor="White" /> **66 67 68 69 70 71 72 73 74 75 76** <RowStyle BackColor="#E3EAEB" /> **77** <EditRowStyle BackColor="#7C6F57" /> **78** <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" **79** ForeColor="#333333" /> **80** <PagerStyle BackColor="#666666" ForeColor="White" **81** HorizontalAlign="Center" /> **82** <HeaderStyle BackColor="#1C5E55" Font-Bold="True" **83** ForeColor="White" /> **84** <AlternatingRowStyle BackColor="White" /> **85** </asp:GridView> **86 87 88** DeleteCommand="DELETE FROM \[Messages\] WHERE \[MessageID\] = **89** @MessageID" InsertCommand="INSERT INTO \[Messages\] **90** (\[Date\], \[Name\], \[Email\], \[Message\]) **91** VALUES (@Date, @Name, @Email, @Message)" **92** UpdateCommand= **93** "UPDATE \[Messages\] SET \[Date\] = @Date, \[Name\] = @Name, **94** \[Email\] = @Email, \[Message\] = @Message
+
+**42** <td style="width: 300px" valign="top"> **43** <asp:TextBox ID="messageTextBox" runat="server" **44** Height="100px" Rows="8" Width="300px"> **45** </asp:TextBox> **46** </td> **47** </tr> **48** <tr> **49** <td style="width: 130px" valign="top"> **50** </td> **51** <td style="width: 300px" valign="top"> **52** <asp:Button ID="submitButton" runat="server" **53** Text="Submit" /> **54** <asp:Button ID="clearButton" runat="server" **55** Text="Clear" /> **56** </td> **57** </tr> **58** </table> **59** <br /> **60 61** AutoGenerateColumns="False" CellPadding="4" **62** DataKeyNames="MessageID" **63** ForeColor="#333333" GridLines="None" Width="600px"> **64** <FooterStyle BackColor="#1C5E55" Font-Bold="True" **65** ForeColor="White" /> **66 67 68 69 70 71 72 73 74 75 76** <RowStyle BackColor="#E3EAEB" /> **77** <EditRowStyle BackColor="#7C6F57" /> **78** <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" **79** ForeColor="#333333" /> **80** <PagerStyle BackColor="#666666" ForeColor="White" **81** HorizontalAlign="Center" /> **82** <HeaderStyle BackColor="#1C5E55" Font-Bold="True" **83** ForeColor="White" /> **84** <AlternatingRowStyle BackColor="White" /> **85** </asp:GridView> **86 87 88** DeleteCommand="DELETE FROM [Messages] WHERE [MessageID] = **89** @MessageID" InsertCommand="INSERT INTO [Messages] **90** ([Date], [Name], [Email], [Message]) **91** VALUES (@Date, @Name, @Email, @Message)" **92** UpdateCommand= **93** "UPDATE [Messages] SET [Date] = @Date, [Name] = @Name, **94** [Email] = @Email, [Message] = @Message
 
 **Fig. 25.37** | ASPX file for the guestbook application. (Part 2 of 4.)
 
@@ -1081,11 +1079,11 @@ SortExpression="Message" /> </Columns>
 
 <asp:SqlDataSource ID="messagesSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
 
-SelectCommand="SELECT \* FROM \[Messages\]"
+SelectCommand="SELECT \* FROM [Messages]"
 
 25.5 Case Study: Connecting to a Database in ASP.NET **1071**
 
-**95** WHERE \[MessageID\] = @MessageID"> **96** <DeleteParameters> **97** <asp:Parameter Name="MessageID" Type="Int32" /> **98** </DeleteParameters> **99** <UpdateParameters> **100** <asp:Parameter Name="Date" Type="String" /> **101** <asp:Parameter Name="Name" Type="String" /> **102** <asp:Parameter Name="Email" Type="String" /> **103** <asp:Parameter Name="Message" Type="String" /> **104** <asp:Parameter Name="MessageID" Type="Int32" /> **105** </UpdateParameters> **106 107 108 109 110 111 112 113 114 115** </asp:SqlDataSource> **116** </div> **117** </form> **118** </body> **119** </html>
+**95** WHERE [MessageID] = @MessageID"> **96** <DeleteParameters> **97** <asp:Parameter Name="MessageID" Type="Int32" /> **98** </DeleteParameters> **99** <UpdateParameters> **100** <asp:Parameter Name="Date" Type="String" /> **101** <asp:Parameter Name="Name" Type="String" /> **102** <asp:Parameter Name="Email" Type="String" /> **103** <asp:Parameter Name="Message" Type="String" /> **104** <asp:Parameter Name="MessageID" Type="Int32" /> **105** </UpdateParameters> **106 107 108 109 110 111 112 113 114 115** </asp:SqlDataSource> **116** </div> **117** </form> **118** </body> **119** </html>
 
 **Fig. 25.37** | ASPX file for the guestbook application. (Part 3 of 4.)
 
@@ -1099,7 +1097,7 @@ Name="Message" PropertyName="Text" Type="String" /> </InsertParameters>
 
 (a)
 
-**1072** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 Notice that the SQL commands used by the SqlDataSource contain several parame- ters (prefixed with @). Lines 96–114 contain elements that define the name, the type and, for some parameters, the source of the parameter. Parameters that are set programmatically are defined by **Parameter** elements containing Name and Type properties. For example, line 107 defines the Date parameter of Type String. This corresponds to the @Date parameter in the InsertCommand (line 91). Parameters that obtain their values from controls are defined by **ControlParameter** elements. Lines 108–113 contain markup that sets up the relationships between the INSERT parameters and the Web Form’s TextBoxes. We estab- lished these relationships in the **Command and Parameter Editor** (Fig. 25.36). Each ControlParameter contains a ControlID property indicating the control from which the parameter gets its value. The PropertyName specifies the property that contains the actual value to be used as the parameter value. The IDE sets the PropertyName based on the type of control specified by the ControlID (indirectly via the **Command and Parameter Editor**). In this case, we use only TextBoxes, so the PropertyName of each ControlParameter is Text (e.g., the value of parameter @Name comes from nameTextBox.Text). However, if we were using a DropDownList, for example, the PropertyName would be SelectedValue.
 
@@ -1119,13 +1117,13 @@ by setting its Text property to an empty string. This resets the form for a new 
 
 Lines 8–30 contain the event-handling code for submitButton, which adds the user’s information to the Messages table of the Guestbook database. Recall that we configured messagesSqlDataSource’s INSERT command to use the values of the TextBoxes on the Web Form as the parameter values inserted into the database. We have not yet specified the date value to be inserted, though. Lines 11–12 assign a String representation of the current date (e.g., "3/27/06") to a new object of type Parameter. This Parameter object is identified as "Date" and is given the current date as a default value. The SqlData-
 
-**1** ' Fig. 25.38: Guestbook.aspx.vb **2** ' Code-behind file that defines event handlers for the guestbook. **3** Partial Class Guestbook **4** Inherits System.Web.UI.Page **5 6** ' Submit Button adds a new guestbook entry to the database, **7** ' clears the form and displays the updated list of guestbook entries **8** Protected Sub submitButton_Click(ByVal sender As Object, \_ **9** ByVal e As System.EventArgs) Handles submitButton.Click
+**1** ' Fig. 25.38: Guestbook.aspx.vb **2** ' Code-behind file that defines event handlers for the guestbook. **3** Partial Class Guestbook **4** Inherits System.Web.UI.Page **5 6** ' Submit Button adds a new guestbook entry to the database, **7** ' clears the form and displays the updated list of guestbook entries **8** Protected Sub submitButton_Click(ByVal sender As Object, _ **9** ByVal e As System.EventArgs) Handles submitButton.Click
 
-**10 11 12 13 14 15 16 17 18 19 20 21 22 23** ' clear the TextBoxes **24** nameTextBox.Text = "" **25** emailTextBox.Text = "" **26** messageTextBox.Text = "" **27 28** ' update the GridView with the new database table contents **29** messagesGridView.DataBind() **30** End Sub ' submitButton_Click **31 32** ' Clear Button clears the Web Form's TextBoxes **33** Protected Sub clearButton_Click(ByVal sender As Object, \_ **34** ByVal e As System.EventArgs) Handles clearButton.Click **35** nameTextBox.Text = "" **36** emailTextBox.Text = "" **37** messageTextBox.Text = "" **38** End Sub ' clearButton_Click **39** End Class ' Guestbook
+**10 11 12 13 14 15 16 17 18 19 20 21 22 23** ' clear the TextBoxes **24** nameTextBox.Text = "" **25** emailTextBox.Text = "" **26** messageTextBox.Text = "" **27 28** ' update the GridView with the new database table contents **29** messagesGridView.DataBind() **30** End Sub ' submitButton_Click **31 32** ' Clear Button clears the Web Form's TextBoxes **33** Protected Sub clearButton_Click(ByVal sender As Object, _ **34** ByVal e As System.EventArgs) Handles clearButton.Click **35** nameTextBox.Text = "" **36** emailTextBox.Text = "" **37** messageTextBox.Text = "" **38** End Sub ' clearButton_Click **39** End Class ' Guestbook
 
 **Fig. 25.38** | Code-behind file for the guestbook application.
 
-' create a date parameter to store the current date Dim currentDate As New System.Web.UI.WebControls.Parameter( \_
+' create a date parameter to store the current date Dim currentDate As New System.Web.UI.WebControls.Parameter( _
 
 "Date", TypeCode.String, DateTime.Now.ToShortDateString())
 
@@ -1133,7 +1131,7 @@ Lines 8–30 contain the event-handling code for submitButton, which adds the us
 
 ' execute an INSERT SQL statement to add a new row to the ' Messages table in the Guestbook database that contains the ' current date and the user's name, e-mail address and message messagesSqlDataSource.Insert()
 
-**1074** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 Source’s InsertParameters collection contains an item named Date (at position 0), which we Remove in line 15 and replace in line 16 by Adding our currentDate parameter. Invoking SqlDataSource method Insert in line 21 executes the INSERT command against the database, thus adding a row to the Messages table. After the data is inserted into the database, lines 24–26 clear the TextBoxes, and line 29 invokes messagesGridView’s Data- Bind method to refresh the data that the GridView displays. This causes messagesSql-
 
@@ -1155,7 +1153,7 @@ The Login.aspx page allows a site visitor to enter an existing user name and pas
 
 **Fig. 25.41** | Message displayed to indicate that a user account was created successfully.
 
-**1076** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 Clicking the **Continue** button on the confirmation page sends the user to Books.aspx
 
@@ -1175,7 +1173,7 @@ Clicking the **Click here to log out** link logs the user out, then sends the us
 
 **Fig. 25.45** | Error message displayed for an unsuccessful login attempt.
 
-**1078** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 Notice that Login.aspx, CreateNewUser.aspx and Books.aspx share the same page header containing the logo image from the fictional company Bug2Bug. Instead of placing this image at the top of each page, we use a **master page** to achieve this. As we demonstrate shortly, a master page defines common GUI elements that are inherited by each page in a set of **content pages**. Just as Visual Basic classes can inherit instance variables and methods from existing classes, content pages inherit elements from master pages—this is known as **visual inheritance**.
 
@@ -1199,7 +1197,7 @@ Even though no users exist at the moment, we configure the Secure folder to gran
 
 **Fig. 25.46** | **Web Site Administration Tool** for configuring a web application.
 
-**1080** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 **Fig. 25.47** | **Security** page of the **Web Site Administration Tool**.
 
@@ -1211,13 +1209,13 @@ Even though no users exist at the moment, we configure the Secure folder to gran
 
 **Fig. 25.50** | **Add New Access Rule** page used to configure directory access.
 
-**1082** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 have not been authenticated. Finally, select **Deny** in the right column, labeled **Permission**, then click **OK**. This rule indicates that **anonymous users** (i.e., users who have not identi- fied themselves by logging in) should be denied access to any pages in the Secure directory (e.g., Books.aspx). By default, anonymous users who attempt to load a page in the Secure directory are redirected to the Login.aspx page so that they can identify themselves. Note that because we did not set up any access rules for the Bug2Bug root directory, anonymous users may still access pages there (e.g., Login.aspx, CreateNewUser.aspx). We create these pages momentarily.
 
 **_Step 4: Examining the Autogenerated Web.config Files_** We have now configured the application to use forms authentication and created an access rule to ensure that only authenticated users can access the Secure folder. Before creating the website’s content, we examine how the changes made through the **Web Site Adminis- tration Tool** appear in the IDE. Recall that Web.config is an XML file used for application configuration, such as enabling debugging or storing database connection strings. Visual Web Developer generates two Web.config files in response to our actions using the **Web Site Administration Tool**—one in the application’s root directory and one in the Secure
 
-folder. \[_Note:_ You may need to click the **Refresh** button in the **Solution Explorer** to see these files.\] In an ASP.NET application, a page’s configuration settings are determined by the current directory’s Web.config file. The settings in this file take precedence over the set- tings in the root directory’s Web.config file.
+folder. [_Note:_ You may need to click the **Refresh** button in the **Solution Explorer** to see these files.] In an ASP.NET application, a page’s configuration settings are determined by the current directory’s Web.config file. The settings in this file take precedence over the set- tings in the root directory’s Web.config file.
 
 After setting the authentication type for the web application, the IDE generates a Web.config file at http://localhost/Bug2Bug/Web.config, which contains an **authen-**
 
@@ -1243,11 +1241,11 @@ For example, you might want to include a **navigation bar** (i.e., a series of b
 
 In this example, we want the Bug2Bug logo to appear as a header at the top of every page, so we will place an Image control in the master page. Each subsequent page we create will be a content page based on this master page and thus will include the header. To create a master page, right click the location of the website in the **Solution Explorer** and select **Add New Item…**. In the **Add New Item** dialog, select **Master Page** from the template list and specify Bug2Bug.master as the filename. Master pages have the filename extension **.master** and, like Web Forms, can optionally use a code-behind file to define additional functionality. In this example, we do not need to specify any code for the master page, so leave the box labeled **Place code in a separate file** unchecked. Click **Add** to create the page.
 
-The IDE opens the master page in **Source** mode (Fig. 25.51) when the file is first cre- ated. \[_Note:_ We added a line break in the DOCTYPE element for presentation purposes.\] The
+The IDE opens the master page in **Source** mode (Fig. 25.51) when the file is first cre- ated. [_Note:_ We added a line break in the DOCTYPE element for presentation purposes.] The
 
 **Fig. 25.51** | Master page in **Source** mode.
 
-**1084** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 markup for a master page is almost identical to that of a Web Form. One difference is that a master page contains a **Master** directive (line 1 in Fig. 25.51), which specifies that this file defines a master page using the indicated Language for any code. Because we chose not to use a code-behind file, the master page also contains a **script** element (lines 6–8). Code that would usually be placed in a code-behind file can be placed in a script element. However, we remove the script element from this page, because we do not need to write any additional code. After deleting this block of markup, set the title of the page to Bug2Bug. Finally, notice that the master page contains a **ContentPlaceHolder** control (lines 17–18 of Fig. 25.51). This control serves as a placeholder for content that will be defined by a content page. You will see how to define content to replace the Content-
 
@@ -1281,7 +1279,7 @@ of the top table cell to 130. Add to this cell an Image control named headerImag
 
 <asp:contentplaceholder id="bodyContent" runat="server"> </asp:contentplaceholder>
 
-**1086** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 _6_, a content page based on this master page displays the logo image defined here, as well as the content designed for that specific page (in place of the ContentPlaceHolder).
 
@@ -1317,7 +1315,7 @@ Figure 25.56 presents the completed CreateNewUser.aspx file (reformatted for rea
 
 **Fig. 25.55** | Content page CreateNewUser.aspx in **Design** mode.
 
-**1088** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 formatting styles for the control, as well as the ContinueDestinationPageUrl property, which you will set later in the chapter. Lines 11–16 specify the wizard’s two steps— CreateUserWizardStep and CompleteWizardStep—in a WizardSteps element. Create- UserWizardStep and CompleteWizardStep are classes that encapsulate the details of cre- ating a user and issuing a confirmation message. Finally, lines 17–35 contain elements that define additional styles used to format specific parts of the control.
 
@@ -1351,7 +1349,7 @@ BackColor="#F7F6F3" BorderColor="#E6E2D8" BorderStyle="Solid" BorderWidth="1px" 
 
 (c)
 
-**1090** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 **_Step 8: Creating a Login Page_** Recall from Section 25.6.1 that Login.aspx is the page in our website that allows return- ing visitors to log into their user accounts. To create this functionality, add another con- tent page named Login.aspx and set its title to Login. In **Design** mode, drag a **Login**
 
@@ -1397,13 +1395,13 @@ To create Books.aspx, right click the Secure folder in the **Solution Explorer**
 
 (b)(a)
 
-**1092** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 opens it in **Source** mode. Change the Title property of the Page directive to Book Infor-
 
 mation.
 
-**_Step 10: Customizing the Secure Page_** To customize the Books.aspx page for a particular user, we add a welcome message con- taining a **LoginName** control, which displays the current authenticated user name. Open Books.aspx in **Design** mode. In the Content control, type Welcome followed by a comma and a space. Then drag a LoginName control from the **Toolbox** onto the page. When this page executes on the server, the text \[UserName\] that appears in this control in **Design** mode will be replaced by the current user name. In **Source** mode, type an exclamation point (!) directly after the LoginName control (with no spaces in between). \[_Note:_ If you add the exclamation point in **Design** mode, the IDE may insert extra spaces or a line break between this character and the preceding control. Entering the ! in **Source** mode ensures that it appears adjacent to the user’s name.\]
+**_Step 10: Customizing the Secure Page_** To customize the Books.aspx page for a particular user, we add a welcome message con- taining a **LoginName** control, which displays the current authenticated user name. Open Books.aspx in **Design** mode. In the Content control, type Welcome followed by a comma and a space. Then drag a LoginName control from the **Toolbox** onto the page. When this page executes on the server, the text [UserName] that appears in this control in **Design** mode will be replaced by the current user name. In **Source** mode, type an exclamation point (!) directly after the LoginName control (with no spaces in between). [_Note:_ If you add the exclamation point in **Design** mode, the IDE may insert extra spaces or a line break between this character and the preceding control. Entering the ! in **Source** mode ensures that it appears adjacent to the user’s name.]
 
 Next, add a LoginStatus control, which will allow the user to log out of the website when finished viewing the listing of books in the database. A **LoginStatus** control renders on a web page in one of two ways—by default, if the user is not authenticated, the control displays a hyperlink with the text Login; if the user is authenticated, the control displays a hyperlink with the text Logout. Each link performs the stated action. Add a LoginStatus control to the page by dragging it from the **Toolbox** onto the page. In this example, any user who reaches this page must already be authenticated, so the control will always render as a Logout link. The **LoginStatus Tasks** smart tag menu allows you switch between the control’s **Views**. Select the **Logged In** view to see the Logout link. To change the actual text of this link, modify the control’s LogoutText property to Click here to log out. Next, set the LogoutAction property to RedirectToLoginPage.
 
@@ -1443,7 +1441,7 @@ named Authors with AuthorID and Name members, and Fill and GetData methods.
 
 **_Step 14: Creating and Configuring a TitlesTableAdapter_** Books.aspx needs to access a list of books by a specific author and a list of authors. Thus we must create a TitlesTableAdapter that will retrieve the desired information from the
 
-**1094** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 database’s Titles table. Right click the **Dataset Designer** and from the menu that appears, select **Add > TableAdapter…** to launch the **TableAdapter Configuration Wizard**. Make sure the BooksConnectionString is selected as the connection in the wizard’s first screen, then click **Next >**. Choose **Use SQL statements** and click **Next >**.
 
@@ -1465,13 +1463,13 @@ DataByAuthorID as the names of the two methods to be generated for the TitlesTab
 
 Adapter. Click **Finish** to exit the wizard. You should now see a Titles DataTable in the **Dataset Designer** (Fig. 25.60).
 
-**_Step 15: Adding a DropDownList Containing Authors’ First and Last Names_** Now that we have created a BooksDataSet and configured the necessary TableAdapters, we add controls to Books.aspx that will display the data on the web page. We first add the DropDownList from which users can select an author. Open Books.aspx in **Design** mode, then add the text Author: and a DropDownList control named authorsDropDownList in the page’s Content control, below the existing content. The DropDownList initially dis- plays the text \[Unbound\]. We now bind the list to a data source, so the list displays the author information placed in the BooksDataSet by the AuthorsTableAdapter. In the **DropDownList Tasks** smart tag menu, click **Choose Data Source…** to start the **Data Source Configuration Wizard**. Select **<New data source…>** from the **Select a data source** drop- down list in the first screen of the wizard. Doing so opens the **Choose a Data Source Type** screen. Select **Object** and set the ID to authorsObjectDataSource, then click **OK**.
+**_Step 15: Adding a DropDownList Containing Authors’ First and Last Names_** Now that we have created a BooksDataSet and configured the necessary TableAdapters, we add controls to Books.aspx that will display the data on the web page. We first add the DropDownList from which users can select an author. Open Books.aspx in **Design** mode, then add the text Author: and a DropDownList control named authorsDropDownList in the page’s Content control, below the existing content. The DropDownList initially dis- plays the text [Unbound]. We now bind the list to a data source, so the list displays the author information placed in the BooksDataSet by the AuthorsTableAdapter. In the **DropDownList Tasks** smart tag menu, click **Choose Data Source…** to start the **Data Source Configuration Wizard**. Select **<New data source…>** from the **Select a data source** drop- down list in the first screen of the wizard. Doing so opens the **Choose a Data Source Type** screen. Select **Object** and set the ID to authorsObjectDataSource, then click **OK**.
 
-An ObjectDataSource accesses data through another object, often called a **business object**. Recall that the middle tier of a three-tier application contains business logic that controls the way an application’s top-tier user interface (in this case, Books.aspx) accesses the bottom tier’s data (in this case, the Books.mdf database file). Thus, a business object represents the middle tier of an application and mediates interactions between the other two tiers. In an ASP.NET web application, a TableAdapter typically serves as the business object that retrieves the data from the bottom-tier database and makes it available to the top-tier user interface through a DataSet. In the **Choose a Business Object** screen of the **Configure Data Source** wizard (Fig. 25.61), select BooksDataSetTableAdapters.Authors- TableAdapter. \[_Note:_ You may need to save the project to see the AuthorsTableAdapter.\]
+An ObjectDataSource accesses data through another object, often called a **business object**. Recall that the middle tier of a three-tier application contains business logic that controls the way an application’s top-tier user interface (in this case, Books.aspx) accesses the bottom tier’s data (in this case, the Books.mdf database file). Thus, a business object represents the middle tier of an application and mediates interactions between the other two tiers. In an ASP.NET web application, a TableAdapter typically serves as the business object that retrieves the data from the bottom-tier database and makes it available to the top-tier user interface through a DataSet. In the **Choose a Business Object** screen of the **Configure Data Source** wizard (Fig. 25.61), select BooksDataSetTableAdapters.Authors- TableAdapter. [_Note:_ You may need to save the project to see the AuthorsTableAdapter.]
 
 **Fig. 25.60** | **Dataset Designer** after adding the TitlesTableAdapter.
 
-**1096** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 BooksDataSetTableAdapters is a namespace declared by the IDE when you create Books- DataSet. Click **Next >** to continue.
 
@@ -1495,7 +1493,7 @@ Recall that TitlesTableAdapter method GetDataByAuthorID requires a parameter to 
 
 **Fig. 25.63** | Choosing a data source for a DropDownList.
 
-**1098** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 parameter source control). Next, enter 1 as the **DefaultValue**, so books by Harvey Deitel (who has AuthorID 1 in the database) display when the page first loads (i.e., before the user has made any selections using the authorsDropDownList). Finally, click **Finish** to exit the wizard. The GridView is now configured to display the data retrieved by TitlesTable-
 
@@ -1529,7 +1527,7 @@ by the selected author. The start tag (lines 26–29) indicates that paging (wit
 
 **Fig. 25.65** | Completed Books.aspx in **Design** mode.
 
-**1100** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 **1** <%-- Fig. 25.66: Books.aspx --%> **2** <%-- Displays information from the Books database. --%> **3** <%@ Page Language="VB" MasterPageFile="~/Bug2Bug.master" **4** Title="Book Information" %> **5** <asp:Content ID="Content1" ContentPlaceHolderID="bodyContent" **6** Runat="Server"> **7** Welcome, **8 9**
 
@@ -1543,13 +1541,13 @@ LogoutAction="RedirectToLoginPage" LogoutText="Click here to log out" />
 
 AutoPostBack="True" DataSourceID="authorsObjectDataSource" DataTextField="Name" DataValueField="AuthorID">
 
-<asp:ObjectDataSource ID="authorsObjectDataSource" runat="server" OldValuesParameterFormatString="original\_{0}" SelectMethod="GetData" TypeName="BooksDataSetTableAdapters.AuthorsTableAdapter">
+<asp:ObjectDataSource ID="authorsObjectDataSource" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="BooksDataSetTableAdapters.AuthorsTableAdapter">
 
 </asp:ObjectDataSource>
 
 <asp:GridView ID="titlesGridView" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="5" DataKeyNames="ISBN" DataSourceID="titlesObjectDataSource" PageSize="4" Width="600px">
 
-<asp:ObjectDataSource ID="titlesObjectDataSource" runat="server" OldValuesParameterFormatString="original\_{0}" SelectMethod="GetDataByAuthorID" TypeName="BooksDataSetTableAdapters.TitlesTableAdapter">
+<asp:ObjectDataSource ID="titlesObjectDataSource" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetDataByAuthorID" TypeName="BooksDataSetTableAdapters.TitlesTableAdapter">
 
 <asp:ControlParameter ControlID="authorsDropDownList" DefaultValue="1" Name="authorID" PropertyName="SelectedValue" Type="Int32" />
 
@@ -1563,7 +1561,7 @@ AutoPostBack="True" DataSourceID="authorsObjectDataSource" DataTextField="Name" 
 
 (c)
 
-**1102** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 (lines 30–39) already specifies the columns for the GridView using BoundFields. Lines 43–52 define the ObjectDataSource used to fill the GridView with data. Recall that we configured titlesObjectDataSource to use method GetDataByAuthorID of the Books-
 
@@ -1601,9 +1599,9 @@ Display="None"
 
 <ajax:ValidatorCalloutExtender ID="nameInputCallout" runat="server" TargetControlID="nameInputValidator"/>
 
-**1104** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
 
-**48** ControlToValidate="emailTextBox" **49** ErrorMessage="Please enter your e-mail address."> **50** </asp:RequiredFieldValidator> **51 52 53** <asp:RegularExpressionValidator **54** ID="emailFormatValidator" runat="server" **55** ControlToValidate="emailTextBox" **56** ErrorMessage= **57** "Please enter an e-mail address in a valid format." **58** ValidationExpression= **59** "\\w+(\[-+.'\]\\w+)\*@\\w+(\[-.\]\\w+)\*\\.\\w+(\[-.\]\\w+)\*"> **60** </asp:RegularExpressionValidator> **61 62 63 64** </td> **65** </tr> **66** <tr> **67** <td style="width: 100px; height: 21px" valign="top"> **68** Phone number:</td> **69** <td style="width: 450px; height: 21px" valign="top"> **70** <asp:TextBox ID="phoneTextBox" runat="server"> **71** </asp:TextBox> **72** &nbsp;e.g., (555) 555-1234<br /> **73** <asp:RequiredFieldValidator **74** ID="phoneInputValidator" runat="server" **75** ControlToValidate="phoneTextBox" **76** ErrorMessage="Please enter your phone number."> **77** </asp:RequiredFieldValidator> **78 79 80** <asp:RegularExpressionValidator **81** ID="phoneFormatValidator" runat="server" **82** ControlToValidate="phoneTextBox" **83** ErrorMessage= **84** "Please enter a phone number in a valid format." **85** ValidationExpression= **86** "((\\(\\d{3}\\) ?)|(\\d{3}-))?\\d{3}-\\d{4}"> **87** </asp:RegularExpressionValidator> **88 89 90 91** </td> **92** </tr> **93** </table> **94 95 96 97 98 99 100**
+
+**48** ControlToValidate="emailTextBox" **49** ErrorMessage="Please enter your e-mail address."> **50** </asp:RequiredFieldValidator> **51 52 53** <asp:RegularExpressionValidator **54** ID="emailFormatValidator" runat="server" **55** ControlToValidate="emailTextBox" **56** ErrorMessage= **57** "Please enter an e-mail address in a valid format." **58** ValidationExpression= **59** "\\w+([-+.']\\w+)\*@\\w+([-.]\\w+)\*\\.\\w+([-.]\\w+)\*"> **60** </asp:RegularExpressionValidator> **61 62 63 64** </td> **65** </tr> **66** <tr> **67** <td style="width: 100px; height: 21px" valign="top"> **68** Phone number:</td> **69** <td style="width: 450px; height: 21px" valign="top"> **70** <asp:TextBox ID="phoneTextBox" runat="server"> **71** </asp:TextBox> **72** &nbsp;e.g., (555) 555-1234<br /> **73** <asp:RequiredFieldValidator **74** ID="phoneInputValidator" runat="server" **75** ControlToValidate="phoneTextBox" **76** ErrorMessage="Please enter your phone number."> **77** </asp:RequiredFieldValidator> **78 79 80** <asp:RegularExpressionValidator **81** ID="phoneFormatValidator" runat="server" **82** ControlToValidate="phoneTextBox" **83** ErrorMessage= **84** "Please enter a phone number in a valid format." **85** ValidationExpression= **86** "((\\(\\d{3}\\) ?)|(\\d{3}-))?\\d{3}-\\d{4}"> **87** </asp:RegularExpressionValidator> **88 89 90 91** </td> **92** </tr> **93** </table> **94 95 96 97 98 99 100**
 
 **Fig. 25.67** | Validation application enhanced by ASP.NET Ajax. (Part 2 of 3.)
 
@@ -1651,7 +1649,7 @@ bottom of the page with a partial page
 
 update.
 
-**1106** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 bundles all the scripts associated with ASP. NET Ajax Toolkit controls to optimize the ap- plication’s performance. Drag the ToolkitScriptManager from the **Ajax Toolkit** tab in the toolbox to the top of the page—a script manager must appear before any controls that use the scripts it manages. This generates lines 5–6 and lines 18–20. Lines 5–6 associate the AjaxControlToolkit assembly with the tag prefix ajax, allowing us to put Ajax Control Toolkit elements on the page. Lines 18–20 load the ToolkitScriptManager on the page.
 
@@ -1693,7 +1691,7 @@ The Deitel ASP.NET Resource Center focuses on the vast amount of free ASP.NET co
 
 • A Web Form file generates a web page that is sent to the client browser. Web Form files have the filename extension .aspx and contain a web page’s GUI. You customize Web Forms by adding web controls.
 
-**1108** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 • Every ASPX file created in Visual Studio has a corresponding class written in a .NET language. The file that contains this class is called the code-behind file and provides the ASPX file’s pro- grammatic implementation.
 
@@ -1783,7 +1781,7 @@ table to a Web Form.
 
 es). Using data from an XML file, the AdRotator control randomly selects an image to display and generates a hyperlink to the web page associated with that image.
 
-**1110** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 • An XmlDataSource references an XML file containing data that will be used in an ASP.NET ap- plication. The **AdRotator Tasks** smart tag menu allows you to create a new XmlDataSource that retrieves advertisement data from an XML file.
 
@@ -1881,7 +1879,7 @@ cludes an HttpSessionState object, which is accessible through property Session 
 
 • A SQL Server 2005 Express database used by an ASP.NET website should be located in the project’s App_Data folder.
 
-**1112** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 • A SqlDataSource control allows a web application to interact with a database.
 
@@ -1977,7 +1975,7 @@ enabled applications.
 
 <%@ %> ASP.NET directive delimiters absolute positioning
 
-**1114** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 access rule in ASP.NET action attribute of XHTML element form Ad XML element in an AdRotator
 
@@ -2047,9 +2045,9 @@ validation control ValidationExpression property of a
 
 RegularExpressionValidator control validator Value property of class HttpCookie **View In Browser** command in Visual Web
 
-Developer \_\_VIEWSTATE hidden input virtual directory Visible property of an ASP.NET Web control visual inheritance web application development web control
+Developer __VIEWSTATE hidden input virtual directory Visible property of an ASP.NET Web control visual inheritance web application development web control
 
-**1116** Chapter 25 ASP.NET 2.0 and ASP.NET Ajax
+
 
 Web Form **Web Site Administration Tool** Web.config ASP.NET configuration file WebControl class WYSIWYG (What You See Is What You Get)
 

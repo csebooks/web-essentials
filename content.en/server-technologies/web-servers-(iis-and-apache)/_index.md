@@ -3,15 +3,15 @@ title: "Web Servers (Iis And Apache)"
 weight: 1
 ---
 
-**O B J E C T I V E S** In this chapter you will learn:
+**OBJECTIVES** In this chapter you will learn:
 
-■ To understand a web server’s functionality.
+- To understand a web server’s functionality.
 
-■ To introduce Microsoft Internet Information Services (IIS) and Apache HTTP Server.
+- To introduce Microsoft Internet Information Services (IIS) and Apache HTTP Server.
 
-■ To set up virtual directories from which content can be served.
+- To set up virtual directories from which content can be served.
 
-■ To test whether you set up the virtual directory properly.
+- To test whether you set up the virtual directory properly.
 
 **_Stop abusing my verses, or publish some of your own._ —Martial**
 
@@ -43,7 +43,7 @@ In its simplest form, a web page is nothing more than an XHTML document that des
 
 Summary | Terminology | Self-Review Exercises | Answers to Self-Review Exercises | Exercises
 
-**860** Chapter 21 Web Servers (IIS and Apache)
+
 
 lookups and Internet searches. If you know the URL of a publicly available resource or file anywhere on the web, you can access it through HTTP.
 
@@ -107,7 +107,7 @@ Internet
 
 Client
 
-**862** Chapter 21 Web Servers (IIS and Apache)
+
 
 up. Similarly, the MIME type image/jpeg indicates that the content is a JPEG image. When the browser receives this MIME type, it attempts to display the image.
 
@@ -155,7 +155,7 @@ Information tier User interface tier _or_
 
 Client tier
 
-**864** Chapter 21 Web Servers (IIS and Apache)
+
 
 catalog) and retrieves data from the database. The middle-tier **presentation logic** then pro- cesses data from the information tier and presents the content to the client. Web applica- tions typically present data to clients as XHTML documents.
 
@@ -191,7 +191,7 @@ The following subsections explain how to configure IIS 5.1, IIS 6.0 and IIS 7.0 
 
 **21.6.1 Microsoft Internet Information Services (IIS) 5.1 and 6.0** Start the Internet services manager by clicking the **Start** button and opening the **Control Panel**. If the **Control Panel** is currently in **Category View**, click **Switch to Classic View**. Then, double click the **Administrative Tools** icon and double click the **Internet Services Manager** icon (**Internet Information Services (IIS) Manager** in Windows Server 2003). For Windows XP, this opens the **Internet Information Services** window (Fig. 21.4)—the administration
 
-**866** Chapter 21 Web Servers (IIS and Apache)
+
 
 program for IIS 5.1. For Windows Server 2003, this opens the (**Internet Information Ser- vices (IIS) Manager**, which provides the same capabilities. Alternatively, you can type inetmgr at the **Start** menu’s **Run...** command prompt to open this window. You place doc- uments that will be requested from IIS either in the website’s **default directory** (i.e., C:\\Inetpub\\wwwroot) or in a **virtual directory**. A virtual directory is an alias for an existing directory that resides on the local machine (e.g., C:\\) or on the network. When a server is accessed from a web browser, content in the default directory and virtual directories is vis- ible to the client.
 
@@ -215,7 +215,7 @@ The **Access Permissions** page (Fig. 21.8) presents the virtual directory **sec
 
 **Fig. 21.7** | **Web Site Content Directory** page of the **Virtual Directory Creation Wizard.**
 
-**868** Chapter 21 Web Servers (IIS and Apache)
+
 
 option allows scripts to run in the directory. The **Execute (such as ISAPI applications or CGI)** option allows applications to run in the directory. The **Write** option allows a web page to write to files on the server, which could be a security risk. The **Browse** option allows users to see a full list of the folder’s files through a web browser. By default, **Read** and **Run scripts** are enabled. Click **Next >**.
 
@@ -237,7 +237,7 @@ In Windows Vista, before you can use IIS, you must enable the World Wide Web Pub
 
 **Fig. 21.9** | **Internet Information (IIS) Services Manager** window (IIS 7.0).
 
-**870** Chapter 21 Web Servers (IIS and Apache)
+
 
 **21.7 Apache HTTP Server** The Apache HTTP Server, maintained by the Apache Software Foundation, is currently the most popular web server because of its stability, efficiency, portability, security and small size. It is open source software that runs on UNIX, Linux, Mac OS X, Windows and numerous other platforms.
 
@@ -245,7 +245,7 @@ Mac OS X and many versions of Linux come preinstalled with Apache. If your syste
 
 http://httpd.apache.org/docs-2.2/platform/windows.html
 
-After installing the Apache HTTP Server, start the application. For Windows, open the **Start** menu, select **Programs > Apache HTTP Server** \[_version number_\] **\> Control Apache Server > Monitor Apache Servers**. Double click on the **Apache Service Monitor** that appears in your **Taskbar**, select **Apache2**, and click **Start** (Fig. 21.11). For Mac OS X, you can start Apache from the **System Preferences** by opening the **Sharing** preference pane and check- ing the checkbox next to **Web Sharing**. To stop Apache in Windows, open the **Apache Ser- vice Monitor**, select your server, and click **Stop**. For Mac OS X, open the **Sharing** preference pane and uncheck the checkbox next to **Web Sharing**.
+After installing the Apache HTTP Server, start the application. For Windows, open the **Start** menu, select **Programs > Apache HTTP Server** [_version number_] **\> Control Apache Server > Monitor Apache Servers**. Double click on the **Apache Service Monitor** that appears in your **Taskbar**, select **Apache2**, and click **Start** (Fig. 21.11). For Mac OS X, you can start Apache from the **System Preferences** by opening the **Sharing** preference pane and check- ing the checkbox next to **Web Sharing**. To stop Apache in Windows, open the **Apache Ser- vice Monitor**, select your server, and click **Stop**. For Mac OS X, open the **Sharing** preference pane and uncheck the checkbox next to **Web Sharing**.
 
 All documents that will be requested from an Apache HTTP Server must either be in the default directory (i.e., C:\\Program Files\\Apache Software Foundation\\Apache2.2\\
 
@@ -259,7 +259,7 @@ Instead of using an administrative utility or set of wizards, we configure the A
 
 21.7 Apache HTTP Server **871**
 
-the Apache HTTP Server needs to run correctly and serve web documents. For Windows, the httpd.conf file is located in the conf subdirectory of Apache’s installation directory. For Mac OS X and most Linux distros, it is located in the /etc/apache2/ directory. To edit this file, either open the httpd.conf in a text editor, or in Windows go to the **Start** menu and select **Programs > Apache HTTP Server** \[_version number_\] **\> Configure Apache Server > Edit the Apache httpd.conf Configuration File**. httpd.conf is a large text file con- taining all of Apache HTTP Server’s configuration information. In this file, any line that starts with a # is a comment that explains the various configuration options.
+the Apache HTTP Server needs to run correctly and serve web documents. For Windows, the httpd.conf file is located in the conf subdirectory of Apache’s installation directory. For Mac OS X and most Linux distros, it is located in the /etc/apache2/ directory. To edit this file, either open the httpd.conf in a text editor, or in Windows go to the **Start** menu and select **Programs > Apache HTTP Server** [_version number_] **\> Configure Apache Server > Edit the Apache httpd.conf Configuration File**. httpd.conf is a large text file con- taining all of Apache HTTP Server’s configuration information. In this file, any line that starts with a # is a comment that explains the various configuration options.
 
 **Good Programming Practice 21.1** _Place a small comment near any changes you make to the Apache httpd.conf file._ 21.1
 
@@ -277,7 +277,7 @@ This creates an alias called Chapter21Test that points to the physical directory
 
 **Fig. 21.11** | **Apache Service Monitor**. (Courtesy of The Apache Software Foundation, <http://www.apache.org/>.)
 
-**872** Chapter 21 Web Servers (IIS and Apache)
+
 
 conflict with an existing alias is allowed. We created a directory named C:\\Chapter21Examples that contains our documents (you should specify an appropriate path on Linux or Mac OS X). Note that in both the name of the alias and the path of the directory to which the alias points we must use forward slashes (/), not backslashes (\\).
 
@@ -301,7 +301,7 @@ Now, the Apache HTTP Server is configured to serve our web document from the C:\
 
 **dynamic web pages**, because the results of these requests might vary based on numerous factors, such as user input, the time of day and current database content.
 
-Copy test.html from the Chapter 21 examples directory into the directory C:\\Chapter21Examples (or to the directory you created in Section 21.6 or 21.7). This is the directory that is referenced by our virtual directory (Chapter21Test). \[_Note_: A file cannot be copied directly to a virtual directory, because a virtual directory is only a name referring to a physical local directory.\] To request the document from IIS or Apache, start the server, launch a web browser and enter the XHTML document’s URL (i.e., http:// localhost/Chapter21Test/test.html) in the **Address** field. Figure 21.12 displays the result of requesting test.html in Internet Explorer 7.
+Copy test.html from the Chapter 21 examples directory into the directory C:\\Chapter21Examples (or to the directory you created in Section 21.6 or 21.7). This is the directory that is referenced by our virtual directory (Chapter21Test). [_Note_: A file cannot be copied directly to a virtual directory, because a virtual directory is only a name referring to a physical local directory.] To request the document from IIS or Apache, start the server, launch a web browser and enter the XHTML document’s URL (i.e., http:// localhost/Chapter21Test/test.html) in the **Address** field. Figure 21.12 displays the result of requesting test.html in Internet Explorer 7.
 
 **21.9 Web Resources** www.deitel.com/WebServers/
 
@@ -319,7 +319,7 @@ such as XHTML documents. When users enter a Uniform Resource Locator (URL) addre
 
 • A web server and a client communicate using the platform-independent Hypertext Transfer Pro- tocol (HTTP), a protocol for transferring requests and files over the Internet or an intranet.
 
-**874** Chapter 21 Web Servers (IIS and Apache)
+
 
 **_Section 21.2 HTTP Transactions_** • The HTTP protocol allows clients and servers to interact and exchange information in a uniform
 
@@ -407,7 +407,7 @@ web pages by manipulating the DOM of a page, and to add Ajax functionality.
 
 • Server-side scripting languages have a wider range of programmatic capabilities than their client- side equivalents. For example, server-side scripts often can access the server’s file directory struc- ture, whereas client-side scripts cannot access the client’s directories.
 
-**876** Chapter 21 Web Servers (IIS and Apache)
+
 
 • Properly configured server-side scripts are not visible to the client; only XHTML and any client- side scripts are visible to the client.
 
@@ -477,7 +477,7 @@ pret data correctly.
 
 **Answers to Self-Review Exercises 21.1** a.) True. b) False. Web browsers cache web pages for quick reloading. c) False. The middle tier implements business logic and presentation logic to control interactions between application cli- ents and application data. d) True. e) False. A virtual directory is an alias for an existing directory
 
-**878** Chapter 21 Web Servers (IIS and Apache)
+
 
 on the local machine or network. f) True. g) False. For security reasons the path normally specifies the location of a virtual directory.
 
