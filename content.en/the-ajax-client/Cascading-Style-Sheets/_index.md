@@ -3,7 +3,7 @@ title: "Cascading Style Sheets™"
 weight: 2
 ---
 
-## O B J E C T I V E S
+# O B J E C T I V E S
 
 In this chapter you will learn:
 
@@ -21,7 +21,9 @@ In this chapter you will learn:
 
 ■ To use style sheets to separate presentation from content.
 
-**5.1 Introduction** In Chapter 4, we introduced the Extensible HyperText Markup Language (XHTML) for marking up information to be rendered in a browser. In this chapter, we shift our focus to formatting and presenting information. To do this, we use a W3C technology called **Cas- cading Style Sheets™** (**CSS**) that allows document authors to specify the presentation of elements on a web page (e.g., fonts, spacing, colors) separately from the structure of the document (section headers, body text, links, etc.). This **separation of structure from pre- sentation** simplifies maintaining and modifying a web page.
+## Introduction
+
+In Chapter 4, we introduced the Extensible HyperText Markup Language (XHTML) for marking up information to be rendered in a browser. In this chapter, we shift our focus to formatting and presenting information. To do this, we use a W3C technology called **Cas- cading Style Sheets™** (**CSS**) that allows document authors to specify the presentation of elements on a web page (e.g., fonts, spacing, colors) separately from the structure of the document (section headers, body text, links, etc.). This **separation of structure from pre- sentation** simplifies maintaining and modifying a web page.
 
 XHTML was designed to specify the content and structure of a document. Though it has some attributes that control presentation, it is better not to mix presentation with content. If a website’s presentation is determined entirely by a style sheet, a web designer can simply swap in a new style sheet to completely change the appearance of the site. CSS provides a way to apply style outside of XHTML, allowing the XHTML to dictate the content while the CSS dictates how it’s presented.
 

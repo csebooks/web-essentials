@@ -17,14 +17,6 @@ In this chapter you will learn:
 
 ■ What Rich Internet Applications (RIAs) are and the key software technologies used to build RIAs.
 
-**_The renaissance of interest in the web that we call Web 2.0 has reached the mainstream._ —Tim O’Reilly**
-
-**_Billions of queries stream across the servers of these Internet services—the aggregate thoughtstream of humankind, online._ —John Battelle, _The Search_**
-
-**_People are using the web to build things they have not built or written or drawn or communicated anywhere else._ —Tim Berners-Lee**
-
-**_Some people take what we contribute and extend it and contribute it back \[to Ruby on Rails\]. That's really the basic open source success story._ —David Heinemeier Hansson, interviewed by Chris Karr at www.Chicagoist.com**
-
 ## Introduction
 
 Welcome to Internet and World Wide Web programming and Web 2.0! And welcome to a walkthrough of the Web 2.0 phenomenon from the technical, business and social per- spectives. We’ve worked hard to create what we hope you’ll find to be an informative, en- tertaining and challenging learning experience. As you read this book, you may want to refer to www.deitel.com for updates and additional information.

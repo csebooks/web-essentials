@@ -3,7 +3,7 @@ title: "JavaScript: Introduction to Scripting"
 weight: 3
 ---
 
-## O B J E C T I V E S
+# O B J E C T I V E S
 
 In this chapter you will learn:
 
