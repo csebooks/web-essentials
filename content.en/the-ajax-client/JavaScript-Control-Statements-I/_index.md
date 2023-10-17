@@ -19,7 +19,6 @@ In this chapter you will learn:
 
 ■ To use the increment, decrement and assignment operators.
 
-## Introduction
 
 Before writing a script to solve a problem, it is essential to have a thorough understanding of the problem and a carefully planned approach to solving the problem. When writing a script, it is equally essential to understand the types of building blocks that are available and to employ proven program-construction principles. In this chapter and in Chapter 8, we discuss these issues in our presentation of the theory and principles of structured pro- gramming. The techniques you will learn here are applicable to most high-level languages, including JavaScript.
 
@@ -303,6 +302,7 @@ Syntax errors (e.g., when one brace in a block is left out of the program) are c
 
 **Good Programming Practice 7.4**
 
+
 > _Some programmers prefer to type the beginning and ending braces of blocks before typing the in- dividual statements within the braces. This helps avoid omitting one or both of the braces._ 7.4
 
 **Software Engineering Observation 7.5**
@@ -326,6 +326,7 @@ describes the repetition that occurs during a shopping trip. The condition “th
 > _If the body of a while statement never causes the while statement’s condition to become true, a logic error occurs. Normally, such a repetition structure will never terminate—an error called an **infinite loop**. Both Internet Explorer and Firefox show a dialog allowing the user to termi- nate a script that contains an infinite loop._ 7.4
 
 **Common Programming Error 7.5**
+
 
 > _Remember that JavaScript is a case-sensitive language. In code, spelling the keyword while with an uppercase W, as in While, is a syntax error. All of JavaScript’s reserved keywords, such as while, if and else, contain only lowercase letters._ 7.5
 
@@ -531,6 +532,7 @@ Note that we are testing for the possibility of **division by zero**—a logic e
 
 > _When performing division by an expression whose value could be zero, explicitly test for this case, and handle it appropriately in your program (e.g., by printing an error message) rather than al- lowing the division by zero to occur._ 7.1
 
+
 **Good Programming Practice 7.5**
 
 > _Include completely blank lines in pseudocode programs to make the pseudocode more readable. The blank lines separate pseudocode control structures and separate the program phases._ 7.5
@@ -607,6 +609,7 @@ gradeCounter = 0;// prepare to loop
 // prompt for input and read grade from user
 grade = window.prompt(
 "Enter Integer Grade, -1 to Quit:", "0" );
+
 
 // convert grade from a string to an integer
 gradeValue = parseInt( grade );
@@ -815,6 +818,8 @@ document.writeln( "<br />Raise Tuition" );
 ```
 
 **Fig. 7.11** | Examination-results calculation. (Part 2 of 3.)
+
+This dialog is displayed 10 times. User input is 1, 2, 1, 1, 1, 1, 1, 1, 1 and 1.
 
 **Fig. 7.11** | Examination-results calculation. (Part 3 of 3.)
 

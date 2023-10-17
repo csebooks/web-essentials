@@ -3,23 +3,23 @@ title: "Ruby on Rails"
 weight: 4
 ---
 
-**O B J E C T I V E S** In this chapter you will learn:
+**OBJECTIVES** In this chapter you will learn:
 
-■ Basic Ruby programming.
+- Basic Ruby programming.
 
-■ How to use the Rails framework.
+- How to use the Rails framework.
 
-■ The Model-View-Controller paradigm.
+- The Model-View-Controller paradigm.
 
-■ How to use ActiveRecord to model a database.
+- How to use ActiveRecord to model a database.
 
-■ How to construct web applications that interact with a database.
+- How to construct web applications that interact with a database.
 
-■ How to create a web-based message forum.
+- How to create a web-based message forum.
 
-■ How to develop Ajax-enabled applications in Ruby on Rails.
+- How to develop Ajax-enabled applications in Ruby on Rails.
 
-■ How to use the built-in Script.aculo.us library to add visual effects to your programs.
+- How to use the built-in Script.aculo.us library to add visual effects to your programs.
 
 **_Convention is the ruler of all._ —Pindar**
 
@@ -55,7 +55,7 @@ Ruby on Rails was created by David Heinemeier Hansson of the company 37Signals. 
 
 Summary | Terminology | Self-Review Exercises | Answers to Self-Review Exercises | Exercises
 
-**958** Chapter 24 Ruby on Rails
+
 
 **_Installing Instant Rails_** To run the Ruby scripts in this chapter, Ruby must first be installed on your system. In this chapter we use the **Instant Rails** package to run our applications. Instant Rails in- cludes Ruby, Rails, MySQL, Apache, PHP and other components necessary to create and run Rails applications. PHP is used specifically for **phpMyAdmin**, a web interface to MySQL. Instant Rails is a stand-alone Rails development and testing environment.
 
@@ -65,7 +65,7 @@ To install Instant Rails, download Instant Rails 1.7 from //rubyforge.org/frs/
 
 After installing Instant Rails, make sure that you stop any existing web servers on your computer such as IIS or Apache— Instant Rails needs port 80 to be available for using **phpMyAdmin** to administer MySQL. If you are not using this tool then you don’t need to stop other web servers on your computer. To run Instant Rails, navigate to the folder where you extracted the contents of the zip file and run **InstantRails.exe**. You should see a window similar to Fig. 24.1.
 
-If you are using Mac OS X, there is an application similar to Instant Rails called Loco- motive. You can download Locomotive from locomotive.raaum.org. Linux users might want to try LinRails (available from linrails.thembid.com). Another program useful for Rails development is Aptana Radrails—a free, open-source IDE. Radrails can be down- loaded from www.aptana.com/download\_rails\_rdt.php.
+If you are using Mac OS X, there is an application similar to Instant Rails called Loco- motive. You can download Locomotive from locomotive.raaum.org. Linux users might want to try LinRails (available from linrails.thembid.com). Another program useful for Rails development is Aptana Radrails—a free, open-source IDE. Radrails can be down- loaded from www.aptana.com/download_rails_rdt.php.
 
 **_Printing a Line of Text_** Figure 24.2 presents a simple Ruby program that prints the text "Welcome to Ruby!". Lines 1–2 are single-line comments that instruct the interpreter to ignore everything on the current line following the # symbol. Line 3 uses the method **puts** that takes a single parameter (a string) and prints the text to the terminal, followed by a newline. A method can have parentheses surrounding its parameters, but this is not typical in Ruby unless they are used to avoid ambiguity. A line of Ruby code does not have to end with a semicolon, although one can be placed there. The puts method automatically adds a newline escape sequence (\\n) at the end of the string if one is not explicitly added.
 
@@ -97,7 +97,7 @@ Welcome to Ruby!
 
 **Fig. 24.2** | Simple Ruby program. (Part 2 of 2.)
 
-**960** Chapter 24 Ruby on Rails
+
 
 The code after the second IRB prompt sends the arithmetic expression 2+2 to the interpreter, which evaluates the expression and returns 4. The code after the third prompt requests the class type of the number 4. The interpreter returns **Fixnum**—a class that rep- resents integers in Ruby. Last, the code after the fourth prompt calls the ceil method of 4.5 to round the number up to the next whole-number value. The IRB returns 5. Type exit to quit IRB.
 
@@ -131,7 +131,7 @@ Line 14 is an example of a Hash. The key/value pairs are separated by commas, an
 
 **1** \# Fig. 24.7: arraysAndHashes.rb **2** \# Arrays and hashes in Ruby. **3** \# create an array **4** puts "The length of the fruits array is #{ }" # output length **5** puts "The first fruit is #{ }" # output first element **6** puts "The last fruit is #{ }\\n\\n" # output last element **7 8** fruits.reverse! # reverse the order of the elements in the fruits array **9** puts "The length of the fruits array is #{fruits.length}" # output length
 
-**10** puts "The first fruit is #{fruits\[0\]}" # output first element **11** puts "The last fruit is #{fruits\[-1\]}\\n\\n" # output last element **12 13** \# a simple hash **14 15** puts "The length of the food hash is #{food.length}" # output length **16** puts "A mango is a #{food\["mango"\]}" # output value of key mango **17** puts "An onion is a #{food\["onion"\]}" # output value of key onion
+**10** puts "The first fruit is #{fruits[0]}" # output first element **11** puts "The last fruit is #{fruits[-1]}\\n\\n" # output last element **12 13** \# a simple hash **14 15** puts "The length of the food hash is #{food.length}" # output length **16** puts "A mango is a #{food["mango"]}" # output value of key mango **17** puts "An onion is a #{food["onion"]}" # output value of key onion
 
 The length of the fruits array is 4 The first fruit is mango the last fruit is pear
 
@@ -141,13 +141,13 @@ The length of the food hash is 3 A mango is a fruit An onion is a vegetable
 
 **Fig. 24.7** | Arrays and hashes in Ruby.
 
-fruits = \[ "mango", "orange", "apple", "pear" \] fruits.length
+fruits = ["mango", "orange", "apple", "pear"] fruits.length
 
-fruits\[0\] fruits\[-1\]
+fruits[0] fruits[-1]
 
 food = { "mango" => "fruit", "banana" => "fruit", "onion" => "vegetable" }
 
-**962** Chapter 24 Ruby on Rails
+
 
 **_Conditionals, Loops and Code Blocks_** Like any other programming language, Ruby provides selection and repetition statements. In addition, Ruby has support for **code blocks**—groupings of Ruby statements that can be passed to a method as an argument. Figure 24.8 shows a program that returns a stu- dent’s letter grade based on a numerical grade.
 
@@ -193,7 +193,7 @@ def to_s
 
 p = Point.new( 8, 9 ) q = Point.new( 1, 1 )
 
-**964** Chapter 24 Ruby on Rails
+
 
 **24.3 Rails Framework** While users have benefitted from the rise of database-driven web applications, web devel- opers have had to implement rich functionality with technology that was not designed for this purpose. The Rails framework combines the simplicity of Ruby with the ability to rap- idly develop database-driven web applications.
 
@@ -229,13 +229,13 @@ _Application Name_ at the command line to create a directory named _Application 
 
 **Fig. 24.11** | Rails directory structure for a new Rails application.
 
-**966** Chapter 24 Ruby on Rails
+
 
 **24.4 ActionController and ActionView** Ruby on Rails has two classes that work together to process a client request and render a view. These classes are ActionController and ActionView.
 
 **_Rails Controller_** To generate a controller in Rails, you can use the built-in Controller generator. To do that, open the **Ruby Console** window and navigate to the application directory by typing in:
 
-cd _pathToInstantRails_\\rails_apps\\_applicationName_
+cd _pathToInstantRails_\\rails_apps\_applicationName_
 
 To generate a controller for the welcome application type:
 
@@ -263,7 +263,7 @@ render :text => "Welcome to Ruby on Rails!"
 
 One important feature of Rails is its URL mapping ability. Rails automatically sets up your web application in a tree structure, where the controller’s name in lowercase is the directory, and the method name is the subdirectory. Since the controller name is Welcome and the method name is index, the URL to display the text in Figure 24.12 is http:// localhost:3000/welcome/index. Notice in the screen capture of Figure 24.12 that the URL is simply http://localhost:3000/welcome. The default action called on any con- troller is the one specified by the method index. So, you do not need to explicitly invoke the index in the URL to render the text in line 6.
 
-**_Rendering a View_** When generating output, a controller usually renders a **template**—an XHTML document with embedded Ruby that has the .rhtml filename extension. \[_Note:_ The next version of Rails will use the extension .html.erb rather than .rhtml.\] The embedded Ruby comes from a library named erb. A method in a controller will automatically render a view with the same name by default. For example, an empty hello method would look for a hel-
+**_Rendering a View_** When generating output, a controller usually renders a **template**—an XHTML document with embedded Ruby that has the .rhtml filename extension. [_Note:_ The next version of Rails will use the extension .html.erb rather than .rhtml.] The embedded Ruby comes from a library named erb. A method in a controller will automatically render a view with the same name by default. For example, an empty hello method would look for a hel-
 
 lo.rhtml view to render. Fig. 24.14 is the Welcome controller with a hello method added. The index method has been removed for simplicity.
 
@@ -273,7 +273,7 @@ The view consists mostly of XHTML. The erb is shown in line 14, surrounded by <%
 
 **Fig. 24.13** | Starting the Mongrel web server.
 
-**968** Chapter 24 Ruby on Rails
+
 
 hello.rhtml file in Fig. 24.15. Run the welcome application on the Mongrel server (if it is not already running) and direct your browser to the URL http://localhost:3000/
 
@@ -315,13 +315,13 @@ Line 9 invokes the **action_name** method on the controller object. This display
 
 <%= yield %>
 
-**970** Chapter 24 Ruby on Rails
+
 
 tabase inherit from **ActiveRecord**. By using ActiveRecord and Rails conventions, you can avoid a lot of explicit configuration.
 
 One ActiveRecord convention is that every model that extends ActiveRecord::Base in an application represents a table in a database. The table that the model represents is, by convention, the lowercase, pluralized form of the model. For example, if there were a messages table in your database, Message would be the name of the model representing it. ActiveRecord follows many standard English pluralization rules as well, which means that a Person model would automatically correspond to a people table. Furthermore, if a people table has a first_name column, the Person model would have a method named first_name that returns the value in that column. ActiveRecord does this for you with no additional configuration.
 
-**_Creating the Database_** Before creating a model using ActiveRecord, we need to create the database it will use. You can do that using MySQL’s mysqladmin command. Rails will automatically look for a da- tabase with the name _applicationName_\_development to use as the development database. To create a database for the Employees application, launch the **Ruby Console** and type in mysqladmin -u root create employees_development. If no error is returned, the database was created successfully in the mysql/data directory of your InstantRails installation.
+**_Creating the Database_** Before creating a model using ActiveRecord, we need to create the database it will use. You can do that using MySQL’s mysqladmin command. Rails will automatically look for a da- tabase with the name _applicationName__development to use as the development database. To create a database for the Employees application, launch the **Ruby Console** and type in mysqladmin -u root create employees_development. If no error is returned, the database was created successfully in the mysql/data directory of your InstantRails installation.
 
 By default MySQL has the user name root and no password. If your settings are dif- ferent you can modify the appropriate fields database.yml, located in the config folder in your application directory.
 
@@ -357,7 +357,7 @@ Employee.create :first_name => "Sue", :last_name => "Green", :job_title => "Prog
 
 drop_table :employees
 
-**972** Chapter 24 Ruby on Rails
+
 
 Because our model will never be modified by the application, we do not need to add any functionality to it. Figure 24.19, which represents the employee.rb file located in the app/Models directory, contains all the code that is needed to integrate the employees data- base table into the application.
 
@@ -395,7 +395,7 @@ scaffold :employee
 
 <%= employee.first_name %> <%= employee.last_name %> <% end %>
 
-**974** Chapter 24 Ruby on Rails
+
 
 **24.6 Case Study: Message Forum** Our next example uses Ruby on Rails to create a **message forum** website. Message forums enable users to discuss various topics. Common features of message forums include discus- sion groups, questions and answers and general comments. To see some popular message forums, visit messages.yahoo.com, web.eesite.com/forums and groups.google.com. In this example, users can post messages to several different forums, and administrators of the message forum site can create and delete forums.
 
@@ -449,11 +449,11 @@ template. The validate method (lines 10–21) checks the user model to determine
 
 @user = User.new
 
-def validate # find a user with the correct name and password @user = User.find_by_name_and_password( params\[ :user \]\[ :name \],
+def validate # find a user with the correct name and password @user = User.find_by_name_and_password( params[:user][:name],
 
-params\[ :user \]\[ :password \] )
+params[:user][:password] )
 
-**976** Chapter 24 Ruby on Rails
+
 
 whether the username exists, then redirects the application to the next action based on the result of that check.
 
@@ -475,13 +475,13 @@ Method admin’s view is a simple login form. The template is shown in Fig. 24.2
 
 if ( @user == nil ) # if the user dosn’t exist redirect_to :action => "admin" # redirect to admin action
 
-else # user does exist session\[ :user \] = @user # store the user in a session variable redirect_to :controller => "forums", :action => "index"
+else # user does exist session[:user] = @user # store the user in a session variable redirect_to :controller => "forums", :action => "index"
 
 end # if end # method validate
 
 reset_session # delete all session variables redirect_to :controller => "forums", :action => "index
 
-**1** <!-- Fig. 24.26: app/views/users/admin.rhtml --> **2** <!-- Login form used to send data to the user controller. --> **3** <h1>Please Log In</h1> **4** <!-- create form tag --> **5** <p><label for="user\_name">Name</label><br/> **6** </p> <!-- create input tag --> **7**
+**1** <!-- Fig. 24.26: app/views/users/admin.rhtml --> **2** <!-- Login form used to send data to the user controller. --> **3** <h1>Please Log In</h1> **4** <!-- create form tag --> **5** <p><label for="user_name">Name</label><br/> **6** </p> <!-- create input tag --> **7**
 
 **Fig. 24.26** | Login form used to send data to the user controller. (Part 1 of 2.)
 
@@ -495,7 +495,7 @@ Rails **helpers** are methods that generate XHTML content for the view. The pass
 
 We define the user controller’s template in Fig. 24.27. Because the user controller has only a single view to render, we could have simply include this XHTML in the view. The benefit of a template is that it allows us to easily add more views in the future that are all based on the same template and adhere to Ruby on Rails’ DRY (Don’t Repeat Yourself) philosophy. Line 9 displays the current action in the title bar. Line 12 is the placeholder for the content of the action’s view.
 
-**8** <p><label for="user\_password">Password</label><br/> **9** </p> <!-- create input tag -->
+**8** <p><label for="user_password">Password</label><br/> **9** </p> <!-- create input tag -->
 
 **10** <!-- create submit tag --> **11** <!-- create an end form tag -->
 
@@ -509,7 +509,7 @@ We define the user controller’s template in Fig. 24.27. Because the user contr
 
 <% end %>
 
-**978** Chapter 24 Ruby on Rails
+
 
 **24.6.2 Embellishing the Models** Several methods must be added to the model so that it can be modified from the applica- tion. These methods are all defined by ActiveRecord.
 
@@ -559,9 +559,9 @@ belongs_to :forum
 
 validates_presence_of :title, :author, :email, :message validates_format_of :email,
 
-:with => /^(\[^@\\s\]+)@((?:\[-a-z0-9\]+\\.)+\[a-z\]{2,})$/i
+:with => /^([^@\\s]+)@((?:[-a-z0-9]+\\.)+[a-z]{2,})$/i
 
-**980** Chapter 24 Ruby on Rails
+
 
 When a forum is deleted, all of that forum’s messages should also be deleted. Line 4 sets the dependent parameter of the has_many method to :destroy to ensure that when a forum is destroyed all the messages that are associated with it are destroyed as well.
 
@@ -595,17 +595,17 @@ request is used to send data to the server for each request that modifies the da
 
 **1** \# Fig. 24.32: app/controllers/forums_controller.rb **2** \# ForumsController implements CRUD functionality. **3** class ForumsController < ApplicationController **4 5 6 7** \# shortcut to the list method **8** def index **9** list
 
-**10** render :action => 'list' **11** end # method index **12 13** \# set up the list web page that lists all forums **14** def list **15** @forums = Forum.find( :all ) **16** end # method list **17 18** \# set up the new web page that adds a new forum **19** def new **20** if ( session\[ :user \] == nil ) # if user is not logged in **21 22** redirect_to :action => "index" and return **23** end # if **24 25** @forum = Forum.new **26** end # method new **27 28** \# attempt to create a new forum with the parameters passed in **29** def create **30** @forum = Forum.new( params\[ :forum \] ) **31** @forum.administrator = session\[ :user \].name **32 33** if @forum.save # if save method was successful **34 35** redirect_to :action => 'list'
+**10** render :action => 'list' **11** end # method index **12 13** \# set up the list web page that lists all forums **14** def list **15** @forums = Forum.find( :all ) **16** end # method list **17 18** \# set up the new web page that adds a new forum **19** def new **20** if ( session[:user] == nil ) # if user is not logged in **21 22** redirect_to :action => "index" and return **23** end # if **24 25** @forum = Forum.new **26** end # method new **27 28** \# attempt to create a new forum with the parameters passed in **29** def create **30** @forum = Forum.new( params[:forum] ) **31** @forum.administrator = session[:user].name **32 33** if @forum.save # if save method was successful **34 35** redirect_to :action => 'list'
 
 **Fig. 24.32** | ForumsController implements CRUD functionality. (Part 1 of 2.)
 
-verify :method => :post, :only => \[ :destroy, :create \], :redirect_to => { :action => :list }
+verify :method => :post, :only => [:destroy, :create], :redirect_to => { :action => :list }
 
-flash\[ :error \] = 'you must be logged in to complete this action'
+flash[:error] = 'you must be logged in to complete this action'
 
-flash\[ :notice \] = 'Forum was successfully created.'
+flash[:notice] = 'Forum was successfully created.'
 
-**982** Chapter 24 Ruby on Rails
+
 
 Method index (line 8–11) redirects the client to the list method (lines 14–16), which obtains a list of forums from the database to be displayed on the page. The new
 
@@ -613,13 +613,13 @@ method (lines 19–26) checks whether the user has privileges to create a new fo
 
 The create method (lines 29–39) is similar to the scaffold code, but differs in that the administrator attribute of the forum being saved must be the name of the user who is logged in. Line 33 attempts to save the forum, and either renders a template if the method returns false (line 37), or redirects to the list method and updates the flash object if the method returns true (lines 34–35). The delete method (lines 42–50) sets up the dele- tion operation by finding all the forums created by the user currently logged in. Once the user picks a forum to delete in the view, the destroy method (lines 53–58) destroys the forum specified by the user (line 55) and re-displays the list (line 56).
 
-**_List View_** Figure 24.33 is the template that is rendered by the list method from the Forum control- ler. \[_Note:_ We replaced the auto-generated list.rhtml from the scaffolding\]. This is also the template rendered by the index method. Line 10 uses the **link_to** method to create a link with the name of the forum and the list action of its messages, which we build in Section 24.6.5.. Lines 12–13 contain a conditional statement which make the forum ital- icized for five minutes after it has been created by using the minutes.ago method of the
+**_List View_** Figure 24.33 is the template that is rendered by the list method from the Forum control- ler. [_Note:_ We replaced the auto-generated list.rhtml from the scaffolding]. This is also the template rendered by the index method. Line 10 uses the **link_to** method to create a link with the name of the forum and the list action of its messages, which we build in Section 24.6.5.. Lines 12–13 contain a conditional statement which make the forum ital- icized for five minutes after it has been created by using the minutes.ago method of the
 
-**36** else # save was unsuccessful **37** render :action => 'new' # go to new **38** end # if...else **39** end # method create **40 41** \# set up the delete web page **42** def delete **43** if ( session\[ :user \] == nil ) # if user is not logged in **44** flash\[ :error \] = 'you must be logged in to complete this action' **45** redirect_to :action => "index" and return **46** else **47 48 49** end # if else **50** end # method delete **51 52** \# delete a forum with a specified parameter **53** def destroy **54** \# find the forum and delete it **55** Forum.destroy( params\[ :forum \]\[ :id \] ) # delete the forum **56** redirect_to :action => 'list' # redirect to list **57** end # method destroy **58** end # class ForumsController
+**36** else # save was unsuccessful **37** render :action => 'new' # go to new **38** end # if...else **39** end # method create **40 41** \# set up the delete web page **42** def delete **43** if ( session[:user] == nil ) # if user is not logged in **44** flash[:error] = 'you must be logged in to complete this action' **45** redirect_to :action => "index" and return **46** else **47 48 49** end # if else **50** end # method delete **51 52** \# delete a forum with a specified parameter **53** def destroy **54** \# find the forum and delete it **55** Forum.destroy( params[:forum][:id] ) # delete the forum **56** redirect_to :action => 'list' # redirect to list **57** end # method destroy **58** end # class ForumsController
 
 **Fig. 24.32** | ForumsController implements CRUD functionality. (Part 2 of 2.)
 
-@forums = Forum.find( :all, :conditions => "administrator = '#{ session\[:user\].name }'" )
+@forums = Forum.find( :all, :conditions => "administrator = '#{ session[:user].name }'" )
 
 24.6 Case Study: Message Forum **983**
 
@@ -629,13 +629,13 @@ Fixnum class. The if statement in lines 17–24 displays the XHTML in lines 19�
 
 **1** <!-- Fig. 24.33: app/views/forums/list.rhtml --> **2** <!-- Template for the list action that displays a list of forums. --> **3** <h1>Deitel Message Forums</h1> **4** <h2>Available Forums</h2> **5** <ul> **6** <% for forum in @forums %> **7** <!-- create a list item for every forum --> **8** <li> **9** <!-- link to list action in messages -->
 
-**10** <%= link_to ( forum.name, {:controller => 'messages', **11** :action => 'list', :forum_id => forum.id}, **12** { :class => (forum.created_on < 5.minutes.ago ? **13** 'recent': nil ) } ) %> **14** </li> **15** <% end %> <!-- end for --> **16** </ul> **17** <% if ( session\[ :user \] ) then %> **18** <!-- a user is logged in --> **19** <h2>Forum Management</h2> **20** <ul> **21** <li><%= link_to 'Add a Forum', :action => 'new' %></li> **22** <li><%= link_to 'Delete a Forum', :action => 'delete' %></li> **23** </ul> **24** <% end %> <!-- end if -->
+**10** <%= link_to ( forum.name, {:controller => 'messages', **11** :action => 'list', :forum_id => forum.id}, **12** { :class => (forum.created_on < 5.minutes.ago ? **13** 'recent': nil ) } ) %> **14** </li> **15** <% end %> <!-- end for --> **16** </ul> **17** <% if ( session[:user] ) then %> **18** <!-- a user is logged in --> **19** <h2>Forum Management</h2> **20** <ul> **21** <li><%= link_to 'Add a Forum', :action => 'new' %></li> **22** <li><%= link_to 'Delete a Forum', :action => 'delete' %></li> **23** </ul> **24** <% end %> <!-- end if -->
 
 **Fig. 24.33** | Template for the list action that displays a list of forums.
 
-**984** Chapter 24 Ruby on Rails
 
-that the action create will be called when the **Create** button is pressed. This template ren- ders a **partial**—a block of HTML and embedded Ruby code stored in another file and in- serted directly into the document. A partial allows the same block of code to be used across multiple documents. In this example, line 5 renders the partial named form, which inserts the file \_form.rhtml at that line of code. A partial filename always begins with an under- score.
+
+that the action create will be called when the **Create** button is pressed. This template ren- ders a **partial**—a block of HTML and embedded Ruby code stored in another file and in- serted directly into the document. A partial allows the same block of code to be used across multiple documents. In this example, line 5 renders the partial named form, which inserts the file _form.rhtml at that line of code. A partial filename always begins with an under- score.
 
 Line 6 uses the submit_tag method to create a submit button that when clicked will create a Hash with the form’s fields as keys and the user’s input as values. Line 9 uses the link_to function to allow the user to go back to the forums list by redirecting the client to the list action of the forum controller.
 
@@ -645,7 +645,7 @@ The partial in Fig. 24.35 renders the input text field for the form. The adminis
 
 **Fig. 24.34** | Template for a new action that adds a forum to the forums table.
 
-**1** <!-- Fig. 24.35: app/views/forums/\_form.rhtml --> **2** <!-- Partial that contains a form used to add a new forum. --> **3 4** <p><label for="forum\_name">Name</label><br/> **5** <%= text_field 'forum', 'name' %></p>
+**1** <!-- Fig. 24.35: app/views/forums/_form.rhtml --> **2** <!-- Partial that contains a form used to add a new forum. --> **3 4** <p><label for="forum_name">Name</label><br/> **5** <%= text_field 'forum', 'name' %></p>
 
 **Fig. 24.35** | Partial that contains a form used to add a new forum.
 
@@ -657,7 +657,7 @@ The partial in Fig. 24.35 renders the input text field for the form. The adminis
 
 **_Forum Layout_** Figure 24.37 is the layout that renders every template for the ForumsController. It has all the necessary XHTML, and contains the login/logout text (lines 13–25). Line 29 auto- matically renders the template of any action that uses the template.
 
-**1** <!-- Fig. 24.36: app/views/forums/delete.rhtml --> **2** <!-- Template for delete action used to delete a Forum. --> **3** <h1>Delete a Forum</h1><br /> **4 5** <% form_tag :action => :destroy do %> <!-- create from tag --> **6** <p><label for="forum\_id">Forum Name</label><br /> **7** </p> **8** <%= submit_tag "Delete" %> <!-- create submit tag --> **9** <% end %> <!-- create end form tag -->
+**1** <!-- Fig. 24.36: app/views/forums/delete.rhtml --> **2** <!-- Template for delete action used to delete a Forum. --> **3** <h1>Delete a Forum</h1><br /> **4 5** <% form_tag :action => :destroy do %> <!-- create from tag --> **6** <p><label for="forum_id">Forum Name</label><br /> **7** </p> **8** <%= submit_tag "Delete" %> <!-- create submit tag --> **9** <% end %> <!-- create end form tag -->
 
 **10 11** <%= link_to 'Back', :action => 'list' %> <!-- link back to list method -->
 
@@ -669,7 +669,7 @@ The partial in Fig. 24.35 renders the input text field for the form. The adminis
 
 <%= collection_select "forum", "id", @forums, "id", "name" %>
 
-**986** Chapter 24 Ruby on Rails
+
 
 If the user is logged in (line 14), lines 16–18 display the username on the page and use the link_to method to enable the user to log out by redirecting to the logout action. Otherwise, lines 21–23 allow the user to log in, using the link_to helper method to redi- rect the user to the admin action. Lines 26–27 display any error messages or success mes- sages that result from user interactions.
 
@@ -681,7 +681,7 @@ method to obtain the forum object, which we will need to add messages to the for
 
 **7** <html xmlns = "http://www.w3.org/1999/xhtml"> **8** <head> **9** <title>Forums: <%= controller.action_name %></title>
 
-**10** <%= stylesheet_link_tag 'scaffold' %> <!-- link to a stylesheet --> **11** </head> **12** <body> **13** <div style = "text-align: right"> **14** <% if ( session\[ :user \] ) then %> <!-- if user is logged on --> **15** <!-- code to display if user is logged on --> **16** <%= "Logged In As #{ session\[ :user \].name }: " %> **17** <%= link_to 'Log Out', **18** :controller => 'users', :action => 'logout' %> **19** <% else %> <!-- user is not logged on --> **20** <!-- code to display if user is not logged on --> **21** <%= "Not Currently Logged In:" %> **22 23 24** <% end %> <!-- end if --> **25** </div> **26** <p style="color: green"><%= flash\[ :notice \] %></p> **27** <p style="color: red"><%= flash\[ :error \] %></p> **28 29** <%= yield %> <!-- displays template --> **30** </body> **31** </html>
+**10** <%= stylesheet_link_tag 'scaffold' %> <!-- link to a stylesheet --> **11** </head> **12** <body> **13** <div style = "text-align: right"> **14** <% if ( session[:user] ) then %> <!-- if user is logged on --> **15** <!-- code to display if user is logged on --> **16** <%= "Logged In As #{ session[:user].name }: " %> **17** <%= link_to 'Log Out', **18** :controller => 'users', :action => 'logout' %> **19** <% else %> <!-- user is not logged on --> **20** <!-- code to display if user is not logged on --> **21** <%= "Not Currently Logged In:" %> **22 23 24** <% end %> <!-- end if --> **25** </div> **26** <p style="color: green"><%= flash[:notice] %></p> **27** <p style="color: red"><%= flash[:error] %></p> **28 29** <%= yield %> <!-- displays template --> **30** </body> **31** </html>
 
 **Fig. 24.37** | Layout that displays the logged-in user for every Forums action. (Part 2 of 2.)
 
@@ -689,15 +689,15 @@ method to obtain the forum object, which we will need to add messages to the for
 
 24.6 Case Study: Message Forum **987**
 
-**_List View_** The list view (Fig. 24.39) for the Message controller is similar to the list view for the Forum controller, except that more information is displayed in the messages list view. It uses CSS to format the output. In this view, every message object acts like a Hash—passing a column name as a key returns the corresponding value in the message object. To obtain an a column’s value, include the attribute method’s name in square brackets after the name of the object. For each message in the forum, line 12 displays the title, line 13 displays the author and line 19 displays the message’s text. At line 14, the Ruby Time object that is re- turned by the message\[’created on’\] is formatted using the Ruby Time class formatting
+**_List View_** The list view (Fig. 24.39) for the Message controller is similar to the list view for the Forum controller, except that more information is displayed in the messages list view. It uses CSS to format the output. In this view, every message object acts like a Hash—passing a column name as a key returns the corresponding value in the message object. To obtain an a column’s value, include the attribute method’s name in square brackets after the name of the object. For each message in the forum, line 12 displays the title, line 13 displays the author and line 19 displays the message’s text. At line 14, the Ruby Time object that is re- turned by the message[’created on’] is formatted using the Ruby Time class formatting
 
-**1** \# Fig. 24.38: app/controllers/messages_controller.rb **2** \# MessagesController that implements CRUD functionality. **3** class MessagesController < ApplicationController **4** verify :method => :post, :only => \[ :destroy, :create \], **5** :redirect_to => { :action => :list } **6 7** \# sets up the list web page that lists all messages **8** def list **9** if ( params\[ :forum_id \] ) # if parameter forum_id is provided
+**1** \# Fig. 24.38: app/controllers/messages_controller.rb **2** \# MessagesController that implements CRUD functionality. **3** class MessagesController < ApplicationController **4** verify :method => :post, :only => [:destroy, :create], **5** :redirect_to => { :action => :list } **6 7** \# sets up the list web page that lists all messages **8** def list **9** if ( params[:forum_id] ) # if parameter forum_id is provided
 
-**10** session\[ :forum_id \] = params\[ :forum_id \] **11** end # if **12 13** if ( session\[ :forum_id \] == nil ) # if no forum_id is provided **14** flash\[ :notice \] = 'there has been an error.' **15** redirect_to :controller => "forums", :action => "list" and return **16** end # if **17 18** @messages = Message.find( :all, :order => "created_on desc", **19** :conditions => "forum_id = #{ session\[:forum_id \] }" ) **20** @forum = Forum.find( :first, **21** :conditions => "id = #{ session\[ :forum_id \] }" ) **22** end # method list **23 24** \# sets up the new web page that creates a message **25** def new **26** @message = Message.new **27** end # method new **28 29** \# attempts to create a new message with the parameters passed in **30** def create **31** @message = Message.new( params\[ :message \] ) **32** @message.forum_id = session\[ :forum_id \] **33 34** if @message.save # if save method was successful **35** flash\[ :notice \] = 'Message was successfully created.' **36** redirect_to :action => 'list' **37** else # save was unsuccessful **38** render :action => 'new' **39** end # if **40** end # method create **41** end # class MessagesController
+**10** session[:forum_id] = params[:forum_id] **11** end # if **12 13** if ( session[:forum_id] == nil ) # if no forum_id is provided **14** flash[:notice] = 'there has been an error.' **15** redirect_to :controller => "forums", :action => "list" and return **16** end # if **17 18** @messages = Message.find( :all, :order => "created_on desc", **19** :conditions => "forum_id = #{ session[:forum_id] }" ) **20** @forum = Forum.find( :first, **21** :conditions => "id = #{ session[:forum_id] }" ) **22** end # method list **23 24** \# sets up the new web page that creates a message **25** def new **26** @message = Message.new **27** end # method new **28 29** \# attempts to create a new message with the parameters passed in **30** def create **31** @message = Message.new( params[:message] ) **32** @message.forum_id = session[:forum_id] **33 34** if @message.save # if save method was successful **35** flash[:notice] = 'Message was successfully created.' **36** redirect_to :action => 'list' **37** else # save was unsuccessful **38** render :action => 'new' **39** end # if **40** end # method create **41** end # class MessagesController
 
 **Fig. 24.38** | MessagesController that implements CRUD functionality.
 
-**988** Chapter 24 Ruby on Rails
+
 
 options. Lines 24–26 use the link_to method to allow the user to create a message in the current forum or to go back to the list of the forums.
 
@@ -707,17 +707,17 @@ helper method to create fields for specifying the title, author and email. Line 
 
 **1** <!-- Fig. 24.39: app/views/messages/list.rhtml --> **2** <!-- Template for the list action that displays a list of Forums. --> **3** <div style = "text-align: center"> **4** <table style = "width: 600px; margin: 0 auto 0 auto"> **5** <tr class="msgHeader"> **6** <td><%= @forum.name %></td> **7** </tr> **8** <% for message in @messages %> **9** <!-- create two table rows for every message -->
 
-**10** <tr class="msgTitle"> **11** <td> **12** <strong><%= message\[ 'title' \] %></strong><br /> **13** by <em><%= message\[ 'author' \] %></em> at **14 15** </td> **16** </tr> **17** <tr class="msgPost"> **18** <!-- message content --> **19** <td><%= message\[ 'message' \] %></td> **20** </tr> **21** <% end %> **22** </table> **23 24** <%= link_to 'New message', :action => 'new' %> | **25** <%= link_to 'list forums', **26** :controller => 'forums', :action => 'index' %> **27** </div>
+**10** <tr class="msgTitle"> **11** <td> **12** <strong><%= message['title'] %></strong><br /> **13** by <em><%= message['author'] %></em> at **14 15** </td> **16** </tr> **17** <tr class="msgPost"> **18** <!-- message content --> **19** <td><%= message['message'] %></td> **20** </tr> **21** <% end %> **22** </table> **23 24** <%= link_to 'New message', :action => 'new' %> | **25** <%= link_to 'list forums', **26** :controller => 'forums', :action => 'index' %> **27** </div>
 
 **Fig. 24.39** | Template for the list action that displays a list of messages.
 
-<%= message\[ 'created_on' \].strftime("%m/%d/%Y at %I:%M%p") %>
+<%= message['created_on'].strftime("%m/%d/%Y at %I:%M%p") %>
 
 24.6 Case Study: Message Forum **989**
 
 **_Message Layout_** Figure 24.41 shows the layout used to render all Message templates. Line 10 invokes the scaffold.css style sheet, which we changed slightly to improve our page’s presentation. To make the style sheet available for import it must be placed in the public/stylesheets directory of the application. When a forum has been modified, line 14 displays the appro- priate message.
 
-**1** <!-- Fig. 24.40: app/views/messages/\_form.rhtml --> **2** <!-- A form that allows the user to enter a new message. --> **3** <%= error_messages_for 'message' %> **4 5** <table> **6** <tr class = "alignRight"> **7** <td>Title</td> **8** <td><%= text_field 'message', 'title' %></td> **9** </tr>
+**1** <!-- Fig. 24.40: app/views/messages/_form.rhtml --> **2** <!-- A form that allows the user to enter a new message. --> **3** <%= error_messages_for 'message' %> **4 5** <table> **6** <tr class = "alignRight"> **7** <td>Title</td> **8** <td><%= text_field 'message', 'title' %></td> **9** </tr>
 
 **10** <tr class = "alignRight"> **11** <td>Author</td> **12** <td><%= text_field 'message', 'author' %></td> **13** </tr> **14** <tr class = "alignRight"> **15** <td>Email</td> **16** <td><%= text_field 'message', 'email' %></td> **17** </tr> **18** <tr><td colspan = "2">Message</td></tr> **19** <tr><td colspan = "2"> **20 21** </td></tr> **22** </table>
 
@@ -725,7 +725,7 @@ helper method to create fields for specifying the title, author and email. Line 
 
 <%= text_area 'message', 'message', :cols => "30", :rows => "4"%>
 
-**990** Chapter 24 Ruby on Rails
+
 
 We have now implemented the basic functionality of the forum application. To test this application execute it on Mongrel and browse to http://localhost:3000/forums. To test the administrative privileges of the forum go to http://localhost:3000/user/
 
@@ -737,7 +737,7 @@ stylesheets directory of the application.
 
 **1** <?xml version = "1.0" encoding = "utf-8"?> **2** <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" **3** "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> **4 5** <!-- Fig. 24.41: app/views/layouts/messages.rhtml --> **6** <!-- Message layout that links a style sheet and displays a message. --> **7** <html xmlns = "http://www.w3.org/1999/xhtml"> **8** <head> **9** <title>Messages: <%= controller.action_name %></title>
 
-**10 11** </head> **12** <body> **13** <% if ( flash\[ :notice \] ) then %> **14** <p style="color: green"><%= flash\[ :notice \] %></p> **15** <% end %> **16** <%= yield %> **17** </body> **18** </html>
+**10 11** </head> **12** <body> **13** <% if ( flash[:notice] ) then %> **14** <p style="color: green"><%= flash[:notice] %></p> **15** <% end %> **16** <%= yield %> **17** </body> **18** </html>
 
 **Fig. 24.41** | Message layout that links a style sheet and displays a message.
 
@@ -759,11 +759,11 @@ JavaScript Rails libraries including Prototype and Script.aculo.us. The rest of 
 
 Figure 24.43 changes the Forum object’s list view to perform Ajax requests rather than load a new page. Now, whenever the user clicks a forum’s name, the page loads the forum’s messages to the right of the forums list with a partial page update.
 
-**14** <div style = "text-align: right"> **15** <% if ( session\[ :user \] ) then %> <!-- if user is logged on --> **16** <!-- code to display if user is logged on --> **17** <%= "Logged In As #{ session\[ :user \].name }: " %> **18** <%= link_to 'Log Out', **19** :controller => 'users', :action => 'logout' %> **20** <% else %> <!-- user is not logged on --> **21** <!-- code to display if user is not logged on --> **22** <%= "Not Currently Logged In:" %> **23** <%= link_to 'Log In', **24** :controller => 'users', :action => 'admin' %> **25** <% end %> <!-- end if --> **26** </div> **27** <p style="color: green"><%= flash\[ :notice \] %></p> **28** <p style="color: red"><%= flash\[ :error \] %></p> **29 30** <%= yield %> <!-- displays template --> **31** </body> **32** </html>
+**14** <div style = "text-align: right"> **15** <% if ( session[:user] ) then %> <!-- if user is logged on --> **16** <!-- code to display if user is logged on --> **17** <%= "Logged In As #{ session[:user].name }: " %> **18** <%= link_to 'Log Out', **19** :controller => 'users', :action => 'logout' %> **20** <% else %> <!-- user is not logged on --> **21** <!-- code to display if user is not logged on --> **22** <%= "Not Currently Logged In:" %> **23** <%= link_to 'Log In', **24** :controller => 'users', :action => 'admin' %> **25** <% end %> <!-- end if --> **26** </div> **27** <p style="color: green"><%= flash[:notice] %></p> **28** <p style="color: red"><%= flash[:error] %></p> **29 30** <%= yield %> <!-- displays template --> **31** </body> **32** </html>
 
 **1** <!-- Fig. 24.43: app/views/forums/list.rhtml --> **2** <!-- Displaying a list of messages without reloading the page. --> **3** <h1>Deitel Message Forums</h1> **4** <div class = "forumList"> **5** <h2>Available Forums</h2> **6** <ul> **7** <% for forum in @forums %> **8** <li> **9**
 
-**10 11 12 13 14 15** </li> **16** <% end %> **17** </ul> **18** <% if ( session\[ :user \] ) then %> **19** <h2>Forum Management</h2> **20** <ul>
+**10 11 12 13 14 15** </li> **16** <% end %> **17** </ul> **18** <% if ( session[:user] ) then %> **19** <h2>Forum Management</h2> **20** <ul>
 
 **Fig. 24.43** | Displaying a list of messages without reloading the page. (Part 1 of 2.)
 
@@ -771,7 +771,7 @@ Figure 24.43 changes the Forum object’s list view to perform Ajax requests rat
 
 <%= link_to_remote ( forum.name, { :url => { :controller => 'messages', :action => 'list', :forum_id => forum.id }, :update => 'currentForum' }, { :class => ( forum.created_on < 5.minutes.ago ? 'recent': nil ) } ) %>
 
-**992** Chapter 24 Ruby on Rails
+
 
 The key change is lines 9–12, which have been changed to call the link_to_remote
 
@@ -799,7 +799,7 @@ In similar fashion, we modify the list and new views of the message object, to b
 
 <%= link_to_remote 'New message', :url => { :action => 'new' }, :update => 'currentForum'%>
 
-**994** Chapter 24 Ruby on Rails
+
 
 Lines 22–24 use the link_to_remote helper method to allow the user to add new messages without reloading the page. The url is the new action, which returns the form and the placeholder to update is currentForum, defined in the list.rhtml view of the forum object (Fig. 24.43). The new view is also modified, so that once the user submits the new message, the updated div named currentForum is shown without reloading the page. Figure 24.45 shows the modified new.rhtml.
 
@@ -821,7 +821,7 @@ Lines 3–7 have been changed to use the **form_remote_tag** helper method, whic
 
 **Fig. 24.45** | Adding a new message without reloading the page. (Part 2 of 2.)
 
-**996** Chapter 24 Ruby on Rails
+
 
 image, the effect named in the link will be applied to the image. Once you start the appli- cation with Mongrel, open http://localhost:3000/scriptaculous_demo/ in your web browser.
 
@@ -841,13 +841,13 @@ Next, create index.rhtml (Fig. 24.49) in app/views/scriptaculous_demo. This is t
 
 parameter of 0, updates itself and plays an effect on the before event. The effect is created using the visual_effect method (lines 6–7). The parameters of this method call are the effect name, the name of the element the effect should apply to, the duration and the loca-
 
-**1** <!-- Fig. 24.47: app/views/scriptaculous\_demo/index.rhtml --> **2** <!-- Default view for Script.aculo.us demo. --> **3** <div id = "link"> **4 5 6 7 8** </div> **9**
+**1** <!-- Fig. 24.47: app/views/scriptaculous_demo/index.rhtml --> **2** <!-- Default view for Script.aculo.us demo. --> **3** <div id = "link"> **4 5 6 7 8** </div> **9**
 
 **10** <div id = "image" style = "width: 244px; height: 320px;"> **11** <%= image_tag "jhtp7medium.jpg" %> **12** </div>
 
 **Fig. 24.47** | Default view for Script.aculo.us demo.
 
-**1** \# Fig. 24.48: app/controllers/scriptaculous_demo_controller.rb **2** \# Script.aculo.us Demo controller **3** class ScriptaculousDemoController < ApplicationController **4** def index **5** @currentEffect = 0 **6** end **7** def playEffect **8** @currentEffect = params\[ :effect_index \] **9** render :partial => "link"
+**1** \# Fig. 24.48: app/controllers/scriptaculous_demo_controller.rb **2** \# Script.aculo.us Demo controller **3** class ScriptaculousDemoController < ApplicationController **4** def index **5** @currentEffect = 0 **6** end **7** def playEffect **8** @currentEffect = params[:effect_index] **9** render :partial => "link"
 
 **10** end # method playEffect **11** end # class ScriptaculousDemoController
 
@@ -861,7 +861,7 @@ parameter of 0, updates itself and plays an effect on the before event. The effe
 
 tion in the queue. The queue is set to end so that any new effects will be played after all the others are complete. The image in line 11 must be in the public/images directory.
 
-The playEffect method (lines 7–10, Fig. 24.47) sets the currentEffect instance variable to the effect_index parameter, then renders the link view in the link div. In app/views/scriptaculous_demo/\_link.rhtml (Fig. 24.50), the application demon- strates several Script.aculo.us effects by using nested if statements to check the current-
+The playEffect method (lines 7–10, Fig. 24.47) sets the currentEffect instance variable to the effect_index parameter, then renders the link view in the link div. In app/views/scriptaculous_demo/_link.rhtml (Fig. 24.50), the application demon- strates several Script.aculo.us effects by using nested if statements to check the current-
 
 Effect, apply it, then increment currentEffect after each effect with the effect_index
 
@@ -873,13 +873,13 @@ parameter. The link text corresponds to the name of the effect the link activate
 
 **Fig. 24.49** | Default layout of Script.aculo.us demo.
 
-**1** <!-- Fig. 24.50: app/views/scriptaculous\_demo/\_link.rhtml --> **2** <!-- link partial view for Script.aculo.us demo --> **3** <!-- Grow effect --> **4** <% if @currentEffect == '0' %> **5** <%= link_to_remote 'Grow', :url => { :action => 'playEffect', **6** :effect_index => 1 }, :update => "link", **7** :before => ( visual_effect( **8** :Grow, 'image', :duration => 1.0, :queue => 'end' ) ) %> **9**
+**1** <!-- Fig. 24.50: app/views/scriptaculous_demo/_link.rhtml --> **2** <!-- link partial view for Script.aculo.us demo --> **3** <!-- Grow effect --> **4** <% if @currentEffect == '0' %> **5** <%= link_to_remote 'Grow', :url => { :action => 'playEffect', **6** :effect_index => 1 }, :update => "link", **7** :before => ( visual_effect( **8** :Grow, 'image', :duration => 1.0, :queue => 'end' ) ) %> **9**
 
 **10** <!-- Fade effect --> **11** <% elsif @currentEffect == '1' %> **12** <%= link_to_remote 'Fade', :url => { :action => 'playEffect', **13** :effect_index => 2 }, :update => "link", **14** :before => ( visual_effect( **15** :Fade, 'image', :duration => 1.0, :queue => 'end' ) ) %> **16 17** <!-- Appear effect --> **18** <% elsif @currentEffect == '2' %> **19** <%= link_to_remote 'Appear', :url => {:action => 'playEffect', **20** :effect_index => 3 }, :update => "link", **21** :before => ( visual_effect( **22** :Appear, 'image', :duration => 1.0, :queue => 'end' ) ) %>
 
 **Fig. 24.50** | link partial view for Script.aculo.us demo. (Part 1 of 3.)
 
-**998** Chapter 24 Ruby on Rails
+
 
 **23 24** <!-- BlindUp effect --> **25** <% elsif @currentEffect == '3' %> **26** <%= link_to_remote 'BlindUp', :url => { :action => 'playEffect', **27** :effect_index => 4 }, :update => "link", **28** :before => ( visual_effect( **29** :BlindUp, 'image', :duration => 1.0, :queue => 'end' ) ) %> **30 31** <!-- BlindDown effect --> **32** <% elsif @currentEffect == '4' %> **33** <%= link_to_remote 'BlindDown', :url => { :action => 'playEffect', **34** :effect_index => 5 }, :update => "link", **35** :before => ( visual_effect( **36** :BlindDown, 'image', :duration => 1.0, :queue => 'end' ) ) %> **37 38** <!-- Puff effect --> **39** <% elsif @currentEffect == '5' %> **40** <%= link_to_remote 'Puff', :url => { :action => 'playEffect', **41** :effect_index => 6 }, :update => "link", **42** :before => ( visual_effect( **43** :Puff, 'image', :duration => 1.0, :queue => 'end' ) ) %> **44 45** <!-- SwitchOff effect --> **46** <% elsif @currentEffect == '6' %> **47** <%= link_to_remote 'SwitchOff', :url => { :action => 'playEffect', **48** :effect_index => 7 }, :update => "link", **49** :before => ( visual_effect( **50** :SwitchOff, 'image', :duration => 1.0, :queue => 'end' ) ) %> **51 52** <!-- SlideUp effect --> **53** <% elsif @currentEffect == '7' %> **54** <%= link_to_remote 'SlideUp', :url => { :action => 'playEffect', **55** :effect_index => 8 }, :update => "link", **56** :before => ( visual_effect( **57** :SlideUp, 'image', :duration => 1.0, :queue => 'end' ) ) %> **58 59** <!-- SlideDown effect --> **60** <% elsif @currentEffect == '8' %> **61** <%= link_to_remote 'SlideDown', :url => { :action => 'playEffect', **62** :effect_index => 9 }, :update => "link", **63** :before => ( visual_effect( **64** :SlideDown, 'image', :duration => 1.0, :queue => 'end' ) ) %> **65 66** <!-- Shake effect --> **67** <% elsif @currentEffect == '9' %> **68** <%= link_to_remote 'Shake', :url => { :action => 'playEffect', **69** :effect_index => 10 }, :update => "link", **70** :before => ( visual_effect( **71** :Shake, 'image', :duration => 1.0, :queue => 'end' ) ) %> **72 73** <!-- Pulsate effect --> **74** <% elsif @currentEffect == '10' %> **75** <%= link_to_remote 'Pulsate', :url => { :action => 'playEffect',
 
@@ -891,7 +891,7 @@ parameter. The link text corresponds to the name of the effect the link activate
 
 **Fig. 24.50** | link partial view for Script.aculo.us demo. (Part 3 of 3.)
 
-**1000** Chapter 24 Ruby on Rails
+
 
 **_Other Script.aculo.us Features_** The Script.aculo.us library also brings other features to Rails. It provides drag-and-drop capability through the draggable_element and drop_receiving_element methods. A live example of this can be found at demo.script.aculo.us/shop.
 
@@ -907,7 +907,7 @@ After creating the FlickrPhotoViewer application, you must install the Flickr li
 
 24.7 Script.aculo.us **1001**
 
-installed, you must configure the library to use your own Flickr API key. You can sign up for a free API key at www.flickr.com/services/api/misc.api\_keys.html. Once you receive your API key, you _must_ replace the key in flickr.rb with your own. If you are using Instant Rails, flickr.rb will be located in the Instant Rails directory, in the folder If you are running Mac OS X, or otherwise have installed Ruby system-wide, this file will be harder to find. If you cannot locate it with a normal search in Mac OS X, open **Terminal** and use find / -name flickr.rb to locate it. The API key to replace should be located at line 57, in the initialize method. Finally, you must tell the application to include the Flickr library by adding require 'flickr' to the end of config/environment.rb.
+installed, you must configure the library to use your own Flickr API key. You can sign up for a free API key at www.flickr.com/services/api/misc.api_keys.html. Once you receive your API key, you _must_ replace the key in flickr.rb with your own. If you are using Instant Rails, flickr.rb will be located in the Instant Rails directory, in the folder If you are running Mac OS X, or otherwise have installed Ruby system-wide, this file will be harder to find. If you cannot locate it with a normal search in Mac OS X, open **Terminal** and use find / -name flickr.rb to locate it. The API key to replace should be located at line 57, in the initialize method. Finally, you must tell the application to include the Flickr library by adding require 'flickr' to the end of config/environment.rb.
 
 Create the controller with ruby script/generate controller flickr. In app/
 
@@ -927,7 +927,7 @@ visual_effect for the thumbs div (line 32) when the search action is complete. L
 
 %( Element.show( 'loading' ) ) }, :failure => %( Element.hide( 'loading' ) ), :success => %( Element.hide( 'loading' ) ) %>
 
-**1002** Chapter 24 Ruby on Rails
+
 
 The controller located at app/controllers/flickr_controller.rb (Fig. 24.53) handles the search action called by the form in line 15 of Fig. 24.52 and the fullsize-
 
@@ -945,7 +945,7 @@ The thumbs view (Fig. 24.54) defines each thumbnail as a link_to_remote with an 
 
 **Fig. 24.53** | Controller for Flickr Photo Viewer.
 
-**1** <!-- Fig. 24.54: app/views/flickr/\_thumbs.rhtml --> **2** <!-- thumbs view of Flickr Photo Viewer. --> **3 4 5 6 7 8 9**
+**1** <!-- Fig. 24.54: app/views/flickr/_thumbs.rhtml --> **2** <!-- thumbs view of Flickr Photo Viewer. --> **3 4 5 6 7 8 9**
 
 **Fig. 24.54** | thumbs view of Flickr photo viewer.
 
@@ -953,13 +953,13 @@ The thumbs view (Fig. 24.54) defines each thumbnail as a link_to_remote with an 
 
 flickr = Flickr.new render :partial => "thumbs",
 
-:collection => flickr.photos( :tags => params\[ :tags \], :per_page => params\[ :numImages \] )
+:collection => flickr.photos( :tags => params[:tags], :per_page => params[:numImages] )
 
-@currentURL = params\[ :imageURL \]
+@currentURL = params[:imageURL]
 
-<%= link_to_remote image_tag( thumbs.sizes\[ 0 \]\[ 'source' \], :class => "image" ),
+<%= link_to_remote image_tag( thumbs.sizes[0]['source'], :class => "image" ),
 
-:url => { :action => 'fullsizeImage', :imageURL => thumbs.sizes\[ 3 \]\[ 'source' \] },
+:url => { :action => 'fullsizeImage', :imageURL => thumbs.sizes[3]['source'] },
 
 :update => "fullsizeImage", :success => visual_effect( :grow, 'fullsizeImage',
 
@@ -989,7 +989,7 @@ applications.
 
 • A web framework is a set of libraries and useful tool that can be used to build dynamic web ap- plications.
 
-**1004** Chapter 24 Ruby on Rails
+
 
 • Ruby on Rails is different from most other programming languages because it takes advantage of many conventions to reduce development time. If you follow these conventions, the Rails frame- work generates substantial functionality and perform many tasks for you.
 
@@ -1099,7 +1099,7 @@ server model employee in the **Ruby Console**, after navigating to your applicat
 
 • We can execute the migration using Ruby’s rake command by typing in rake db:migrate, which will call the self.up method of all the migrations located in your db/migrate directory.
 
-**1006** Chapter 24 Ruby on Rails
+
 
 • If you ever want to roll back the migrations, you can type in rake db:migrate VERSION=0, which calls each migration’s self.down method.
 
@@ -1193,7 +1193,7 @@ page. h) Rails implements Ajax functionality using the JavaScript Prototype libr
 
 **24.2** a) False. A line of Ruby code does not have to end with a semicolon, although one can be placed there.
 
-**1008** Chapter 24 Ruby on Rails
+
 
 b) False. Rails is a framework for internet applications built in the Ruby programming lan- guage.
 
