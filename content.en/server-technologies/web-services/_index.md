@@ -25,7 +25,7 @@ In this chapter you will learn:
 - How to build a REST-based web service in ASP.NET.
 
 
-## 28.1 Introduction
+## Introduction
 This chapter introduces web services, which promote software portability and reusability in applications that operate over the Internet. A **web service** is a software component stored on one computer that can be accessed via method calls by an application (or other software component) on another computer over a network. Web services communicate using such technologies as XML and HTTP. Several Java APIs facilitate web services. In this chapter, we’ll be dealing with Java APIs that are based on the **Simple Object Access Protocol (SOAP)**—an XML-based protocol that allows web services and clients to com- municate, even if the client and the web service are written in different languages. There are other web services technologies, such as Representational State Transfer (REST), which we cover in the contect of ASP.NET web services in Section 28.9. For information on web services, see the web resources in Section 28.11 and visit our Web Services Re- source Center at www.deitel.com/WebServices.The Web Services Resource Center in cludes information on designing and implementing web services in many languages, and information about web services offered by companies such as Google, Amazon and eBay. You’ll also find many additional tools for publishing and consuming web services. [Note: This chapter assumes that you know Java for Sections 28.2–28.8. To learn more about Ja- va, check out Java How to Program, Seventh Edition, or visit our Java Resource Centers at www.deitel.com/ResourceCenters.html. For Section 28.9, the chapter assumes you know Visual Basic and ASP.NET. To learn more about Visual Basic and ASP.NET, check out our book Visual Basic 2005 How to Program, Third Edition or visit our Visual Basic Resource Center (www.deitel.com/visualbasic/) and our ASP.NET Resource Center (www.deitel.com/aspdotnet/).]
 
 Web services have important implications for **business-to-business** (**B2B**) **transac- tions**. They enable businesses to conduct transactions via standardized, widely available web services rather than relying on proprietary applications. Web services and SOAP are platform and language independent, so companies can collaborate via web services without worrying about the compatibility of their hardware, software and communica- tions technologies. Companies such as Amazon, Google, eBay, PayPal and many others are using web services to their advantage by making their server-side applications available to partners via web services.
@@ -39,7 +39,7 @@ Netbeans—developed by Sun—is one of the many tools that enable programmers t
 
 
 
-## 28.2 Java Web Services Basics 
+## Java Web Services Basics 
 A web service normally resides on a **server**. The application (i.e., the client) that accesses the web service sends a method call over a network to the remote machine, which processes the call and returns a response over the network to the application. This kind of distribut- ed computing is beneficial in many applications. For example, a client application without direct access to a database on a remote server might be able to retrieve the data via a web service. Similarly, an application lacking the processing power to perform specific compu- tations could use a web service to take advantage of another system’s superior resources.
 
 In Java, a web service is implemented as a class. In previous chapters, all the pieces of an application resided on one machine. The class that represents the web service resides on a server—it’s not part of the client application.
@@ -51,7 +51,7 @@ Requests to and responses from web services created with **JAX-WS 2.0** (one of 
 **Fig. 28.1** | Interaction between a web service client and a web service.
 
 
-## 28.3 Creating, Publishing, Testing and Describing a Web Service 
+## Creating, Publishing, Testing and Describing a Web Service 
 The following subsections demonstrate how to create, publish and test a HugeInteger web service that performs calculations with positive integers up to 100 digits long (maintained as arrays of digits). Such integers are much larger than Java’s integral primitive types can represent. The HugeInteger web service provides methods that take two “huge integers" (represented as Strings) and determine their sum, their difference, which is larger, which is smaller or whether the two numbers are equal. These methods will be services available to other applications via the web—hence the term web services.
 
 
@@ -374,7 +374,7 @@ http://host:8080/HugeInteger/HugeIntegerService?WSDL
 
 where host is the hostname or IP address of the computer on which the web service is de- ployed. As we discussed in Section 28.3.4, this will work only if your computer allows HTTP connections from other computers—as is the case for publicly accessible web and application servers.
 
-## 28.4 Consuming a Web Service 
+## Consuming a Web Service 
 Now that we’ve defined and deployed our web service, we can consume it from a client application. A web service client can be any type of application or even another web ser- vice. You enable a client application to consume a web service by **adding a web service reference** to the application. This process defines the proxy class that allows the client to access the web service.
 
 ### 28.4.1 Creating a Client in Netbeans to Consume the HugeInteger Web Service
@@ -698,7 +698,7 @@ The user enters two integers, each up to 100 digits long. Clicking any of the fi
 
 **Fig. 28.11** | Client desktop application for the HugeInteger web service. (Part 6 of 6.)
 
-## 28.5 SOAP 
+## SOAP 
 SOAP (Simple Object Access Protocol) is a platform-independent protocol that uses XML to facilitate remote procedure calls, typically over HTTP. SOAP is one common protocol for passing information between web service clients and web services. The protocol that transmits request-and-response messages is also known as the web service’s **wire format** or **wire protocol**, because it defines how information is sent “along the wire.”
 
 Each request and response is packaged in a **SOAP message** (also known as a **SOAP envelope**)—an XML “wrapper” containing the information that a web service requires to process the message. SOAP messages are written in XML so that they are platform inde- pendent. Many **firewalls**—security barriers that restrict communication among net- works—are configured to allow HTTP traffic to pass through so that clients can browse websites on web servers behind firewalls. Thus, XML and HTTP enable computers on dif- ferent platforms to send and receive SOAP messages with few limitations.
@@ -726,7 +726,7 @@ matically, so you don’t need to understand the details of SOAP or XML to take 
 
 **Fig. 28.12** | SOAP messages for the HugeInteger web service’s add method as shown by the Sun Java System Application Server’s Tester web page.
 
-## 28.6 Session Tracking in Web Services
+## Session Tracking in Web Services
 Section 26.5 described the advantages of using session tracking to maintain client state in- formation so you can personalize the users’ browsing experiences. Now we’ll incorporate session tracking into a web service. Suppose a client application needs to call several meth- ods from the same web service, possibly several times each. In such a case, it can be bene- ficial for the web service to maintain state information for the client, thus eliminating the need for client information to be passed between the client and the web service multiple times. For example, a web service that provides local restaurant reviews could store the cli- ent user’s street address during the initial request, then use it to return personalized, local- ized results in subsequent requests. Storing session information also enables a web service to distinguish between clients.
 
 ### 28.6.1 Creating a Blackjack Web Service
@@ -1334,7 +1334,7 @@ Letter is used to complete the image’s filename (lines 176–178). In this exa
 so that you could keep track of each client’s session state. You also learned how to indicate from a desktop client application that it wishes to take part in session tracking. You’ll now learn how to access a database from a web service and how to consume a web service from a client web application.
 
 
-## 28.7 Consuming a Database-Driven Web Service from a Web Application 
+## Consuming a Database-Driven Web Service from a Web Application 
 Our prior examples accessed web services from desktop applications created in Netbeans. However, we can just as easily use them in web applications created with Netbeans. In fact, because web-based businesses are becoming increasingly prevalent, it is common for web applications to consume web services. In this section, we present an airline reservation web service that receives information regarding the type of seat a customer wishes to reserve and makes a reservation if such a seat is available. Later in the section, we present a web appli- cation that allows a customer to specify a reservation request, then uses the airline reserva- tion web service to attempt to execute the request.
 
 ### 28.7.1 Configuring Java DB in Netbeans and Creating the Reservation Database 
@@ -1673,7 +1673,7 @@ Figure 28.18 contains the page bean code that provides the logic for Reserve.jsp
 **Fig. 28.18** | Page scope backing bean class for seat reservation client. (Part 3 of 3.)
 
 
-## 28.8 Passing an Object of a User-Defined Type to a Web Service
+## Passing an Object of a User-Defined Type to a Web Service
 The web methods we’ve demonstrated so far each receive and return only primitive values or Strings. Web services also can receive and return objects of user-defined types—known as **custom types**. This section presents an EquationGenerator web service that generates random arithmetic questions of type Equation. The client is a math-tutoring desktop ap- plication in which the user selects the type of mathematical question to attempt (addition, subtraction or multiplication) and the skill level of the user—level 1 uses one-digit num- bers in each question, level 2 uses two-digit numbers and level 3 uses three-digit numbers. The client passes this information to the web service, which then generates an Equation
 
 consisting of random numbers with the proper number of digits. The client application receives the Equation, displays the sample question to the user in a Java application, allows the user to provide an answer and checks the answer to determine whether it is correct.
@@ -2055,7 +2055,7 @@ When the user clicks the **Generate Equation** JButton, method generateButton-
 
 ActionPerformed (lines 207–221) invokes the EquationGenerator web service’s gener- ateEquation (line 212) method. After receiving an Equation object from the web service, the handler displays the left-hand side of the equation in equationJLabel (line 214) and enables the checkAnswerJButton so that the user can submit an answer. When the user clicks the **Check Answer** JButton, method checkAnswerJButtonActionPerformed (lines 180–204) determines whether the user provided the correct answer.
 
-## 28.9 REST-Based Web Services in ASP.NET
+## REST-Based Web Services in ASP.NET
 [Note: This section assumes you already know ASP.NET (Chapter 25).] In this section, we discuss how to build ASP.NET REST-based web services. **Representational State Transfer (REST)** (originally proposed in Roy Thomas Fielding’s doctoral dissertation1) refers to an architectural style for implementing web services. Though REST is not a stan- dard, RESTful web services are implemented using web standards, such as HTTP, XML and JSON. Each operation in a RESTful web service is easily identified by a unique URL. So, when the server receives a request, it immediately knows what operation to perform. Such web services can be invoked from a program or directly from a web browser by en- tering the URL in the browser’s address field. In some cases, the results of a particular op- eration may be cached locally by the browser. This can make subsequent requests for the same operation faster by loading the result directly from the browser’s cache.2 Many Web 2.0 web services provide RESTful interfaces^3^.
 
 
@@ -2363,12 +2363,12 @@ Run the web service and direct your browser to the location of the Calendar.html
 
 file. We populated the database only with events for July 2007, so the calendar is coded to always display July 2007 when the application is loaded. To test whether the web service works click a few dates like the fourth of July, the sixth of July or the twentieth of July for which events exist in the Calendar database
 
-## 28.10 Wrap-Up
+## Wrap-Up
 This chapter introduced JAX-WS 2.0 SOAP-based web services and ASP.NET REST- based web services. You learned that web services promote software portability and reus- ability in applications that operate over the Internet. You also learned that a web service is a software component stored on one computer that can be accessed by an application (or other software component) on another computer over a network, communicating via such technologies as XML, SOAP and HTTP. We discussed several benefits of this kind of dis- tributed computing—e.g., clients can access data on remote machines, clients lacking the processing power to perform specific computations can leverage remote machines’ re- sources and entirely new types of innovative applications can be developed.
 
 We explained how Netbeans and the JAX-WS 2.0 APIs facilitate the creation and consumption of JAX-WS web services. We showed how to set up projects and files in these tools and how the tools manage the web service infrastructure necessary to support the web services you create. You learned how to define web services and web methods, as well as how to consume them both from Java desktop applications and from web applications cre- ated in Netbeans. After explaining the mechanics of web services with our HugeInteger example, we demonstrated more sophisticated web services that use session tracking in both the server side and the client side, and web services that access databases using JDBC. We also explained XML serialization and showed how to pass objects of user-defined types to web services and return them from web services. Finally, we discussed how to build a REST-based web service in ASP.NET with Microsoft’s Visual Web Developer Express.
 
-## 28.11 Web Resources 
+## Web Resources 
 www.deitel.com/WebServices/
 
 Visit our Web Services Resource Center for information on designing and implementing web ser- vices in many languages, and information about web services offered by companies such as Google, Amazon and eBay. You’ll also find many additional Java tools for publishing and consuming web services. www.deitel.com/java/ www.deitel.com/JavaSE6Mustang/ www.deitel.com/JavaEE5/ www.deitel.com/JavaCertification/ www.deitel.com/JavaDesignPatterns/

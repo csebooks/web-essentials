@@ -14,7 +14,7 @@ In this chapter you will learn:
 - To configure virtual forms that enable subsets of a form’s input components to be submitted to the server.
 
 
-## 27.1 Introduction
+## Introduction
 This chapter continues our discussion of web application development with several ad- vanced concepts. We discuss accessing, updating and searching databases in a web appli- cation, adding virtual forms to web pages to enable subsets of a form’s input components to be submitted to the server, and using Ajax-enabled component libraries to improve ap- plication performance and component responsiveness. [Note: This chapter assumes that you know Java. To learn more about Java, check out Java How to Program, Seventh Edition, or visit our Java Resource Centers at www.deitel.com/ResourceCenters.html.]
 
 We present a single address book application developed in three stages to illustrate these concepts. The application is backed by a Java DB database for storing the contact names and their addresses.
@@ -25,7 +25,7 @@ As in Chapter 26, this chapter’s examples were developed in Netbeans. We insta
 
 **27.1** Introduction **27.2** Accessing Databases in Web Application Instructions for installing this library are included in Section 27.3. These Ajax-enabled components use the Dojo Toolkit (which we introduced in Chapter 15) on the client side.
 
-## 27.2 Accessing Databases in Web Applications 
+## Accessing Databases in Web Applications 
 Many web applications access databases to store and retrieve persistent data. In this sec- tion, we build a web application that uses a Java DB database to store contacts in the ad- dress book and display contacts from the address book on a web page.
 
 The web page enables the user to enter new contacts in a form. This form consists of **Text Field** components for the contact’s first name, last name, street address, city, state and zip code. The form also has a **Submit** button to send the data to the server and a **Clear** button to reset the form’s fields. The application stores the address book information in a database named AddressBook, which has a single table named Addresses. (We provide this database in the examples directory for this chapter. You can download the examples from www.deitel.com/books/iw3htp4/). This example also introduces the **Table** JSF component, which displays the addresses from the database in tabular format. We show how to configure the **Table** component shortly.
@@ -483,7 +483,7 @@ Book database. Lines 566–567 display a message indicating that the database wa
 
 In method prerender, line 508 calls CachedRowSetDataProvider method **refresh**. This re-executes the wrapped CachedRowSet’s SQL statement and re-sorts the **Table**’s rows so that the new row is displayed in the proper order. If you do not call refresh, the new address is displayed at the end of the **Table** (since we appended the new row to the end of the data provider). The IDE automatically generated code to free resources used by the data provider (line 513) in the destroy method.
 
-## 27.3 Ajax-Enabled JSF Components
+## Ajax-Enabled JSF Components
 The **Java BluePrints Ajax component library** provides **Ajax-enabled JSF components**. These components rely on Ajax technology to deliver the feel and responsiveness of a desk- top application over the web. Figure 27.9 summarizes the current set of components that you can download and use with Netbeans. We demonstrate the **AutoComplete Text Field** and **Map Viewer** components in the next two sections.
 
 
@@ -510,7 +510,7 @@ Next, you must import the components into the **Palette**. Select **Tools > Comp
 
 To see the new components in the **Palette**, you must add the **BluePrints AJAX Com- ponents** library to your visual web application. To do so, make sure your application’s node is expanded in the **Projects** tab. Right click the **Component Libraries** node and select **Add Component Library**. In the **Add Component Library** dialog box, select the **BluePrints AJAX Components library** and click **Add Component Library**. You should now see two new nodes in the **Palette**. The first, **BluePrints AJAX Components**, provides the eight compo- nents listed in Fig. 27.9. The second, **BluePrints AJAX Support Beans**, includes compo- nents that support the Ajax components. You can now build high-performance Ajax web applications by dragging, dropping and configuring the component’s properties, just as you do with other components in the **Palette**.
 
-## 27.4 AutoComplete Text Field and Virtual Forms 
+## AutoComplete Text Field and Virtual Forms 
 We demonstrate the **AutoComplete Text Field** component from the BluePrints catalog by modifying the form in our AddressBook application. The **AutoComplete Text Field** pro- vides a list of suggestions as the user types. It obtains the suggestions from a data source, such as a database or web service. Eventually, the new form will allow users to search the address book by last name, then first name. If the user selects a contact, the application will display the contact’s name and address on a map of the neighborhood. We build this form in two stages. First, we’ll add the **AutoComplete Text Field** that will display sugges- tions as the user types a contact’s last name. Then we’ll add the search functionality and map display in the next step.
 
 **Adding Search Components to the AddressBook.jsp Page** 
@@ -845,7 +845,7 @@ If the name is neither a match nor alphabetically greater than prefix, then line
 
 Lines 665–668 catch any exceptions generated while searching the database. Line 667 adds text to the suggestion box indicating the error to the user.
 
-## 27.5 Google Maps Map Viewer Component
+## Google Maps Map Viewer Component
 We now complete the AddressBook application by adding functionality to the **Look Up Button**. When the user clicks this **Button**, the name in the **AutoComplete Text Field** is used
 
 // move cursor to next row of database hasNext = addressesDataProvider.cursorNext(); to search the AddressBook database. We also add a **Map Viewer** Ajax-enabled JSF compo- nent to the page to display a map of the area for the address. A **Map Viewer** uses the **Google Maps API** web service to find and display maps. (The details of web services are covered in Chapter 28.) In this example, using the Google Maps API is analogous to making or- dinary method calls on a **Map Viewer** object and its supporting bean in the page bean file. When a contact is found, we display a map of the neighborhood with a **Map Marker** that points to the location and indicates the contact’s name and address.
@@ -1231,14 +1231,14 @@ Lines 785–786 set the latitude and longitude of the **Map Viewer**’s center 
 
 Lines 796–799 catch any exceptions generated throughout the method body and dis- play an error message in the **Message Group**. If the user has simply selected a name from the list of selections in the **AutoComplete Text Field**, there will be no errors in searching the database, as the name is guaranteed to be in the proper last name, first name format and included in the AddressBook database. We did not include any special error-handling code for cases in which the user types a name that cannot be found in the AddressBook or for improperly formatted names.
 
-## 27.6 Wrap-Up 
+## Wrap-Up 
 In this chapter, we presented a three-part case study on building a web application that interacts with a database and provides rich user interaction using Ajax-enabled JSF com- ponents. We first showed how to build an AddressBook application that allows a user to add addresses to the AddressBook and browse its contents. Through this example, you learned how to insert user input into a Java DB database and how to display the contents of a database on a web page using a **Table** JSF component.
 
 You learned how to download and import the Java BluePrints Ajax-enabled compo- nent library. We then extended the AddressBook application to include an **AutoComplete Text Field** component. We showed how to use a database to display suggestions in the **AutoComplete Text Field**. You also learned how to use virtual forms to submit subsets of a form’s input components to the server for processing.
 
 Finally, we completed the third part of the AddressBook application by adding func- tionality to the search form. You learned how to use a **Map Viewer**, a **Map Marker** and a **Geocoding Service Object** from the Java BluePrints Ajax-enabled component library to display a Google map that shows a contact’s location.
 
-## 27.7 Web Resources 
+## Web Resources 
 Our Java Resource Centers focus on the enormous amount of free Java content available online. We currently provide six Java-related Resource Centers:
 
 www.deitel.com/java/ 

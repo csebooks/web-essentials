@@ -18,14 +18,14 @@ In this chapter you will learn:
 - The ADO.NET 2.0 object model.
 
 
-## 22.1 Introduction
+## Introduction
  A **database** is an organized collection of data. There are many different strategies for orga- nizing data to facilitate easy access and manipulation. A **database management system** (**DBMS**) provides mechanisms for storing, organizing, retrieving and modifying data. Database management systems allow for the access and storage of data without concern for the internal representation of the data in the database.
 
 Today’s most popular database systems are relational databases, where the data is stored without consideration of its physical structure (Section 22.2). A language called **SQL**—pronounced “sequel,” or as its individual letters—is the international standard lan- guage used almost universally with relational databases to perform **queries** (i.e., to request information that satisfies given criteria) and to manipulate data. [Note: As you learn about SQL, you will see some authors writing “a SQL statement” (which assumes the pronunci- ation “sequel”) and others writing “an SQL statement” (which assumes that the individual letters are pronounced). In this book we pronounce SQL as “sequel.”] Some popular **rela- tional database management systems** (**RDBMSs**) are Microsoft SQL Server, Oracle, Sybase, IBM DB2, Informix, PostgreSQL and MySQL.
 
 Programs connect to, and interact with, a relational database via an **interface**—soft- ware that facilitates communication between a database management system and a pro- gram. For example, Java developers can use the JDBC interface to interact with databases. Similarly, ASP.NET programmers communicate with databases and manipulate their data through the interface provided by ADO.NET.
 
-## 22.2 Relational Databases*
+## Relational Databases*
 A **relational database** is a logical representation of data that allows the data to be accessed without consideration of its physical structure. A relational database stores data in **tables**. Figure 22.1 illustrates a sample table that might be used in a personnel system. The table name is Employee, and its primary purpose is to store the attributes of an employee. Tables are composed of **rows**, and rows are composed of **columns** in which values are stored. This table consists of six rows. The Number column of each row in this table is the table’s **pri- mary key**—a column (or group of columns) in a table with a unique value that cannot be duplicated in other rows. This guarantees that each row can be identified by its primary key. Good examples of primary key columns are a social security number, an employee ID number and a part number in an inventory system, as values in each of these columns are guaranteed to be unique. The rows in Fig. 22.1 are displayed in order by primary key. In this case, the rows are listed in increasing order, but we could also use decreasing order.
 
 Rows in tables are not guaranteed to be stored in any particular order. As we will dem- onstrate in an upcoming example, programs can specify ordering criteria when requesting data from a database.
@@ -39,7 +39,7 @@ Different users of a database are often interested in different data and differe
 **Fig. 22.2** | Result of selecting distinct Department and Location data from table Employee.
 
 
-## 22.3 Relational Database Overview: A books Database
+## Relational Database Overview: A books Database
 We now overview relational databases in the context of a sample books database we created for this chapter. Before we discuss SQL, we overview the tables of the books database. We use this database to introduce various database concepts, including how to use SQL to ob- tain information from the database and to manipulate the data. We provide a script to cre- ate the database. You can find the script in the examples directory for this chapter. Section 22.8 explains how to use this script.
 
 The database consists of three tables—authors, authorISBN and titles. The authors table (described in Fig. 22.3) consists of three columns that maintain each author’s unique ID number, first name and last name. Figure 22.4 contains sample data from the authors table of the books database.
@@ -133,7 +133,7 @@ The lines connecting the tables in Fig. 22.9 represent the relationships between
 
 The line between the titles and authorISBN tables illustrates another one-to-many relationship; a title can be written by any number of authors. In fact, the sole purpose of the authorISBN table is to provide a many-to-many relationship between the authors and titles tables—an author can write any number of books and a book can have any number of authors. The primary key for authorISBN is the combination of authorID and ISBN.
 
-## 22.4 SQL
+## SQL
 We now provide an overview of SQL in the context of our books database. You will be able to use the SQL discussed here in the examples later in the chapter and in examples in Chapters 23–28.
 
 The next several subsections discuss most of the SQL keywords listed in Fig. 22.10 in the context of SQL queries and statements. Other SQL keywords are beyond this text’s scope. To learn other keywords, refer to the SQL reference guide supplied by the vendor of the RDBMS you are using. [Note: For more information on SQL, refer to the web resources in Section 22.12.]
@@ -456,7 +456,7 @@ Figure 22.22 shows the authors table after the DELETE operation has taken place.
 **Fig. 22.22** | Sample data from table authors after a DELETE operation.
 
 
-## 22.5 MySQL 
+## MySQL 
 In 1994, TcX, a Swedish consulting firm, needed a fast and flexible way to access its tables. Unable to find a database server that could accomplish the required task adequately, Michael Widenius, the principal developer at TcX, decided to create his own database server. The resulting product was called MySQL (pronounced “my sequel”), a robust and scalable relational database management system (RDBMS).
 
 MySQL is a multiuser, multithreaded (i.e., allows multiple simultaneous connec- tions) RDBMS server that uses SQL to interact with and manipulate data. The MySQL Manual (www.mysql.com/why-mysql/topreasons.html) lists numerous benefits of MySQL. A few important benefits include:
@@ -475,7 +475,7 @@ For these reasons and more, MySQL is the database of choice for many businesses,
 
 company/legal/licensing/ for details]
 
-## 22.6 Instructions for Installing MySQL 
+## Instructions for Installing MySQL 
 **MySQL 5.0 Community Edition** is an open source database management system that ex- ecutes on many platforms, including Windows, Solaris, Linux, and Macintosh. Complete information about MySQL is available from www.mysql.com.
 
 **Installing MySQL** 
@@ -501,7 +501,7 @@ When the installation completes, you will be asked to set up an account on MySQL
 
 **4.** Click **Finish** to close the wizard.
 
-## 22.7 Instructions for Setting Up a MySQL User Account 
+## Instructions for Setting Up a MySQL User Account 
 For the MySQL examples to execute correctly, you need to set up a user account that al- lows users to create, delete and modify a database. After MySQL is installed, follow the steps below to set up a user account (these steps assume MySQL is installed in its default installation directory):
 
 **1.** Open a Command Prompt and start the database server by executing the com- mand mysqld-nt.exe. (On Linux, execute mysqld start from a shell or terminal window.) Note that this command has no output—it simply starts the MySQL server. Do not close this window—doing so terminates the server.
@@ -528,7 +528,7 @@ exit;
 
 to terminate the MySQL monitor.
 
-## 22.8 Creating a Database in MySQL 
+## Creating a Database in MySQL 
 For each MySQL database we discuss in this book, we provide a SQL script in a file with the .sql extension that sets up the database and its tables. You can execute these scripts in the MySQL command-line client tool. In the examples directory for this chapter, you’ll find the SQL script books.sql to create the books database. For the following steps, we assume that the MySQL server (mysqld-nt.exe) is still running. To execute the books.sql script:
 
 **1.** Open a command prompt and use the cd command to change directories to the location that contains the books.sql script.
@@ -551,7 +551,7 @@ exit;
 
 to terminate the MySQL command-line client tool. You are now ready to use your MySQL database.
 
-## 22.9 ADO.NET Object Model 
+## ADO.NET Object Model 
 Several examples in Chapter 25, ASP.NET 2.0 and ASP.NET Ajax, use ADO.NET 2.0 to access and manipulate SQL Server 2005 Express databases. The **ADO.NET object model** provides an API for accessing database management systems programmatically. ADO.NET was created for the .NET framework to replace Microsoft’s ActiveX Data Ob jects™ (ADO) technology. Microsoft’s Visual Studio IDE features visual programming tools that simplify the process of using a database in your projects. While you may not need to work directly with many ADO.NET objects to develop simple applications, basic knowledge of how the ADO.NET object model works is important for understanding data access in Visual Basic (the programming language we use in Chapter 25).
 
 **Namespaces System.Data, System.Data.OleDb and System.Data.SqlClient** Namespace **System.Data** is the root namespace for the ADO.NET API. The other impor- tant ADO.NET namespaces, **System.Data.OleDb** and **System.Data.SqlClient**, contain classes that enable programs to connect with and manipulate **data sources**—locations that contain data, such as a database or an XML file. Namespace System.Data.OleDb contains classes that are designed to work with any data source that supports the OLE DB API, whereas System.Data.SqlClient contains classes that are optimized to work with Mi- crosoft SQL Server databases. The Chapter 25 examples manipulate SQL Server 2005 Ex- press databases, so we use the classes of namespace System.Data.SqlClient. SQL Server 2005 Express is available at msdn.microsoft.com/vstudio/express/sql/default.aspx.
@@ -578,15 +578,15 @@ An object of class **SqlDataAdapter** (namespace System.Data.SqlClient) connects
 
 maintains a SqlConnection object that it opens and closes as needed to perform these operations, using SqlCommands.
 
-## 22.10 Java DB/Apache Derby
+## Java DB/Apache Derby
 As of the Java SE 6 Development Kit (JDK), Sun Microsystems now bundles the open source, pure Java database **Java DB** (the Sun branded version of Apache Derby) with the JDK. Chapters 27–28 use Java DB in data-driven web applications. Similar to MySQL, Java DB has both an embedded version and a network (client/server) version. The tools we use in Chapters 27–28 come with Java DB. For those examples, we use Java DB’s net- work version, and we provide all the information you need to configure each example’s database. You can learn more about Apache Derby at db.apache.org/derby. You can learn more about Java DB at developers.sun.com/javadb/.
 
-## 22.11 Wrap-Up 
+## Wrap-Up 
 In this chapter, you learned basic database concepts and how to interact with data in a da- tabase using SQL. You learned about the SQL statements SELECT, INSERT, UPDATE and DE-
 
 LETE, as well as clauses such as WHERE, ORDER BY and INNER JOIN. You learned how to install MySQL, to create and configure a MySQL user account, and to execute scripts that create databases in MySQL. We also discussed ADO.NET 2.0 and introduced Java DB. In the next chapter, you’ll learn one of the most popular server-side scripting languages—PHP.
 
-## 22.12 Web Resources
+## Web Resources
 Many database-related resources are available on the web. This section lists several data- base resources. www.sql.org
 
 The sql.org site is an online resource that provides a tutorial on the SQL programming language. It offers links to news groups, discussion forums, free software and various database vendors. www.deitel.com/mysql/
