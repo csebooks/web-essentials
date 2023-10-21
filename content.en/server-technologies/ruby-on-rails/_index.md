@@ -23,12 +23,12 @@ In this chapter you will learn:
 - How to use the built-in Script.aculo.us library to add visual effects to your programs.
 
 
-## 24.1 Introduction 
+## Introduction 
 **Ruby on Rails** (also known as **RoR** or just **Rails**) is a framework for developing data-driven web applications using the **Ruby** scripting language. A **web framework** is a set of libraries and useful tools that can be used to build dynamic web applications. Ruby on Rails is dif- ferent from most other programming languages because it takes advantage of many con- ventions to reduce development time. If you follow these conventions, the Rails framework generates substantial functionality and perform many tasks for you. Ruby on Rails has built-in libraries for performing common web development tasks, such as interacting with a database, sending mass e-mails to clients or generating web services. In addition, Rails has built-in libraries that provide Ajax functionality (discussed in Chapter 15), to improve the user experience. Rails is quickly becoming a popular web development environment.
 
 Ruby on Rails was created by David Heinemeier Hansson of the company 37Signals. After developing Basecamp, a web application written in Ruby that allows a business to organize multiple projects. Hansson extracted the reusable components to create the Rails framework. Since then, many developers have enhanced the Rails framework. For more information, visit our Ruby on Rails Resource Center at www.deitel.com/RubyOnRails. Full documentation of the Rails Framework can be found at api.rubyonrails.org.
 
-## 24.2 Ruby
+## Ruby
 The first several examples are simple command-line programs that demonstrate funda- mental Ruby programming concepts. The Ruby scripting language was developed by Yukihiro “Matz” Matsumoto in 1995 to be a flexible, object-oriented scripting language. Ruby’s syntax and conventions are intuitive—they attempt to mimic the way a developer thinks. Ruby is an interpreted language.
 
 
@@ -245,7 +245,7 @@ the number of points created is 2
 **Fig. 24.9** | A Ruby class.
 
 
-## 24.3 Rails Framework
+## Rails Framework
 While users have benefitted from the rise of database-driven web applications, web devel- opers have had to implement rich functionality with technology that was not designed for this purpose. The Rails framework combines the simplicity of Ruby with the ability to rap- idly develop database-driven web applications.
 
 **Model-View-Controller** 
@@ -274,7 +274,7 @@ Application Name at the command line to create a directory named Application Nam
 
 
 
-## 24.4 ActionController and ActionView
+## ActionController and ActionView
 Ruby on Rails has two classes that work together to process a client request and render a view. These classes are ActionController and ActionView.
 
 **Rails Controller** 
@@ -385,7 +385,7 @@ Line 9 invokes the **action_name** method on the controller object. This display
 **Fig. 24.16** | Layout that displays a greeting.
 
 
-## 24.5 A Database-Driven Web Application
+## A Database-Driven Web Application
 The third tier of a typical Rails application—the model—manages the data used in the ap- plication. In this section, we set up a database and build a fully functional web application using the ActionView and ActionController classes that we introduced in Section 24.4. We create an application that allows the user to browse and edit an employee list. To create this application’s structure, type rails Employees in the **Ruby Console** window.
 
 **Object Relational Mapping** 
@@ -510,7 +510,7 @@ The list template is rendered by the list method from the EmployeeController. Co
 **Fig. 24.22** | A view that displays a list of employees.
 
 
-## 24.6 Case Study: Message Forum
+## Case Study: Message Forum
 Our next example uses Ruby on Rails to create a **message forum** website. Message forums enable users to discuss various topics. Common features of message forums include discus- sion groups, questions and answers and general comments. To see some popular message forums, visit messages.yahoo.com, web.eesite.com/forums and groups.google.com. In this example, users can post messages to several different forums, and administrators of the message forum site can create and delete forums.
 
 **Design** For our message forum application, we need a table containing all of the messages. This table will be called messages and will contain attributes such as id, title, author, e-mail, created_on (the date the message was created) and forum_id (the id of the forum to which the message belongs). In addition, we need a table of all the available forums. This table, called forums, will contain attributes such as id, name, administrator and created_on (the date the forum was created).
@@ -1344,7 +1344,7 @@ Fig. 24.45 | Adding a new message without reloading the page. (Part 1 of 2.)
 
 
 
-## 24.7 Script.aculo.us 
+## Script.aculo.us 
 **Visual Effects** Rails includes the **Script.aculo.us JavaScript library**, which allows you to easily create vi- sual effects similar to those in Adobe Flash and Microsoft Silverlight. The library provides many pre-defined effects, as well as the ability to create your own effects from the pre- defined ones. The following example demonstrates many of the effects provided by this library. Figure 24.46 demonstrates the Fade effect. When the user clicks the link above the
 
 **Fig. 24.46** | Script.aculo.us’s Fade effect.
@@ -1712,10 +1712,10 @@ activate the fullsizeImage action and pass an imageURL parameter. This parameter
 
 The fullsizeImage view (Fig. 24.55) fills the fullsizeImage div in line 33 of Fig. 24.52 with an image_tag. The source of this image is set to the currentURL variable. Try the program out with different tag searches and numbers of images.
 
-## 24.8 Wrap-Up 
+## Wrap-Up 
 In this chapter, you first learned basic Ruby programming concepts, including classes, control structures, and data types such as Fixnum, String, Array and Hash. Next, you learned how to develop web applications using the Rails framework. You installed Instant Rails, an all-in-one environment for building and testing Rails applications. We then dis- cussed the MVC (Model-View-Controller) design pattern that is used by Rails applica- tions, and the many conventions that allow Rails to generate a significant amount of functionality for you. This included using the controller generator to create an applica- tion’s controller, using the scaffold generator to quickly generate a user interface to view and modify a database, and combining Ruby script and HTML into RHTML files that define an application’s view. You learned how to include rich AJAX functionality (such as partial page updates, advanced controls, and visual effects) in Rails applications through the use of the built-in Prototype and Script.aculo.us libraries. These libraries allow for Ajax functionality such as In the next chapter, we discuss how to build web applications using Microsoft’s ASP.NET 2.0.
 
-## 24.9 Web Resources 
+## Web Resources 
 www.deitel.com/Ruby/ www.deitel.com/RubyOnRails/
 
 The Deitel Ruby and Ruby on Rails Resource Centers contain links to some of the best Ruby and Rails resources on the web. There you’ll find categorized links to forums, conferences, blogs, books, open source projects, videos, podcasts, webcasts and more. Also check out the tutorials for all skill levels, from introductory to advanced.

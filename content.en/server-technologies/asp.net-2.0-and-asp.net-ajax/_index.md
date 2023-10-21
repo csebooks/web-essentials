@@ -23,7 +23,7 @@ In this chapter you will learn:
 - To design a master page and content pages to create a uniform look-and-feel for a website.
 
 
-## 25.1 Introduction 
+## Introduction 
 This chapter introduces **web application development** with Microsoft’s **Active Server Pages .NET (ASP.NET) 2.0** technology. Web-based applications create web content for web-browser clients. This web content includes Extensible HyperText Markup Language (XHTML), client-side scripting, images and binary data. If you are not familiar with XHTML, you should read Chapter 4 before studying this chapter. [Note: This chapter as- sumes that you know Visual Basic and are familiar with the .NET platform version 2.0. To learn more about Visual Basic, check out Visual Basic 2005 How to Program, Third Edi- tion, or visit our Visual Basic Resource Center at www.deitel.com/visualbasic.]
 
 We present several examples that demonstrate web application development using **Web Forms**, **web controls** (also called **ASP.NET server controls**) and Visual Basic pro- gramming. We also introduce ASP.NET Ajax and use it to enhance one of the earlier exam- ples. Web Form files have the filename extension **.aspx** and contain the web page’s GUI. You customize Web Forms by adding web controls including labels, text boxes, images, buttons and other GUI components. The Web Form file generates the web page that is sent to the client browser. From this point onward, we refer to Web Form files as **ASPX files**.
@@ -35,7 +35,7 @@ To develop the code and GUIs in this chapter, we used Microsoft Visual Web Devel
 
 default.aspx) or a complete version of Visual Studio 2005 to implement the programs in this chapter.
 
-## 25.2 Creating and Running a Simple Web Form Example
+## Creating and Running a Simple Web Form Example
 Our first example displays the web server’s time of day in a browser window. When run, this program displays the text A Simple Web Form Example, followed by the web server’s time. As mentioned previously, the program consists of two related files—an ASPX file (Fig. 25.1) and a Visual Basic code-behind file (Fig. 25.2), which we’ll discuss in Section 25.2.5. We first display the markup, code and output, then we carefully guide you through the step-by-step process of creating this program. [Note: The markup in Fig. 25.1 and other ASPX file listings in this chapter is the same as the markup that appears in Visual Web Developer, but we’ve reformatted it for presentation purposes to make the code more readable.]
 
 Visual Web Developer generates all the markup shown in Fig. 25.1 when you set the web page’s title, type text in the Web Form, drag a Label onto the Web Form and set the properties of the page’s text and the Label. We discuss these steps in Section 25.2.6.
@@ -305,7 +305,7 @@ Note that all of these methods of running the application compile the project fo
 **Windows Firewall Settings** 
 If you would like to test your web application over a network, you may need to change your Windows Firewall settings. For security reasons, Windows Firewall does not allow remote access to a web server on your local computer by default. To change this, open the Windows Firewall utility in the Windows Control Panel. In Windows XP, Click the **Ad- vanced** tab and select your network connection from the **Network Connection Settings** list, then click **Settings…**. On the **Services** tab of the **Advanced Settings** dialog, ensure that **Web Server (HTTP)** is checked. In Windows Vista click the **Change settings** link, then click **Continue** in dialog that appears. Select the **Exceptions** tab and place a check next to **World Wide Web Services (HTTP)**.
 
-## 25.3 Web Controls
+## Web Controls
 This section introduces some of the web controls located in the **Standard** section of the **Toolbox** (Fig. 25.6). Figure 25.12 summarizes some of the web controls used in the chap- ter examples.
 
 
@@ -1593,7 +1593,7 @@ Line 13 accesses the **Keys** property of class HttpSessionState, which returns 
 
 ISBN#: " and the value from the Session object for which keyName is the key. This String is the recommendation that appears in the ListBox.
 
-## 25.5 Case Study: Connecting to a Database in ASP.NET
+## Case Study: Connecting to a Database in ASP.NET
 Many websites allow users to provide feedback about the website in a **guestbook**. Typical- ly, users click a link on the website’s home page to request the guestbook page. This page usually consists of an XHTML form that contains fields for the user’s name, e-mail ad- dress, message/feedback and so on. Data submitted on the guestbook form is then stored in a database located on the web server’s machine.
 
 In this section, we create a guestbook Web Form application. This example’s GUI is slightly more complex than that of earlier examples. It contains a **GridView** ASP.NET data control, as shown in Fig. 25.30, which displays all the entries in the guestbook in tabular format. We explain how to create and configure this data control shortly. Note that the GridView displays **abc** in **Design** mode to indicate string data that will be retrieved from a data source at runtime.
@@ -1877,7 +1877,7 @@ Lines 8–30 contain the event-handling code for submitButton, which adds the us
 
 DataSource (the data source of the GridView) to execute its SELECT command to obtain the Messages table’s newly updated data.
 
-## 25.6 Case Study: Secure Books Database Application
+## Case Study: Secure Books Database Application
 This case study presents a web application in which a user logs into a secure website to view a list of publications by an author of the user’s choosing. The application consists of several ASPX files. Section 25.6.1 presents the application and explains the purpose of each of its web pages. Section 25.6.2 provides step-by-step instructions to guide you through building the application and presents the markup in the ASPX files.
 
 **25.6.1 Examining the Completed Secure Books Database Application** This example uses a technique known as **forms authentication** to protect a page so that only users known to the website can access it. Such users are known as the site’s members. Authentication is a crucial tool for sites that allow only members to enter the site or a por- tion of the site. In this application, website visitors must log in before they are allowed to view the publications in the Books database. The first page that a user would typically re- quest is Login.aspx (Fig. 25.39). You will soon learn to create this page using a Login con- trol, one of several **ASP.NET login controls** that help create secure applications using authentication. These controls are found in the **Login** section of the **Toolbox**.
@@ -2379,7 +2379,7 @@ Figure 25.66(a) depicts the default appearance of Books.aspx in a web browser. B
 
 ObjectDataSource is set to 1, books by the author with AuthorID 1 (i.e., Harvey Deitel) are displayed when the page first loads. Note that the GridView displays paging links below the data, because the number of rows of data returned by GetDataByAuthorID is greater than the page size. Figure 25.66(b) shows the GridView after clicking the 2 link to view the second page of data. Figure 25.66(c) presents Books.aspx after the user selects a dif- ferent author from the authorsDropDownList. The data fits on one page, so the GridView does not display paging links.
 
-## 25.7 ASP.NET Ajax
+## ASP.NET Ajax
 In this section, we introduce how you can use **ASP.NET Ajax** to quickly and easily add Ajax functionality to existing ASP.NET web applications. You can download the latest version of ASP.NET Ajax from www.asp.net/ajax/downloads. Run the.msi installer you downloaded and follow the on-screen instructions to install the **Ajax Extensions package**.
 
 The Ajax Extensions package implements basic Ajax functionality. Microsoft also provides the **ASP.NET Ajax Control Toolkit**, which contains rich, Ajax-enabled GUI controls. There is also a link to the download the latest version of the Ajax Control Toolkit from the ASP.NET Ajax download page listed above. The toolkit does not come with an installer, so you must extract the contents of the toolkit’s ZIP file to your hard drive.
@@ -2528,7 +2528,7 @@ Several controls in the Ajax Control Toolkit are **extenders**—components that
 **Additional ASP.NET Information** 
 The Ajax Control Toolkit contains many other extenders and independent controls. You can check them out using the sample website included with the toolkit. The live version of the sample website can be found at www.asp.net/ajax/control-toolkit/live/. For more information on ASP.NET Ajax, check out our ASP.NET Ajax Resource Center at www.deitel.com/aspdotnetajax.
 
-## 25.8 Wrap-Up
+## Wrap-Up
 In this chapter, we introduced web application development using ASP.NET and Visual Web Developer 2005 Express. We began by discussing the simple HTTP transactions that take place when you request and receive a web page through a web browser. You then learned about the three tiers (i.e., the client or top tier, the business logic or middle tier and the information or bottom tier) that comprise most web applications.
 
 
@@ -2546,7 +2546,7 @@ Manager and the UpdatePanel. You also learned how to use validation extenders. T
 
 before accessing information from the Books database. You used the **Web Site Administra- tion Tool** to configure the application to use forms authentication and prevent anonymous users from accessing the book information. This case study explained how to use the new ASP.NET 2.0 Login, CreateUserWizard, LoginName and LoginStatus controls to sim- plify user authentication. You also learned to create a uniform look-and-feel for a website using a master page and several content pages. In the next chapter, you will learn about similar web application development techniques with JavaServer Faces, which is imple- mented with the Java programming language.
 
-## 25.9 Web Resources** 
+## Web Resources** 
 www.deitel.com/aspdotnet/
 
 The Deitel ASP.NET Resource Center focuses on the vast amount of free ASP.NET content avail- able online, plus some for-sale items. Start your search here for tools, downloads, text and video tu- torials, webcasts, podcasts, wikis, documentation, reference manuals, conferences, FAQs, books, e- books, sample chapters, articles, newsgroups, forums, downloads from CNET’s download.com, jobs and contract opportunities, and more that will help you develop ASP.NET-based applications. Keep track of ASP.NET blogs for the latest news and developments, or sign up for RSS feeds to be notified promptly of each new development. Also, download free open-source ASP.NET projects.

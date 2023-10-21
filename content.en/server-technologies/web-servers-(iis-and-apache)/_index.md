@@ -16,12 +16,12 @@ In this chapter you will learn:
 - To test whether you set up the virtual directory properly.
 
 
-## 21.1 Introduction
+## Introduction
  In this chapter, we discuss the specialized software—called a **web server**—that responds to client requests (typically from a web browser) by providing resources such as XHTML documents. For example, when users enter a Uniform Resource Locator (URL) address, such as www.deitel.com, into a web browser, they are requesting a specific document from a web server. The web server maps the URL to a resource on the server (or to a file on the server’s network) and returns the requested resource to the client. During this interaction, the web server and the client communicate using the platform-independent Hypertext Transfer Protocol (HTTP), a protocol for transferring requests and files over the Internet or a local intranet.
 
 Our web server discussion introduces **Microsoft Internet Information Services (IIS)** and the open source **Apache HTTP Server**. Sections 21.6 and 21.7 discuss IIS and Apache, respectively.
 
-## 21.2 HTTP Transactions
+## HTTP Transactions
  In this section, we discuss what occurs behind the scenes when a user requests a web page in a browser. The HTTP protocol allows clients and servers to interact and exchange in- formation in a uniform and reliable manner.
 
 In its simplest form, a web page is nothing more than an XHTML document that describes to a web browser how to display and format the document’s information. XHTML documents normally contain hyperlinks that link to different pages or to other parts of the same page. When the user clicks a hyperlink, the requested web page loads into the user’s web browser. Similarly, the user can type the address of a page into the browser’s address field.
@@ -96,7 +96,7 @@ Browsers often **cache** (save on disk) web pages for quick reloading. If there 
 
 When you use a web-based search engine, the browser normally supplies the informa- tion you specify in an HTML form to the search engine with a get request. The search engine performs the search, then returns the results to you as a web page. Such pages are sometimes cached by the browser in case you perform the same search again.
 
-## 21.3 Multitier Application Architecture 
+## Multitier Application Architecture 
 Web-based applications are **multitier applications** (sometimes referred to as **_n_\-tier appli- cations**) that divide functionality into separate **tiers** (i.e., logical groupings of functional- ity). Although tiers can be located on the same computer, the tiers of web-based applications often reside on separate computers. Figure 21.3 presents the basic structure of a **three-tier web-based application**.
 
 The **bottom tier** (also called the data tier or the information tier) maintains the appli- cation’s data. This tier typically stores data in a relational database management system (RDBMS). We discuss RDBMSs in Chapter 22. For example, a retail store might have an inventory information database containing product descriptions, prices and quantities in stock. Another database might contain customer information, such as user names, billing addresses and credit card numbers. These may reside on one or more computers, which together comprise the application’s data.
@@ -111,7 +111,7 @@ catalog) and retrieves data from the database. The middle-tier **presentation lo
 
 The **top tier**, or client tier, is the application’s user interface, which gathers input and displays output. Users interact directly with the application through the user interface, which is typically a web browser, keyboard and mouse, or a mobile device. In response to user actions (e.g., clicking a hyperlink), the client tier interacts with the middle tier to make requests and to retrieve data from the information tier. The client tier then displays the data retrieved for the user. The client tier never directly interacts with the information tier.
 
-## 21.4 Client-Side Scripting versus Server-Side Scripting
+## Client-Side Scripting versus Server-Side Scripting
  In earlier chapters, we focused on client-side scripting with JavaScript. Client-side script- ing can be used to validate user input, to interact with the browser, to enhance web pages by manipulating the DOM of a page, and to add Ajax functionality.
 
 Client-side scripting does have limitations, such as browser dependency; the browser or **scripting host** must support the scripting language and capabilities. Scripts are restricted from accessing the local hardware and filesystem for security reasons. Another issue is that client-side scripts can be viewed by the client by using the browser’s source- viewing capability. Sensitive information, such as passwords or other personally identifi- able data, should not be on the client. All client-side data validation should be mirrored on the server. Also, placing certain operations in JavaScript on the client can open web applications to attack and other security issues.
@@ -124,7 +124,7 @@ Server-side scripts also have access to server-side software that extends server
 
 **Software Engineering Observation 21.2** Properly configured server-side script source code is not visible to the client; only XHTML and any client-side scripts are visible to the client.
 
-## 21.5 Accessing Web Servers
+## Accessing Web Servers
  To request documents from web servers, users must know the hostnames on which the web server software resides. Users can request documents from **local web servers** (i.e., ones residing on users’ machines) or **remote web servers** (i.e., ones residing on different ma- chines).
 
 Local web servers can be accessed through your computer’s name or through the name **localhost**—a hostname that references the local machine and normally translates to the IP address 127.0.0.1 (known as the **loopback address**). We sometimes use localhost in this book for demonstration purposes. To display the machine name in Windows XP, Windows Server 2003, Windows Vista, Mac OS X or Linux, run the hostname command in a command prompt or terminal window.
@@ -135,7 +135,7 @@ A remote web server referenced by a fully qualified hostname or an IP address ca
 **Windows Firewall Settings** 
 If you’d like to test your web server over a network, you may need to change your Win- dows Firewall settings. For security reasons, Windows Firewall does not allow remote ac- cess to a web server on your local computer by default. To change this, open the Windows Firewall utility in the Windows Control Panel. Click the **Advanced** tab and select your network connection from the **Network Connection Settings** list, then click **Settings…**. On the **Services** tab of the **Advanced Settings** dialog, ensure that **Web Server (HTTP)** is checked.
 
-## 21.6 Microsoft Internet Information Services (IIS) 
+## Microsoft Internet Information Services (IIS) 
 **Microsoft Internet Information Services (IIS)** is a web server that is included with several versions of Windows. Installing IIS enables a computer to serve documents. To install IIS 5.1 on Windows XP Professional, open the **Add or Remove Programs** control panel, click **Add/Remove Windows Components**, check the checkbox next to **Internet Information Ser- vices (IIS)**, and click **Next >**. You may need the original operating system disk to complete the installation. For IIS 6.0 on Windows Server 2003 and IIS 7.0 on Windows Vista, the software should already be installed (but is also on your installation disk). The remainder of this section assumes that either IIS 5.1, IIS 6.0 or IIS 7.0 is installed on your system. In Windows Server 2003, you’ll need to use the **Manager Your Server** window to add the **Ap- plication Server** role. In Windows Vista, go to the **Control Panel**, select **Programs**, then se- lect **Turn Windows Features On or Off**.
 
 The following subsections explain how to configure IIS 5.1, IIS 6.0 and IIS 7.0 to serve documents via HTTP. If you are using Windows XP or Windows Server 2003, see Section 21.6.1. If you are using Windows Vista, skip to Section 21.6.2.
@@ -186,7 +186,7 @@ In Windows Vista, before you can use IIS, you must enable the World Wide Web Pub
 
 **Fig. 21.10** | **Add Virtual Directory** dialog.
 
-## 21.7 Apache HTTP Server
+## Apache HTTP Server
 The Apache HTTP Server, maintained by the Apache Software Foundation, is currently the most popular web server because of its stability, efficiency, portability, security and small size. It is open source software that runs on UNIX, Linux, Mac OS X, Windows and numerous other platforms.
 
 Mac OS X and many versions of Linux come preinstalled with Apache. If your system does not have Apache preinstalled, you can obtain the Apache HTTP Server for a variety of platforms from httpd.apache.org/download.cgi. For instructions on installing ver- sion 2.2 of the Apache HTTP Server on Windows, please visit
@@ -242,14 +242,14 @@ We begin by specifying the location of the directory, then proceed to configure 
 
 Now, the Apache HTTP Server is configured to serve our web document from the C:\\Chapter21Examples directory. We need to restart the server so that our changes to httpd.conf file will take effect. Then we will be ready to request documents from the Apache HTTP Server. To restart the server, we must first stop it and start it again. Please refer to the beginning of this section for instructions on how to stop and start the Apache HTTP Server.
 
-## 21.8 Requesting Documents
+## Requesting Documents
 This section demonstrates how an HTTP server responds to requests for XHTML docu- ments. Requesting other types of documents is similar. We discuss serving these docu- ments using the IIS and Apache HTTP Servers. The server sends XHTML documents to the client as **static web pages**. The server response for a given XHTML document is always the same. For other types of documents, such as PHP, Ruby on Rails, ASP.NET and Java- Server Faces, the appropriate language interpreter or scripting engine first generates XHT- ML content, then transmits it to the client over HTTP. These are often referred to as **dynamic web pages**, because the results of these requests might vary based on numerous factors, such as user input, the time of day and current database content.
 
 Copy test.html from the Chapter 21 examples directory into the directory C:\\Chapter21Examples (or to the directory you created in Section 21.6 or 21.7). This is the directory that is referenced by our virtual directory (Chapter21Test). [_Note_: A file cannot be copied directly to a virtual directory, because a virtual directory is only a name referring to a physical local directory.] To request the document from IIS or Apache, start the server, launch a web browser and enter the XHTML document’s URL (i.e., http:// localhost/Chapter21Test/test.html) in the **Address** field. Figure 21.12 displays the result of requesting test.html in Internet Explorer 7.
 
 **Fig. 21.12** | Requesting test.html.
 
-## 21.9 Web Resources
+## Web Resources
 www.deitel.com/WebServers/
 
 The Web Servers Resource Center guides you through learning the basics behind web servers, de- ciding which server is best suited to you, and configuring and maintaining your own web server. Start your search here for resources, downloads, tutorials, documentation, books, e-books, articles, blogs and more that will help you run your own web server. www.fiddlertool.com/fiddler/

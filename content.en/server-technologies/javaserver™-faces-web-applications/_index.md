@@ -16,7 +16,7 @@ In this chapter you will learn:
 
 - To maintain state information about a user with session tracking and cookies.
 
-## 26.1 Introduction
+## Introduction
 In this chapter, we introduce web application development with Java-based technology. Web-based applications create web content for web browser clients. This web content in- cludes Extensible HyperText Markup Language (XHTML), client-side scripting, images and binary data. If you are not familiar with XHTML, you should read Chapter 4 before studying this chapter. [Note: This chapter assumes that you know Java. To learn more about Java, check out Java How to Program, Seventh Edition, or visit our Java Resource Centers at www.deitel.com/ResourceCenters.html.]
 
 This chapter begins with an overview of multitier application architecture and Java’s web technologies for implementing multitier applications. We then present several exam- ples that demonstrate web application development. The first example introduces you to Java web development. In the second example, we build a web application that simply shows the look-and-feel of several web application GUI components. Next, we demon- strate how to use validation components and custom validation methods to ensure that user input is valid before it is submitted for processing on the server. The chapter finishes with two examples of customizing a user’s experience with session tracking.
@@ -31,7 +31,7 @@ The Visual Web Pack is available at
 
 www.netbeans.org/products/visualweb/
 
-## 26.2 Java Web Technologies
+## Java Web Technologies
 Java web technologies continually evolve to provide developers with higher levels of ab- straction and greater separation of the application’s tiers. This separation makes web ap- plications more maintainable and extensible. It also allows for an effective division of labor. A graphic designer can build the application’s user interface without concern for the underlying page logic, which will be handled by a programmer. Meanwhile, the program- mer is free to focus on the application’s business logic, leaving the details of building an attractive and easy-to-use application to the designer. Netbeans is the latest step in this evolution, allowing you to develop a web application’s GUI in a drag-and-drop design tool, while handling the business logic in separate Java classes.
 
 Java multitier applications are typically implemented using the features of Java Enter- prise Edition (Java EE). The technologies we use to develop web applications in Chapters 26–27 are part of Java EE 5 (java.sun.com/javaee).
@@ -83,7 +83,7 @@ Every JSP file created in Netbeans represents a web page and has a corresponding
 
 Every Netbeans web application has three other JavaBeans. The **RequestBean** object is maintained in **request scope**—this object exists only for an HTTP request’s duration. A **SessionBean** object has **session scope**—the object exists throughout a user’s browsing ses- sion or until the session times out. There is a unique SessionBean object for each user. Finally, the **ApplicationBean** object has **application scope**—this object is shared by all instances of an application and exists as long as the application remains deployed on a web server. This object is used for application-wide data storage or processing; only one instance exists for the application, regardless of the number of open sessions.
 
-## 26.3 Creating and Running a Simple Application in Netbeans
+## Creating and Running a Simple Application in Netbeans
 Our first example displays the web server’s time of day in a browser window. When run, this program displays the text "Current Time on the Web Server", followed by the web server’s time. The application contains a single web page and, as mentioned previously, consists of two related files—a JSP file (Fig. 26.1) and a supporting page bean file (Fig. 26.3). The application also has the three scoped data beans for request, session, and application scopes. Since this application does not store data, these beans are not used in this example. We first discuss the markup in the JSP file, the code in the page bean file and the application output, then we provide step-by-step instructions for creating the pro- gram. [Note: The markup in Fig. 26.1 and other JSP file listings in this chapter is the same as the markup that appears in Netbeans, but we have reformatted these listings for presen- tation purposes to make the code more readable.]
 
 ~~~xml
@@ -561,7 +561,7 @@ Finally, you can run your built application by opening a browser window and typi
 
 WebTime/faces/Time.jsp. The path to the file Time.jsp (i.e., faces/Time.jsp) can be omitted, because this file was set by default as the project’s start page. For projects with multiple pages, you can change the start page by right clicking the desired page in the **Projects** window and selecting **Set As Start Page**. The start page is indicated by a green arrow next to the page’s name in the **Projects** window.
 
-## 26.4 JSF Components 
+## JSF Components 
 This section introduces some of the JSF components featured in the **Palette** (Fig. 26.6). Figure 26.13 summarizes some of the JSF components used in the chapter examples.
 
 **Fig. 26.13** | Commonly used JSF components.
@@ -996,7 +996,7 @@ contains a valid phone number before the form is submitted. The user input is ma
 
 If all six validators are successful (i.e., each TextField contains data, the name is less than 30 characters and the e-mail address and phone number are valid), clicking the **Submit** button sends the form’s data to the server. As shown in Fig. 26.15(d), the submitButtonaction method displays the submitted data in a gridPanel (lines 446– 449) and a success message in resultsText (line 450).
 
-## 26.5 Session Tracking
+## Session Tracking
 In the early days of the Internet, e-businesses could not provide the kind of customized service typically experienced in “brick-and-mortar” stores. To address this problem, e- businesses began to establish mechanisms by which they could personalize users’ browsing experiences, tailoring content to individual users while enabling them to bypass irrelevant information. Businesses achieve this level of service by tracking each customer’s movement through their websites and combining the collected data with information provided by the consumer, including billing information, personal preferences, interests and hobbies.
 
 **Personalization** **Personalization** makes it possible for e-businesses to communicate effectively with their customers and also improves the user’s ability to locate desired products and services. Companies that provide content of particular interest to users can establish relationships with customers and build on those relationships over time. Furthermore, by targeting con- sumers with personal offers, recommendations, advertisements, promotions and services, e-businesses create customer loyalty. Websites can use sophisticated technology to allow visitors to customize home pages to suit their individual needs and preferences. Similarly, online shopping sites often store personal information for customers, tailoring notifica- tions and special offers to their interests. Such services encourage customers to visit sites and make purchases more frequently.
@@ -1805,7 +1805,7 @@ Line 182 retrieves the Properties object containing the user’s selections from
 
 object. Line 184 retrieves the number of selections made from the SessionBean. If any selections were made, line 191 constructs an appropriately sized Option array to display the selections in the webuijsf:listBox element of Recommendations.jsp. Lines 193–199 add each of the user’s selections to this Option array. Line 195 gets the next key from the enumeration of keys, and lines 196–198 add a recommendation to the Option array.
 
-## 26.6 Wrap-Up
+## Wrap-Up
 In this chapter, we introduced web application development using JavaServer Pages and JavaServer Faces in Netbeans. We began by discussing the simple HTTP transactions that take place when you request and receive a web page through a web browser. We then discussed the three tiers (i.e., the client or top tier, the business logic or middle tier and the information or bottom tier) that comprise most web applications.
 
 You learned the role of JSP files and page bean files, and the relationship between them. You learned how to use Netbeans to visually build web applications using Net- beans’s drag-and-drop capabilities, then you compiled and executed them.
@@ -1814,7 +1814,7 @@ We demonstrated several common JSF components used for displaying text and image
 
 We discussed the benefits of maintaining user information across multiple pages of a website. We then demonstrated how you can include such functionality in a web applica- tion using either cookies or properties in the SessionBean class. In the next chapter, we continue our discussion of web application development. You’ll learn how to access a data- base from a JSF web application, how to use several of the AJAX-enabled JSF components from Sun’s Java Blueprints and how to use virtual forms.
 
-## 26.7 Web Resources
+## Web Resources
 Our Java Resource Centers focus on the enormous amount of free Java content available online. We currently provide six Java-related Resource Centers:
 
 www.deitel.com/java/ www.deitel.com/JavaCertification/ www.deitel.com/JavaDesignPatterns/ www.deitel.com/JavaEE5/ www.deitel.com/JavaFX/ www.deitel.com/JavaSE6Mustang/
