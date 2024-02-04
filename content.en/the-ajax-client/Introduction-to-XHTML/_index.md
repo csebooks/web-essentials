@@ -143,7 +143,7 @@ Some text in an XHTML document may be more important than other text. For exampl
 
 > _Use larger headings to emphasize more important sections of a web page._ 4.2
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -176,7 +176,7 @@ Line 14 introduces the **strong element**, which indicates that its contents has
 
 Links are created using the **a** (**anchor**) element. Line 17 defines a hyperlink to the URL assigned to attribute **href**, which specifies the location of a linked resource, such as
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -207,7 +207,7 @@ a web page, a file or an e-mail address. This particular anchor element links th
 **_Hyperlinking to an E-Mail Address_**
 Anchors can link to e-mail addresses using a **mailto:** URL. When someone clicks this type of anchored link, most browsers launch the default e-mail program (e.g., Microsoft Out- look or Mozilla Thunderbird) to enable the user to write an e-mail message to the linked address. Figure 4.4 demonstrates this type of anchor. Lines 15–17 contain an e-mail link. The form of an e-mail anchor is <a href = "mailto:_emailAddress_">…</a>. In this case, we link to the e-mail address deitel@deitel.com.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -254,7 +254,7 @@ attributes. If these attributes are omitted, the browser uses the image’s actu
 
 > _Entering new dimensions for an image that change its inherent width-to-height ratio distorts the appearance of the image. For example, if your image is 200 pixels wide and 100 pixels high, you should ensure that any new dimensions have a 2:1 width-to-height ratio._ 4.4
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -268,7 +268,7 @@ attributes. If these attributes are omitted, the browser uses the image’s actu
 
 **Fig. 4.5** | Images in XHTML files. (Part 1 of 2.)
 
-```js
+```bash
 <body>
 <p>
 <img src = "cpphtp6.jpg" width = "92" height = "120" alt = "C++ How to Program book cover" />
@@ -291,7 +291,7 @@ Some XHTML elements (called **empty elements**) contain only attributes and do n
 **_Using Images as Hyperlinks_**
 By using images as hyperlinks, web developers can create graphical web pages that link to other resources. In Fig. 4.6, we create six different image hyperlinks.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -353,7 +353,7 @@ which uses the character entity reference **&lt;** for the less-than symbol (<).
 
 Lines 24–25 contain other special characters, which can be expressed as either char- acter entity references (coded using word abbreviations such as &amp; for ampersand and &copy; for copyright) or **numeric character references**—decimal or **hexadecimal** (**hex**) values representing special characters. For example, the & character is represented in dec- imal and hexadecimal notation as &#38; and &#x26;, respectively. Hexadecimal numbers are base 16 numbers—digits in a hexadecimal number have values from 0 to 15 (a total of 16 different values). The letters A–F represent the hexadecimal digits corresponding to decimal values 10–15. Thus in hexadecimal notation we can have numbers like 876 con- sisting solely of decimal-like digits, numbers like DA19F consisting of digits and letters, and numbers like DCB consisting solely of letters. We discuss hexadecimal numbers in detail in Appendix E, Number Systems.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -405,7 +405,7 @@ In addition to special characters, this document introduces a **horizontal rule*
 
 Up to this point, we have presented basic XHTML elements and attributes for linking to resources, creating headings, using special characters and incorporating images. In this sec- tion, we discuss how to organize information on a web page using lists. In the next section, we introduce another feature for organizing information, called a table. Figure 4.8 displays text in an **unordered list** (i.e., a list that does not order its items by letter or number). The unordered list element **ul** creates a list in which each item begins with a bullet symbol (called a disc). Each entry in an unordered list (element ul in line 17) is an **li** (**list item**) element (lines 19–22). Most web browsers render each li element on a new line with a bullet symbol indented from the beginning of the line.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -442,7 +442,7 @@ Lists may be nested to represent hierarchical relationships, as in an outline fo
 
 A web browser indents each nested list to indicate a hierarchical relationship. The first ordered list begins at line 30. Items in an ordered list are enumerated one, two, three and so on. Nested ordered lists are enumerated in the same manner. The items in the outer- most unordered list (line 16) are preceded by discs. List items nested inside the unordered list of line 16 are preceded by circular bullets. Although not demonstrated in this example, subsequent nested list items are preceded by square bullets.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -515,7 +515,7 @@ Tables are defined with the **table** element (lines 15–62). Lines 15–17 spe
 
 As its name implies, attribute **summary** (lines 16–17) describes the table’s contents. Speech devices use this attribute to make the table more accessible to users with visual impairments. The **caption** element (line 21) describes the table’s content and helps text-
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -600,7 +600,7 @@ Figure 4.10 explored a basic table’s structure. Figure 4.11 presents another t
 
 The table begins in line 15. Table cells are sized to fit the data they contain. Docu- ment authors can create larger data cells using the attributes **rowspan** and **colspan**. The values assigned to these attributes specify the number of rows or columns occupied by a cell. The th element at lines 23–26 uses the attribute rowspan = "2" to allow the cell con- taining the picture of the camel to use two vertically adjacent cells (thus the cell _spans_ two rows). The th element in lines 29–32 uses the attribute colspan = "4" to widen the header cell (containing Camelid comparison and Approximate as of 6/2007) to span four cells.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -677,7 +677,7 @@ Forms can contain visual and nonvisual components. Visual components include cli
 
 Attribute **method** (line 21) specifies how the form’s data is sent to the web server. Using method = "**post**" appends form data to the browser request, which contains the pro- tocol (HTTP) and the requested resource’s URL. This method of passing data to the server is transparent—the user doesn’t see the data after the form is submitted. The other pos- sible value, method = "**get**", appends the form data directly to the end of the URL of the script, where it is visible in the browser’s **Address** field. The _post_ and _get_ methods for sending form data are discussed in detail in Chapter 21, Web Servers (IIS and Apache).
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -755,7 +755,7 @@ The three input elements in lines 25–30 have the type attribute hidden, which 
 **_Additional Form Elements_**
 In the previous example, you saw basic elements of XHTML forms. Now that you know the general structure of a form, we introduce elements and attributes for creating more complex forms. Figure 4.13 contains a form that solicits user feedback about a website.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -773,7 +773,7 @@ In the previous example, you saw basic elements of XHTML forms. Now that you kno
 
 **Fig. 4.13** | Form using a variety of components. (Part 1 of 4.)
 
-```js
+```bash
 <p>Please fill out this form to help
 us improve our site.</p>
 
@@ -830,7 +830,7 @@ value = "Code" /></label>
 
 **Fig. 4.13** | Form using a variety of components. (Part 2 of 4.)
 
-```js
+```bash
 <!-- and checkboxes is that only one radio button -->
 <!-- in a group can be selected. -->
 <p>
@@ -915,7 +915,7 @@ Earlier in the chapter, we discussed how to hyperlink one web page to another. F
 
 Line 14 contains a tag with the id attribute (set to "features") for an internal hyper- link. To link to a tag with this attribute inside the same web page, the href attribute of an anchor element includes the id attribute value preceded by a pound sign (as in #features). Line 56 contains a hyperlink with the id features as its target. Selecting this hyperlink in a web browser scrolls the browser window to the h1 tag in line 14. Note that you may have to resize your browser to a small window and scroll down before clicking the link to see the browser scroll to the h1 element.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -927,7 +927,7 @@ Line 14 contains a tag with the id attribute (set to "features") for an internal
 
 **Fig. 4.14** | Internal hyperlinks to make pages more navigable. (Part 1 of 3.)
 
-```js
+```bash
 <head>
 <title>Internal Links</title>
 </head>
@@ -984,7 +984,7 @@ around the world.</li>
 
 **Fig. 4.14** | Internal hyperlinks to make pages more navigable. (Part 2 of 3.)
 
-```js
+```bash
 <li>Roman Tic</li>
 </ol>
 </body>
@@ -1011,7 +1011,7 @@ Search engines help people find websites. They usually catalog sites by followin
 
 Two important attributes of the meta element are **name**, which identifies the type of meta element, and **content**, which provides the information search engines use to catalog pages. Figure 4.15 introduces the meta element.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -1044,7 +1044,7 @@ XML’s strict syntax to ensure well-formedness. Soon you
 
 **Fig. 4.15** | meta elements provide keywords and a description of a page. (Part 1 of 2.)
 
-```js
+```bash
 will know about many of the great features of
 <em>XHTML.</em></p>
 
