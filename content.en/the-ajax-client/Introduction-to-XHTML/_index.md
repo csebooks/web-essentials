@@ -53,18 +53,20 @@ Lines 1–3 are required in XHTML documents to conform with proper XHTML syntax.
 
 Lines 5–6 are **XHTML comments**. XHTML document creators insert comments to improve markup readability and describe the content of a document. Comments also help other people read and understand an XHTML document’s markup and content. Com- ments do not cause the browser to perform any action when the user loads the XHTML document into the web browser to view it. XHTML comments always start with <!-- and end with -->. Each of our XHTML examples includes comments that specify the figure number and filename and provide a brief description of the example’s purpose. Subse- quent examples include comments in the markup, especially to highlight new features.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <!-- Fig. 4.1: main.html -->
 <!-- First XHTML example. -->
-<html xmlns = "http://www.w3.org/1999/xhtml"> **8** <head> **9** <title>Welcome</title>
- </head>
- <body>
- <p>Welcome to XHTML!</p>
- </body>
- </html>
+<html xmlns = "http://www.w3.org/1999/xhtml"> 
+<head>
+<title>Welcome</title>
+</head>
+<body>
+<p>Welcome to XHTML!</p>
+</body>
+</html>
 ```
 
 **Fig. 4.1** | First XHTML example.
