@@ -74,7 +74,7 @@ Consider a script (Fig. 9.2) that uses a function square to calculate the square
 
 The for statement in lines 15–17 outputs XHTML that displays the results of squaring the integers from 1 to 10. Each iteration of the loop calculates the square of the current value of control variable x and outputs the result by writing a line in the XHTML document. Function square is invoked, or called, in line 17 with the expression square(x). When program control reaches this expression, the program calls function square (defined in lines 23–26). The parentheses () represent the **function-call operator**, which has high precedence. At this point, the program makes a copy of the value of x (the argument) and program control transfers to the first line of function square. Function square receives the copy of the value of x and stores it in the parameter y. Then square calculates y \* y. The result is passed back (returned) to the point in line 17 where square was invoked. Lines 16–17 concatenate "The square of ", the value of x, the string " is ",
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -187,7 +187,7 @@ Note the implementation of the function maximum (lines 28–31). The first line 
 
 object’s max method. First, method Math.max is invoked with the values of variables y and z to determine the larger of the two values. Next, the value of variable x and the result of the first call to Math.max are passed to method Math.max. Finally, the result of the second call to Math.max is returned to the point at which maximum was invoked (i.e., line 20). Note
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -254,7 +254,7 @@ Math.floor( 1 + Math.random() \* 6 )
 
 First, the preceding expression multiplies the result of a call to Math.random() by 6 to pro- duce a number in the range 0.0 up to, but not including, 6.0. This is called scaling the range of the random numbers. Next, we add 1 to the result to shift the range of numbers to produce a number in the range 1.0 up to, but not including, 7.0. Finally, we use method **Math.floor** to _round_ the result down to the closest integer not greater than the argument’s value—for example, 1.75 is rounded to 1. Figure 9.4 confirms that the results are in the range 1 to 6.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -291,7 +291,7 @@ document.writeln( "</tr></table>" );
 
 **Fig. 9.4** | Random integers, shifting and scaling. (Part 1 of 2.)
 
-```js
+```bash
 // -->
 </script>
 </head>
@@ -305,7 +305,7 @@ document.writeln( "</tr></table>" );
 
 To show that these numbers occur with approximately equal likelihood, let us simu- late 6000 rolls of a die with the program in Fig. 9.5. Each integer from 1 to 6 should appear approximately 1000 times. Use your browser’s **Refresh** (or **Reload**) button to exe- cute the script again.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -317,7 +317,7 @@ To show that these numbers occur with approximately equal likelihood, let us sim
 
 **Fig. 9.5** | Rolling a six-sided die 6000 times. (Part 1 of 3.)
 
-```js
+```bash
 <head>
 <title>Roll a Six-Sided Die 6000 Times</title>
 <script type = "text/javascript">
@@ -375,7 +375,7 @@ document.writeln( "<tr><td>5</td><td>" + frequency5 +
 
 **Fig. 9.5** | Rolling a six-sided die 6000 times. (Part 2 of 3.)
 
-```js
+```bash
 document.writeln( "<tr><td>6</td><td>" + frequency6 +
 "</td></tr></tbody></table>" );
 // -->
@@ -422,7 +422,7 @@ Until now, all user interactions with scripts have been through either a prompt 
 
 More frequently, multiple inputs are received from the user at once via an XHTML form (such as one in which the user enters name and address information) or to display many pieces of data at once (e.g., the values of the dice, the sum of the dice and the point in this example). To begin our introduction to more elaborate user interfaces, this program uses an XHTML form (discussed in Chapter 4) and a new graphical user interface con- cept—GUI **event handling**. This is our first example in which the JavaScript executes in response to the user’s interaction with a GUI component in an XHTML form. This inter- action causes an event. Scripts are often used to respond to events.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -464,7 +464,7 @@ if ( firstRoll ) // first roll of the dice
 
 **Fig. 9.6** | Craps game simulation. (Part 1 of 4.)
 
-```js
+```bash
 sumOfDice = rollDice();
 
 switch ( sumOfDice )
@@ -522,7 +522,7 @@ var workSum;
 
 **Fig. 9.6** | Craps game simulation. (Part 2 of 4.)
 
-```js
+```bash
 die1 = Math.floor( 1 + Math.random() \* 6 );
 die2 = Math.floor( 1 + Math.random() \* 6 );
 workSum = die1 + die2;
@@ -651,7 +651,7 @@ Lines 12–13 randomly select an image to display on a web page. This docu-
 
 ment.write statement creates an image tag in the web page with the src attribute set to a random integer from 1 to 7, concatenated with ".gif". Thus, the script dynamically sets the source of the image tag to the name of one of the image files in the current directory.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -690,7 +690,7 @@ Identifiers declared inside a function have **function** (or **local**) **scope*
 
 The script in Fig. 9.8 demonstrates the **scope rules** that resolve conflicts between global variables and local variables of the same name. This example also demonstrates the **onload event** (line 52), which calls an event handler (start) when the <body> of the XHTML document is completely loaded into the browser window.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -730,7 +730,7 @@ x + " a fter entering functionA" );
 
 **Fig. 9.8** | Scoping example. (Part 1 of 2.)
 
-```js
+```bash
 ++x;
 document.writeln( "<br />local x in functionA is " +
 x + " before exiting functionA" + "</p>" );
@@ -818,7 +818,7 @@ Function factorial (lines 22–28) receives as its argument the value for which 
 
 **Fig. 9.10** | Recursive evaluation of 5!.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -851,7 +851,7 @@ return number \* factorial( number - 1 );
 
 **Fig. 9.11** | Factorial calculation with a recursive function. (Part 1 of 2.)
 
-```js
+```bash
 // -->
 </script>
 </head><body></body>
