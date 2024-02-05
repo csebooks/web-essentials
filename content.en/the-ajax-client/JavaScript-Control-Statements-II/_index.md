@@ -39,7 +39,7 @@ var counter; // declare counter counter = 1; // initialize counter to 1
 
 Lines 16–18 in the while statement write a paragraph element consisting of the string “XHTML font size” concatenated with the control variable counter’s value, which repre-
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -106,7 +106,7 @@ The **for repetition statement** handles all the details of counter-controlled r
 
 When the for statement begins executing (line 15), the control variable counter is declared and is initialized to 1 (i.e., the first statement of the for statement declares the control variable’s _name_ and provides the control variable’s _initial value_). Next, the loop-
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -253,7 +253,7 @@ for ( var j = 99; j >= 0; j -= 11 )
 
 The next two scripts demonstrate the for repetition statement. Figure 8.5 uses the for statement to sum the even integers from 2 to 100. Note that the increment expression adds 2 to the control variable number after the body executes during each iteration of the loop. The loop terminates when number has the value 102 (which is not added to the sum).
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -270,7 +270,7 @@ var sum = 0;
 
 **Fig. 8.5** | Summation with the for repetition structure. (Part 1 of 2.)
 
-```js
+```bash
 
 for ( var number = 2; number <= 100; number += 2 )
 sum += number;
@@ -315,7 +315,7 @@ This problem involves a loop that performs the indicated calculation for each of
 
 Lines 16–18 declare three variables and initialize principal to 1000.0 and rate to .05. Lines 20–21 write an XHTML <table> tag, and lines 22–23 write the caption that summarizes the table’s content. Lines 24–25 create the table’s header section (<thead>), a
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -399,7 +399,7 @@ Lines 18–19 prompt the user to enter a 1 to display a numbered list, a 2 to di
 
 The switch statement consists of a series of **case labels** and an optional **default case**. When the flow of control reaches the switch statement, the script evaluates the **control- ling expression** (choice in this example) in the parentheses following keyword switch. The value of this expression is compared with the value in each of the case labels*,* starting with the first case label. Assume that the user entered 2. Remember that the value typed
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -410,7 +410,7 @@ The switch statement consists of a series of **case labels** and an optional **d
 
 **Fig. 8.7** | Using the switch multiple-selection statement. (Part 1 of 4.)
 
-```js
+```bash
 <html xmlns = "http://www.w3.org/1999/xhtml">
 <head>
 <title>Switching between XHTML List Formats</title>
@@ -532,7 +532,7 @@ The script in Fig. 8.9 uses a do…while statement to display each of the six di
 
 The do…while flowchart in Fig. 8.10 makes it clear that the loop-continuation test does not occur until the action executes at least once.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -569,7 +569,7 @@ The **break** and **continue statements** alter the flow of control. The break s
 
 During each iteration of the for statement in lines 14–20, the script writes the value of count in the XHTML document. When the if statement in line 16 detects that count
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -623,7 +623,7 @@ Figure 8.12 uses continue in a for statement to skip the document.writeln state-
 
 > _There is a tension between achieving quality software engineering and achieving the best- performing software. Often, one of these goals is achieved at the expense of the other. For all but the most performance-intensive situations, the following rule of thumb should be followed: First make your code simple, readable and correct; then make it fast and small, but only if necessary._ 8.3
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -662,7 +662,7 @@ The break statement can break out of an immediately enclosing while, for, do…w
 
 **statement**. This statement, when executed in a while, for, do…while or switch state- ment, causes immediate exit from that statement and any number of enclosing repetition statements; program execution resumes with the first statement after the enclosing **labeled statement** (a statement preceded by a label). The labeled statement can be a block (a set of statements enclosed in curly braces, {}). Labeled break statements commonly are used to terminate nested looping structures containing while, for, do…while or switch state- ments. Figure 8.13 demonstrates the labeled break statement in a nested for statement.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -704,7 +704,7 @@ The labeled block (lines 12–28) begins with a **label** (an identifier followe
 
 The continue statement proceeds with the next iteration (repetition) of the immedi- ately enclosing while, for or do…while statement. The **labeled continue statement**, when executed in a repetition statement (while, for or do…while), skips the remaining statements in the structure’s body and any number of enclosing repetition statements, then proceeds with the next iteration of the enclosing **labeled repetition statement** (a rep- etition statement preceded by a label). In labeled while and do…while statements, the loop-continuation test evaluates immediately after the continue statement executes. In a labeled for statement, the increment expression executes, then the loop-continuation test evaluates. Figure 8.14 uses the labeled continue statement in a nested for statement to cause execution to continue with the next iteration of the outer for statement.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -820,7 +820,7 @@ true false
 
 **Fig. 8.17** | Truth table for operator ! (logical negation).
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
