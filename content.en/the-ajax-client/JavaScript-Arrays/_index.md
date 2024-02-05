@@ -96,7 +96,7 @@ This section presents several examples of creating and manipulating arrays.
 
 Line 17 creates Array n1 as an array of five elements. Line 18 creates Array n2 as an empty array. Lines 21–22 use a for statement to initialize the elements of n1 to their sub-
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -148,7 +148,7 @@ document.writeln( "</tbody></table>" );
 
 **Fig. 10.3** | Initializing the elements of an array. (Part 1 of 2.)
 
-```js
+```bash
 </script>
 </head><body></body>
 </html>
@@ -198,7 +198,7 @@ The script in Fig. 10.5 sums the values contained in theArray, the 10-element in
 
 In this example, we introduce JavaScript’s **for…in statement**, which enables a script to perform a task for each element in an array (or, as we will see in Chapters 12–13, for each element in a collection). This process is also known as **iterating over the elements of an array**. Lines 25-26 show the syntax of a for…in statement. Inside the parentheses, we declare the element variable used to select each element in the object to the right of key-
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -250,7 +250,7 @@ document.writeln( "</tbody></table>" );
 
 **Fig. 10.4** | Declaring and initializing arrays. (Part 2 of 2.)
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -269,7 +269,7 @@ var total1 = 0, total2 = 0;
 
 **Fig. 10.5** | Summing elements of an array. (Part 1 of 2.)
 
-```js
+```bash
 // iterates through the elements of the array in order and adds
 // each element's value to total1
 for ( var i = 0; i < theArray.length; i++ )
@@ -300,7 +300,7 @@ word in (theArray in this case). When using for…in, JavaScript automatically d
 **_Using the Elements of an Array as Counters_**
 In Chapter 9, we indicated that there is a more elegant way to implement the dice-rolling program in Fig. 9.5. The program rolled a single six-sided die 6000 times and used a switch statement to total the number of times each value was rolled. An array version of this script is shown in Fig. 10.6. The switch statement in Fig. 9.5 is replaced by line 24 of this program. This line uses the random face value as the subscript for the array frequency to determine which element to increment during each iteration of the loop. Be- cause the random number calculation in line 23 produces numbers from 1 to 6 (the values for a six-sided die), the frequency array must be large enough to allow subscript values of 1 to 6. The smallest number of elements required for an array to have these subscript values is seven elements (subscript values from 0 to 6). In this program, we ignore element 0 of array frequency and use only the elements that correspond to values on the sides of a die. Also, lines 32–34 of this program use a loop to generate the table that was written one line at a time in Fig. 9.5. Because we can loop through array frequency to help produce the output, we do not have to enumerate each XHTML table row as we did in Fig. 9.5.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -354,7 +354,7 @@ document.writeln( "</tbody></table>" );
 
 In Chapter 9, we created a random image generator that required image files to be named 1.gif, 2.gif, …, 7.gif. In this example (Fig. 10.7), we create a more elegant random im- age generator that does not require the image filenames to be integers. This version of the random image generator uses an array pictures to store the names of the image files as strings. The script generates a random integer and uses it as a subscript into the pictures array. The script outputs an XHTML img element whose src attribute contains the image filename located in the randomly selected position in the pictures array.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -380,7 +380,7 @@ var pictures =
 
 **Fig. 10.7** | Random image generation using arrays. (Part 1 of 2.)
 
-```js
+```bash
 document.write ( "<img src = \\"" +
 pictures\[ Math.floor( Math.random() \* 7 ) \] + ".gif\\" />" );
 // -->
@@ -436,7 +436,7 @@ passes array hourlyTemperatures to function modifyArray. As stated in Section 10
 
 Although entire arrays are passed by reference, _individual numeric and boolean array elements_ are passed _by value_ exactly as simple numeric and boolean variables are passed (the objects referred to by individual elements of an Array of objects are still passed by refer- ence). Such simple single pieces of data are called **scalars**, or **scalar quantities**_._ To pass an array element to a function, use the subscripted name of the element as an argument in the function call.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -494,7 +494,7 @@ document.writeln( "<br />value in modifyElement: " + e );
 
 **Fig. 10.8** | Passing arrays and individual array elements to functions. (Part 1 of 2.)
 
-```js
+```bash
 **54** </head><body></body>
 **55** </html>
 ```
@@ -523,7 +523,7 @@ Sorting data (putting data in a particular order, such as ascending or descendin
 
 The Array object in JavaScript has a built-in method **sort** for sorting arrays. Figure 10.9 demonstrates the Array object’s sort method.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -552,7 +552,7 @@ theArray.join( " " ) + "</p>" );
 
 **Fig. 10.9** | Sorting an array with sort. (Part 1 of 2.)
 
-```js
+```bash
 
 // comparison function for use with sort
 function compareIntegers( value1, value2 )
@@ -594,7 +594,7 @@ Often, a programmer will be working with large amounts of data stored in arrays.
 **_Searching an Array with Linear Search_**
 The script in Fig. 10.10 performs a **linear search** on an array. Function linearSearch (de- fined in lines 42–50) uses a for statement containing an if statement to compare each element of an array with a search key (lines 45–47). If the search key is found, the function returns the subscript value (line 47) of the element to indicate the exact position of the search key in the array. \[_Note:_ The loop (lines 45–47) in the linearSearch function ter- minates, and the function returns control to the caller as soon as the return statement in its body executes.\] If the search key is not found, the function returns a value of –1. The function returns the value –1 because it is not a valid subscript number.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -631,7 +631,7 @@ var searchKey = inputVal.value;
 
 **Fig. 10.10** | Linear search of an array. (Part 1 of 2.)
 
-```js
+```bash
 var element = linearSearch( a, parseInt( searchKey ) );
 
 if ( element != -1 )
@@ -686,7 +686,7 @@ Figure 10.11 presents the iterative version of function binarySearch (lines 40�
 
 receives two arguments—an array called theArray (the array to search) and key (the search key). The array is passed to binarySearch even though the array is a global variable. Once again, we do this because an array is normally passed to a function for searching. If key matches the middle element of a subarray (line 55), middle (the subscript of the current element) is returned, to indicate that the value was found and the search is complete. If key does not match the middle element of a subarray, the low subscript or the high sub- script (both declared in the function) is adjusted, so that a smaller subarray can be searched. If key is less than the middle element (line 57), the high subscript is set to middle - 1 and the search is continued on the elements from low to middle - 1. If key is greater than the middle element (line 59), the low subscript is set to middle + 1 and the search is continued on the elements from middle + 1 to high. These comparisons are per- formed by the nested if…else statement in lines 55–60.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -728,7 +728,7 @@ result.value += "\\nValue not found";
 
 **Fig. 10.11** | Binary search of an array. (Part 1 of 3.)
 
-```js
+```bash
 // binary search function
 function binarySearch( theArray, key )
 {
@@ -783,7 +783,7 @@ result.value += "\\n";
 
 **Fig. 10.11** | Binary search of an array. (Part 2 of 3.)
 
-```js
+```bash
 <body>
 <form action = "">
 <p>Enter integer search key<br />
@@ -843,7 +843,7 @@ The preceding code creates a two-dimensional array with two rows. Row 0 has five
 **_Two-Dimensional Array Example: Displaying Element Values_**
 Figure 10.13 initializes two-dimensional arrays in declarations and uses nested for…in loops to **traverse the arrays** (i.e., manipulate every element of the array).
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -855,7 +855,7 @@ Figure 10.13 initializes two-dimensional arrays in declarations and uses nested 
 
 **Fig. 10.13** | Initializing multidimensional arrays. (Part 1 of 2.)
 
-```js
+```bash
 <head>
 <title>Initializing Multidimensional Arrays</title>
 <script type = "text/javascript">
@@ -963,7 +963,7 @@ and reset buttons to the page. We now examine the script used to check the answe
 
 An XHTML form’s elements can be accessed individually using getElementById or through the **elements property** of the containing form object. The elements property
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
