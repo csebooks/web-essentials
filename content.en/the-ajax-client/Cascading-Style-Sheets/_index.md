@@ -45,7 +45,7 @@ You can declare document styles in several ways. This section presents **inline 
 
 The first inline style declaration appears in line 17. Attribute style specifies an ele- ment’s style. Each **CSS property** (**font-size** in this case) is followed by a colon and a value. In line 17, we declare this particular p element to use 20-point font size.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -84,7 +84,7 @@ Line 21 specifies the two properties, font-size and **color**, separated by a se
 
 A second technique for using style sheets is **embedded style sheets**. Embedded style sheets enable a you to embed an entire CSS document in an XHTML document’s head section. To achieve this separation between the CSS code and the XHTML that it styles, we will use **CSS selectors**. Figure 5.2 creates an embedded style sheet containing four styles.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -109,7 +109,7 @@ font-family: arial, sans-serif }
 
 **Fig. 5.2** | Embedded style sheets. (Part 1 of 2.)
 
-```js
+```bash
 <body>
 <!-- this class attribute applies the .special style -->
 <h1 class = "special">Deitel &amp; Associates, Inc.</h1>
@@ -179,7 +179,7 @@ Figure 5.2 presented an example of **inheritance** in which a child em element i
 
 Line 12 applies property text-decoration to all a elements whose class attribute is set to nodec. The text-decoration property applies **decorations** to text in an element. By default, browsers underline the text of an a (anchor) element. Here, we set the text-dec- oration property to none to indicate that the browser should not underline hyperlinks. Other possible values for text-decoration include overline, line-through, underline and blink. \[_Note:_ blink is not supported by Internet Explorer.\] The .nodec appended to a is a more specific class selector; this style will apply only to a (anchor) elements that specify nodec in their class attribute.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -264,14 +264,14 @@ Style sheets are a convenient way to create a document with a uniform theme. Wit
 
 Figure 5.4 presents an external style sheet. Lines 1–2 are **CSS comments**. Like XHTML comments, CSS comments describe the content of a CSS document. Comments may be placed in any type of CSS code (i.e., inline styles, embedded style sheets and external style sheets) and always start with /\* and end with \*/. Text between these delim- iters is ignored by the browser.
 
-```js
+```bash
 /\* Fig. 5.4: styles.css \*/
 /\* External stylesheet \*/
 ```
 
 **Fig. 5.4** | External style sheet. (Part 1 of 2.)
 
-```js
+```bash
 body { font-family: arial, helvetica, sans-serif }
 
 a.nodec { text-decoration: none }
@@ -291,7 +291,7 @@ ul ul { font-size: .8em; }
 
 Figure 5.5 contains an XHTML document that references the external style sheet in Fig. 5.4. Lines 10–11 (Fig. 5.5) show a **link** element that uses the **rel** attribute to specify a **relationship** between the current document and another document. In this case, we declare the linked document to be a **stylesheet** for this document. The type attribute specifies the MIME type of the related document as text/css. The href attribute pro- vides the URL for the document containing the style sheet. In this case, styles.css is in the same directory as external.html.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -322,7 +322,7 @@ Figure 5.5 contains an XHTML document that references the external style sheet i
 
 **Fig. 5.5** | Linking an external style sheet. (Part 1 of 2.)
 
-```js
+```bash
 <li>Pizza <em>with mushrooms</em></li>
 </ul>
 
@@ -348,7 +348,7 @@ Grocery store</a>
 
 Before CSS, controlling the positioning of elements in an XHTML document was diffi- cult—the browser determined positioning. CSS introduced the **position** property and a capability called **absolute positioning**, which gives authors greater control over how doc- ument elements are displayed. Figure 5.6 demonstrates absolute positioning.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -399,7 +399,7 @@ values. In this example, i.gif has the lowest z-index (1), so it displays in the
 
 Absolute positioning is not the only way to specify page layout. Figure 5.7 demon- strates **relative positioning**, in which elements are positioned relative to other elements.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -413,7 +413,7 @@ Absolute positioning is not the only way to specify page layout. Figure 5.7 demo
 
 **Fig. 5.7** | Relative positioning of elements. (Part 1 of 2.)
 
-```js
+```bash
 <style type = "text/css">
 p { font-size: 1.3em;
 font-family: verdana, arial, sans-serif }
@@ -463,7 +463,7 @@ Element span is a **grouping element**—it does not apply any inherent formatti
 
 CSS provides control over the background of block-level elements. CSS can set a back- ground color or add background images to XHTML elements. Figure 5.8 adds a corporate logo to the bottom-right corner of the document. This logo stays fixed in the corner even when the user scrolls up or down the screen.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -490,7 +490,7 @@ font-family: arial, sans-serif; }
 
 **Fig. 5.8** | Adding background images and indentation. (Part 1 of 2.)
 
-```js
+```bash
 <body>
 <p>
 This example uses the background-image,
@@ -526,7 +526,7 @@ Another CSS property that formats text is the **font-style** property, which all
 
 In addition to positioning elements, CSS rules can specify the actual dimensions of each page element. Figure 5.9 demonstrates how to set the dimensions of elements.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -584,7 +584,7 @@ CSS controls the border using three properties: **border-width**, **border-color
 
 Property border-width may be set to any valid CSS length (e.g., em, ex, px, etc.) or to the predefined value of thin, medium or thick. The **border-color property** sets the color. \[_Note:_ This property has different meanings for different style borders.\] The border-style options are none, hidden, dotted, dashed, solid, double, groove, ridge, inset and outset. Borders groove and ridge have opposite effects, as do inset and outset. When border-style is set to none, no border is rendered.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -621,7 +621,7 @@ border-width: 4px }
 
 **Fig. 5.11** | Borders of block-level elements. (Part 1 of 2.)
 
-```js
+```bash
 <div class = "thin red solid">Thin Red Solid border</div><hr />
 <div class = "medium blue outset">Medium Blue Outset border</div>
 </body>
@@ -640,7 +640,7 @@ Block-level elements (such as divs) render with a line break before and after th
 
 Line 17 assigns a margin of .5em to all paragraph tags. The **margin property** sets the space between the outside of the border and all other content on the page. In line 21, we assign .2em of padding to the floated divs. The **padding property** determines the distance between the content inside an element and the inside of the element’s border. Margins for individual sides of an element can be specified (lines 22–23) by using the properties **margin-top**, **margin-right**, **margin-left** and **margin-bottom**. Padding can be specified in the same way, using **padding-top**, **padding-right**, **padding-left** and **padding-bottom**. To see the effects of margins and padding, try putting the margin and padding properties inside comments and observing the difference.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -711,7 +711,7 @@ In line 11, we begin a block of styles that applies to all media types, declared
 
 The styles we applied for all media types look nice on a screen but would not look good on a printed page. A colored background would use a lot of ink, and a black-and- white printer may print a page that’s hard to read because there isn’t enough contrast
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -781,7 +781,7 @@ We’ve already seen the :hover pseudoclass used to change a link’s style when
 
 and inline values display the element as a block element or an inline element, while none stops the element from being rendered. The code for the drop-down menu is shown in Fig. 5.14.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -819,7 +819,7 @@ div.menu a:hover { background-color: #dfeeff }
 
 **Fig. 5.14** | CSS drop-down menu. (Part 1 of 2.)
 
-```js
+```bash
 <a href = "#">Articles</a>
 <a href = "#">Blog</a>
 <a href = "#">Contact</a>
@@ -848,7 +848,7 @@ User style sheets are external style sheets. Figure 5.16 shows a user style shee
 
 User style sheets are not linked to a document; rather, they are set in the browser’s options. To add a user style sheet in IE7, select **Internet Options...**, located in the **Tools** menu. In the **Internet Options** dialog (Fig. 5.17) that appears, click **Accessibility...**, check the **Format documents using my style sheet** checkbox, and type the location of the user style sheet. Internet Explorer 7 applies the user style sheet to any document it loads. To add a user style sheet in Firefox, find your Firefox profile using the instructions at
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -896,7 +896,7 @@ In this example, if users define their own font-size in a user style sheet, the 
 
 may make pages difficult to read, especially for individuals with visual impairments. You can avoid this problem by using relative measurements (e.g., em or ex) instead of absolute measurements, such as pt. Figure 5.19 changes the font-size property to use a relative measurement (line 11) that does not override the user style set in Fig. 5.16. Instead, the font size displayed is relative to the one specified in the user style sheet. In this case, text enclosed in the <p> tag displays as 20pt, and <p> tags that have class note applied to them are displayed in 15pt (.75 times 20pt).
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -910,7 +910,7 @@ may make pages difficult to read, especially for individuals with visual impairm
 
 **Fig. 5.19** | em measurement for text size. (Part 1 of 2.)
 
-```js
+```bash
 <style type = "text/css">
 .note { font-size: .75em }
 </style>
