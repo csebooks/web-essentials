@@ -104,7 +104,7 @@ ajax/fig15_05/SwitchContent.html.
 **_Asynchronous Requests_**
 The function getContent (lines 19–35) sends the asynchronous request. Line 24 creates the XMLHttpRequest object, which manages the asynchronous request. We store the object in the global variable asyncRequest (declared at line 16) so that it can be accessed any- where in the script.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -139,7 +139,7 @@ asyncRequest.send( null ); // send the request
 
 **Fig. 15.5** | Asynchronously display content without reloading the page. (Part 1 of 3.)
 
-```js
+```bash
 catch ( exception )
 {
 alert( 'Request failed.' );
@@ -243,7 +243,7 @@ Figures 15.6 and 15.7 summarize some of the XMLHttpRequest object’s properties
 
 When passing structured data between the server and the client, Ajax applications often use XML because it is easy to generate and parse. When the XMLHttpRequest object re- ceives XML data, it parses and stores the data as an XML DOM object in the responseXML property. The example in Fig. 15.8 asynchronously requests from a server XML docu- ments containing URLs of book-cover images, then displays the images in an HTML ta- ble. The code that configures the asynchronous request is the same as in Fig. 15.5. You can test-drive this application at test.deitel.com/examples/iw3htp4/ajax/fig15_08/ PullImagesOntoPage.html (the book-cover images will be easier to see on the screen).
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -272,7 +272,7 @@ asyncRequest = new XMLHttpRequest(); // create request object
 
 **Fig. 15.8** | Image catalog that uses Ajax to request XML data asynchronously. (Part 1 of 4.)
 
-```js
+```bash
 // register event handler
 asyncRequest.onreadystatechange = processResponse;
 asyncRequest.open( 'GET', url, true ); // prepare the request
@@ -329,7 +329,7 @@ var imageCell = document.createElement( "td" );
 
 **Fig. 15.8** | Image catalog that uses Ajax to request XML data asynchronously. (Part 2 of 4.)
 
-```js
+```bash
 var imageTag = document.createElement( "img" );
 
 // set img element's src attribute
@@ -430,7 +430,7 @@ The previous examples in this chapter requested data from static files on the se
 
 Initially the address book loads a list of entries, each containing a first and last name (Fig. 15.9(a)). Each time the user clicks a name, the address book uses Ajax functionality to load the person’s address from the server and expand the entry _without reloading the page_ (Fig. 15.9(b))—and it does this _in parallel_ with allowing the user to click other names. The application allows the user to search the address book by typing a last name. As the user enters each keystroke, the application asynchronously displays the list of names in which the last name starts with the characters the user has entered so far (Fig. 15.9(c), Fig. 15.9 (d) and Fig. 15.9(e))—a popular feature called **type ahead**.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -450,7 +450,7 @@ var webServiceUrl = '/AddressBookWebService/AddressService.asmx';
 
 **Fig. 15.9** | Ajax-enabled address-book application. (Part 1 of 10.)
 
-```js
+```bash
 
 var phoneValid = false; // indicates if the telephone is valid
 var zipValid = false; //indicates if the zip code is valid
@@ -507,7 +507,7 @@ asyncRequest.send(); // send request
 
 **Fig. 15.9** | Ajax-enabled address-book application. (Part 2 of 10.)
 
-```js
+```bash
 catch ( exception )
 {
 alert ( 'Request Failed' );
@@ -565,7 +565,7 @@ var listBox = document.getElementById( 'Names' );
 
 **Fig. 15.9** | Ajax-enabled address-book application. (Part 3 of 10.)
 
-```js
+```bash
 listBox.innerHTML = ''; // clear the display box
 
 // if no search string is specified all the names are displayed
@@ -622,7 +622,7 @@ if ( asyncRequest.readyState == 4 && asyncRequest.status == 200 )
 
 **Fig. 15.9** | Ajax-enabled address-book application. (Part 4 of 10.)
 
-```js
+```bash
 // convert the JSON string to an object
 var data = asyncRequest.responseText.parseJSON();
 var name = entry.innerHTML // save the name string
@@ -679,7 +679,7 @@ if ( asyncRequest.readyState == 4 )
 
 **Fig. 15.9** | Ajax-enabled address-book application. (Part 5 of 10.)
 
-```js
+```bash
 if ( asyncRequest.status == 200 )
 {
 // convert the JSON string to an object
@@ -738,7 +738,7 @@ if ( data.ErrorText != "Valid Telephone Format" )
 
 **Fig. 15.9** | Ajax-enabled address-book application. (Part 6 of 10.)
 
-```js
+```bash
 phoneValid = false; // update validity tracker
 } // end if
 else
@@ -796,7 +796,7 @@ params = '[{"param": "first", "value": "' + first +
 
 **Fig. 15.9** | Ajax-enabled address-book application. (Part 7 of 10.)
 
-```js
+```bash
 
 // call the web service to insert data into the database
 callWebService( "addEntry", params, parseData );
@@ -868,7 +868,7 @@ Each of our web service’s methods in this example returns a JSON representatio
 
 Line 11 links the json.js script to the XHTML file so we can parse JSON data. When the XMLHttpRequest object receives the response, it calls function parseData (lines 75–84). Line 81 calls the string’s parseJSON function, which converts the JSON string into a JavaScript object. Then line 82 calls function displayNames (lines 87–106), which
 
-```js
+```bash
 [
   { first: "Cheryl", last: "Black" },
   { first: "James", last: "Blue" },
@@ -906,7 +906,7 @@ Developing web applications in general, and Ajax applications in particular, inv
 
 To install Dojo, download the Dojo version 0.4.3 from www.Dojotoolkit.org/down-loads to your hard drive. Extract the files from the archive file you downloaded to your web development directory or web server. Including the dojo.js script file in your web application will give you access to all the Dojo functions. To do this, place the following script in the head element of your XHTML document:
 
-```js
+```bash
 <script type = "text/javascript" src = "_path_/Dojo.js">
 ```
 
@@ -914,7 +914,7 @@ where _path_ is the relative or complete path to the Dojo toolkit’s files. Qui
 
 Figure 15.11 is a calendar application that uses Dojo to create the user interface, communicate with the server asynchronously, handle events and manipulate the DOM. The application contains a calendar control that shows the user six weeks of dates (see the screen captures in Fig. 15.11). Various arrow buttons allow the user to traverse the cal- endar. When the user selects a date, an asynchronous request obtains from the server a list of the scheduled events for that date. There is an **Edit** button next to each scheduled event. When the **Edit** button is clicked, the item is replaced by a text box with the item’s content, a **Save** button and a **Cancel** button. When the user presses **Save**, an asynchronous request saves the new value to the server and displays it on the page. This feature, often referred to as **edit-in-place**, is common in Ajax applications. You can test-drive this application at test.deitel.com/examples/iw3htp4/ajax/fig15_11/calendar.html.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -945,7 +945,7 @@ calendar, "onValueChanged", "retrieveItems" );
 
 **Fig. 15.11** | Calendar application built with Dojo. (Part 1 of 7.)
 
-```js
+```bash
 // location of CalendarService web service
 var webServiceUrl = "/CalendarService/CalendarService.asmx";
 
@@ -1002,7 +1002,7 @@ var items = data.parseJSON(); // parse server data
 
 **Fig. 15.11** | Calendar application built with Dojo. (Part 2 of 7.)
 
-```js
+```bash
 // check whether there are events;
 // if none then display message
 if ( items == "" )
@@ -1059,7 +1059,7 @@ alert( 'Could not retrieve the event' ); // display error
 
 **Fig. 15.11** | Calendar application built with Dojo. (Part 3 of 7.)
 
-```js
+```bash
 else
 {
 var item = data.parseJSON(); // parse the item
@@ -1117,7 +1117,7 @@ var descr = dojo.byId( 'edit' + id ).value;
 
 **Fig. 15.11** | Calendar application built with Dojo. (Part 4 of 7.)
 
-```js
+```bash
 
 // build parameter string and call the web service
 var params = '[{ "param":"id", "value":"' + id +
@@ -1175,7 +1175,7 @@ widgetID = "calendar"></div>
 
 **Fig. 15.11** | Calendar application built with Dojo. (Part 5 of 7.)
 
-```js
+```bash
 </body>
 </html>
 ```
