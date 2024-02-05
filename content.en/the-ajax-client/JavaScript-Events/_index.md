@@ -27,7 +27,7 @@ Functions that handle events are called **event handlers**. Assigning an event h
 
 In the earliest event-capable browsers, the inline model was the only way to handle events. Later, Netscape developed the traditional model and Internet Explorer adopted it. Since then, both Netscape and Microsoft have developed separate (incompatible)
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -104,7 +104,7 @@ The traditional model allows us to register event handlers in JavaScript code. T
 
 The onload event fires whenever an element finishes loading successfully (i.e., all its chil- dren are loaded). Frequently, this event is used in the body element to initiate a script after the page loads in the client’s browser. Figure 13.2 uses the onload event for this purpose. The script called by the onload event updates a timer that indicates how many seconds have elapsed since the document was loaded.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -162,7 +162,7 @@ The XHTML body has a table with a tbody containing one row that gives the user i
 
 The createCanvas function (lines 23–41) fills in the table with a grid of cells. The CSS rule in lines 14–15 sets the width and height of every td element to 4px. Line 11
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -209,7 +209,7 @@ tbody.appendChild( row );
 
 **Fig. 13.3** | Simple drawing program. (Part 1 of 3.)
 
-```js
+```bash
 // processes the onmousemove event
 function processMouseMove( e )
 {
@@ -288,7 +288,7 @@ cussed more advanced event handling using the event object to get information ab
 
 Two more events fired by mouse movements are onmouseover and onmouseout. When the mouse cursor moves into an element, an **onmouseover event** occurs for that element. When the cursor leaves the element, an **onmouseout event** occurs. Figure 13.5 uses these events to achieve a **rollover effect** that updates text when the mouse cursor moves over it. We also introduce a technique for creating rollover images.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -297,7 +297,7 @@ Two more events fired by mouse movements are onmouseover and onmouseout. When th
 
 **Fig. 13.5** | Events onmouseover and onmouseout. (Part 1 of 5.)
 
-```js
+```bash
 <!-- Fig. 13.5: onmouseoverout.html -->
 <!-- Events onmouseover and onmouseout. -->
 <html xmlns = "http://www.w3.org/1999/xhtml">
@@ -355,7 +355,7 @@ return;
 
 **Fig. 13.5** | Events onmouseover and onmouseout. (Part 2 of 5.)
 
-```js
+```bash
 
 // if an element's id is defined, assign id to innerHTML
 // to display the color name
@@ -411,7 +411,7 @@ cell will display the color name.</p>
 
 **Fig. 13.5** | Events onmouseover and onmouseout. (Part 3 of 5.)
 
-```js
+```bash
 </table>
 </body>
 </html>
@@ -439,7 +439,7 @@ The script handles the onmouseover event for the table cells in lines 41–42. T
 
 The onfocus and onblur events are particularly useful when dealing with form elements that allow user input (Fig. 13.6). The onfocus event fires when an element gains focus (i.e., when the user clicks a form field or uses the _Tab_ key to move between form elements), and onblur fires when an element loses focus, which occurs when another control gains the focus. In lines 31–32, the script changes the text inside the div below the form (line 58) based on the messageNum passed to function helpText (lines 29–33). Each of the ele- ments of the form, such as the name input in lines 40–41, passes a different value to the helpText function when it gains focus (and its onfocus event fires). These values are used as indices for helpArray, which is declared and initialized in lines 17–27 and stores help messages. When elements lose focus, they all pass the value 6 to helpText to clear the tip div (note that the empty string "" is stored in the last element of the array).
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -497,7 +497,7 @@ onfocus = "helpText(3)" onblur = "helpText(6)"></textarea>
 
 **Fig. 13.6** | Demonstrating the onfocus and onblur events. (Part 1 of 2.)
 
-```js
+```bash
 <input type = "reset" value = "Reset" onfocus =
 "helpText(5)" onblur = "helpText(6)" />
 </div>
@@ -513,7 +513,7 @@ onfocus = "helpText(3)" onblur = "helpText(6)"></textarea>
 
 Two more useful events for processing forms are onsubmit and onreset. These events fire when a form is submitted or reset, respectively (Fig. 13.7). Function registerEvents (lines 35–46) registers the event handlers for the form after the body has loaded.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -564,7 +564,7 @@ return confirm( "Are you sure you want to reset?" );
 
 **Fig. 13.7** | Demonstrating the onsubmit and onreset events. (Part 1 of 2.)
 
-```js
+```bash
 // -->
 </script>
 </head>
@@ -608,7 +608,7 @@ Our event handlers for the form’s onsubmit and onreset events simply return th
 
 **Event bubbling** is the process by which events fired in child elements “bubble” up to their parent elements. When an event is fired on an element, it is first delivered to the element’s event handler (if any), then to the parent element’s event handler (if any). This might re- sult in event handling that was not intended. If you intend to handle an event in a child element alone, you should cancel the bubbling of the event in the child element’s event- handling code by using the **cancelBubble property** of the event object, as shown in Fig. 13.8.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -624,7 +624,7 @@ Our event handlers for the form’s onsubmit and onreset events simply return th
 
 **Fig. 13.8** | Canceling event bubbling. (Part 1 of 3.)
 
-```js
+```bash
 function documentClick()
 {
 alert( "You clicked in the document." );
