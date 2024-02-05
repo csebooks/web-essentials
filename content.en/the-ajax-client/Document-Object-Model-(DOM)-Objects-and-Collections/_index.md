@@ -41,7 +41,7 @@ The XHTML document contains a few simple elements. We explain the example based 
 
 The **HEAD** and **BODY** nodes are siblings, since they are both children of the **HTML** node. The **HEAD** contains two **#comment** nodes, representing lines 5–6. The **TITLE** node
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -92,7 +92,7 @@ attribute, which is also displayed at the beginning of the element in square bra
 
 A div element (lines 133–162) contains the remainder of the XHTML body. Line 134 begins a form element, assigning the empty string to the required action attribute (because we’re not submitting to a server) and returning false to the onsubmit attribute. When a form’s onsubmit handler returns false, the navigation to the address specified in the action attribute is aborted. This allows us to modify the page using JavaScript event handlers without reloading the original, unmodified XHTML.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -129,7 +129,7 @@ function byId()
 
 **Fig. 12.2** | Basic DOM functionality. (Part 1 of 8.)
 
-```js
+```bash
 var id = document.getElementById( "gbi" ).value;
 var target = document.getElementById( id );
 
@@ -186,7 +186,7 @@ var target = currentNode.parentNode;
 
 **Fig. 12.2** | Basic DOM functionality. (Part 2 of 8.)
 
-```js
+```bash
 if ( target != document.body )
 switchTo( target );
 else
@@ -244,7 +244,7 @@ value = "bigheading" /></td>
 
 **Fig. 12.2** | Basic DOM functionality. (Part 3 of 8.)
 
-```js
+```bash
 <td><input type = "submit" value = "Get By id"
 onclick = "byId()" class = "submit" /></td>
 </tr><tr>
@@ -342,7 +342,7 @@ This section introduced the basics of DOM tree traversal and manipulation. Next,
 
 Included in the Document Object Model is the notion of **collections**, which are groups of related objects on a page. DOM collections are accessed as properties of DOM objects such as the document object or a DOM node. The document object has properties con- taining the **images collection**, **links collection**, **forms collection** and **anchors collection**. These collections contain all the elements of the corresponding type on the page. Figure 12.3 gives an example that uses the links collection to extract all of the links on a page and display them together at the bottom of the page.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -379,7 +379,7 @@ for ( var i = 0; i < linkslist.length; i++ )
 
 **Fig. 12.3** | Using the links collection. (Part 1 of 2.)
 
-```js
+```bash
 var currentLink = linkslist[ i ];
 contents += "<span class = 'link'>" +
 currentLink.innerHTML.link( currentLink.href ) +
@@ -430,7 +430,7 @@ Collections allow easy access to all elements of a single type in a page. This i
 
 An element’s style can be changed dynamically. Often such a change is made in response to user events, which we discuss in Chapter 13. Such style changes can create many effects, including mouse hover effects, interactive menus, and animations. Figure 12.4 is a simple example that changes the background-color style property in response to user input.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -443,7 +443,7 @@ An element’s style can be changed dynamically. Often such a change is made in 
 
 **Fig. 12.4** | Dynamic styles. (Part 1 of 2.)
 
-```js
+```bash
 <title>Dynamic Styles</title>
 <script type = "text/javascript">
 <!--
@@ -478,7 +478,7 @@ The display function (lines 46–62) dynamically updates the image in the left d
 
 Line 61 introduces the window object’s **setInterval method**, which starts the anima- tion. This method takes two parameters—a statement to execute repeatedly, and an integer specifying how often to execute it, in milliseconds. We use setInterval to call
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -517,7 +517,7 @@ if ( count >= 375 )
 
 **Fig. 12.5** | Dynamic styles used for animation. (Part 1 of 4.)
 
-```js
+```bash
 window.clearInterval( interval );
 interval = null;
 } // end if
