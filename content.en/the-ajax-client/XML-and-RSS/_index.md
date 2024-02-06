@@ -31,7 +31,7 @@ XML permits document authors to create **markup** (i.e., a text-based notation f
 
 Figure 14.1 is a simple XML document that describes information for a baseball player. We focus on lines 5–9 to introduce basic XML syntax. You will learn about the other elements of this document in Section 14.3.
 
-```js
+```bash
 <?xml version = "1.0"?>
 
 <!-- Fig. 14.1: player.xml -->
@@ -86,7 +86,7 @@ In Fig. 14.2, we present an XML document that marks up a simple article using XM
 
 This document begins with an **XML declaration** (line 1), which identifies the docu- ment as an XML document. The **version attribute** specifies the XML version to which the document conforms. The current XML standard is version 1.0. Though the W3C released a version 1.1 specification in February 2004, this newer version is not yet widely supported. The W3C may continue to release new versions as XML evolves to meet the requirements of different fields.
 
-```js
+```bash
 <?xml version = "1.0"?>
 <!-- Fig. 14.2: article.xml -->
 <!-- Article structured with XML -->
@@ -160,7 +160,7 @@ Note the minus sign (**–**) and plus sign (**+**) in the screen shots of Fig. 
 **_XML Markup for a Business Letter_**
 Now that you’ve seen a simple XML document, let’s examine a more complex XML doc- ument that marks up a business letter (Fig. 14.4). Again, we begin the document with the XML declaration (line 1) that states the XML version to which the document conforms.
 
-```js
+```bash
 <?xml version = "1.0"?>
 <!-- Fig. 14.4: letter.xml -->
 <!-- Business letter marked up as XML -->
@@ -199,7 +199,7 @@ perform the work of sorting and filtering the data.
 
 **Fig. 14.4** | Business letter marked up as XML. (Part 1 of 2.)
 
-```js
+```bash
 <closing>Sincerely,</closing>
 <signature>Ms. Jane Doe</signature>
 </letter>
@@ -273,7 +273,7 @@ Both highschool and medicalschool are **namespace prefixes**. A document author 
 **_Differentiating Elements with Namespaces_**
 Figure 14.7 demonstrates namespaces. In this document, namespaces differentiate two distinct elements—the file element related to a text file and the file document related to an image file.
 
-```js
+```bash
 <?xml version = "1.0"?>
 
 <!-- Fig. 14.7: namespace.xml -->
@@ -322,7 +322,7 @@ Line 5 defines a default namespace using attribute xmlns with no prefex specifie
 
 The default namespace applies to the directory element and all elements that are not qualified with a namespace prefix. However, we can use a namespace prefix to specify a
 
-```js
+```bash
 <?xml version = "1.0"?>
 
 <!-- Fig. 14.8: defaultnamespace.xml -->
@@ -365,7 +365,7 @@ Figure 14.4 presented a simple business letter marked up with XML. Recall that l
 
 A DTD describes the structure of an XML document and enables an XML parser to verify whether an XML document is valid (i.e., whether its elements contain the proper attributes and appear in the proper sequence). DTDs allow users to check document struc- ture and to exchange data in a standardized format. A DTD expresses the set of rules for document structure using an EBNF (Extended Backus-Naur Form) grammar. DTDs are not themselves XML documents. [_Note:_ EBNF grammars are commonly used to define programming languages. To learn more about EBNF grammars, visit en.wikipedia.org/ wiki/EBNF or www.garshol.priv.no/download/text/bnf.html.]
 
-```js
+```bash
 <!-- Fig. 14.9: letter.dtd -->
 <!-- DTD document for letter.xml -->
 
@@ -472,7 +472,7 @@ www.w3.org/2001/03/webdata/xsv
 
 These tools are free and enforce the W3C’s specifications regarding XML Schemas and schema validation.
 
-```js
+```bash
 <?xml version = "1.0"?>
 
 <!-- Fig. 14.11: book.xml -->
@@ -498,7 +498,7 @@ These tools are free and enforce the W3C’s specifications regarding XML Schema
 
 **Fig. 14.11** | Schema-valid XML document describing a list of books.
 
-```js
+```bash
 <?xml version = "1.0"?>
 
 <!-- Fig. 14.12: book.xsd -->
@@ -589,7 +589,7 @@ Line 5 declares the default namespace to be the standard XML Schema namespace—
 
 To design the XML elements for describing laptop computers, we first create a simple type in lines 9–13 using the **simpleType** element. We name this simpleType gigahertz
 
-```js
+```bash
 <?xml version = "1.0"?>
 <!-- Fig. 14.14: computer.xsd -->
 <!-- W3C XML Schema document -->
@@ -640,7 +640,7 @@ We have now created an element named laptop that contains child elements process
 
 Line 5 declares namespace prefix computer. The laptop element requires this prefix because it is part of the http://www.deitel.com/computer namespace. Line 6 sets the
 
-```js
+```bash
 <?xml version = "1.0"?>
 
 <!-- Fig. 14.15: laptop.xml -->
@@ -678,7 +678,7 @@ MathML markup describes mathematical expressions for display. MathML is divided 
 **_Simple Equation in MathML_**
 Figure 14.16 uses MathML to mark up a simple expression. For this example, we show the expression rendered in Firefox.
 
-```js
+```bash
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE math PUBLIC "-//W3C//DTD MathML 2.0//EN"
 "http://www.w3.org/TR/MathML2/dtd/mathml2.dtd">
@@ -701,7 +701,7 @@ By convention, MathML files end with the .mml filename extension. A MathML doc- 
 **_Algebraic Equation in MathML_**
 Let’s consider using MathML to mark up an algebraic equation containing exponents and arithmetic operators (Fig. 14.17). For this example, we again show the expression ren- dered in Firefox.
 
-```js
+```bash
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE math PUBLIC "-//W3C//DTD MathML 2.0//EN"
 "http://www.w3.org/TR/MathML2/dtd/mathml2.dtd">
@@ -719,7 +719,7 @@ Let’s consider using MathML to mark up an algebraic equation containing expone
 
 **Fig. 14.17** | Algebraic equation marked up with MathML and displayed in the Firefox browser. (Part 1 of 2.)
 
-```js
+```bash
 <mo>+</mo>
 <mn>x</mn>
 <mo>&minus;</mo>
@@ -741,7 +741,7 @@ To display a fraction, lines 17–20 uses the **mfrac element**. Lines 18–19 s
 **_Calculus Expression in MathML_**
 Figure 14.18 marks up a calculus expression that contains an integral symbol and a square- root symbol.
 
-```js
+```bash
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE math PUBLIC "-//W3C//DTD MathML 2.0//EN"
 "http://www.w3.org/TR/MathML2/dtd/mathml2.dtd">
@@ -756,7 +756,7 @@ Figure 14.18 marks up a calculus expression that contains an integral symbol and
 
 **Fig. 14.18** | Calculus expression marked up with MathML and displayed in the Amaya browser. [Courtesy of World Wide Web Consortium (W3C).] (Part 1 of 2.)
 
-```js
+```bash
 <mn>0</mn>
 <mrow>
 <mn>1</mn>
@@ -818,7 +818,7 @@ Figure 14.20 lists an XML document that describes various sports. The output sho
 
 To perform transformations, an XSLT processor is required. Popular XSLT proces- sors include Microsoft’s MSXML and the Apache Software Foundation’s **Xalan 2** (xml.apache.org). The XML document in Fig. 14.20 is transformed into an XHTML document by MSXML when the document is loaded in Internet Explorer. MSXML is both an XML parser and an XSLT processor. Firefox also includes an XSLT processor.
 
-```js
+```bash
 <?xml version = "1.0"?>
 <?xml-stylesheet type = "text/xsl" href = "sports.xsl"?>
 
@@ -837,7 +837,7 @@ More popular among commonwealth nations.
 
 **Fig. 14.20** | XML document that describes various sports. (Part 1 of 2.)
 
-```js
+```bash
 
 <game id = "239">
 <name>Baseball</name>
@@ -875,7 +875,7 @@ Figure 14.21 shows the XSL document for transforming the structured data of the 
 
 Lines 6–7 begin the XSL style sheet with the **stylesheet** start tag. Attribute **version** specifies the XSLT version to which this document conforms. Line 7 binds namespace prefix **xsl** to the W3C’s XSLT URI (i.e., http://www.w3.org/1999/XSL/Transform).
 
-```js
+```bash
 <?xml version = "1.0"?>
 <!-- Fig. 14.21: sports.xsl -->
 <!-- A simple XSLT transformation -->
@@ -936,7 +936,7 @@ Line 35 uses element **value-of** to retrieve attribute id’s value and place i
 **_Using XSLT to Sort and Format Data_**
 Figure 14.22 presents an XML document (sorting.xml) that marks up information about a book. Note that several elements of the markup describing the book appear out of
 
-```js
+```bash
 <?xml version = "1.0"?>
 <?xml-stylesheet type = "text/xsl" href = "sorting.xsl"?>
 
@@ -980,7 +980,7 @@ Lines 23–24 create the title for the XHTML document. We use the book’s ISBN 
 
 Line 28 creates a header element that contains the book’s title. Lines 29–31 create a header element that contains the book’s author. Because the context node (i.e., the current
 
-```js
+```bash
 <?xml version = "1.0"?>
 
 <!-- Fig. 14.23: sorting.xsl -->
@@ -1038,7 +1038,7 @@ Chapter <xsl:value-of select = "@number"/>
 
 **Fig. 14.23** | XSL document that transforms sorting.xml into XHTML. (Part 1 of 2.)
 
-```js
+```bash
 
 <td>
 <xsl:value-of select = "text()"/>
@@ -1130,7 +1130,7 @@ Lines 203–217 create the XHTML document’s body. When the body loads, its onl
 **_Global Script Variables_**
 Lines 16–21 in the script element (lines 14–201) declare several variables used through- out the script. Variable doc references a DOM object representation of article.xml. Variable outputHTML stores the markup that will be placed in outputDiv. Variable id Counter is used to track the unique id attributes that we assign to each element in the out- putHTML markup. These ids will be used to dynamically highlight parts of the document when the user clicks the buttons in the form. Variable depth determines the indentation level for the content in article.xml. We use this to structure the output using the nesting of the elements in article.xml. Variables current and previous track the current and previous nodes in article.xml’s DOM structure as the user navigates it.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -1188,7 +1188,7 @@ function buildHTML( childList )
 
 **Fig. 14.26** | Traversing an XML document using the XML DOM. (Part 1 of 8.)
 
-```js
+```bash
 ++depth; // increase tab depth
 
 // display each node's content
@@ -1246,7 +1246,7 @@ outputHTML += "&nbsp;&nbsp;&nbsp;";
 
 **Fig. 14.26** | Traversing an XML document using the XML DOM. (Part 2 of 8.)
 
-```js
+```bash
 // highlight first child of current node
 function processFirstChild() {
   if (
@@ -1300,7 +1300,7 @@ function processPreviousSibling() {
 
 **Fig. 14.26** | Traversing an XML document using the XML DOM. (Part 3 of 8.)
 
-```js
+```bash
 
 // highlight last child of current node
 function processLastChild()
@@ -1358,7 +1358,7 @@ onclick = "processLastChild()"/>
 
 **Fig. 14.26** | Traversing an XML document using the XML DOM. (Part 4 of 8.)
 
-```js
+```bash
 <input type = "submit" value = "parentNode"
 onclick = "processParentNode()"/>
 </form><br/>
@@ -1474,7 +1474,7 @@ Although you can use XML DOM capabilities to navigate through and manipulate nod
 
 Figure 14.33 enables the user to enter XPath expressions in an XHTML form. When the user clicks the **Get Matches** button, the script applies the XPath expression to the XML DOM and displays the matching nodes. Figure 14.34 shows the XML document sports.xml that we use in this example. [_Note:_ The versions of sports.xml presented in Fig. 14.34 and Fig. 14.20 are nearly identical. In the current example, we do not want to apply an XSLT, so we omit the processing instruction found in line 2 of Fig. 14.20. We also removed extra blank lines to save space.]
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -1502,7 +1502,7 @@ if ( window.ActiveXObject ) // IE7
 
 **Fig. 14.33** | Using XPath to locate nodes in an XML document. (Part 1 of 3.)
 
-```js
+```bash
 // create IE7-specific XML document object
 doc = new ActiveXObject( "Msxml2.DOMDocument.6.0" );
 doc.async = false; // specifies synchronous loading of XML doc
@@ -1558,7 +1558,7 @@ current = result.iterateNext();
 
 **Fig. 14.33** | Using XPath to locate nodes in an XML document. (Part 2 of 3.)
 
-```js
+```bash
 displayDoc();
 } // end function processXPathExpression
 // -->
@@ -1577,7 +1577,7 @@ displayDoc();
 
 **Fig. 14.33** | Using XPath to locate nodes in an XML document. (Part 3 of 3.)
 
-```js
+```bash
 <?xml version = "1.0"?>
 
 <!-- Fig. 14.34: sports.xml -->
@@ -1708,7 +1708,7 @@ document (included with this example’s code), and lines 38–46 register an on
 **_Transforming the RSS to XHTML_**
 Function applyTransform (Fig. 14.38, lines 75–96) performs the browser-specific XSL transformations using the RSS document and XSL document it receives as arguments. Line 81 uses the MSXML object’s built-in XSLT capabilities to apply the transformations. Method **transformNode** is invoked on the rssDocument object and receives the xslDocument object as an argument.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -1766,7 +1766,7 @@ var doc = ""; // variable to manage loading file
 
 **Fig. 14.38** | Rendering an RSS feed in a web page using XSLT and JavaScript. (Part 1 of 3.)
 
-```js
+```bash
 
 if ( browser == "IE7" ) // IE7
 {
@@ -1824,7 +1824,7 @@ resultXHTML );
 
 **Fig. 14.38** | Rendering an RSS feed in a web page using XSLT and JavaScript. (Part 2 of 3.)
 
-```js
+```bash
 // -->
 </script>
 </head>
@@ -1836,7 +1836,7 @@ resultXHTML );
 
 **Fig. 14.38** | Rendering an RSS feed in a web page using XSLT and JavaScript. (Part 3 of 3.)
 
-```js
+```bash
 <?xml version="1.0" encoding="utf-8"?>
 
 <!-- Fig. 14.39: deitel-20.xml -->
@@ -1851,7 +1851,7 @@ Deitel Resource Centers
 
 **Fig. 14.39** | RSS 2.0 sample feed. (Part 1 of 2.)
 
-```js
+```bash
 <link>http://www.deitel.com/ResourceCenters.html</link>
 <description>
 Check out our growing network of Resource Centers that focus on
