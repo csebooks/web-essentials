@@ -181,7 +181,7 @@ The String object encapsulates the attributes and behaviors of a string of chara
 
 The script in Fig. 11.4 demonstrates some of the String object’s character-processing methods, including **charAt** (returns the character at a specific position), **charCodeAt** (re- turns the Unicode value of the character at a specific position), **fromCharCode** (returns a string created from a series of Unicode values), **toLowerCase** (returns the lowercase version of a string) and **toUpperCase** (returns the uppercase version of a string).
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -193,7 +193,7 @@ toUpperCase. -->
 
 **Fig. 11.4** | String methods charAt, charCodeAt, fromCharCode, toLowercase and toUpperCase. (Part 1 of 2.)
 
-```js
+```bash
 <html xmlns = "http://www.w3.org/1999/xhtml">
 <head>
 <title>Character Processing Methods</title>
@@ -241,7 +241,7 @@ event and perform the searches. The results of each search are displayed in the 
 
 Lines 21–22 use String method indexOf to determine the location of the first occur- rence in string letters of the string inputVal.value (i.e., the string the user typed in the
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -265,7 +265,7 @@ var inputVal = document.getElementById( "inputVal" );
 
 **Fig. 11.5** | String searching with indexOf and lastIndexOf. (Part 1 of 3.)
 
-```js
+```bash
 searchForm.elements[2].value =
 letters.indexOf( inputVal.value );
 searchForm.elements[3].value =
@@ -322,7 +322,7 @@ When you read a sentence, your mind breaks it into individual words, or **tokens
 
 The user types a sentence into the text field with id inputVal text field and presses the **Split** button to tokenize the string. Function splitButtonPressed (lines 12–21) han- dles the button’s onclick event.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -381,7 +381,7 @@ Lines 12–17 define the strings that call each of the XHTML markup methods of t
 
 <!-a name = "top">This is an anchor</!-a>
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -494,7 +494,7 @@ Lines 16–19 demonstrate the methods toString, toLocaleString, toUTCString and 
 
 Lines 23–32 demonstrate the Date object’s _get_ methods for the local time zone. Note that method getFullYear returns the year as a four-digit number. Note as well that method getTimeZoneOffset returns the difference in minutes between the local time zone and UTC time (i.e., a difference of four hours in our time zone when this example was executed).
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -545,7 +545,7 @@ document.writeln( "Modified date: " + anotherDate );
 
 **Fig. 11.9** | Date and time methods of the Date object. (Part 1 of 2.)
 
-```js
+```bash
 // -->
 </script>
 </head><body></body>
@@ -648,7 +648,7 @@ The **window** object provides methods for manipulating browser windows. The fol
 
 The script starts in line 10. Line 12 declares a variable to refer to the new window. We refer to the new window as the **child window** because it is created and controlled by the main, or **parent**, window in this script. Lines 14–50 define the createChildWindow func- tion, which determines the features that have been selected by the user and creates a child window with those features (but does not add any content to the window). Lines 18–20 declare several variables to store the status of the checkboxes on the page. Lines 23–38 set each variable to "yes" or "no" based on whether the corresponding checkbox is checked or unchecked.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -685,7 +685,7 @@ menuBar = "no";
 
 **Fig. 11.13** | Using the window object to create and modify child windows. (Part 1 of 4.)
 
-```js
+```bash
 // determine whether the Scroll Bar checkbox is checked
 if ( document.getElementById( "scrollBarsCheckBox" ).checked )
 scrollBars = "yes";
@@ -743,7 +743,7 @@ document.getElementById( "myChildURL" ).value;
 
 **Fig. 11.13** | Using the window object to create and modify child windows. (Part 2 of 4.)
 
-```js
+```bash
 </head>
 <body>
 <h1>Hello, this is the main window</h1>
@@ -846,7 +846,7 @@ Lines 30–66 contain the code used to manipulate the cookie. Line 30 determines
 
 (line 49). The function escape converts any non-alphanumeric characters, such as spaces
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -896,7 +896,7 @@ name = window.prompt( "Please enter your name", "Paul" );
 
 **Fig. 11.15** | Using cookies to store user identification data. (Part 1 of 3.)
 
-```js
+```bash
 // escape special characters in the name string
 // and add name to the cookie
 document.cookie = "name=" + escape( name );
@@ -949,7 +949,7 @@ The script allows the user to reset the cookie, which is useful in case someone 
 
 The past few chapters have explored many JavaScript concepts and how they can be ap- plied on the web. The next JavaScript example combines many of these concepts into a single web page. Figure 11.16 uses functions, cookies, arrays, loops, the Date object, the window object and the document object to create a sample welcome screen containing a personalized greeting, a short quiz, a random image and a random quotation. We have seen all of these concepts before, but this example illustrates how they work together on one web page.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -984,7 +984,7 @@ document.write( "<h2>Good Morning, " );
 
 **Fig. 11.16** | Rich welcome page using several JavaScript concepts. (Part 1 of 5.)
 
-```js
+```bash
 else
 {
 hour = hour - 12; // convert from 24-hour clock to PM time
@@ -1042,7 +1042,7 @@ function allQuotes()
 
 **Fig. 11.16** | Rich welcome page using several JavaScript concepts. (Part 2 of 5.)
 
-```js
+```bash
 // create the child window for the quotes
 var quoteWindow = window.open( "", "", "resizable=yes, " +
 "toolbar=no, menubar=no, status=no, location=no," +
@@ -1124,7 +1124,7 @@ The quiz used in this example is in a separate XHTML document named quiz2.html
 
 (Fig. 11.17). This document is similar to quiz.html in Fig. 10.14. The quiz in this exam- ple differs from the quiz in Fig. 10.14 in that it shows the result in the main window in the example, whereas the earlier quiz example alerts the result. After the **Submit** button in the quiz window is clicked, the main window changes to reflect that the quiz was taken, and the quiz window closes.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -1155,7 +1155,7 @@ window.close();
 
 **Fig. 11.17** | Online quiz in a child window. (Part 1 of 3.)
 
-```js
+```bash
 //-->
 </script>
 </head>
