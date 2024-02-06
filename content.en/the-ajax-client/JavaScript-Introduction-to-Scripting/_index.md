@@ -51,7 +51,7 @@ in the web page. Line 8 indicates the beginning of the <head> section of the XHT
 
 the moment, the JavaScript code we write will appear in the <head> section. The browser interprets the contents of the <head> section first, so the JavaScript programs we write there execute before the <body> of the XHTML document displays. In later chapters on JavaScript and in the chapters on dynamic HTML, we illustrate **inline scripting**, in which JavaScript code is written in the <body> of an XHTML document.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -132,7 +132,7 @@ A script can display Welcome to JavaScript Programming! several ways. Figure 6.3
 
 Most of this XHTML document is identical to Fig. 6.2, so we concentrate only on lines 12–14 of Fig. 6.3, which display one line of text in the XHTML document. The first statement uses document method **write** to display a string. Unlike writeln, write does
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -168,7 +168,7 @@ not position the output cursor in the XHTML document at the beginning of the nex
 **_Displaying Multiple Lines of Text_**
 In the next example, we demonstrate that a single statement can cause the browser to dis- play multiple lines by using line-break XHTML tags (<br/>) throughout the string of XHTML text in a write or writeln method call. Figure 6.4 demonstrates the use of line- break XHTML tags. Lines 12–13 produce three separate lines of text when the browser renders the XHTML document.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -195,7 +195,7 @@ document.writeln( "<h1>Welcome to<br />JavaScript" +
 **_Displaying Text in an Alert Dialog_**
 The first several programs in this chapter display text in the XHTML document. Some- times it is useful to display information in windows called **dialogs** (or **dialog boxes**) that “pop up” on the screen to grab the user’s attention. Dialogs typically display important messages to users browsing the web page. JavaScript allows you easily to display a dialog box containing a message. The program in Fig. 6.5 displays Welcome to JavaScript Programming! as three lines in a predefined dialog called an **alert dialog**.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -257,7 +257,7 @@ Our next script builds on prior scripts to create a dynamic welcome page that ob
 
 Line 12 is a **declaration** that contains the JavaScript **keyword** var. Keywords are words that have special meaning in JavaScript. The keyword **var** at the beginning of the statement indicates that the word name is a **variable**. A variable is a location in the com- puter’s memory where a value can be stored for use by a program. All variables have a name, type and value, and should be declared with a var statement before they are used in
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -363,7 +363,7 @@ Our next script illustrates another use of prompt dialogs to obtain input from t
 
 Lines 12–16 declare the variables firstNumber, secondNumber, number1, number2 and sum. Single-line comments state the purpose of each of these variables. Line 19 employs a prompt dialog to allow the user to enter a string representing the first of the two
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -607,7 +607,7 @@ The script in Fig. 6.17 uses four if statements to display a time-sensitive gree
 
 Lines 12–14 declare the variables used in the script. Remember that variables may be declared in one declaration or in multiple declarations. If more than one variable is declared in a single declaration (as in this example), the names are separated by commas (,). This list of names is referred to as a comma-separated list. Once again, note the com- ment at the end of each line, indicating the purpose of each variable in the program. Also note that some of the variables are assigned a value in the declaration—JavaScript allows you to assign a value to a variable when the variable is declared.
 
-```js
+```bash
 <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -629,7 +629,7 @@ name = window.prompt( "Please enter your name" );
 
 **Fig. 6.17** | Using equality and relational operators. (Part 1 of 2.)
 
-```js
+```bash
 
 // determine whether it is morning
 if ( hour < 12 )
