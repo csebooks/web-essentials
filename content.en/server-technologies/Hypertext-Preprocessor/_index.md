@@ -42,7 +42,7 @@ Although PHP can be used from the command line, a web server is necessary to tak
 **_Simple PHP Program_**
 
 Figure 23.1 presents a simple PHP program that displays a welcome message. In PHP, code is inserted between the scripting delimiters **<?php** and **?>**. PHP code can be placed anywhere in XHTML markup, as long as the code is enclosed in these delimiters. Line 1 uses function print to output the XML declaration. This avoids the <? in the XML dec-
-```php
+```bashp
 <?php print( '<?xml version = "1.0" encoding = "utf-8"?>' ) ?>
  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -107,7 +107,7 @@ PHP variables are loosely typed—they can contain different types of data (e.g.
 **_Converting Between Data Types_**
 
 Converting between different data types may be necessary when performing arithmetic operations with variables. Type conversions can be performed using function settype. Figure 23.3 demonstrates type conversion of some types introduced in Fig. 23.2.
-```php
+```bashp
  <?php print( '<?xml version = "1.0" encoding = "utf-8"?>' ) ?>
  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -191,7 +191,7 @@ _Assigning a value to a constant after it is declared is a syntax error._
 
 Line 20 adds constant VALUE to variable $a. Line 25 uses the **multiplication assign- ment operator *=** to yield an expression equivalent to $a = $a * 2 (thus assigning $a the value 20). Arithmetic assignment operators—like the ones described in Chapter 7—are syntactical shortcuts. Line 33 adds 40 to the value of variable $a.
 
-```php
+```bashp
 <?php print( '<?xml version = "1.0" encoding = "utf-8"?>' ) ?>
  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -387,7 +387,7 @@ PHP can process text easily and efficiently, enabling straightforward searching,
 ### Comparing Strings
 
 Many string-processing tasks can be accomplished by using the **equality** and **comparison** operators, demonstrated in Fig. 23.7. Line 14 declares and initializes array $fruits. Lines 17–36 iterate through each element in the $fruits array.
-```php
+```bashp
  <?php print( '<?xml version = "1.0" encoding = "utf-8"?>' ) ?>
  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -726,7 +726,7 @@ In this example, the client selects the name of a column in the database. The PH
 
 Figure 23.14 is a web page that posts form data consisting of a selected database column to the server. The script in Fig. 23.15 processes the form data.
 
-```html
+```bashml
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -757,7 +757,7 @@ Figure 23.14 is a web page that posts form data consisting of a selected databas
 
 ```
 **Fig. 23.14** | Form to query a MySQL database.
-```js
+```bash
 <form method="post" action="database.php">
   <select name="select">
     <option selected="selected">*</option>
@@ -770,7 +770,7 @@ Figure 23.14 is a web page that posts form data consisting of a selected databas
 
 ```
 
-```php 
+```bashp 
 <?php print('<?xml version="1.0" encoding="utf-8"')?> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
@@ -830,7 +830,7 @@ Figure 23.14 is a web page that posts form data consisting of a selected databas
 
 ```
 **Fig. 23.15** | Querying a database and displaying the results. (Part 1 of 2.)
-```php
+```bashp
 $query = "SELECT" . $select . " FROM books";
 
 if ( !( $database = mysql_connect( "localhost", "iw3htp4", "iw3htp4" ) ) )
