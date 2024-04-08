@@ -1207,8 +1207,6 @@ In this chapter, we introduced the popular server-side scripting language PHP. W
 
 ## Web Resources
 
-[www.deitel.com](www.deitel.com/PHP/)
-
 The Deitel PHP Resource Center contains links to some of the best PHP information on the web. There you’ll find categorized links to PHP tools, code generators, forums, books, libraries, frame- works and more. Also check out the tutorials for all skill levels, from introductory to advanced. Be sure to visit the related Resource Centers on XHTML (www.deitel.com/xhtml/) and CSS 2.1 (www.deitel.com/css21/).
 
 ## Summary
