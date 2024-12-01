@@ -1,11 +1,9 @@
 ---
 title: Themes
-weight: 2
+weight: 1
 ---
 
-### **What is a Theme in CSS?**
-
-In web design, **themes** refer to a set of styles that define the appearance and look of a website. A theme typically includes colors, fonts, layout styles, and other design elements that can be applied across a website to ensure consistency. In CSS, you can create themes by using **CSS variables** (custom properties) to define color schemes, fonts, and other design properties, making it easy to switch between different visual styles (e.g., light mode and dark mode).
+> In web design, **themes** refer to a set of styles that define the appearance and look of a website. A theme typically includes colors, fonts, layout styles, and other design elements that can be applied across a website to ensure consistency. In CSS, you can create themes by using **CSS variables** (custom properties) to define color schemes, fonts, and other design properties, making it easy to switch between different visual styles (e.g., light mode and dark mode).
 
 ### **Why Use Themes in CSS?**
 - **Consistency**: Themes ensure a consistent design across all pages of a website.
@@ -96,45 +94,8 @@ button {
 button:hover {
     background-color: #0056b3;
 }
-```
-
-#### **JavaScript File (`script.js`)**
-
-This JavaScript file toggles between the light and dark themes when the button is clicked.
-
-```javascript
-// Toggle between light and dark themes
-const themeToggleButton = document.getElementById('theme-toggle');
-
-themeToggleButton.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    if (currentTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'light');
-    } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    }
-});
-```
-
----
 
 ### **How It Works**
 1. **CSS Variables**: The `:root` selector defines the default values for light mode (light theme). We use custom properties like `--background-color`, `--text-color`, etc., to manage the theme's colors.
 2. **Switching Themes**: The `[data-theme="dark"]` selector is used to apply a different set of CSS variables when the page's `data-theme` attribute is set to `"dark"`.
-3. **JavaScript Toggle**: The JavaScript code listens for a button click and toggles the `data-theme` attribute between `light` and `dark`. This triggers the switch between the themes defined in the CSS file.
 
----
-
-### **Example Use Cases for Themes**
-1. **Dark Mode/Light Mode**: Many websites now offer a dark theme for users who prefer it, and CSS makes it easy to toggle between the two.
-2. **Seasonal Themes**: A website can automatically switch to a "winter" theme with snowflakes or a "summer" theme with bright colors.
-3. **Personalized Themes**: Allowing users to choose a custom theme or color scheme that suits their preferences.
-
----
-
-### **Advantages of Using CSS Themes**
-- **Flexibility**: You can easily change the visual design of a website by modifying a few CSS variables.
-- **User Control**: Allowing users to choose between different themes (light/dark) enhances the user experience.
-- **Maintainability**: With CSS variables, themes are easy to manage and maintain, as the design elements are centralized.
-
-Let me know if you'd like to explore more advanced theming techniques or how to implement other types of dynamic themes!
