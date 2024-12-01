@@ -1,6 +1,9 @@
 ---
 title: Layouts
 weight: 4
+references:
+    links:
+        - https://learnlayout.com/
 ---
 
 > In CSS, **layout** refers to the way content is arranged and displayed on a web page. CSS provides various layout techniques to control the positioning, alignment, and distribution of elements within a container. These layouts help create responsive, visually appealing designs that adapt to different screen sizes.
@@ -38,7 +41,7 @@ Example:
 ```
 Modern apps uses more flexible layout plans that wll be discussed in the next chapter.
 
-# Positioning in CSS
+# Positioning 
 
 CSS positioning properties allow you to control the position of elements within their parent containers. The key properties in positioning are
 

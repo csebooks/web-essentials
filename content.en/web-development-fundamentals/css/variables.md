@@ -14,7 +14,7 @@ weight: 2
 
 ---
 
-### **Advantages of CSS Variables**
+# Advantages of CSS Variables**
 1. **Reusability**: Define a value once and reuse it across the stylesheet.  
 2. **Maintainability**: Update the variable to instantly reflect changes wherever it is used.  
 3. **Dynamic Updates**: CSS variables can be manipulated via JavaScript to create dynamic themes.  
