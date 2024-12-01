@@ -3,17 +3,17 @@ title: Layouts
 weight: 3
 ---
 
-### **What is Layout in CSS?**
 
-In CSS, **layout** refers to the way content is arranged and displayed on a web page. CSS provides various layout techniques to control the positioning, alignment, and distribution of elements within a container. These layouts help create responsive, visually appealing designs that adapt to different screen sizes.
 
-### **Common Layout Techniques in CSS**
+> In CSS, **layout** refers to the way content is arranged and displayed on a web page. CSS provides various layout techniques to control the positioning, alignment, and distribution of elements within a container. These layouts help create responsive, visually appealing designs that adapt to different screen sizes.
 
-1. **Normal Flow (Block and Inline Elements)**
-2. **Flexbox**
-3. **CSS Grid**
-4. **Positioning (Static, Relative, Absolute, Fixed, Sticky)**
-5. **Float and Clear**
+# Common Layout Techniques
+
+ **Normal Flow (Block and Inline Elements)**
+ **Flexbox**
+ **CSS Grid**
+ **Positioning (Static, Relative, Absolute, Fixed, Sticky)**
+ **Float and Clear**
 
 ---
 
