@@ -5,13 +5,13 @@ weight: 1
 
 > **CSS Grid** is a powerful two-dimensional layout system that allows you to create complex grid-based designs. It enables you to define rows and columns, and place items within those grids.
 
-#### Key Properties:
+Key Properties:
 - `display: grid;`: Defines a grid container.
 - `grid-template-columns`: Specifies the number and size of columns.
 - `grid-template-rows`: Specifies the number and size of rows.
 - `grid-gap`: Defines the spacing between grid items.
 
-#### Example (CSS Grid):
+Example (CSS Grid):
 
 ```html
 <!DOCTYPE html>
