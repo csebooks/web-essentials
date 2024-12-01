@@ -3,7 +3,7 @@ title: Container
 weight: 5
 ---
 
-> In HTML, a **container** is an element that acts as a wrapper for grouping and organizing content on a web page. Containers are commonly used to structure the layout, style elements collectively, or apply specific behaviors to a group of elements.
+> In HTML, a **container** is a composite element that acts as a wrapper for grouping and organizing content on a web page. Containers are commonly used to structure the layout, style elements collectively, or apply specific behaviors to a group of elements.
 
 ---
 
@@ -15,8 +15,7 @@ weight: 5
 ---
 
 
-Lets start design a form with container types.
-Create file under `src` named `container.html`.
+Lets start design a form with container types. Create file under `src` named `container.html`.
 
 #  Containers Types
 
