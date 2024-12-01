@@ -9,7 +9,7 @@ In the default flow, elements are displayed in their natural flow:
 - **Block-level elements** (e.g., `<div>`, `<p>`, `<h1>`) take up the full width of their parent container and push subsequent elements to the next line.
 - **Inline elements** (e.g., `<span>`, `<a>`) only take up as much space as needed and do not start on a new line.
 
-#### Example:
+Example:
 
 ```html
 <!DOCTYPE html>
@@ -38,15 +38,14 @@ In the default flow, elements are displayed in their natural flow:
 ```
 Modern apps uses more flexible layout plans that wll be discussed in the next chapter.
 
-### **4. Positioning in CSS**
+# Positioning in CSS
 
-CSS positioning properties allow you to control the position of elements within their parent containers.
+CSS positioning properties allow you to control the position of elements within their parent containers. The key properties in positioning are
 
-#### Key Properties:
 - `position`: Defines the positioning method (`static`, `relative`, `absolute`, `fixed`, `sticky`).
 - `top`, `right`, `bottom`, `left`: Adjust the position based on the parent container.
 
-#### Example (Positioning):
+Example (Positioning):
 
 ```html
 <!DOCTYPE html>
@@ -86,11 +85,11 @@ CSS positioning properties allow you to control the position of elements within 
 
 ---
 
-### **5. Float and Clear Layout**
+# Float and Clear Layout
 
-Float-based layouts were historically used to create multi-column designs before Flexbox and Grid. The `float` property is used to float elements to the left or right of their container, and `clear` is used to control how the next element behaves after a floated element.
+> Float-based layouts were historically used to create multi-column designs before Flexbox and Grid. The `float` property is used to float elements to the left or right of their container, and `clear` is used to control how the next element behaves after a floated element.
 
-#### Example (Float Layout):
+Example (Float Layout):
 
 ```html
 <!DOCTYPE html>
@@ -128,8 +127,5 @@ Float-based layouts were historically used to create multi-column designs before
 ```
 
 ---
-
-### **Conclusion**
-Layouts in CSS provide a wide range of tools to control the positioning and arrangement of elements on a page. From simple block-level flow to powerful layout systems like Flexbox and Grid, CSS gives you the flexibility to create complex, responsive, and modern designs.
 
 Let me know if you'd like to dive deeper into any of these layout techniques or see more examples!
