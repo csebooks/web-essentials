@@ -1,9 +1,7 @@
 ---
 title: Typography
-weight: 1
+weight: 3
 ---
-
-
 
 > **Typography** is a key aspect of web design that focuses on the style, appearance, and arrangement of text. In CSS, typography can be controlled through various properties such as font family, size, weight, line height, and more.
 

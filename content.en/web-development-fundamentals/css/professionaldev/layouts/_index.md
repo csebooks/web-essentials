@@ -1,23 +1,9 @@
 ---
 title: Layouts
-weight: 3
+weight: 4
 ---
-
-
 
 > In CSS, **layout** refers to the way content is arranged and displayed on a web page. CSS provides various layout techniques to control the positioning, alignment, and distribution of elements within a container. These layouts help create responsive, visually appealing designs that adapt to different screen sizes.
-
-# Common Layout Techniques
-
- **Normal Flow (Block and Inline Elements)**
- **Flexbox**
- **CSS Grid**
- **Positioning (Static, Relative, Absolute, Fixed, Sticky)**
- **Float and Clear**
-
----
-
-### **1. Normal Flow (Block and Inline Elements)**
 
 In the default flow, elements are displayed in their natural flow:
 - **Block-level elements** (e.g., `<div>`, `<p>`, `<h1>`) take up the full width of their parent container and push subsequent elements to the next line.
@@ -50,108 +36,7 @@ In the default flow, elements are displayed in their natural flow:
 </body>
 </html>
 ```
-
----
-
-### **2. Flexbox Layout**
-
-**Flexbox** is a modern layout technique in CSS that allows you to create flexible and responsive layouts with ease. It enables the distribution of space within a container and aligns items along the main axis or cross axis.
-
-#### Key Properties:
-- `display: flex;`: Defines a flex container.
-- `flex-direction`: Specifies the direction of the flex items (`row`, `column`).
-- `justify-content`: Aligns items horizontally (main axis).
-- `align-items`: Aligns items vertically (cross axis).
-- `flex-wrap`: Allows wrapping of items when they exceed the container's width.
-
-#### Example (Flexbox):
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox Layout</title>
-    <style>
-        .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 100vh;
-            background-color: lightgray;
-        }
-        .box {
-            width: 100px;
-            height: 100px;
-            background-color: steelblue;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="box">Box 1</div>
-        <div class="box">Box 2</div>
-        <div class="box">Box 3</div>
-    </div>
-</body>
-</html>
-```
-
----
-
-### **3. CSS Grid Layout**
-
-**CSS Grid** is a powerful two-dimensional layout system that allows you to create complex grid-based designs. It enables you to define rows and columns, and place items within those grids.
-
-#### Key Properties:
-- `display: grid;`: Defines a grid container.
-- `grid-template-columns`: Specifies the number and size of columns.
-- `grid-template-rows`: Specifies the number and size of rows.
-- `grid-gap`: Defines the spacing between grid items.
-
-#### Example (CSS Grid):
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Grid Layout</title>
-    <style>
-        .container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 10px;
-            height: 100vh;
-        }
-        .box {
-            background-color: coral;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="box">Box 1</div>
-        <div class="box">Box 2</div>
-        <div class="box">Box 3</div>
-        <div class="box">Box 4</div>
-        <div class="box">Box 5</div>
-        <div class="box">Box 6</div>
-    </div>
-</body>
-</html>
-```
-
----
+Modern apps uses more flexible layout plans that wll be discussed in the next chapter.
 
 ### **4. Positioning in CSS**
 

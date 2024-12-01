@@ -1,12 +1,9 @@
 ---
 title: Flex
-weight: 4
+weight: 2
 ---
 
-
-### **2. Flexbox Layout**
-
-**Flexbox** is a modern layout technique in CSS that allows you to create flexible and responsive layouts with ease. It enables the distribution of space within a container and aligns items along the main axis or cross axis.
+> **Flexbox** is a modern layout technique in CSS that allows you to create flexible and responsive layouts with ease. It enables the distribution of space within a container and aligns items along the main axis or cross axis.
 
 #### Key Properties:
 - `display: flex;`: Defines a flex container.

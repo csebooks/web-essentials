@@ -1,13 +1,9 @@
 ---
 title: Grid
-weight: 5
+weight: 1
 ---
 
-
-
-### **3. CSS Grid Layout**
-
-**CSS Grid** is a powerful two-dimensional layout system that allows you to create complex grid-based designs. It enables you to define rows and columns, and place items within those grids.
+> **CSS Grid** is a powerful two-dimensional layout system that allows you to create complex grid-based designs. It enables you to define rows and columns, and place items within those grids.
 
 #### Key Properties:
 - `display: grid;`: Defines a grid container.
