@@ -5,8 +5,6 @@ weight: 3
 
 > **Typography** is a key aspect of web design that focuses on the style, appearance, and arrangement of text. In CSS, typography can be controlled through various properties such as font family, size, weight, line height, and more.
 
----
-
 ### **Key Typography Properties in CSS**
 
 1. **`font-family`**  
@@ -184,7 +182,7 @@ body {
 </html>
 ```
 
-#### **CSS (styles.css)**
+ **CSS (styles.css)**
 ```css
 body {
     font-family: 'Roboto', sans-serif;
@@ -218,7 +216,8 @@ p {
 
 ---
 
-### **Conclusion**
+ **Conclusion**
 Typography is a critical part of web design, as it affects readability, user experience, and overall design aesthetics. With CSS, you can control almost every aspect of typography, from fonts to spacing, alignment, and decoration.
 
 Let me know if you'd like more advanced typography techniques or other related topics!
+
