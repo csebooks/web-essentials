@@ -54,18 +54,20 @@ Next we need to create our html file `src/index.html` and keep the below content
 - `<title>`: Sets the title displayed on the browser tab.
 - `<body>`: Contains the content displayed on the web page, such as headings, paragraphs, links, images, etc.
 
-Lets add start script at `package.json`
-
+Open your package.json file and inside the "scripts" section, add this line:
 
 ```json
-"start": "webpack serve"
+"scripts": {
+  "start": "webpack serve"
+}
 ```
 
-Create Web pack config to load html files from `src` folder by configuring `src/webpack.config.js`
+Create a file named `webpack.config.js` in your project root folder, and paste the following config:
 
 ```js
 const path = require('path');
 module.exports = {
+  mode: 'development',
     devServer: {
         static: {
             directory: path.join(__dirname, 'src'),
@@ -84,7 +86,7 @@ Lets server the HTML with
 npm start
 ```
 
-You can now open [localhost:1234](localhost:1234) to view your html file.Lets make a small change `Lets build HTML` as `Lets build HTML Text, Media, Form and Container Elements` and save the file. You should see your browser that shows updated content automatically. Cool. Isn't it ?
+You can now open [localhost:3000](localhost:3000) to view your html file.Lets make a small change `Lets build HTML` as `Lets build HTML Text, Media, Form and Container Elements` and save the file. You should see your browser that shows updated content automatically. Cool. Isn't it ?
 
 Lets understand the concepts behnind the basic HTML we jusy created.
 
