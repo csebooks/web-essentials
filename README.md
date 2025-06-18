@@ -1,4 +1,4 @@
-# Web essentials
+# Web Essentials
 
 ```sh
 hugo server --themesDir ../
