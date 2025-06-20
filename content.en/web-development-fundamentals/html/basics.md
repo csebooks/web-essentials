@@ -14,7 +14,7 @@ Next we need to intialize the project.
 
 ```shell
 cd my-static-website
-npm init
+npm init -y
 ```
 
 After providing inputs to the prompt, the project has been successfully created.To view the project, open it in the VS Code editor.
@@ -25,13 +25,13 @@ code .
 
 You will find a file named `package.json` in the project directory. We will see this file in detail later but for now just consider this file contains all about your project.
 
-We need a bundler which can prepare the static assets for us. There are many options, but here we use `parcel js`.  Lets add this to our project.
+We need a bundler which can prepare the static assets for us. There are many options, but here we use `webpack`.  Lets add this to our project.
 
 ```shell
-npm install --save-dev parcel
+npm install webpack webpack-cli webpack-dev-server --save-dev
 ```
 
-Open your `package.json` and you will find `parcel` added as **devDependencies**.
+Open your `package.json` and you will find `webpack` added as **devDependencies**.
 Next we need to create our html file `src/index.html` and keep the below content inside the file.
 
 ```html
@@ -54,18 +54,37 @@ Next we need to create our html file `src/index.html` and keep the below content
 - `<title>`: Sets the title displayed on the browser tab.
 - `<body>`: Contains the content displayed on the web page, such as headings, paragraphs, links, images, etc.
 
+Lets add start script at `package.json`
+
+
+```json
+"start": "webpack serve"
+```
+
+Create Web pack config to load html files from `src` folder by configuring `src/webpack.config.js`
+
+```js
+const path = require('path');
+module.exports = {
+    devServer: {
+        static: {
+            directory: path.join(__dirname, 'src'),
+        },
+        open: true,
+        hot: true,
+        liveReload: true,
+        port: 3000,
+    },
+};
+```
+
 Lets server the HTML with
 
 ```shell
-npx parcel src/index.html
+npm start
 ```
 
-> NPX stands for Node Package eXecute. It is simply an NPM package runner. It allows developers to execute any Javascript Package available on the NPM registry without even installing it.
-
-
-You can now open [localhost:1234](localhost:1234) to view your html file.
-
-Lets make a small change `Lets build HTML` as `Lets build HTML Text, Media, Form and Container Elements` and save the file. You should see your browser that shows updated content automatically. Cool. Isn't it ?
+You can now open [localhost:1234](localhost:1234) to view your html file.Lets make a small change `Lets build HTML` as `Lets build HTML Text, Media, Form and Container Elements` and save the file. You should see your browser that shows updated content automatically. Cool. Isn't it ?
 
 Lets understand the concepts behnind the basic HTML we jusy created.
 
