@@ -47,6 +47,7 @@ Semantic containers give meaning to the content they hold, improving accessibili
 - **`<section>`**: For grouping related content.
 - **`<article>`**: For self-contained content like blog posts.
 - **`<footer>`**: For footer content.
+- **`<aside>`**: For extra content that supports the main content.
 
 **Example:**
 ```html

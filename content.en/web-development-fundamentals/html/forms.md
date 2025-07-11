@@ -100,6 +100,12 @@ Allows users to upload a file.
 <input type="file" name="profile_picture">
 ```
 
+## Button
+Creates a clickable button that does nothing by default 
+```html
+<button type="button">Click Me</button>
+```
+
 ## Submit Button
 Used to submit the form data.
 ```html
@@ -213,5 +219,3 @@ HTML provides built-in validation for form inputs to ensure data accuracy:
    ``` 
 
 ---
-
-

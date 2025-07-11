@@ -80,6 +80,12 @@ Defines a block of quoted text.
 </blockquote>
 ```
 
+# Inline Quote
+For short quotes inside a sentence that automatically adds quotation marks.
+```html
+<p>She said, <q>Code like a poet, not a robot.</q></p>
+```
+
 ---
 
 # Code and Preformatted Text
@@ -138,3 +144,30 @@ Creates a horizontal line to separate content.
 <hr>
 ```
 
+---
+
+# Abbreviations
+This tag is used to show the full meaning of a short word when you hover your mouse over it.
+```html
+<p>
+  We use <abbr>HTML</abbr>, Hypertext Markup Language, to structure our web documents.
+</p>
+
+<p>
+  I think <abbr title="Reverend">Rev.</abbr> Green did it in the kitchen with the chainsaw.
+</p>
+```
+
+---
+
+# Address
+An element for marking up contact details.
+```html
+<address>KeerthanaSri, Tamil Nadu, India</address>
+```
+
+# Date and Time
+An element for marking up times and dates in a machine-readable format. 
+```html
+<time datetime="2016-01-20">20 January 2016</time>
+```
