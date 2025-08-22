@@ -1,5 +1,6 @@
 # Web Essentials
 
 ```sh
-hugo server --themesDir ../
+npm i
+npm start
 ```

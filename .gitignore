@@ -4,3 +4,4 @@ resources/
 themes/
 *.backup
 config.toml
+node_modules/
