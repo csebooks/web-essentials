@@ -31,7 +31,7 @@ Lets start design a form with container types. Create file under `src` named `co
 </div>
 ```
 
-## `<span>`: Inline Container**
+## `<span>`: Inline Container
 - A generic inline container for styling or grouping small portions of text.
 
 **Example:**
