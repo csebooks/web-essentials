@@ -1,6 +1,6 @@
 ---
 title: Media
-weight: 3
+weight: 4
 ---
 
 > In HTML, **media** refers to content such as images, audio, and video that can be embedded in web pages to enhance user experience and provide visual or auditory context. HTML provides various elements and attributes to include, control, and manipulate media.

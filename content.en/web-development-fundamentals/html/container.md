@@ -1,6 +1,6 @@
 ---
 title: Container
-weight: 5
+weight: 6
 ---
 
 > In HTML, a **container** is a composite element that acts as a wrapper for grouping and organizing content on a web page. Containers are commonly used to structure the layout, style elements collectively, or apply specific behaviors to a group of elements.

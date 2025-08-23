@@ -1,6 +1,6 @@
 ---
 title: Forms
-weight: 4
+weight: 5
 ---
 
 > An **HTML form** is a structured way to collect user input and send it to a server for processing. Forms are essential for enabling user interaction on web pages, such as logging in, signing up, providing feedback, or searching for information.

@@ -1,6 +1,6 @@
 ---
 title: Text Elements
-weight: 2
+weight: 3
 ---
 
 > HTML provides a range of elements specifically designed to structure, format, and emphasize text on web pages. These text elements allow developers to create meaningful and visually appealing content.
