@@ -1,6 +1,6 @@
 ---
 title: Forms
-weight: 5
+weight: 6
 ---
 
 > An **HTML form** is a structured way to collect user input and send it to a server for processing. Forms are essential for enabling user interaction on web pages, such as logging in, signing up, providing feedback, or searching for information.
@@ -201,3 +201,9 @@ input:text[name=username minlength=5 maxlength=10]
 ```
 
 ---
+
+Lets build login form that gets user credentials and invoke login action upon submit
+
+```emmet
+div.login-container>h2{Login}+form>label[for="username"]{Username}+input#username[name="username" type="text" required]+label[for="password"]{Password}+input#password[name="password" type="password" required]+button[type="submit"]{Login}
+```

@@ -45,7 +45,7 @@ Next, We need to link this css to our existing `src/index.html` by adding below 
   <link href="css/styles.css" rel="stylesheet"/>
 ```
 
-# Types of Selectors in CSS**
+# Types of Selectors in CSS
 
 - **Universal Selector (`*`)**: Targets all elements.
   ```css
@@ -101,6 +101,48 @@ h1 {
     color: navy;
     font-size: 24px;
 }
+```
+
+Lets consider we want to present our login form in a better manner. include below under `style` tag
+
+```css
+body {
+                font-family: Arial, sans-serif;
+                background: #f4f4f4;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            .login-container {
+                background: #fff;
+                padding: 30px 40px;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            }
+            .login-container h2 {
+                margin-bottom: 20px;
+            }
+            .login-container input[type="text"],
+            .login-container input[type="password"] {
+                width: 100%;
+                padding: 10px;
+                margin: 8px 0 16px 0;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+            .login-container button {
+                width: 100%;
+                padding: 10px;
+                background: #007bff;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            .login-container button:hover {
+                background: #0056b3;
+            }
 ```
 
 # **Key Points About CSS Rules**

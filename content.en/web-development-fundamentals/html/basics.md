@@ -37,7 +37,7 @@ code .
 Next we need to create our html file `index.html` and keep the below content inside the file.
 
 ```emmet
-html:5>body{Lets build HTML}
+html:5
 ```
 
 - `<!DOCTYPE html>`: Declares the document as an HTML5 document.
