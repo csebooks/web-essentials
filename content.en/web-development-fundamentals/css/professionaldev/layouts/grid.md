@@ -3,8 +3,6 @@ title: Grid
 weight: 2
 ---
 
-# CSS Grid Layout
-
 > **CSS Grid** is a two-dimensional layout system for the web. It lets you arrange content in rows and columns, making it easy to build complex, responsive, and accessible layouts.
 
 ## Key Concepts
@@ -17,22 +15,20 @@ weight: 2
 
 ---
 
-## Example: College Events Landing Page (Step by Step)
+## Example
 
-Let's build a modern, accessible college landing page step by step. Each step introduces new structure or features, with Emmet for HTML and matching CSS.
+Let's build a modern, accessible college landing page step by step. Each step introduces new structure or features, with Emmet for HTML and matching CSS. create a file `events.html`
 
----
-
-### Step 1: Page Structure & Header
+### Page Structure & Header
 
 Start with the main structure and a visually appealing header.
 
-**Emmet:**
+
 ```
 body>header>h1{Starlight College}+p{Empowering Students, Inspiring Futures}
 ```
 
-**CSS:**
+
 ```css
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
@@ -61,16 +57,15 @@ header p {
 
 ---
 
-### Step 2: Navigation Bar
+### Navigation Bar
 
 Add a navigation bar for easy access to sections.
 
-**Emmet:**
+
 ```
 nav>a[href="#about"]{About}+a[href="#events"]{Events}+a[href="#contact"]{Contact}
 ```
 
-**CSS:**
 ```css
 nav {
     background: #fff;
@@ -91,18 +86,16 @@ nav a:hover {
 }
 ```
 
----
-
-### Step 3: Hero Section
+### Hero Section
 
 Add a hero section with a background image and overlay.
 
-**Emmet:**
+
 ```
 section.hero>div.hero-content>h2{Welcome to Starlight College}+p{Discover a world of opportunities...}
 ```
 
-**CSS:**
+
 ```css
 .hero {
     background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
@@ -134,16 +127,16 @@ section.hero>div.hero-content>h2{Welcome to Starlight College}+p{Discover a worl
 
 ---
 
-### Step 4: About Section
+### About Section
 
 Add an about section with a card-like appearance.
 
-**Emmet:**
+
 ```
 section.about#about>h2{About Us}+p{Starlight College is a premier institution...}
 ```
 
-**CSS:**
+
 ```css
 .about {
     max-width: 900px;
@@ -161,16 +154,16 @@ section.about#about>h2{About Us}+p{Starlight College is a premier institution...
 
 ---
 
-### Step 5: Events Grid
+### Events Grid
 
 Add a grid of event cards.
 
-**Emmet:**
+
 ```
 section.events-section#events>h2{Upcoming Events}+div.events-grid>div.event-card*3>h3{Event Title $}+p{Event $ details}+button{Register}
 ```
 
-**CSS:**
+
 ```css
 .events-section {
     max-width: 1100px;
@@ -221,16 +214,16 @@ section.events-section#events>h2{Upcoming Events}+div.events-grid>div.event-card
 
 ---
 
-### Step 6: Modal Registration Form (Optional Advanced)
+### Modal Registration Form
 
-Add a modal popup for event registration. (JS not shown here, see full sample for logic.)
+Add a modal popup for event registration. 
 
-**Emmet:**
+
 ```
 section.modal#registerModal>div.modal-content>button.close-modal{×}+h3#modalEventTitle{Register for Event}+form#registerForm>input[name="name" placeholder="Your Name"]+input[type="email" name="email" placeholder="Your Email"]+input[name="roll" placeholder="Roll Number"]+textarea[name="message" placeholder="Why do you want to join? (optional)"]+button[type="submit"]{Submit Registration}+div#successMsg{Thank you for registering!}
 ```
 
-**CSS:**
+
 ```css
 .modal {
     display: none;
@@ -296,16 +289,16 @@ section.modal#registerModal>div.modal-content>button.close-modal{×}+h3#modalEve
 
 ---
 
-### Step 7: Footer
+### Footer
 
 Add a simple footer for contact and copyright.
 
-**Emmet:**
+
 ```
 footer#contact>p{Contact us: info@starlightcollege.edu | +1 234 567 8901}+p{© 2025 Starlight College. All rights reserved.}
 ```
 
-**CSS:**
+
 ```css
 footer {
     background: #222;
@@ -318,11 +311,11 @@ footer {
 
 ---
 
-### Step 8: Responsive Tweaks
+### Responsive Tweaks
 
 Make the layout mobile-friendly.
 
-**CSS:**
+
 ```css
 @media (max-width: 700px) {
     .about, .events-section {
@@ -333,76 +326,3 @@ Make the layout mobile-friendly.
     }
 }
 ```
-
----
-
-
----
-
-## Full HTML Reference (Body Content)
-
-Below is the complete HTML content that would go inside the `<body>` tag for the final landing page:
-
-```html
-<header>
-    <h1>Starlight College</h1>
-    <p>Empowering Students, Inspiring Futures</p>
-</header>
-<nav>
-    <a href="#about">About</a>
-    <a href="#events">Events</a>
-    <a href="#contact">Contact</a>
-</nav>
-<section class="hero">
-    <div class="hero-content">
-        <h2>Welcome to Starlight College</h2>
-        <p>Discover a world of opportunities, vibrant campus life, and a community that supports your dreams. Join us for our upcoming events and be a part of something extraordinary!</p>
-    </div>
-</section>
-<section class="about" id="about">
-    <h2>About Us</h2>
-    <p>Starlight College is a premier institution dedicated to academic excellence, innovation, and holistic development. Our diverse programs, world-class faculty, and state-of-the-art facilities provide students with the tools they need to succeed in a rapidly changing world. We believe in nurturing talent, fostering creativity, and building leaders for tomorrow.</p>
-</section>
-<section class="events-section" id="events">
-    <h2>Upcoming Events</h2>
-    <div class="events-grid">
-        <div class="event-card">
-            <h3>Tech Symposium 2025</h3>
-            <p>Join us for a day of tech talks, workshops, and networking with industry leaders. Open to all students and faculty.</p>
-            <button onclick="openModal('Tech Symposium 2025')">Register</button>
-        </div>
-        <div class="event-card">
-            <h3>Art & Culture Fest</h3>
-            <p>Experience the vibrant culture of our college with music, dance, art exhibitions, and food stalls. Family and friends welcome!</p>
-            <button onclick="openModal('Art & Culture Fest')">Register</button>
-        </div>
-        <div class="event-card">
-            <h3>Sports Meet</h3>
-            <p>Show your sportsmanship and compete in a variety of games and athletic events. Prizes and certificates for winners.</p>
-            <button onclick="openModal('Sports Meet')">Register</button>
-        </div>
-    </div>
-</section>
-<section class="modal" id="registerModal">
-    <div class="modal-content">
-        <button class="close-modal" onclick="closeModal()">&times;</button>
-        <h3 id="modalEventTitle">Register for Event</h3>
-        <form id="registerForm" onsubmit="submitForm(event)">
-            <input type="text" id="name" name="name" placeholder="Your Name" required />
-            <input type="email" id="email" name="email" placeholder="Your Email" required />
-            <input type="text" id="roll" name="roll" placeholder="Roll Number" required />
-            <textarea id="message" name="message" placeholder="Why do you want to join? (optional)"></textarea>
-            <button type="submit">Submit Registration</button>
-        </form>
-        <div id="successMsg" style="display:none; color: #388e3c; margin-top: 1rem; font-weight: 500;">Thank you for registering!</div>
-    </div>
-</section>
-<footer id="contact">
-    <p>Contact us: info@starlightcollege.edu | +1 234 567 8901</p>
-    <p>© 2025 Starlight College. All rights reserved.</p>
-</footer>
-```
-
----
-
-This stepwise approach helps you build a modern, accessible landing page using HTML, CSS Grid, and Emmet, with a focus on real-world web design.
