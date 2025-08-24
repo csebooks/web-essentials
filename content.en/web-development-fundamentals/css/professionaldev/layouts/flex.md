@@ -1,6 +1,6 @@
 ---
 title: Flex
-weight: 2
+weight: 3
 ---
 
 > **Flexbox** is a modern layout technique in CSS that allows you to create flexible and responsive layouts with ease. It enables the distribution of space within a container and aligns items along the main axis or cross axis.
