@@ -8,6 +8,7 @@ This module introduces the **foundational concepts of web development**, coverin
 2. **Use Emmet Syntax** – All HTML code snippets will be provided in _Emmet_ format for faster learning and practice.
 3. **Practical Use Cases** – Each concept will be demonstrated through examples that closely resemble real-world lab expectations.
 4. **Step-by-Step Learning** – Full copy-paste samples will not be provided. Instead, learners will build incrementally through **progressive snippets**.
+5. **Gamificatio** – We need to explain the concepts through visual games as applicable
 
 ## Setup
 
