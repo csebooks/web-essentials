@@ -36,18 +36,8 @@ code .
 
 Next we need to create our html file `index.html` and keep the below content inside the file.
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My First HTML Page</title>
-  </head>
-  <body>
-    Lets build HTML
-  </body>
-</html>
+```emmet
+html:5>body{Lets build HTML}
 ```
 
 - `<!DOCTYPE html>`: Declares the document as an HTML5 document.

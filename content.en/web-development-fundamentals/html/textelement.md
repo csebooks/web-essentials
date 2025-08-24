@@ -3,7 +3,7 @@ title: Text Elements
 weight: 3
 ---
 
-> HTML provides a range of elements specifically designed to structure, format, and emphasize text on web pages. These text elements allow developers to create meaningful and visually appealing content.
+> emmet provides a range of elements specifically designed to structure, format, and emphasize text on web pages. These text elements allow developers to create meaningful and visually appealing content.
 
 ---
 
@@ -11,14 +11,11 @@ weight: 3
 # Headings
 
 Used to define headings in a hierarchical structure.
-```html
-<h1>This is a Heading 1</h1>
-<h2>This is a Heading 2</h2>
-<h3>This is a Heading 3</h3>
-<h4>This is a Heading 4</h4>
-<h5>This is a Heading 5</h5>
-<h6>This is a Heading 6</h6>
+
+```emmet
+h$[title="Heading $"]{Heading $}*6
 ```
+
 - `<h1>` is the largest and most important heading.
 - `<h6>` is the smallest and least important heading.
 
@@ -26,8 +23,9 @@ Used to define headings in a hierarchical structure.
 
 # Paragraphs
 Defines a block of text.
-```html
-<p>This is a paragraph of text.</p>
+
+```emmet
+p{This is a paragraph of text.}
 ```
 
 ---
@@ -36,138 +34,119 @@ Defines a block of text.
 For applying styles or emphasizing specific parts of text.
 
 - **Bold Text**
-  ```html
-  <b>This text is bold.</b>
-  <strong>This text is strong emphasis.</strong>
-  ```
+```emmet
+ b{This text is bold.}+strong{This text is strong emphasis.}
+```
   *`<strong>` has semantic meaning (important text).*
 
 - **Italic Text**
-  ```html
-  <i>This text is italic.</i>
-  <em>This text is emphasized.</em>
-  ```
+```emmet
+  i{This text is italic.}+em{This text is emphasized.}
+```
   *`<em>` is used for semantic emphasis.*
 
 - **Underlined Text**
-  ```html
-  <u>This text is underlined.</u>
-  ```
+```emmet
+u{This text is underlined.}
+```
 
 - **Small Text**
-  ```html
-  <small>This text is smaller.</small>
-  ```
+```emmet
+small{This text is smaller.}
+```
 
 - **Deleted and Inserted Text**
-  ```html
-  <del>This text is deleted.</del>
-  <ins>This text is inserted.</ins>
-  ```
+```emmet
+del{This text is deleted.}+ins{This text is inserted.}
+```
 
 - **Superscript and Subscript**
-  ```html
-  x<sup>2</sup> is superscript. H<sub>2</sub>O is subscript.
-  ```
+```emmet
+x^sup{2}+{ is superscript. }+H^sub{2}+{O is subscript.}
+```
 
 ---
 
 # Blockquote
 Defines a block of quoted text.
-```html
-<blockquote>
-  This is a long quotation from another source.
-</blockquote>
+```emmet
+blockquote{This is a long quotation from another source.}
 ```
 
 # Inline Quote
 For short quotes inside a sentence that automatically adds quotation marks.
-```html
-<p>She said, <q>Code like a poet, not a robot.</q></p>
+```emmet
+p{She said, }+q{Code like a poet, not a robot.}
 ```
 
 ---
 
 # Code and Preformatted Text
 - **Inline Code**
-  ```html
-  <code>console.log('Hello, World!');</code>
-  ```
+```emmet
+code{console.log('Hello, World!');}
+```
 
 - **Preformatted Text**
-  ```html
+```emmet
   <pre>
     Line 1
     Line 2
   </pre>
-  ```
+```
   *Preserves whitespace and line breaks.*
 
 ---
 
 # Lists
 - **Ordered List**
-  ```html
-  <ol>
-    <li>First item</li>
-    <li>Second item</li>
-  </ol>
-  ```
+```emmet
+  ol>li{First item}+li{Second item}
+```
 
 - **Unordered List**
-  ```html
-  <ul>
-    <li>Item 1</li>
-    <li>Item 2</li>
-  </ul>
-  ```
+```emmet
+ ul>li{Item 1}+li{Item 2}
+```
 
 - **Description List**
-  ```html
-  <dl>
-    <dt>HTML</dt>
-    <dd>HyperText Markup Language</dd>
-  </dl>
-  ```
+```emmet
+dl>dt{emmet}+dd{HyperText Markup Language}
+```
 
 ---
 
 # Anchor (Link)
 Defines a hyperlink.
-```html
-<a href="https://example.com">Visit Example</a>
+```emmet
+a[href="https://example.com"]{Visit Example}
 ```
 
 # Horizontal Rule
 Creates a horizontal line to separate content.
-```html
-<hr>
+```emmet
+hr
 ```
 
 ---
 
 # Abbreviations
 This tag is used to show the full meaning of a short word when you hover your mouse over it.
-```html
-<p>
-  We use <abbr>HTML</abbr>, Hypertext Markup Language, to structure our web documents.
-</p>
-
-<p>
-  I think <abbr title="Reverend">Rev.</abbr> Green did it in the kitchen with the chainsaw.
-</p>
+```emmet
+p{We use }+abbr{emmet}+{, Hypertext Markup Language, to structure our web documents.}+
+p{I think }+abbr[title="Reverend"]{Rev.}+{ Green did it in the kitchen with the chainsaw.}
 ```
 
 ---
 
 # Address
 An element for marking up contact details.
-```html
-<address>KeerthanaSri, Tamil Nadu, India</address>
+```emmet
+address{KeerthanaSri, Tamil Nadu, India}
 ```
 
 # Date and Time
 An element for marking up times and dates in a machine-readable format. 
-```html
-<time datetime="2016-01-20">20 January 2016</time>
+```emmet
+time[datetime="2016-01-20"]{20 January 2016}
 ```

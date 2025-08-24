@@ -24,19 +24,16 @@ Lets start design a form with container types. Create file under `src` named `co
 - Often styled using CSS or used as a layout grid.
 
 **Example:**
-```html
-<div class="container">
-  <h1>Welcome</h1>
-  <p>This is a simple HTML container example.</p>
-</div>
+```emmet
+.container>h1{Welcome}+p{This is a simple HTML container example.}
 ```
 
 ## `<span>`: Inline Container
 - A generic inline container for styling or grouping small portions of text.
 
 **Example:**
-```html
-<p>This is a <span style="color: red;">highlighted</span> word.</p>
+```emmet
+p{This is a }+span[style="color: red;"]{highlighted}+{ word.}
 ```
 
 ## Semantic Containers
@@ -50,11 +47,8 @@ Semantic containers give meaning to the content they hold, improving accessibili
 - **`<aside>`**: For extra content that supports the main content.
 
 **Example:**
-```html
-<section>
-  <h2>About Us</h2>
-  <p>We are a team of developers building amazing products.</p>
-</section>
+```emmet
+section>h2{About Us}+p{We are a team of developers building amazing products.}
 ```
 
 ---
